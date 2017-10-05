@@ -10,7 +10,7 @@ class Principal{
     @RequestMapping("/")
     @ResponseBody
     fun index():String{
-        return "Bienvenido a <h3>Quijote Lui</h3> :/"
+        return "Bienvenido a <h3>Quijote Lui :/</h3>"
     }
 
 }
