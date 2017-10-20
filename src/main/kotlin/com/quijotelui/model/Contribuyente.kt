@@ -10,7 +10,7 @@ import javax.persistence.Table
 @Entity
 @Immutable
 @Table(name = "v_ele_contribuyentes")
-class Contribuyentes : Serializable{
+class Contribuyente : Serializable{
 
     @Column(name = "razon_social")
     var razonSocial : String? = null
