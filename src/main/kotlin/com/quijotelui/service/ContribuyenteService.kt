@@ -1,8 +1,8 @@
-package com.quijotelui.repository
+package com.quijotelui.service
 
 import com.quijotelui.model.Contribuyente
 
-interface ContribuyenteDao {
-
+interface ContribuyenteService {
     fun getContribuyentes() : MutableList<Contribuyente>
+
 }

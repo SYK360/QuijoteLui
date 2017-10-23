@@ -12,13 +12,16 @@ import javax.persistence.Table
 @Table(name = "v_ele_contribuyentes")
 class Contribuyente : Serializable{
 
+    @Id
+    @Column(name = "id")
+    var id : Int? = null
+
     @Column(name = "razon_social")
     var razonSocial : String? = null
 
     @Column(name = "nombre_comercial")
     var nombreComercial : String? = null
 
-    @Id
     @Column(name = "ruc")
     var ruc : String? = null
 

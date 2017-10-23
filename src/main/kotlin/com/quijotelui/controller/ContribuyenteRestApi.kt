@@ -1,8 +1,10 @@
 package com.quijotelui.controller
 
 import com.quijotelui.model.Contribuyente
-import com.quijotelui.repository.ContribuyenteDao
+import com.quijotelui.service.ContribuyenteService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -12,13 +14,11 @@ import org.springframework.web.bind.annotation.RestController
 class ContribuyenteRestApi {
 
     @Autowired
-    lateinit var contribuyente : ContribuyenteDao
+    lateinit var contribuyenteService: ContribuyenteService
 
     @GetMapping("/contribuyentes")
-    fun findContribuyente() : List<Contribuyente>{
-        val c: Contribuyente
-        c = contribuyente.findAll()[0]
-        println(c.nombreComercial)
-        return contribuyente.findAll()
+    fun findContribuyente() : ResponseEntity<MutableList<Contribuyente>> {
+        val contribuyente = contribuyenteService.getContribuyentes()
+        return ResponseEntity<MutableList<Contribuyente>>(contribuyente,HttpStatus.OK)
     }
 }
