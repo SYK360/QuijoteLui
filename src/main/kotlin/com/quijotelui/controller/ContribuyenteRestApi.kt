@@ -1,11 +1,12 @@
 package com.quijotelui.controller
 
 import com.quijotelui.model.Contribuyente
-import com.quijotelui.service.ContribuyenteService
+import com.quijotelui.service.IContribuyenteService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -14,11 +15,18 @@ import org.springframework.web.bind.annotation.RestController
 class ContribuyenteRestApi {
 
     @Autowired
-    lateinit var contribuyenteService: ContribuyenteService
+    lateinit var contribuyenteService: IContribuyenteService
 
     @GetMapping("/contribuyentes")
-    fun findContribuyente() : ResponseEntity<MutableList<Contribuyente>> {
-        val contribuyente = contribuyenteService.getContribuyentes()
-        return ResponseEntity<MutableList<Contribuyente>>(contribuyente,HttpStatus.OK)
+    fun getContribuyentes() : ResponseEntity<MutableList<Contribuyente>> {
+        val contribuyente = contribuyenteService.findAll()
+        return ResponseEntity<MutableList<Contribuyente>>(contribuyente, HttpStatus.OK)
+    }
+
+    @GetMapping("/contribuyente/{ruc}")
+    fun getByRUC(@PathVariable(value = "ruc") ruc : String) : ResponseEntity<Contribuyente> {
+        println("Ruc: $ruc")
+        val contribuyente = contribuyenteService.findByRUC(ruc)
+        return ResponseEntity<Contribuyente>(contribuyente, HttpStatus.OK)
     }
 }
