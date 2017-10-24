@@ -20,13 +20,13 @@ class FacturaRestApi {
     lateinit var facturaService: IFacturaService
 
     @GetMapping("/facturas")
-    fun getContribuyentes() : ResponseEntity<MutableList<Factura>> {
+    fun getFacturas() : ResponseEntity<MutableList<Factura>> {
         val factura = facturaService.findAll()
         return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
     }
 
     @GetMapping("/factura/{fecha}")
-    fun getByRuc(@PathVariable(value = "fecha") fecha : String) : ResponseEntity<MutableList<Factura>> {
+    fun getByFecha(@PathVariable(value = "fecha") fecha : String) : ResponseEntity<MutableList<Factura>> {
 
         val factura = facturaService.findByFecha(fecha)
         return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)

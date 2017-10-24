@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @Service
-class IFacturaServiceImpl : IFacturaService {
+class FacturaServiceImpl : IFacturaService {
 
     @Autowired
     lateinit var facturaDao : IFacturaDao

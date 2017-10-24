@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext
 
 @Transactional
 @Repository
-class IFacturaDaoImpl : IFacturaDao {
+class FacturaDaoImpl : IFacturaDao {
 
     @PersistenceContext
     lateinit var entityMAnager : EntityManager
