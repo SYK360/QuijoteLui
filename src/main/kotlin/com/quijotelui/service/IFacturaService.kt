@@ -5,5 +5,5 @@ import java.util.*
 
 interface IFacturaService {
     fun findAll() : MutableList<Factura>
-    fun findByFecha(fecha: Date) : MutableList<Factura>
+    fun findByFecha(fecha: String) : MutableList<Factura>
 }

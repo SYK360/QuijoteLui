@@ -7,7 +7,7 @@
     SUBSTR(TO_CHAR(f.NUM_FACTURA,'fm000000000000000'),1,3) establecimiento,
     SUBSTR(TO_CHAR(f.NUM_FACTURA,'fm000000000000000'),4,3) punto_emision,
     to_char(SUBSTR(TO_CHAR(f.NUM_FACTURA,'fm000000000000000'),7,9)) secuencial,
-    to_date(f.FECHA_FACTURA,'dd/mm/rrrr') as FECHA,
+    trunc(f.FECHA_FACTURA) as FECHA,
     round(f.TOTAL_SIN_IVA,2) as TOTAL_SIN_IVA,
     round(f.TOTAL_CON_IVA,2)-f.DESCUENTOS as TOTAL_CON_IVA,
     round(f.IVA,2) as IVA,
