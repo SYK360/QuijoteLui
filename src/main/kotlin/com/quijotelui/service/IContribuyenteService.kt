@@ -5,6 +5,6 @@ import com.quijotelui.model.Contribuyente
 interface IContribuyenteService {
 
     fun findAll() : MutableList<Contribuyente>
-    fun findByRUC(ruc : String) : Contribuyente
+    fun findByRuc(ruc : String) : Contribuyente
 
 }

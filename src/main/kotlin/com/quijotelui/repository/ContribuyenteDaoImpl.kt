@@ -19,7 +19,7 @@ class ContribuyenteDaoImpl : IContribuyenteDao {
     }
 
     @Override
-    override fun findByRUC(ruc: String): Contribuyente {
+    override fun findByRuc(ruc: String): Contribuyente {
         println("DAO Ruc: $ruc")
         return entityMAnager.createQuery("from Contribuyente " +
                 "where ruc = :ruc").setParameter("ruc", ruc).singleResult as Contribuyente
