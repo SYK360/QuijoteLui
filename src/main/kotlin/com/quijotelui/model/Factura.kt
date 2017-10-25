@@ -42,10 +42,10 @@ class Factura : Serializable {
     @Type(type="date")
     var fecha : Date? = null
 
-    @Column(name = "TOTAL_SIN_IVA")
+    @Column(name = "total_sin_iva")
     var totalSinIva : BigDecimal? = null
 
-    @Column(name = "TOTAL_CON_IVA")
+    @Column(name = "total_con_iva")
     var totalConIva : BigDecimal? = null
 
     @Column(name = "iva")
