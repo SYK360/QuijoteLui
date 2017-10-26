@@ -30,4 +30,8 @@ class FacturaServiceImpl : IFacturaService {
 
         return facturaDao.findByFecha(fechaInDateType)
     }
+
+    override fun findByComprobante(codigo: String, numero: String): MutableList<Factura> {
+        return facturaDao.findByComprobante(codigo, numero)
+    }
 }

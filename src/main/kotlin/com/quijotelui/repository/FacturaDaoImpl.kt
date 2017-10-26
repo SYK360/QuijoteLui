@@ -24,4 +24,18 @@ class FacturaDaoImpl : IFacturaDao {
         return entityMAnager.createQuery("from Factura " +
                 "where fecha = :fecha").setParameter("fecha", fecha).resultList as MutableList<Factura>
     }
+
+    @Override
+    override fun findByComprobante(codigo: String, numero: String): MutableList<Factura> {
+        return entityMAnager.createQuery("from Factura " +
+                "where codigo = :codigo " +
+                "and numero = :numero")
+                .setParameter("codigo", codigo)
+                .setParameter("numero",numero).resultList as MutableList<Factura>
+    }
+
+    override fun count(codigo: String, numero: String): Int {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 }

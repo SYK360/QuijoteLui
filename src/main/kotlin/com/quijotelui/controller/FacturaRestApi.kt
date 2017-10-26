@@ -1,7 +1,9 @@
 package com.quijotelui.controller
 
 
+import com.quijotelui.electronico.xml.GeneraFactura
 import com.quijotelui.model.Factura
+import com.quijotelui.service.IContribuyenteService
 import com.quijotelui.service.IFacturaService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -19,6 +21,9 @@ class FacturaRestApi {
     @Autowired
     lateinit var facturaService: IFacturaService
 
+    @Autowired
+    lateinit var contribuyenteService: IContribuyenteService
+
     @GetMapping("/facturas")
     fun getFacturas() : ResponseEntity<MutableList<Factura>> {
         val factura = facturaService.findAll()
@@ -30,6 +35,28 @@ class FacturaRestApi {
 
         val factura = facturaService.findByFecha(fecha)
         return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
+    }
+
+    @GetMapping("/factura/codigo/{codigo}/numero/{numero}")
+    fun generaXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
+
+        if (codigo == null || numero == null) {
+            return ResponseEntity(HttpStatus.CONFLICT)
+        }
+        else {
+            val factura = facturaService.findByComprobante(codigo, numero)
+
+            if (factura.isEmpty()) {
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            } else {
+                val genera = GeneraFactura()
+
+                genera.contribuyenteService = contribuyenteService
+                genera.genera()
+                return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
+            }
+        }
+
     }
 
 }
