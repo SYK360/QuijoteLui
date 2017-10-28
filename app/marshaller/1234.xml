@@ -3,17 +3,43 @@
     <infoTributaria>
         <ambiente>1</ambiente>
         <tipoEmision>1</tipoEmision>
-        <razonSocial>Quiguango Terán Jorge Luis</razonSocial>
+        <razonSocial>Quiguango Jorge Luis</razonSocial>
         <nombreComercial>QuijoteLui</nombreComercial>
-        <ruc>1002456877001</ruc>
+        <ruc>102245612701</ruc>
         <claveAcceso>0000000000000000000000000000000000000000000</claveAcceso>
         <codDoc>01</codDoc>
         <estab>001</estab>
         <ptoEmi>010</ptoEmi>
         <secuencial>000000013</secuencial>
-        <dirMatriz>Cananvalle Calle Los Higos y Calle Cananvalle</dirMatriz>
+        <dirMatriz>Cananvalle Calle Las Uvillas y Calle Cananvalle</dirMatriz>
     </infoTributaria>
     <infoFactura>
         <fechaEmision>03/10/2017</fechaEmision>
+        <dirEstablecimiento>Cananvalle Calle Las Uvillas y Calle Cananvalle</dirEstablecimiento>
+        <obligadoContabilidad>NO</obligadoContabilidad>
+        <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
+        <razonSocialComprador>Arenita</razonSocialComprador>
+        <identificacionComprador>1002345644</identificacionComprador>
+        <direccionComprador>Priorato</direccionComprador>
+        <totalSinImpuestos>10.00</totalSinImpuestos>
+        <totalDescuento>0.00</totalDescuento>
+        <totalConImpuestos>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>2</codigoPorcentaje>
+                <baseImponible>10.00</baseImponible>
+                <tarifa>12</tarifa>
+                <valor>1.20</valor>
+            </totalImpuesto>
+        </totalConImpuestos>
+        <propina>0.00</propina>
+        <importeTotal>11.20</importeTotal>
+        <moneda>DOLAR</moneda>
+        <pagos>
+            <pago>
+                <formaPago>20</formaPago>
+                <total>11.20</total>
+            </pago>
+        </pagos>
     </infoFactura>
 </factura>

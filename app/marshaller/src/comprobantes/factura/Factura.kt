@@ -28,11 +28,12 @@ class Factura {
         this.version = version
     }
 
-    fun setInformacionTributaria(informacionTributaria : InformacionTributaria){
+    fun setInformacionTributaria(informacionTributaria : InformacionTributaria) {
         this.informacionTributaria = informacionTributaria
     }
 
-    fun setInformacionFactura(informacionFactura : InformacionFactura){
+    fun setInformacionFactura(informacionFactura : InformacionFactura) {
         this.informacionFactura = informacionFactura
     }
+
 }
