@@ -3,24 +3,24 @@
     <infoTributaria>
         <ambiente>1</ambiente>
         <tipoEmision>1</tipoEmision>
-        <razonSocial>QUIGUANGO TERAN JORGE LUIS</razonSocial>
-        <nombreComercial>QUIJOTELU</nombreComercial>
-        <ruc>1002456877001</ruc>
-        <claveAcceso>0310201701100245687700110010100000000131234567818</claveAcceso>
+        <razonSocial>JORGE LUIS</razonSocial>
+        <nombreComercial>QUIJOTELUI</nombreComercial>
+        <ruc>0326985277001</ruc>
+        <claveAcceso>0310201701320158450110010100000000131234567818</claveAcceso>
         <codDoc>01</codDoc>
         <estab>001</estab>
         <ptoEmi>010</ptoEmi>
         <secuencial>000000013</secuencial>
-        <dirMatriz>CANANVALLE CALLE LOS HIGOS</dirMatriz>
+        <dirMatriz>CALLE</dirMatriz>
     </infoTributaria>
     <infoFactura>
         <fechaEmision>03/10/2017</fechaEmision>
-        <dirEstablecimiento>CANANVALLE CALLE LOS HIGOS</dirEstablecimiento>
+        <dirEstablecimiento>CALLE</dirEstablecimiento>
         <obligadoContabilidad>NO</obligadoContabilidad>
         <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
-        <razonSocialComprador>CHAMORRO SANDRA</razonSocialComprador>
-        <identificacionComprador>1002882262</identificacionComprador>
-        <direccionComprador>Los Ceibos</direccionComprador>
+        <razonSocialComprador>Pablin</razonSocialComprador>
+        <identificacionComprador>1532887852</identificacionComprador>
+        <direccionComprador>Los Nogales</direccionComprador>
         <totalSinImpuestos>10.00</totalSinImpuestos>
         <totalDescuento>0.00</totalDescuento>
         <totalConImpuestos>
@@ -63,8 +63,8 @@
         </detalle>
     </detalles>
     <infoAdicional>
-        <campoAdicional nombre="Dirección">Los Ceibos</campoAdicional>
+        <campoAdicional nombre="Dirección">Los Nogales</campoAdicional>
         <campoAdicional nombre="Teléfono">062542125</campoAdicional>
-        <campoAdicional nombre="Email">sandra@gmail.com</campoAdicional>
+        <campoAdicional nombre="Email">pablin@gmail.com</campoAdicional>
     </infoAdicional>
 </factura>

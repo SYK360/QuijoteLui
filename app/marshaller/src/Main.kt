@@ -1,3 +1,5 @@
+import comprobantes.CampoAdicional
+import comprobantes.InformacionAdicional
 import comprobantes.InformacionTributaria
 import comprobantes.factura.*
 import java.io.FileOutputStream
@@ -54,10 +56,44 @@ fun main(args: Array<String>) {
     pago.formaPago = "20"
     pago.total = BigDecimal(11.20).setScale(2, BigDecimal.ROUND_HALF_UP)
 
+
     var pagos = Pagos()
     pagos.setPago(pago)
 
     informacionFactura.setPagos(pagos)
+
+
+    val detalle = Detalle()
+    detalle.codigoPrincipal = "1"
+    detalle.descripcion = "Servicio de Pruebas"
+    detalle.Cantidad = BigDecimal(1).setScale(2, BigDecimal.ROUND_HALF_UP)
+    detalle.precioUnitario = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
+    detalle.descuento = BigDecimal(0).setScale(2, BigDecimal.ROUND_HALF_UP)
+    detalle.precioTotalSinImpuesto = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
+
+
+    val impuesto = Impuesto()
+    impuesto.codigo = "2"
+    impuesto.codigoPorcentaje = "2"
+    impuesto.tarifa = BigDecimal(12).setScale(2, BigDecimal.ROUND_HALF_UP)
+    impuesto.baseImponible = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
+    impuesto.valor = BigDecimal(1.2).setScale(2, BigDecimal.ROUND_HALF_UP)
+
+    var impuestos = Impuestos()
+    impuestos.setImpuesto(impuesto)
+
+    detalle.setImpuestos(impuestos)
+
+    var detalles = Detalles()
+    detalles.setDetalle(detalle)
+
+
+    val campoAdicional = CampoAdicional()
+    campoAdicional.setNombre("Teléfono")
+    campoAdicional.setValor("999999999")
+
+    var informacionAdicional = InformacionAdicional()
+    informacionAdicional.setCampoAdicional(campoAdicional)
 
     val factura = Factura()
 
@@ -66,6 +102,8 @@ fun main(args: Array<String>) {
 
     factura.setInformacionTributaria(informacionTributaria)
     factura.setInformacionFactura(informacionFactura)
+    factura.setDetalles(detalles)
+    factura.setInformacionAdicional(informacionAdicional)
 
 
 

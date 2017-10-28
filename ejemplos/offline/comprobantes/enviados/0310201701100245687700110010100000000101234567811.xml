@@ -6,19 +6,19 @@
     <infoTributaria>
         <ambiente>1</ambiente>
         <tipoEmision>1</tipoEmision>
-        <razonSocial>QUIGUANGO TERAN JORGE LUIS</razonSocial>
-        <nombreComercial>QUIJOTELU</nombreComercial>
-        <ruc>1002456877001</ruc>
-        <claveAcceso>0310201701100245687700110010100000000101234567811</claveAcceso>
+        <razonSocial>JORGE LUIS</razonSocial>
+        <nombreComercial>QUIJOTELUI</nombreComercial>
+        <ruc>1045896877001</ruc>
+        <claveAcceso>031020180890980987700110010100000000101234567811</claveAcceso>
         <codDoc>01</codDoc>
         <estab>001</estab>
         <ptoEmi>010</ptoEmi>
         <secuencial>000000010</secuencial>
-        <dirMatriz>CANANVALLE CALLE LOS HIGOS</dirMatriz>
+        <dirMatriz>CALLE</dirMatriz>
     </infoTributaria>
     <infoFactura>
         <fechaEmision>03/10/2017</fechaEmision>
-        <dirEstablecimiento>CANANVALLE CALLE LOS HIGOS</dirEstablecimiento>
+        <dirEstablecimiento>CALLE</dirEstablecimiento>
         <obligadoContabilidad>NO</obligadoContabilidad>
         <tipoIdentificacionComprador>07</tipoIdentificacionComprador>
         <razonSocialComprador>CONSUMIDOR FINAL</razonSocialComprador>

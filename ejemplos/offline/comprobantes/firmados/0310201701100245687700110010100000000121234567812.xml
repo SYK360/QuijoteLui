@@ -3,24 +3,24 @@
     <infoTributaria>
         <ambiente>1</ambiente>
         <tipoEmision>1</tipoEmision>
-        <razonSocial>QUIGUANGO TERAN JORGE LUIS</razonSocial>
-        <nombreComercial>QUIJOTELU</nombreComercial>
-        <ruc>1002456877001</ruc>
-        <claveAcceso>0310201701100245687700110010100000000121234567812</claveAcceso>
+        <razonSocial>JORGE LUIS</razonSocial>
+        <nombreComercial>QUIJOTELUI</nombreComercial>
+        <ruc>1098523017001</ruc>
+        <claveAcceso>031020098098944400110010100000000121234567812</claveAcceso>
         <codDoc>01</codDoc>
         <estab>001</estab>
         <ptoEmi>010</ptoEmi>
         <secuencial>000000012</secuencial>
-        <dirMatriz>CANANVALLE CALLE LOS HIGOS</dirMatriz>
+        <dirMatriz>CALLE</dirMatriz>
     </infoTributaria>
     <infoFactura>
         <fechaEmision>03/10/2017</fechaEmision>
-        <dirEstablecimiento>CANANVALLE CALLE LOS HIGOS</dirEstablecimiento>
+        <dirEstablecimiento>CALLE</dirEstablecimiento>
         <obligadoContabilidad>NO</obligadoContabilidad>
         <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
-        <razonSocialComprador>CHAMORRO SANDRA</razonSocialComprador>
-        <identificacionComprador>1002882262</identificacionComprador>
-        <direccionComprador>Los Ceibos</direccionComprador>
+        <razonSocialComprador>Pedro Panda</razonSocialComprador>
+        <identificacionComprador>1898098062</identificacionComprador>
+        <direccionComprador>Los Nogales</direccionComprador>
         <totalSinImpuestos>1.00</totalSinImpuestos>
         <totalDescuento>0.00</totalDescuento>
         <totalConImpuestos>
@@ -65,9 +65,9 @@
         </detalle>
     </detalles>
     <infoAdicional>
-        <campoAdicional nombre="Dirección">Los Ceibos</campoAdicional>
+        <campoAdicional nombre="Dirección">Los Nogales</campoAdicional>
         <campoAdicional nombre="Teléfono">062542125</campoAdicional>
-        <campoAdicional nombre="Email">sandra@gmail.com</campoAdicional>
+        <campoAdicional nombre="Email">pedro@gmail.com</campoAdicional>
     </infoAdicional>
 <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#" Id="Signature18901">
 <ds:SignedInfo Id="Signature-SignedInfo37626">

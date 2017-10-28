@@ -5,7 +5,19 @@ import javax.xml.bind.annotation.XmlRootElement
 import javax.xml.bind.annotation.XmlType
 
 @XmlRootElement
-@XmlType(name = "", propOrder = arrayOf("ambiente", "tipoEmision", "razonSocial", "nombreComercial", "ruc", "claveAcceso", "codDoc", "estab", "ptoEmi", "secuencial", "dirMatriz"))
+@XmlType(name = "", propOrder = arrayOf(
+        "ambiente",
+        "tipoEmision",
+        "razonSocial",
+        "nombreComercial",
+        "ruc",
+        "claveAcceso",
+        "codDoc",
+        "estab",
+        "ptoEmi",
+        "secuencial",
+        "dirMatriz"))
+
 class InformacionTributaria(
 
         @XmlElement var ambiente: String? = null,
@@ -21,3 +33,4 @@ class InformacionTributaria(
         @XmlElement var dirMatriz: String? = null
 
 )
+
