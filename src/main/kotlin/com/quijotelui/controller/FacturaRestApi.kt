@@ -51,7 +51,6 @@ class FacturaRestApi {
             } else {
                 val genera = GeneraFactura()
 
-                genera.contribuyenteService = contribuyenteService
                 genera.genera()
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
             }

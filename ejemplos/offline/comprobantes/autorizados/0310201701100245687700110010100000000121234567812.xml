@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><autorizacion>
+  <estado>AUTORIZADO</estado>
+  <numeroAutorizacion>0310201701100245687700110010100000000121234567812</numeroAutorizacion>
+  <fechaAutorizacion class="fechaAutorizacion">03/10/2017 22:53:47.000</fechaAutorizacion>
+  <comprobante><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprobante" version="1.0.0">
+    <infoTributaria>
+        <ambiente>1</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>QUIGUANGO TERAN JORGE LUIS</razonSocial>
+        <nombreComercial>QUIJOTELU</nombreComercial>
+        <ruc>1002456877001</ruc>
+        <claveAcceso>0310201701100245687700110010100000000121234567812</claveAcceso>
+        <codDoc>01</codDoc>
+        <estab>001</estab>
+        <ptoEmi>010</ptoEmi>
+        <secuencial>000000012</secuencial>
+        <dirMatriz>CANANVALLE CALLE LOS HIGOS</dirMatriz>
+    </infoTributaria>
+    <infoFactura>
+        <fechaEmision>03/10/2017</fechaEmision>
+        <dirEstablecimiento>CANANVALLE CALLE LOS HIGOS</dirEstablecimiento>
+        <obligadoContabilidad>NO</obligadoContabilidad>
+        <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
+        <razonSocialComprador>CHAMORRO SANDRA</razonSocialComprador>
+        <identificacionComprador>1002882262</identificacionComprador>
+        <direccionComprador>Los Ceibos</direccionComprador>
+        <totalSinImpuestos>1.00</totalSinImpuestos>
+        <totalDescuento>0.00</totalDescuento>
+        <totalConImpuestos>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>2</codigoPorcentaje>
+                <baseImponible>1.00</baseImponible>
+                <tarifa>12</tarifa>
+                <valor>0.12</valor>
+            </totalImpuesto>
+        </totalConImpuestos>
+        <propina>0.00</propina>
+        <importeTotal>1.12</importeTotal>
+        <moneda>DOLAR</moneda>
+        <pagos>
+            <pago>
+                <formaPago>01</formaPago>
+                <total>1.12</total>
+                <plazo>30</plazo>
+                <unidadTiempo>Días</unidadTiempo>
+            </pago>
+        </pagos>
+    </infoFactura>
+    <detalles>
+        <detalle>
+            <codigoPrincipal>1</codigoPrincipal>
+            <codigoAuxiliar>1</codigoAuxiliar>
+            <descripcion>SERVICIO DE PRUEBAS</descripcion>
+            <cantidad>1</cantidad>
+            <precioUnitario>1</precioUnitario>
+            <descuento>0</descuento>
+            <precioTotalSinImpuesto>1.00</precioTotalSinImpuesto>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>2</codigoPorcentaje>
+                    <tarifa>12</tarifa>
+                    <baseImponible>1.00</baseImponible>
+                    <valor>0.12</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+    </detalles>
+    <infoAdicional>
+        <campoAdicional nombre="Dirección">Los Ceibos</campoAdicional>
+        <campoAdicional nombre="Teléfono">062542125</campoAdicional>
+        <campoAdicional nombre="Email">sandra@gmail.com</campoAdicional>
+    </infoAdicional>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#" Id="Signature18901">
+<ds:SignedInfo Id="Signature-SignedInfo37626">
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></ds:CanonicalizationMethod>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></ds:SignatureMethod>
+<ds:Reference Id="SignedPropertiesID228294" Type="http://uri.etsi.org/01903#SignedProperties" URI="#Signature18901-SignedProperties672384">
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
+<ds:DigestValue>a9z3xebvgKP+yZ05ajLZKYDYp6c=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference URI="#Certificate11037629">
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
+<ds:DigestValue>v0iEMfu+PMkrgrH2Yo+u3Tq1nKg=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Id="Reference-ID-592017" URI="#comprobante">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></ds:Transform>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
+<ds:DigestValue>QRs0z6oQiCHOrsWn8ywehK03nEY=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue Id="SignatureValue817394">
+dmC+3bPbT1amG/BTym8Redgkpstv6NBqegB+EEi6FTEC6JSTibIe1aOCQo50cTZmyoA8SIFM5ddO
+ykv+u6w+BFEAxyXWvUQD0wtbIEb6bC65QHbgHGe5pQazxx3Mlcv7nD6CwE1tCAdyPNteV0gaShtv
+ItkIZjIMTOP4KI7qtY0it43+QGAVy/nYt20R6ZjMsxoZOWgY78p3XE3RgGsyjDppS7GymQgYt3Fn
+pkcKBShYwJVhAhgIFtqD9WpDpZwQkFxMDUnxMqI1x50DKaFCdCVluCbe9qmwKep2VbOFj69cve/Q
+aLhFzYYJ3KAf6XE4vsYrmr8HqK/0pOZv77Mo9g==
+</ds:SignatureValue>
+<ds:KeyInfo Id="Certificate11037629">
+<ds:X509Data>
+<ds:X509Certificate>
+MIIJnzCCB4egAwIBAgIEWH4zTzANBgkqhkiG9w0BAQsFADCBoTELMAkGA1UEBhMCRUMxIjAgBgNV
+BAoTGUJBTkNPIENFTlRSQUwgREVMIEVDVUFET1IxNzA1BgNVBAsTLkVOVElEQUQgREUgQ0VSVElG
+SUNBQ0lPTiBERSBJTkZPUk1BQ0lPTi1FQ0lCQ0UxDjAMBgNVBAcTBVFVSVRPMSUwIwYDVQQDExxB
+QyBCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMB4XDTE3MDQyODE1MDAxNloXDTE5MDQyODE1MzAx
+NlowgbIxCzAJBgNVBAYTAkVDMSIwIAYDVQQKExlCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMTcw
+NQYDVQQLEy5FTlRJREFEIERFIENFUlRJRklDQUNJT04gREUgSU5GT1JNQUNJT04tRUNJQkNFMQ4w
+DAYDVQQHEwVRVUlUTzE2MBEGA1UEBRMKMDAwMDIwOTgwNjAhBgNVBAMTGkpPUkdFIExVSVMgUVVJ
+R1VBTkdPIFRFUkFOMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyCaM76995V76a/uO
+lxVfOvFh33dCH+YLtoRQoRuqi5ZnStirthrQ1KSqJ3/QC22ux9ZR2TLYxqMujtX8hONQLGODhODQ
+v1q9TLynyh+VU1JWNEwVrEg3SMqFamvYOuml/nKufTPgYMknYaQqIrVNSj76D/irGELn4lX+p0vz
+FmDSYBdVpQVr1iWpcp0WjzWKoARtSuK98yS6SLj7K2mRuexhzI7cFCwXLKnDjchrCl3a222mcHuV
+fBKGoqV//83tFUexiPs7tne871ZniBcrqN088X052y2Ba67FgHVRzqi7pBgtR+26AtPxLFcHm7OL
+2N9ztr3lCLu2xwSSWd36fQIDAQABo4IEyjCCBMYwCwYDVR0PBAQDAgeAMGYGA1UdIARfMF0wWwYL
+KwYBBAGCqDsCAQEwTDBKBggrBgEFBQcCARY+aHR0cDovL3d3dy5lY2kuYmNlLmVjL3BvbGl0aWNh
+LWNlcnRpZmljYWRvL3BlcnNvbmEtbmF0dXJhbC5wZGYwgZEGCCsGAQUFBwEBBIGEMIGBMD4GCCsG
+AQUFBzABhjJodHRwOi8vb2NzcC5lY2kuYmNlLmVjL2VqYmNhL3B1YmxpY3dlYi9zdGF0dXMvb2Nz
+cDA/BggrBgEFBQcwAYYzaHR0cDovL29jc3AxLmVjaS5iY2UuZWMvZWpiY2EvcHVibGljd2ViL3N0
+YXR1cy9vY3NwMBoGCisGAQQBgqg7AwEEDBMKMTAwMjQ1Njg3NzAaBgorBgEEAYKoOwMCBAwTCkpP
+UkdFIExVSVMwGQYKKwYBBAGCqDsDAwQLEwlRVUlHVUFOR08wFQYKKwYBBAGCqDsDBAQHEwVURVJB
+TjAqBgorBgEEAYKoOwMHBBwTGkNBTkFOVkFMTEUgQ0FMTEUgTE9TIEhJR09TMBkGCisGAQQBgqg7
+AwgECxMJMDYyNTQyMTczMBYGCisGAQQBgqg7AwkECBMGSWJhcnJhMBcGCisGAQQBgqg7AwwECRMH
+RUNVQURPUjAdBgorBgEEAYKoOwMLBA8TDTEwMDI0NTY4NzcwMDEwHgYKKwYBBAGCqDsDMwQQEw5I
+QVJEV0FSRS1UT0tFTjAkBgNVHREEHTAbgRlqb3JnZXF1aWd1YW5nb0BpY2xvdWQuY29tMIIB3wYD
+VR0fBIIB1jCCAdIwggHOoIIByqCCAcaGgdVsZGFwOi8vYmNlcWxkYXBzdWJwMS5iY2UuZWMvY249
+Q1JMNDIwLGNuPUFDJTIwQkFOQ08lMjBDRU5UUkFMJTIwREVMJTIwRUNVQURPUixsPVFVSVRPLG91
+PUVOVElEQUQlMjBERSUyMENFUlRJRklDQUNJT04lMjBERSUyMElORk9STUFDSU9OLUVDSUJDRSxv
+PUJBTkNPJTIwQ0VOVFJBTCUyMERFTCUyMEVDVUFET1IsYz1FQz9jZXJ0aWZpY2F0ZVJldm9jYXRp
+b25MaXN0P2Jhc2WGNGh0dHA6Ly93d3cuZWNpLmJjZS5lYy9DUkwvZWNpX2JjZV9lY19jcmxmaWxl
+Y29tYi5jcmykgbUwgbIxCzAJBgNVBAYTAkVDMSIwIAYDVQQKExlCQU5DTyBDRU5UUkFMIERFTCBF
+Q1VBRE9SMTcwNQYDVQQLEy5FTlRJREFEIERFIENFUlRJRklDQUNJT04gREUgSU5GT1JNQUNJT04t
+RUNJQkNFMQ4wDAYDVQQHEwVRVUlUTzElMCMGA1UEAxMcQUMgQkFOQ08gQ0VOVFJBTCBERUwgRUNV
+QURPUjEPMA0GA1UEAxMGQ1JMNDIwMCsGA1UdEAQkMCKADzIwMTcwNDI4MTUwMDE2WoEPMjAxOTA0
+MjgxNTMwMTZaMB8GA1UdIwQYMBaAFBj58PvmMhyZZjkqyouyaX1JJ7/OMB0GA1UdDgQWBBSjAkBF
+gcwAsdFLY+f/Xl3U/Mfk6DAJBgNVHRMEAjAAMBkGCSqGSIb2fQdBAAQMMAobBFY4LjEDAgSwMA0G
+CSqGSIb3DQEBCwUAA4ICAQB2TSCt1CbAe3CPA8SEQEbhxXAOdUdqMotwGsjlcqIC8PyWCMWPywHx
+Xz8smlSeG6eDcjkrc+fF+CLPSFLvCOZ9q+gcWtHoKGQVmO2alOsHdD2k7PXDzXY+ZOZFWvz3lELj
+3k8Z+arFmTzyRPVfMzyM2/1ssJHH/2lQNsx81vAdTxF14nmpp4a6eT1+/Oa0ytgkg6aMqlYscuyB
+frZjnegBsqch7fAYPM7+/OTqF0N7GxDaAOVBlHeZqcjJbLde/qR23N9aLJ2JYFDgUINIO+CfS9XJ
+loKJzxEJUNABXQ2dYOtaR/wbzPLgQsYmHYBVIKGYhY9C7A6Ck49qExmoVzGRvZ0ZPAMF1jlav7yH
+w9dW3P+n78MVgfb3dHvXg3kr0QN7v1Uov2SwEq1PSs6t/Y7hQB7WYgn9D0EELXmsEemK4ZbDNZ0O
+OrpkDu00VCTxPSDRc6CKGQ0FFBmUaT4qD949wPMJWioJIAPFp+eRz7NCKyZMNO5no3mEfsbr+erf
+ji0lQlnXPjtJfmFneihwl3iJVf7e7xqBUlPcOqMQp6/Dolxi2DTdQOC3X9IHYl0wjvgILKpLwMyR
+ltbWhfEJ7+nUtvutgQNAnxNNzeNb2NBVrjl9M+WcYkfJhMIecDWB47Jh75mh9lYwgcNss8sYkgnK
+3CmQd+Gj8cQAEpAQ80kEMw==
+</ds:X509Certificate>
+</ds:X509Data>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+yCaM76995V76a/uOlxVfOvFh33dCH+YLtoRQoRuqi5ZnStirthrQ1KSqJ3/QC22ux9ZR2TLYxqMu
+jtX8hONQLGODhODQv1q9TLynyh+VU1JWNEwVrEg3SMqFamvYOuml/nKufTPgYMknYaQqIrVNSj76
+D/irGELn4lX+p0vzFmDSYBdVpQVr1iWpcp0WjzWKoARtSuK98yS6SLj7K2mRuexhzI7cFCwXLKnD
+jchrCl3a222mcHuVfBKGoqV//83tFUexiPs7tne871ZniBcrqN088X052y2Ba67FgHVRzqi7pBgt
+R+26AtPxLFcHm7OL2N9ztr3lCLu2xwSSWd36fQ==
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+</ds:KeyInfo>
+<ds:Object Id="Signature18901-Object957998"><etsi:QualifyingProperties Target="#Signature18901"><etsi:SignedProperties Id="Signature18901-SignedProperties672384"><etsi:SignedSignatureProperties><etsi:SigningTime>2017-10-03T22:52:21-05:00</etsi:SigningTime><etsi:SigningCertificate><etsi:Cert><etsi:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod><ds:DigestValue>GttZw2rgb5eDWvOniG2Ts33oM3o=</ds:DigestValue></etsi:CertDigest><etsi:IssuerSerial><ds:X509IssuerName>CN=AC BANCO CENTRAL DEL ECUADOR,L=QUITO,OU=ENTIDAD DE CERTIFICACION DE INFORMACION-ECIBCE,O=BANCO CENTRAL DEL ECUADOR,C=EC</ds:X509IssuerName><ds:X509SerialNumber>1484665679</ds:X509SerialNumber></etsi:IssuerSerial></etsi:Cert></etsi:SigningCertificate></etsi:SignedSignatureProperties><etsi:SignedDataObjectProperties><etsi:DataObjectFormat ObjectReference="#Reference-ID-592017"><etsi:Description>contenido comprobante</etsi:Description><etsi:MimeType>text/xml</etsi:MimeType></etsi:DataObjectFormat></etsi:SignedDataObjectProperties></etsi:SignedProperties></etsi:QualifyingProperties></ds:Object></ds:Signature></factura>]]></comprobante>
+  <mensajes/>
+</autorizacion>

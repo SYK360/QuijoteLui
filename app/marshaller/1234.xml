@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<factura id="comprobante" version="1.0.0">
+    <infoTributaria>
+        <ambiente>1</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>Quiguango Terán Jorge Luis</razonSocial>
+        <nombreComercial>QuijoteLui</nombreComercial>
+        <ruc>1002456877001</ruc>
+        <claveAcceso>0000000000000000000000000000000000000000000</claveAcceso>
+        <codDoc>01</codDoc>
+        <estab>001</estab>
+        <ptoEmi>010</ptoEmi>
+        <secuencial>000000013</secuencial>
+        <dirMatriz>Cananvalle Calle Los Higos y Calle Cananvalle</dirMatriz>
+    </infoTributaria>
+    <infoFactura>
+        <fechaEmision>03/10/2017</fechaEmision>
+    </infoFactura>
+</factura>

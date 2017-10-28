@@ -1,47 +1,50 @@
 package com.quijotelui.electronico.xml
 
-import com.quijotelui.electronico.xml.comprobantes.Factura
-import com.quijotelui.service.IContribuyenteService
-import java.io.FileNotFoundException
-import java.io.UnsupportedEncodingException
-import javax.xml.bind.JAXBException
+import com.quijotelui.electronico.comprobantes.InformacionTributaria
+import com.quijotelui.electronico.comprobantes.factura.Factura
 import java.io.FileOutputStream
 import java.io.OutputStreamWriter
-import java.util.logging.Logger
+import java.io.StringWriter
 import javax.xml.bind.JAXBContext
-
+import javax.xml.bind.Marshaller
 
 
 class GeneraFactura() {
 
-    val factura : Factura = Factura()
-    lateinit var contribuyenteService: IContribuyenteService
-
     fun genera(){
-        val contribuyente = contribuyenteService.findByRuc("1091707752001")
-        println("Nombre Comercial : " + contribuyente.nombreComercial)
+        val informacionTributaria = InformacionTributaria()
+        informacionTributaria.ambiente = "1"
+        informacionTributaria.tipoEmision = "1"
+        informacionTributaria.razonSocial = "Quiguango Terán Jorge Luis"
+        informacionTributaria.nombreComercial = "QuijoteLui"
+        informacionTributaria.ruc = "1002456877001"
+        informacionTributaria.claveAcceso = "0000000000000000000000000000000000000000000"
+        informacionTributaria.codDoc = "01"
+        informacionTributaria.estab = "001"
+        informacionTributaria.ptoEmi = "010"
+        informacionTributaria.secuencial = "000000013"
+        informacionTributaria.dirMatriz = "Cananvalle Calle Los Higos y Calle Cananvalle"
 
-        factura.id = contribuyente.nombreComercial.toString()
+        val factura = Factura()
+        factura.setId(id = "comprobante")
+        factura.setVersion(version = "1.0.0")
 
-        try {
-            val context = JAXBContext.newInstance(Factura::class.java)
-            val marshaller = context.createMarshaller()
-            marshaller.setProperty("jaxb.encoding", "UTF-8")
-            marshaller.setProperty("jaxb.formatted.output", java.lang.Boolean.valueOf(true))
-            var out = OutputStreamWriter(FileOutputStream("/tmp/1234.xml"), "UTF-8")
-            marshaller.marshal(factura, out)
-            println("Archivo factura generado.")
-        } catch (ex: JAXBException) {
-            println("Error al generar: " + ex.message)
-            Logger.getLogger("Hola")
-        } catch (ex: UnsupportedEncodingException) {
-            println("Error al generar: " + ex.message)
-            Logger.getLogger("Hola")
-        } catch (ex: FileNotFoundException) {
-            println("Error al generar: " + ex.message)
-            Logger.getLogger("Hola")
+        factura.setInformacionTributaria(informacionTributaria)
+
+        val jaxbContext = JAXBContext.newInstance(Factura::class.java)
+        val marshaller = jaxbContext.createMarshaller()
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true)
+        marshaller.setProperty("jaxb.encoding", "UTF-8")
+
+        val stringWriter = StringWriter()
+        stringWriter.use {
+            marshaller.marshal(factura, stringWriter)
         }
 
+        val out = OutputStreamWriter(FileOutputStream("1234.xml"), "UTF-8")
+        marshaller.marshal(factura, out)
 
+        println(stringWriter)
     }
+
 }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<factura id="comprobante" version="1.0.0">
+    <infoTributaria>
+        <ambiente>1</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>QUIGUANGO TERAN JORGE LUIS</razonSocial>
+        <nombreComercial>QUIJOTELU</nombreComercial>
+        <ruc>1002456877001</ruc>
+        <claveAcceso>0310201701100245687700110010100000000131234567818</claveAcceso>
+        <codDoc>01</codDoc>
+        <estab>001</estab>
+        <ptoEmi>010</ptoEmi>
+        <secuencial>000000013</secuencial>
+        <dirMatriz>CANANVALLE CALLE LOS HIGOS</dirMatriz>
+    </infoTributaria>
+    <infoFactura>
+        <fechaEmision>03/10/2017</fechaEmision>
+        <dirEstablecimiento>CANANVALLE CALLE LOS HIGOS</dirEstablecimiento>
+        <obligadoContabilidad>NO</obligadoContabilidad>
+        <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
+        <razonSocialComprador>CHAMORRO SANDRA</razonSocialComprador>
+        <identificacionComprador>1002882262</identificacionComprador>
+        <direccionComprador>Los Ceibos</direccionComprador>
+        <totalSinImpuestos>10.00</totalSinImpuestos>
+        <totalDescuento>0.00</totalDescuento>
+        <totalConImpuestos>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>2</codigoPorcentaje>
+                <baseImponible>10.00</baseImponible>
+                <tarifa>12</tarifa>
+                <valor>1.20</valor>
+            </totalImpuesto>
+        </totalConImpuestos>
+        <propina>0.00</propina>
+        <importeTotal>11.20</importeTotal>
+        <moneda>DOLAR</moneda>
+        <pagos>
+            <pago>
+                <formaPago>20</formaPago>
+                <total>11.20</total>
+            </pago>
+        </pagos>
+    </infoFactura>
+    <detalles>
+        <detalle>
+            <codigoPrincipal>1</codigoPrincipal>
+            <codigoAuxiliar>1</codigoAuxiliar>
+            <descripcion>SERVICIO DE PRUEBAS</descripcion>
+            <cantidad>1</cantidad>
+            <precioUnitario>10</precioUnitario>
+            <descuento>0</descuento>
+            <precioTotalSinImpuesto>10.00</precioTotalSinImpuesto>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>2</codigoPorcentaje>
+                    <tarifa>12</tarifa>
+                    <baseImponible>10.00</baseImponible>
+                    <valor>1.20</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+    </detalles>
+    <infoAdicional>
+        <campoAdicional nombre="Dirección">Los Ceibos</campoAdicional>
+        <campoAdicional nombre="Teléfono">062542125</campoAdicional>
+        <campoAdicional nombre="Email">sandra@gmail.com</campoAdicional>
+    </infoAdicional>
+</factura>
