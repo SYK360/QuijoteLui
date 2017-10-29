@@ -1,11 +1,16 @@
 package com.quijotelui.repository
 
+import com.quijotelui.model.Contribuyente
 import com.quijotelui.model.Factura
 import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Transactional
 import java.util.*
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
+import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
+import oracle.net.aso.i
+
+
 
 @Transactional
 @Repository
@@ -34,8 +39,36 @@ class FacturaDaoImpl : IFacturaDao {
                 .setParameter("numero",numero).resultList as MutableList<Factura>
     }
 
-    override fun count(codigo: String, numero: String): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    @Override
+    override fun findContribuyenteByComprobante(codigo: String, numero: String): MutableList<Any> {
 
+        val result = entityMAnager.createQuery("from Contribuyente c, " +
+                "Factura f  " +
+                "WHERE c.id = f.idContribuyente " +
+                "and f.codigo = :codigo " +
+                "and f.numero = :numero")
+                .setParameter("codigo", codigo)
+                .setParameter("numero", numero)
+                .resultList
+
+
+        var contribuyente = Contribuyente()
+        var factura = Factura()
+
+        if (result.size > 0) {
+
+            for (i in result.indices) {
+                val row = result.get(i) as Array<Any>
+                contribuyente = row[0] as Contribuyente
+                factura = row[1] as Factura
+
+            }
+
+        }
+
+        println("Nombre Comercial " + contribuyente.nombreComercial)
+        println("Razón Social " + factura.razonSocial)
+
+        return result as MutableList<Any>
+    }
 }

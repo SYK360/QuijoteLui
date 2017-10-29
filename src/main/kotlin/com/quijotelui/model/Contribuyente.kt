@@ -14,7 +14,7 @@ class Contribuyente : Serializable{
 
     @Id
     @Column(name = "id")
-    var id : Int? = null
+    var id : Long? = null
 
     @Column(name = "razon_social")
     var razonSocial : String? = null

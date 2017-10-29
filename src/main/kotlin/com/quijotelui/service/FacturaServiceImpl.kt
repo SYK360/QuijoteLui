@@ -1,5 +1,6 @@
 package com.quijotelui.service
 
+import com.quijotelui.model.Contribuyente
 import com.quijotelui.model.Factura
 import com.quijotelui.repository.IFacturaDao
 import org.springframework.beans.factory.annotation.Autowired
@@ -33,5 +34,9 @@ class FacturaServiceImpl : IFacturaService {
 
     override fun findByComprobante(codigo: String, numero: String): MutableList<Factura> {
         return facturaDao.findByComprobante(codigo, numero)
+    }
+
+    override fun findContribuyenteByComprobante(codigo: String, numero: String): MutableList<Any> {
+        return facturaDao.findContribuyenteByComprobante(codigo, numero)
     }
 }

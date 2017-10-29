@@ -20,6 +20,10 @@ class Factura : Serializable {
     @Column(name = "id")
     var id : Long? = null
 
+    @Id
+    @Column(name = "id_contribuyente")
+    var idContribuyente : Long? = null
+
     @Column(name = "codigo")
     var codigo : String? = null
 

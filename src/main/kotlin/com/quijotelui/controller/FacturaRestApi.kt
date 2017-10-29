@@ -2,6 +2,7 @@ package com.quijotelui.controller
 
 
 import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.model.Contribuyente
 import com.quijotelui.model.Factura
 import com.quijotelui.service.IContribuyenteService
 import com.quijotelui.service.IFacturaService
@@ -20,9 +21,6 @@ class FacturaRestApi {
 
     @Autowired
     lateinit var facturaService: IFacturaService
-
-    @Autowired
-    lateinit var contribuyenteService: IContribuyenteService
 
     @GetMapping("/facturas")
     fun getFacturas() : ResponseEntity<MutableList<Factura>> {
@@ -56,6 +54,12 @@ class FacturaRestApi {
             }
         }
 
+    }
+
+    @GetMapping("/contribuyentefactura")
+    fun getContribuyenteFactura() : ResponseEntity<MutableList<Any>> {
+        val factura = facturaService.findContribuyenteByComprobante("FAC","001003003004626")
+        return ResponseEntity<MutableList<Any>>(factura, HttpStatus.OK)
     }
 
 }
