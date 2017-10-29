@@ -2,6 +2,7 @@ package com.quijotelui.electronico.xml
 
 import com.quijotelui.electronico.comprobantes.InformacionTributaria
 import com.quijotelui.electronico.comprobantes.factura.Factura
+import com.quijotelui.service.IFacturaService
 import comprobantes.CampoAdicional
 import comprobantes.InformacionAdicional
 import comprobantes.factura.*
@@ -13,7 +14,11 @@ import javax.xml.bind.JAXBContext
 import javax.xml.bind.Marshaller
 
 
-class GeneraFactura() {
+class GeneraFactura(facturaService : IFacturaService, codigo : String, numero : String) {
+
+    fun xml(){
+
+    }
 
     fun genera() {
         val informacionTributaria = InformacionTributaria()

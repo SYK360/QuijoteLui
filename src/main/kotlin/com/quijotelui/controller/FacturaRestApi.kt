@@ -47,7 +47,7 @@ class FacturaRestApi {
             if (factura.isEmpty()) {
                 return ResponseEntity(HttpStatus.NOT_FOUND)
             } else {
-                val genera = GeneraFactura()
+                val genera = GeneraFactura(facturaService, codigo, numero)
 
                 genera.genera()
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)

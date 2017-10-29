@@ -1,6 +1,5 @@
 package com.quijotelui.repository
 
-import com.quijotelui.model.Contribuyente
 import com.quijotelui.model.Factura
 import java.util.*
 

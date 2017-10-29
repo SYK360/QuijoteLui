@@ -1,8 +1,6 @@
 package com.quijotelui.service
 
-import com.quijotelui.model.Contribuyente
 import com.quijotelui.model.Factura
-import java.util.*
 
 interface IFacturaService {
 
