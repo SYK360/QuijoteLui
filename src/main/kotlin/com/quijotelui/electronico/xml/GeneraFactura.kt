@@ -2,6 +2,8 @@ package com.quijotelui.electronico.xml
 
 import com.quijotelui.electronico.comprobantes.InformacionTributaria
 import com.quijotelui.electronico.comprobantes.factura.Factura
+import com.quijotelui.model.Contribuyente
+import com.quijotelui.model.Parametro
 import com.quijotelui.service.IFacturaService
 import comprobantes.CampoAdicional
 import comprobantes.InformacionAdicional
@@ -14,11 +16,96 @@ import javax.xml.bind.JAXBContext
 import javax.xml.bind.Marshaller
 
 
-class GeneraFactura(facturaService : IFacturaService, codigo : String, numero : String) {
+class GeneraFactura(val facturaService : IFacturaService, val codigo : String, val numero : String) {
+
+    val factura = Factura()
+    var error = ""
 
     fun xml(){
 
+        factura.setInformacionTributaria(getInformacionTributaria())
+
+        if ( !this.error.equals("")){
+            println("Error: $error")
+        }
+
+
+        val jaxbContext = JAXBContext.newInstance(Factura::class.java)
+        val marshaller = jaxbContext.createMarshaller()
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true)
+        marshaller.setProperty("jaxb.encoding", "UTF-8")
+
+        val stringWriter = StringWriter()
+        stringWriter.use {
+            marshaller.marshal(this.factura, stringWriter)
+        }
+
+//        val out = OutputStreamWriter(FileOutputStream("1234.xml"), "UTF-8")
+//        marshaller.marshal(this.factura, out)
+
+        println(stringWriter)
     }
+
+    fun getInformacionTributaria() : InformacionTributaria{
+        val informacionTributaria = InformacionTributaria()
+        val parametro = facturaService.findParametroByNombre("Ambiente")
+
+        val contribuyenteConprobante = facturaService.findContribuyenteByComprobante(codigo, numero)
+
+        var contribuyente = getContribuyente(contribuyenteConprobante)
+//        var facturaDocumento = getFactura(contribuyenteConprobante)
+
+
+        informacionTributaria.ambiente = getAmbiente(parametro)
+        informacionTributaria.tipoEmision = "1"
+        informacionTributaria.razonSocial = contribuyente?.razonSocial
+
+        return informacionTributaria
+
+    }
+
+    fun getAmbiente(parametro : MutableList<Parametro>) : String {
+        if (parametro.isEmpty()){
+            error = "No existe valor para el parámetro Ambiente"
+            return "0"
+        }
+        else if (parametro.size > 1){
+            error = "Existen más de un valor para el parámetro Ambiente"
+            return "0"
+        }
+        else {
+            println("Ambiente " + parametro[0].valor)
+            if ( parametro[0].valor == "Pruebas"){
+                return "1"
+            }
+            else if ( parametro[0].valor == "Producción"){
+                return "2"
+            }
+        }
+        error = "El parámetro Ambiente no fue encontrado"
+        return "0"
+    }
+
+    fun getContribuyente(contribuyenteConprobante : MutableList<Any>) : Contribuyente? {
+        var contribuyente = Contribuyente()
+        for (i in contribuyenteConprobante.indices) {
+            val row = contribuyenteConprobante[i] as Array<Any>
+            contribuyente = row[0] as Contribuyente
+        }
+        return contribuyente
+    }
+/*
+    fun getFactura (contribuyenteConprobante : MutableList<Any>) : Factura? {
+        if (contribuyenteConprobante.size > 0) {
+
+            for (i in contribuyenteConprobante.indices) {
+                val row = contribuyenteConprobante.get(i) as Array<Any>
+                return row[1] as Factura
+            }
+
+        }
+        return null
+    }*/
 
     fun genera() {
         val informacionTributaria = InformacionTributaria()

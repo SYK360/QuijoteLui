@@ -19,10 +19,10 @@ class ContribuyenteDaoImpl : IContribuyenteDao {
     }
 
     @Override
-    override fun findByRuc(ruc: String): Contribuyente {
+    override fun findByRuc(ruc: String): MutableList<Contribuyente> {
         println("DAO Ruc: $ruc")
         return entityMAnager.createQuery("from Contribuyente " +
-                "where ruc = :ruc").setParameter("ruc", ruc).singleResult as Contribuyente
+                "where ruc = :ruc").setParameter("ruc", ruc).resultList as MutableList<Contribuyente>
     }
 
 

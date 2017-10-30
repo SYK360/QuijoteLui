@@ -3,7 +3,9 @@ package com.quijotelui.service
 import com.quijotelui.model.Parametro
 import com.quijotelui.repository.IParametroDao
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
+@Service
 class ParametroServiceImpl : IParametroService {
 
     @Autowired

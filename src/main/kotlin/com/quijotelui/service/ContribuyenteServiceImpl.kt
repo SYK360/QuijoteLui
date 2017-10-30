@@ -17,7 +17,7 @@ class ContribuyenteServiceImpl : IContribuyenteService {
     }
 
     @Override
-    override fun findByRuc(ruc: String): Contribuyente {
+    override fun findByRuc(ruc: String): MutableList<Contribuyente> {
         return controbuyenteDao.findByRuc(ruc)
     }
 }

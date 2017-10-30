@@ -2,9 +2,7 @@ package com.quijotelui.controller
 
 
 import com.quijotelui.electronico.xml.GeneraFactura
-import com.quijotelui.model.Contribuyente
 import com.quijotelui.model.Factura
-import com.quijotelui.service.IContribuyenteService
 import com.quijotelui.service.IFacturaService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -20,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController
 class FacturaRestApi {
 
     @Autowired
-    lateinit var facturaService: IFacturaService
+    lateinit var facturaService : IFacturaService
 
     @GetMapping("/facturas")
     fun getFacturas() : ResponseEntity<MutableList<Factura>> {
@@ -49,7 +47,7 @@ class FacturaRestApi {
             } else {
                 val genera = GeneraFactura(facturaService, codigo, numero)
 
-                genera.genera()
+                genera.xml()
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
             }
         }

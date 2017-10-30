@@ -1,7 +1,7 @@
 package com.quijotelui.service
 
-import com.quijotelui.model.Contribuyente
 import com.quijotelui.model.Factura
+import com.quijotelui.model.Parametro
 import com.quijotelui.repository.IFacturaDao
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -14,7 +14,6 @@ class FacturaServiceImpl : IFacturaService {
     @Autowired
     lateinit var facturaDao : IFacturaDao
 
-    @Override
     override fun findAll(): MutableList<Factura> {
         return facturaDao.findAll()
     }
@@ -38,5 +37,9 @@ class FacturaServiceImpl : IFacturaService {
 
     override fun findContribuyenteByComprobante(codigo: String, numero: String): MutableList<Any> {
         return facturaDao.findContribuyenteByComprobante(codigo, numero)
+    }
+
+    override fun findParametroByNombre(nombre: String): MutableList<Parametro> {
+        return facturaDao.findParametroByNombre(nombre)
     }
 }

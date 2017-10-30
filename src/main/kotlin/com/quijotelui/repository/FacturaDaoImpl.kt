@@ -2,14 +2,12 @@ package com.quijotelui.repository
 
 import com.quijotelui.model.Contribuyente
 import com.quijotelui.model.Factura
+import com.quijotelui.model.Parametro
 import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Transactional
 import java.util.*
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
-import oracle.net.aso.i
-
 
 
 @Transactional
@@ -40,7 +38,7 @@ class FacturaDaoImpl : IFacturaDao {
     }
 
     @Override
-    override fun findContribuyenteByComprobante(codigo: String, numero: String): MutableList<Any> {
+    override fun findContribuyenteByComprobante(codigo: String, numero: String) : MutableList<Any> {
 
         val result = entityMAnager.createQuery("from Contribuyente c, " +
                 "Factura f  " +
@@ -66,9 +64,16 @@ class FacturaDaoImpl : IFacturaDao {
 
         }
 
-        println("Nombre Comercial " + contribuyente.nombreComercial)
-        println("Razón Social " + factura.razonSocial)
+//        println("Nombre Comercial " + contribuyente.nombreComercial)
+//        println("Razón Social " + factura.razonSocial)
 
         return result as MutableList<Any>
     }
+
+    @Override
+    override fun findParametroByNombre(nombre: String): MutableList<Parametro> {
+        return entityMAnager.createQuery("from Parametro " +
+                "where nombre = :nombre " +
+                "and estado = 'Activo'")
+                .setParameter("nombre", nombre).resultList as MutableList<Parametro>    }
 }

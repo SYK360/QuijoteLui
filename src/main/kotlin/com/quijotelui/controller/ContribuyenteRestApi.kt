@@ -24,9 +24,9 @@ class ContribuyenteRestApi {
     }
 
     @GetMapping("/contribuyente/{ruc}")
-    fun getByRuc(@PathVariable(value = "ruc") ruc : String) : ResponseEntity<Contribuyente> {
+    fun getByRuc(@PathVariable(value = "ruc") ruc : String) : ResponseEntity<MutableList<Contribuyente>> {
         println("Ruc: $ruc")
         val contribuyente = contribuyenteService.findByRuc(ruc)
-        return ResponseEntity<Contribuyente>(contribuyente, HttpStatus.OK)
+        return ResponseEntity<MutableList<Contribuyente>>(contribuyente, HttpStatus.OK)
     }
 }
