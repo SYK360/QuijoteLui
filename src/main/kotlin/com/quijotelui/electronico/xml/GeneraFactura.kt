@@ -2,8 +2,9 @@ package com.quijotelui.electronico.xml
 
 import com.quijotelui.electronico.comprobantes.InformacionTributaria
 import com.quijotelui.electronico.comprobantes.factura.Factura
+import com.quijotelui.electronico.util.Modulo11
+import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.model.Contribuyente
-import com.quijotelui.model.Parametro
 import com.quijotelui.service.IFacturaService
 import comprobantes.CampoAdicional
 import comprobantes.InformacionAdicional
@@ -12,22 +13,21 @@ import java.io.FileOutputStream
 import java.io.OutputStreamWriter
 import java.io.StringWriter
 import java.math.BigDecimal
+import java.text.SimpleDateFormat
 import javax.xml.bind.JAXBContext
 import javax.xml.bind.Marshaller
 
 
 class GeneraFactura(val facturaService : IFacturaService, val codigo : String, val numero : String) {
 
+
+    val contribuyenteFactura = facturaService.findContribuyenteByComprobante(codigo, numero)
     val factura = Factura()
-    var error = ""
 
     fun xml(){
 
         factura.setInformacionTributaria(getInformacionTributaria())
-
-        if ( !this.error.equals("")){
-            println("Error: $error")
-        }
+        factura.setInformacionFactura(getInformacionFactura())
 
 
         val jaxbContext = JAXBContext.newInstance(Factura::class.java)
@@ -47,46 +47,59 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
     }
 
     fun getInformacionTributaria() : InformacionTributaria{
+
         val informacionTributaria = InformacionTributaria()
-        val parametro = facturaService.findParametroByNombre("Ambiente")
-
-        val contribuyenteConprobante = facturaService.findContribuyenteByComprobante(codigo, numero)
-
-        var contribuyente = getContribuyente(contribuyenteConprobante)
-//        var facturaDocumento = getFactura(contribuyenteConprobante)
 
 
-        informacionTributaria.ambiente = getAmbiente(parametro)
-        informacionTributaria.tipoEmision = "1"
-        informacionTributaria.razonSocial = contribuyente?.razonSocial
+        var contribuyente = getContribuyente(this.contribuyenteFactura)
+        var facturaDocumento = getFactura(this.contribuyenteFactura)
+
+
+        informacionTributaria.ambiente = Parametros.getAmbiente(facturaService.findParametroByNombre("Ambiente"))
+        informacionTributaria.tipoEmision = Parametros.getEmision(facturaService.findParametroByNombre("Emisión"))
+        informacionTributaria.razonSocial = contribuyente.razonSocial
+        informacionTributaria.nombreComercial = contribuyente.nombreComercial
+        informacionTributaria.ruc = contribuyente.ruc
+        informacionTributaria.claveAcceso = getClaveAcceso(contribuyente, facturaDocumento, informacionTributaria.ambiente!!, informacionTributaria.tipoEmision!!)
+        informacionTributaria.codDoc = facturaDocumento.codigoDocumento
+        informacionTributaria.estab = facturaDocumento.establecimiento
+        informacionTributaria.ptoEmi = facturaDocumento.puntoEmision
+        informacionTributaria.secuencial = facturaDocumento.secuencial
+        informacionTributaria.dirMatriz = contribuyente.direccion
 
         return informacionTributaria
 
     }
 
-    fun getAmbiente(parametro : MutableList<Parametro>) : String {
-        if (parametro.isEmpty()){
-            error = "No existe valor para el parámetro Ambiente"
-            return "0"
-        }
-        else if (parametro.size > 1){
-            error = "Existen más de un valor para el parámetro Ambiente"
-            return "0"
-        }
-        else {
-            println("Ambiente " + parametro[0].valor)
-            if ( parametro[0].valor == "Pruebas"){
-                return "1"
-            }
-            else if ( parametro[0].valor == "Producción"){
-                return "2"
-            }
-        }
-        error = "El parámetro Ambiente no fue encontrado"
-        return "0"
+    fun getInformacionFactura() : InformacionFactura {
+
+        val informacionFactura = InformacionFactura()
+
+        var contribuyente = getContribuyente(this.contribuyenteFactura)
+        var facturaDocumento = getFactura(this.contribuyenteFactura)
+
+        informacionFactura.fechaEmision = SimpleDateFormat("dd/MM/yyyy").format(facturaDocumento.fecha)
+        informacionFactura.dirEstablecimiento = facturaDocumento.direccionEstablecimiento
+        informacionFactura.contribuyenteEspecial = contribuyente.contribuyenteEspecial
+        informacionFactura.obligadoContabilidad = contribuyente.obligadoContabilidad
+        informacionFactura.tipoIdentificacionComprador = facturaDocumento.tipoDocumento
+        informacionFactura.razonSocialComprador = facturaDocumento.razonSocial
+        informacionFactura.identificacionComprador = facturaDocumento.documento
+        informacionFactura.direccionComprador = facturaDocumento.direccion
+        informacionFactura.totalSinImpuestos = facturaDocumento.totalSinIva!!.setScale(2, BigDecimal.ROUND_HALF_UP)
+        informacionFactura.totalDescuento = facturaDocumento.descuentos!!.setScale(2, BigDecimal.ROUND_HALF_UP)
+
+        return informacionFactura
+
     }
 
-    fun getContribuyente(contribuyenteConprobante : MutableList<Any>) : Contribuyente? {
+    fun getImpuesto(factura: com.quijotelui.model.Factura) {
+
+        val totalImpuesto = TotalImpuesto()
+        
+    }
+
+    fun getContribuyente(contribuyenteConprobante : MutableList<Any>) : Contribuyente {
         var contribuyente = Contribuyente()
         for (i in contribuyenteConprobante.indices) {
             val row = contribuyenteConprobante[i] as Array<Any>
@@ -94,18 +107,26 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         }
         return contribuyente
     }
-/*
-    fun getFactura (contribuyenteConprobante : MutableList<Any>) : Factura? {
-        if (contribuyenteConprobante.size > 0) {
 
-            for (i in contribuyenteConprobante.indices) {
-                val row = contribuyenteConprobante.get(i) as Array<Any>
-                return row[1] as Factura
-            }
-
+    fun getFactura (contribuyenteConprobante : MutableList<Any>) : com.quijotelui.model.Factura {
+        var factura = com.quijotelui.model.Factura()
+        for (i in contribuyenteConprobante.indices) {
+            val row = contribuyenteConprobante[i] as Array<Any>
+            factura = row[1] as com.quijotelui.model.Factura
         }
-        return null
-    }*/
+        return factura
+    }
+
+    fun getClaveAcceso(contribuyente: Contribuyente, factura: com.quijotelui.model.Factura, ambiente : String, emision : String) : String {
+
+        val m11 = Modulo11()
+        val claveAcceso = SimpleDateFormat("ddMMyyyy").format(factura.fecha) +
+                factura.codigoDocumento + contribuyente.ruc + ambiente +
+                factura.establecimiento + factura.puntoEmision + factura.secuencial +
+                "12345678" + emision
+
+        return claveAcceso + m11.modulo11(claveAcceso)
+    }
 
     fun genera() {
         val informacionTributaria = InformacionTributaria()

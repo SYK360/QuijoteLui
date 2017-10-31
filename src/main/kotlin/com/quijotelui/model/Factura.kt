@@ -76,4 +76,7 @@ class Factura : Serializable {
     @Column(name = "guia_remision")
     var guiaRemision : String? = null
 
+    @Column(name = "direccion_establecimiento")
+    var direccionEstablecimiento : String? = null
+
 }
