@@ -1,6 +1,5 @@
 package com.quijotelui.model
 
-import com.fasterxml.jackson.annotation.JsonFormat
 import org.hibernate.annotations.Immutable
 import org.hibernate.annotations.Type
 import java.io.Serializable

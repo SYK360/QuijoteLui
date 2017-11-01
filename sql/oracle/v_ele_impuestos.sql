@@ -1,9 +1,9 @@
-
-  CREATE OR REPLACE FORCE VIEW "V_ELE_IMPUESTOS" ("CODIGO", "NUMERO", "CODIGO_IMPUESTO", "CODIGO_PORCENTAJE", "BASE_IMPONIBLE", "TARIFA", "VALOR") AS
-  SELECT
+CREATE OR REPLACE FORCE VIEW "V_ELE_IMPUESTOS" ("ID", "CODIGO", "NUMERO", "CODIGO_IMPUESTO", "CODIGO_PORCENTAJE", "BASE_IMPONIBLE", "TARIFA", "VALOR") AS
+SELECT
+    f.NUM_FACTURA as id,
     f.cod_documento AS codigo,
-    f.num_factura AS numero,
-    '2' AS codigo_impuesto,
+    TO_CHAR(f.NUM_FACTURA,'fm000000000000000') AS numero,
+    cast('2' as varchar2(1)) AS codigo_impuesto,
     DECODE(
         d.porcentaje_iva,
         0,
@@ -14,14 +14,14 @@
         '3',
         '-1'
     ) AS codigo_porcentaje,
-    round(
+    decode(d.porcentaje_iva,0,f.total_sin_iva,round(
         f.total_con_iva - f.descuentos,
         2
-    ) AS base_imponible,
+    )) AS base_imponible,
     d.porcentaje_iva AS tarifa,
     round(f.iva,2) AS valor
 FROM
-    dismemayor.fac_factura_c f
+    DISMEMAYOR.fac_factura_c f
     INNER JOIN DISMEMAYOR.FAC_FACTURA_D d ON
         f.cod_empresa = d.cod_empresa
     AND
