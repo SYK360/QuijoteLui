@@ -1,9 +1,6 @@
 package com.quijotelui.service
 
-import com.quijotelui.model.Factura
-import com.quijotelui.model.Impuesto
-import com.quijotelui.model.Pago
-import com.quijotelui.model.Parametro
+import com.quijotelui.model.*
 
 interface IFacturaService {
 
@@ -14,5 +11,6 @@ interface IFacturaService {
     fun findParametroByNombre(nombre : String) : MutableList<Parametro>
     fun findImpuestoByComprobante(codigo : String, numero : String) : MutableList<Impuesto>
     fun findPagoByComprobante(codigo : String, numero : String) : MutableList<Pago>
+    fun findFacturaDetalleByComprobante(codigo : String, numero : String) : MutableList<FacturaDetalle>
 
 }

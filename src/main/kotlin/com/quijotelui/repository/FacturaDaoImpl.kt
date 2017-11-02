@@ -36,6 +36,15 @@ class FacturaDaoImpl : IFacturaDao {
     }
 
     @Override
+    override fun findFacturaDetalleByComprobante(codigo: String, numero: String): MutableList<FacturaDetalle> {
+        return entityMAnager.createQuery("from FacturaDetalle " +
+                "where codigo = :codigo " +
+                "and numero = :numero")
+                .setParameter("codigo", codigo)
+                .setParameter("numero",numero).resultList as MutableList<FacturaDetalle>
+    }
+
+    @Override
     override fun findContribuyenteByComprobante(codigo: String, numero: String) : MutableList<Any> {
 
         val result = entityMAnager.createQuery("from Contribuyente c, " +
@@ -48,6 +57,7 @@ class FacturaDaoImpl : IFacturaDao {
                 .resultList
 
 
+        /*
         var contribuyente = Contribuyente()
         var factura = Factura()
 
@@ -61,9 +71,9 @@ class FacturaDaoImpl : IFacturaDao {
             }
 
         }
-
-//        println("Nombre Comercial " + contribuyente.nombreComercial)
-//        println("Razón Social " + factura.razonSocial)
+        println("Nombre Comercial " + contribuyente.nombreComercial)
+        println("Razón Social " + factura.razonSocial)
+        */
 
         return result as MutableList<Any>
     }

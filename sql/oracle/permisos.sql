@@ -7,3 +7,4 @@ grant select on INV_PRODUCTOS to jorge;
 grant select on INV_ARTICULO to jorge;
 grant select on CXC_PAGO_CONTADO to jorge;
 grant select on CXC_DOC_COBRAR to jorge;
+grant select on GNR_PERSONA to jorge;

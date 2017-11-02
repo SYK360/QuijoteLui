@@ -16,12 +16,12 @@ import javax.xml.bind.annotation.XmlType
         "impuestos"))
 
 class Detalle (
-    @XmlElement var codigoPrincipal: String? = null,
-    @XmlElement var descripcion: String? = null,
-    @XmlElement var Cantidad: BigDecimal? = null,
-    @XmlElement var precioUnitario: BigDecimal? = null,
-    @XmlElement var descuento: BigDecimal? = null,
-    @XmlElement var precioTotalSinImpuesto: BigDecimal? = null
+        @XmlElement var codigoPrincipal: String? = null,
+        @XmlElement var descripcion: String? = null,
+        @XmlElement var cantidad: BigDecimal? = null,
+        @XmlElement var precioUnitario: BigDecimal? = null,
+        @XmlElement var descuento: BigDecimal? = null,
+        @XmlElement var precioTotalSinImpuesto: BigDecimal? = null
 )
 {
     @XmlElement

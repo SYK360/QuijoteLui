@@ -5,6 +5,7 @@ import com.quijotelui.electronico.comprobantes.factura.Factura
 import com.quijotelui.electronico.util.Modulo11
 import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.model.Contribuyente
+import com.quijotelui.model.FacturaDetalle
 import com.quijotelui.service.IFacturaService
 import comprobantes.CampoAdicional
 import comprobantes.InformacionAdicional
@@ -29,6 +30,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
         factura.setInformacionTributaria(getInformacionTributaria())
         factura.setInformacionFactura(getInformacionFactura())
+        factura.setDetalles(getDetalle())
 
 
         val jaxbContext = JAXBContext.newInstance(Factura::class.java)
@@ -99,19 +101,18 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
         informacionFactura.setPagos(getPago())
 
+
         return informacionFactura
 
     }
 
     fun getImpuesto() : TotalConImpuestos {
 
-
         val impuestos = facturaService.findImpuestoByComprobante(codigo, numero)
         var totalConImpuestos = TotalConImpuestos()
-        var totalImpuesto : TotalImpuesto
 
         for (impuesto in impuestos){
-            totalImpuesto = TotalImpuesto()
+            var totalImpuesto = TotalImpuesto()
             totalImpuesto.codigo = impuesto.codigoImpuesto
             totalImpuesto.codigoPorcentaje = impuesto.codigoPorcentaje
             totalImpuesto.baseImponible = impuesto.baseImponible
@@ -129,10 +130,9 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
         val pagosComprobante = facturaService.findPagoByComprobante(codigo, numero)
         var pagos = Pagos()
-        var pago : Pago
 
         for (pagoComprobante in pagosComprobante){
-            pago = Pago()
+            var pago = Pago()
             pago.formaPago = pagoComprobante.formaPago
             pago.total = pagoComprobante.total?.setScale(2, BigDecimal.ROUND_HALF_UP)
             pago.plazo = pagoComprobante.plazo
@@ -142,6 +142,49 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         }
 
         return pagos
+    }
+
+    fun getDetalle() : Detalles {
+        val facturaDetalles = facturaService.findFacturaDetalleByComprobante(codigo, numero)
+        var detalles = Detalles()
+
+        for (i in facturaDetalles.indices){
+            var detalle = Detalle()
+            detalle.codigoPrincipal = facturaDetalles[i].codigoPrincipal
+            detalle.descripcion = facturaDetalles[i].descripcion
+            detalle.cantidad = facturaDetalles[i].cantidad?.setScale(2, BigDecimal.ROUND_HALF_UP)
+            detalle.precioUnitario = facturaDetalles[i].precioUnitario?.setScale(2, BigDecimal.ROUND_HALF_UP)
+            detalle.descuento = facturaDetalles[i].descuento?.setScale(2, BigDecimal.ROUND_HALF_UP)
+            detalle.precioTotalSinImpuesto = facturaDetalles[i].precioTotalSinImpuesto?.setScale(2, BigDecimal.ROUND_HALF_UP)
+
+            detalle.setImpuestos(getDetalleImpuestos(facturaDetalles[i]))
+
+            detalles.setDetalle(detalle)
+        }
+
+        return detalles
+    }
+
+    fun getDetalleImpuestos(detalle : FacturaDetalle) : Impuestos {
+        /*
+        Los detalles de impuestos por
+        producto, solo está habilitado para el IVA.
+        En futuras versiones se soportará ICE y más
+        impuestos existentes.
+        */
+
+        val impuesto = Impuesto()
+        var impuestos = Impuestos()
+
+        impuesto.codigo = "2"
+        impuesto.codigoPorcentaje = detalle.codigoPorcentaje
+        impuesto.tarifa = detalle.porcentajeIva
+        impuesto.baseImponible = detalle.precioTotalSinImpuesto?.setScale(2, BigDecimal.ROUND_HALF_UP)
+        impuesto.valor = detalle.valorIva?.setScale(2, BigDecimal.ROUND_HALF_UP)
+
+        impuestos.setImpuesto(impuesto)
+
+        return impuestos
     }
 
     fun getContribuyente(contribuyenteComprobante: MutableList<Any>) : Contribuyente {
@@ -229,7 +272,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         val detalle = Detalle()
         detalle.codigoPrincipal = "1"
         detalle.descripcion = "Servicio de Pruebas"
-        detalle.Cantidad = BigDecimal(1).setScale(2, BigDecimal.ROUND_HALF_UP)
+        detalle.cantidad = BigDecimal(1).setScale(2, BigDecimal.ROUND_HALF_UP)
         detalle.precioUnitario = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
         detalle.descuento = BigDecimal(0).setScale(2, BigDecimal.ROUND_HALF_UP)
         detalle.precioTotalSinImpuesto = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
