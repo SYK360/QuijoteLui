@@ -1,8 +1,6 @@
 package com.quijotelui.repository
 
-import com.quijotelui.model.Contribuyente
-import com.quijotelui.model.Factura
-import com.quijotelui.model.Parametro
+import com.quijotelui.model.*
 import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Transactional
 import java.util.*
@@ -75,5 +73,24 @@ class FacturaDaoImpl : IFacturaDao {
         return entityMAnager.createQuery("from Parametro " +
                 "where nombre = :nombre " +
                 "and estado = 'Activo'")
-                .setParameter("nombre", nombre).resultList as MutableList<Parametro>    }
+                .setParameter("nombre", nombre).resultList as MutableList<Parametro>
+    }
+
+    @Override
+    override fun findImpuestoByComprobante(codigo: String, numero: String): MutableList<Impuesto> {
+        return entityMAnager.createQuery("from Impuesto " +
+                "where codigo = :codigo " +
+                "and numero = :numero")
+                .setParameter("codigo", codigo)
+                .setParameter("numero",numero).resultList as MutableList<Impuesto>
+    }
+
+    @Override
+    override fun findPagoByComprobante(codigo: String, numero: String): MutableList<Pago> {
+        return entityMAnager.createQuery("from Pago " +
+                "where codigo = :codigo " +
+                "and numero = :numero")
+                .setParameter("codigo", codigo)
+                .setParameter("numero",numero).resultList as MutableList<Pago>
+    }
 }

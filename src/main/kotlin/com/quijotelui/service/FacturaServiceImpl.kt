@@ -1,6 +1,8 @@
 package com.quijotelui.service
 
 import com.quijotelui.model.Factura
+import com.quijotelui.model.Impuesto
+import com.quijotelui.model.Pago
 import com.quijotelui.model.Parametro
 import com.quijotelui.repository.IFacturaDao
 import org.springframework.beans.factory.annotation.Autowired
@@ -41,5 +43,13 @@ class FacturaServiceImpl : IFacturaService {
 
     override fun findParametroByNombre(nombre: String): MutableList<Parametro> {
         return facturaDao.findParametroByNombre(nombre)
+    }
+
+    override fun findImpuestoByComprobante(codigo: String, numero: String): MutableList<Impuesto> {
+        return facturaDao.findImpuestoByComprobante(codigo, numero)
+    }
+
+    override fun findPagoByComprobante(codigo: String, numero: String): MutableList<Pago> {
+        return facturaDao.findPagoByComprobante(codigo, numero)
     }
 }

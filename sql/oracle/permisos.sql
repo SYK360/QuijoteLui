@@ -5,3 +5,5 @@ grant execute on PKG_INFO_FACTURA to jorge;
 grant select on FAC_FACTURA_D to jorge;
 grant select on INV_PRODUCTOS to jorge;
 grant select on INV_ARTICULO to jorge;
+grant select on CXC_PAGO_CONTADO to jorge;
+grant select on CXC_DOC_COBRAR to jorge;

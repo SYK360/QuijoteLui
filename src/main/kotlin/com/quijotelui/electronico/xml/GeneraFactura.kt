@@ -22,6 +22,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
 
     val contribuyenteFactura = facturaService.findContribuyenteByComprobante(codigo, numero)
+
     val factura = Factura()
 
     fun xml(){
@@ -76,33 +77,77 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         val informacionFactura = InformacionFactura()
 
         var contribuyente = getContribuyente(this.contribuyenteFactura)
-        var facturaDocumento = getFactura(this.contribuyenteFactura)
+        var facturaComprobante = getFactura(this.contribuyenteFactura)
 
-        informacionFactura.fechaEmision = SimpleDateFormat("dd/MM/yyyy").format(facturaDocumento.fecha)
-        informacionFactura.dirEstablecimiento = facturaDocumento.direccionEstablecimiento
+        informacionFactura.fechaEmision = SimpleDateFormat("dd/MM/yyyy").format(facturaComprobante.fecha)
+        informacionFactura.dirEstablecimiento = facturaComprobante.direccionEstablecimiento
         informacionFactura.contribuyenteEspecial = contribuyente.contribuyenteEspecial
         informacionFactura.obligadoContabilidad = contribuyente.obligadoContabilidad
-        informacionFactura.tipoIdentificacionComprador = facturaDocumento.tipoDocumento
-        informacionFactura.razonSocialComprador = facturaDocumento.razonSocial
-        informacionFactura.identificacionComprador = facturaDocumento.documento
-        informacionFactura.direccionComprador = facturaDocumento.direccion
-        informacionFactura.totalSinImpuestos = facturaDocumento.totalSinIva!!.setScale(2, BigDecimal.ROUND_HALF_UP)
-        informacionFactura.totalDescuento = facturaDocumento.descuentos!!.setScale(2, BigDecimal.ROUND_HALF_UP)
+        informacionFactura.tipoIdentificacionComprador = facturaComprobante.tipoDocumento
+        informacionFactura.razonSocialComprador = facturaComprobante.razonSocial
+        informacionFactura.identificacionComprador = facturaComprobante.documento
+        informacionFactura.direccionComprador = facturaComprobante.direccion
+        informacionFactura.totalSinImpuestos = facturaComprobante.totalSinIva!!.setScale(2, BigDecimal.ROUND_HALF_UP) +
+                facturaComprobante.totalConIva!!.setScale(2, BigDecimal.ROUND_HALF_UP)
+        informacionFactura.totalDescuento = facturaComprobante.descuentos!!.setScale(2, BigDecimal.ROUND_HALF_UP)
+
+        informacionFactura.setTotalConImpuestos(getImpuesto())
+
+        informacionFactura.setPropina(BigDecimal(0).setScale(2, BigDecimal.ROUND_HALF_UP))
+        informacionFactura.setImporteTotal(facturaComprobante.total!!.setScale(2, BigDecimal.ROUND_HALF_UP))
+        informacionFactura.setMoneda("DOLAR")
+
+        informacionFactura.setPagos(getPago())
 
         return informacionFactura
 
     }
 
-    fun getImpuesto(factura: com.quijotelui.model.Factura) {
+    fun getImpuesto() : TotalConImpuestos {
 
-        val totalImpuesto = TotalImpuesto()
-        
+
+        val impuestos = facturaService.findImpuestoByComprobante(codigo, numero)
+        var totalConImpuestos = TotalConImpuestos()
+        var totalImpuesto : TotalImpuesto
+
+        for (impuesto in impuestos){
+            totalImpuesto = TotalImpuesto()
+            totalImpuesto.codigo = impuesto.codigoImpuesto
+            totalImpuesto.codigoPorcentaje = impuesto.codigoPorcentaje
+            totalImpuesto.baseImponible = impuesto.baseImponible
+            totalImpuesto.tarifa = impuesto.tarifa
+            totalImpuesto.valor = impuesto.valor
+
+            totalConImpuestos.setTotalImpuesto(totalImpuesto)
+        }
+
+        return totalConImpuestos
+
     }
 
-    fun getContribuyente(contribuyenteConprobante : MutableList<Any>) : Contribuyente {
+    fun getPago() : Pagos {
+
+        val pagosComprobante = facturaService.findPagoByComprobante(codigo, numero)
+        var pagos = Pagos()
+        var pago : Pago
+
+        for (pagoComprobante in pagosComprobante){
+            pago = Pago()
+            pago.formaPago = pagoComprobante.formaPago
+            pago.total = pagoComprobante.total?.setScale(2, BigDecimal.ROUND_HALF_UP)
+            pago.plazo = pagoComprobante.plazo
+            pago.unidadTiempo = pagoComprobante.tiempo
+
+            pagos.setPago(pago)
+        }
+
+        return pagos
+    }
+
+    fun getContribuyente(contribuyenteComprobante: MutableList<Any>) : Contribuyente {
         var contribuyente = Contribuyente()
-        for (i in contribuyenteConprobante.indices) {
-            val row = contribuyenteConprobante[i] as Array<Any>
+        for (i in contribuyenteComprobante.indices) {
+            val row = contribuyenteComprobante[i] as Array<Any>
             contribuyente = row[0] as Contribuyente
         }
         return contribuyente

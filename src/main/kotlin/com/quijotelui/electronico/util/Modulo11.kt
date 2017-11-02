@@ -46,7 +46,7 @@ class Modulo11 {
 
 //fun main(args: Array<String>) {
 //    val a = Modulo11()
-//    println("Cadena: 2310201402100160804900110010011123456781")
-//    println("Resultado :" + a.modulo11("2310201402100160804900110010011123456781"))
+//    println("Cadena: 301020140717908768960012001001000025855123456781")
+//    println("Resultado :" + a.modulo11("301020140717908768960012001001000025855123456781"))
 //
 //}
