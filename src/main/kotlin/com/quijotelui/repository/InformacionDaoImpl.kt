@@ -15,7 +15,6 @@ class InformacionDaoImpl : IInformacionDao {
 
     @Override
     override fun findByDocumento(documento : String): MutableList<Informacion> {
-
         return entityMAnager.createQuery("from Informacion " +
                 "where documento = :documento")
                 .setParameter("documento", documento)

@@ -12,3 +12,6 @@ hs_err_pid*
 /.nb-gradle/
 /build/
 /out/
+/app/QuijoteLuiFirmador/nbproject/private/
+/app/QuijoteLuiFirmador/build/
+/app/QuijoteLuiFirmador/dist/

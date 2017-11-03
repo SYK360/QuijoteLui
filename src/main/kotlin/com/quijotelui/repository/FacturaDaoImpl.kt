@@ -103,4 +103,12 @@ class FacturaDaoImpl : IFacturaDao {
                 .setParameter("codigo", codigo)
                 .setParameter("numero",numero).resultList as MutableList<Pago>
     }
+
+    @Override
+    override fun findInformacionByDocumento(documento: String): MutableList<Informacion> {
+        return entityMAnager.createQuery("from Informacion " +
+                "where documento = :documento")
+                .setParameter("documento", documento)
+                .resultList as MutableList<Informacion>
+    }
 }

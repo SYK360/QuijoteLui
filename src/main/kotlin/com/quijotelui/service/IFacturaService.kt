@@ -12,5 +12,6 @@ interface IFacturaService {
     fun findImpuestoByComprobante(codigo : String, numero : String) : MutableList<Impuesto>
     fun findPagoByComprobante(codigo : String, numero : String) : MutableList<Pago>
     fun findFacturaDetalleByComprobante(codigo : String, numero : String) : MutableList<FacturaDetalle>
+    fun findInformacionByDocumento(documento : String) : MutableList<Informacion>
 
 }

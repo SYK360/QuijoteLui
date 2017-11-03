@@ -32,7 +32,20 @@ class Parametros{
                     return "1"
                 }
             }
-            return "El parámetro Ambiente no fue encontrado"
+            return "El parámetro Emisión no fue encontrado"
+        }
+
+        fun getRuta(parametro: MutableList<Parametro>) : String {
+            if (parametro.isEmpty()) {
+                return "No existe valor para el parámetro Ruta"
+            } else if (parametro.size > 1) {
+                return "Existen más de un valor para el parámetro Ruta"
+            } else {
+                println("Ruta ${parametro[0].nombre} ${parametro[0].valor}"  )
+                return parametro[0].valor.toString()
+
+            }
+            return "El parámetro Ruta no fue encontrado"
         }
     }
 

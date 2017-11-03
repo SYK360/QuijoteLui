@@ -51,7 +51,11 @@ class FacturaServiceImpl : IFacturaService {
     }
 
     override fun findFacturaDetalleByComprobante(codigo: String, numero: String): MutableList<FacturaDetalle> {
-        return  facturaDao.findFacturaDetalleByComprobante(codigo, numero)
+        return facturaDao.findFacturaDetalleByComprobante(codigo, numero)
+    }
+
+    override fun findInformacionByDocumento(documento: String): MutableList<Informacion> {
+        return facturaDao.findInformacionByDocumento(documento)
     }
 
 }

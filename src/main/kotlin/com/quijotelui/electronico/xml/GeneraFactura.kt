@@ -10,6 +10,7 @@ import com.quijotelui.service.IFacturaService
 import comprobantes.CampoAdicional
 import comprobantes.InformacionAdicional
 import comprobantes.factura.*
+import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStreamWriter
 import java.io.StringWriter
@@ -18,35 +19,50 @@ import java.text.SimpleDateFormat
 import javax.xml.bind.JAXBContext
 import javax.xml.bind.Marshaller
 
-
 class GeneraFactura(val facturaService : IFacturaService, val codigo : String, val numero : String) {
 
 
     val contribuyenteFactura = facturaService.findContribuyenteByComprobante(codigo, numero)
 
     val factura = Factura()
+    var claveAcceso : String? = null
 
+    /*
+    Función que genera la facrua en XML
+     */
     fun xml(){
 
-        factura.setInformacionTributaria(getInformacionTributaria())
-        factura.setInformacionFactura(getInformacionFactura())
-        factura.setDetalles(getDetalle())
+        try {
+            factura.setId(id = "comprobante")
+            factura.setVersion(version = "1.0.0")
 
+            factura.setInformacionTributaria(getInformacionTributaria())
+            factura.setInformacionFactura(getInformacionFactura())
+            factura.setDetalles(getDetalle())
+            factura.setInformacionAdicional(getInformacionAdicional())
 
-        val jaxbContext = JAXBContext.newInstance(Factura::class.java)
-        val marshaller = jaxbContext.createMarshaller()
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true)
-        marshaller.setProperty("jaxb.encoding", "UTF-8")
+            val jaxbContext = JAXBContext.newInstance(Factura::class.java)
+            val marshaller = jaxbContext.createMarshaller()
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true)
+            marshaller.setProperty("jaxb.encoding", "UTF-8")
 
-        val stringWriter = StringWriter()
-        stringWriter.use {
-            marshaller.marshal(this.factura, stringWriter)
+            val stringWriter = StringWriter()
+            stringWriter.use {
+                marshaller.marshal(this.factura, stringWriter)
+            }
+
+            val rutaGenerado = Parametros.getRuta(facturaService.findParametroByNombre("Generado"))
+            val out = OutputStreamWriter(FileOutputStream("$rutaGenerado" +
+                    "${File.separatorChar}" +
+                    "${this.claveAcceso}.xml"), "UTF-8")
+
+            marshaller.marshal(this.factura, out)
+            println(stringWriter)
+        }
+        catch (e: Exception) {
+            println("Error en GeneraFactura: ${e.message}")
         }
 
-//        val out = OutputStreamWriter(FileOutputStream("1234.xml"), "UTF-8")
-//        marshaller.marshal(this.factura, out)
-
-        println(stringWriter)
     }
 
     fun getInformacionTributaria() : InformacionTributaria{
@@ -63,7 +79,10 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         informacionTributaria.razonSocial = contribuyente.razonSocial
         informacionTributaria.nombreComercial = contribuyente.nombreComercial
         informacionTributaria.ruc = contribuyente.ruc
-        informacionTributaria.claveAcceso = getClaveAcceso(contribuyente, facturaDocumento, informacionTributaria.ambiente!!, informacionTributaria.tipoEmision!!)
+
+        this.claveAcceso = getClaveAcceso(contribuyente, facturaDocumento, informacionTributaria.ambiente!!, informacionTributaria.tipoEmision!!)
+
+        informacionTributaria.claveAcceso = this.claveAcceso
         informacionTributaria.codDoc = facturaDocumento.codigoDocumento
         informacionTributaria.estab = facturaDocumento.establecimiento
         informacionTributaria.ptoEmi = facturaDocumento.puntoEmision
@@ -187,6 +206,24 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return impuestos
     }
 
+    fun getInformacionAdicional() : InformacionAdicional {
+
+        val facturaDocumento = getFactura(this.contribuyenteFactura)
+
+        val informaciones = facturaService.findInformacionByDocumento(facturaDocumento.documento.toString())
+        var informacionAdicional = InformacionAdicional()
+
+        for (informacion in informaciones){
+            val campoAdicional = CampoAdicional()
+            campoAdicional.setNombre(informacion.nombre.toString())
+            campoAdicional.setValor(informacion.valor.toString())
+
+            informacionAdicional.setCampoAdicional(campoAdicional)
+        }
+
+        return informacionAdicional
+    }
+
     fun getContribuyente(contribuyenteComprobante: MutableList<Any>) : Contribuyente {
         var contribuyente = Contribuyente()
         for (i in contribuyenteComprobante.indices) {
@@ -214,118 +251,6 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
                 "12345678" + emision
 
         return claveAcceso + m11.modulo11(claveAcceso)
-    }
-
-    fun genera() {
-        val informacionTributaria = InformacionTributaria()
-        informacionTributaria.ambiente = "1"
-        informacionTributaria.tipoEmision = "1"
-        informacionTributaria.razonSocial = "Quiguango Jorge Luis"
-        informacionTributaria.nombreComercial = "QuijoteLui"
-        informacionTributaria.ruc = "102245612701"
-        informacionTributaria.claveAcceso = "0000000000000000000000000000000000000000000"
-        informacionTributaria.codDoc = "01"
-        informacionTributaria.estab = "001"
-        informacionTributaria.ptoEmi = "010"
-        informacionTributaria.secuencial = "000000013"
-        informacionTributaria.dirMatriz = "Cananvalle Calle Las Uvillas y Calle Cananvalle"
-
-
-        val informacionFactura = InformacionFactura()
-        informacionFactura.fechaEmision = "03/10/2017"
-        informacionFactura.dirEstablecimiento = informacionTributaria.dirMatriz
-        informacionFactura.obligadoContabilidad = "NO"
-        informacionFactura.tipoIdentificacionComprador = "05"
-        informacionFactura.razonSocialComprador = "Arenita"
-        informacionFactura.identificacionComprador = "1002345644"
-        informacionFactura.direccionComprador = "Priorato"
-        informacionFactura.totalSinImpuestos = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
-        informacionFactura.totalDescuento = BigDecimal(0).setScale(2, BigDecimal.ROUND_HALF_UP)
-
-        val totalImpuesto = TotalImpuesto()
-        totalImpuesto.codigo = "2"
-        totalImpuesto.codigoPorcentaje = "2"
-        totalImpuesto.baseImponible = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
-        totalImpuesto.tarifa = BigDecimal(12).setScale(0, BigDecimal.ROUND_HALF_UP)
-        totalImpuesto.valor = BigDecimal(1.20).setScale(2, BigDecimal.ROUND_HALF_UP)
-
-        var totalConImpuestos = TotalConImpuestos()
-        totalConImpuestos.setTotalImpuesto(totalImpuesto)
-
-        informacionFactura.setTotalConImpuestos(totalConImpuestos)
-
-        informacionFactura.setPropina(BigDecimal(0).setScale(2, BigDecimal.ROUND_HALF_UP))
-        informacionFactura.setImporteTotal(BigDecimal(11.20).setScale(2, BigDecimal.ROUND_HALF_UP))
-        informacionFactura.setMoneda("DOLAR")
-
-        val pago = Pago()
-        pago.formaPago = "20"
-        pago.total = BigDecimal(11.20).setScale(2, BigDecimal.ROUND_HALF_UP)
-
-
-        var pagos = Pagos()
-        pagos.setPago(pago)
-
-        informacionFactura.setPagos(pagos)
-
-
-        val detalle = Detalle()
-        detalle.codigoPrincipal = "1"
-        detalle.descripcion = "Servicio de Pruebas"
-        detalle.cantidad = BigDecimal(1).setScale(2, BigDecimal.ROUND_HALF_UP)
-        detalle.precioUnitario = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
-        detalle.descuento = BigDecimal(0).setScale(2, BigDecimal.ROUND_HALF_UP)
-        detalle.precioTotalSinImpuesto = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
-
-
-        val impuesto = Impuesto()
-        impuesto.codigo = "2"
-        impuesto.codigoPorcentaje = "2"
-        impuesto.tarifa = BigDecimal(12).setScale(2, BigDecimal.ROUND_HALF_UP)
-        impuesto.baseImponible = BigDecimal(10).setScale(2, BigDecimal.ROUND_HALF_UP)
-        impuesto.valor = BigDecimal(1.2).setScale(2, BigDecimal.ROUND_HALF_UP)
-
-        var impuestos = Impuestos()
-        impuestos.setImpuesto(impuesto)
-
-        detalle.setImpuestos(impuestos)
-
-        var detalles = Detalles()
-        detalles.setDetalle(detalle)
-
-
-        val campoAdicional = CampoAdicional()
-        campoAdicional.setNombre("Teléfono")
-        campoAdicional.setValor("999999999")
-
-        var informacionAdicional = InformacionAdicional()
-        informacionAdicional.setCampoAdicional(campoAdicional)
-
-        val factura = Factura()
-
-        factura.setId(id = "comprobante")
-        factura.setVersion(version = "1.0.0")
-
-        factura.setInformacionTributaria(informacionTributaria)
-        factura.setInformacionFactura(informacionFactura)
-        factura.setDetalles(detalles)
-        factura.setInformacionAdicional(informacionAdicional)
-
-
-        val jaxbContext = JAXBContext.newInstance(Factura::class.java)
-        val marshaller = jaxbContext.createMarshaller()
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true)
-        marshaller.setProperty("jaxb.encoding", "UTF-8")
-
-        val stringWriter = StringWriter()
-        stringWriter.use {
-            marshaller.marshal(factura, stringWriter)
-        }
-
-        val out = OutputStreamWriter(FileOutputStream("1234.xml"), "UTF-8")
-        marshaller.marshal(factura, out)
-
-        println(stringWriter)
     }
 
 }
