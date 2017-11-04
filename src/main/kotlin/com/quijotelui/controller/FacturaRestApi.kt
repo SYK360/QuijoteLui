@@ -1,7 +1,7 @@
 package com.quijotelui.controller
 
 
-import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.electronico.ejecutar.Electronica
 import com.quijotelui.model.Factura
 import com.quijotelui.service.IFacturaService
 import org.springframework.beans.factory.annotation.Autowired
@@ -45,9 +45,9 @@ class FacturaRestApi {
             if (factura.isEmpty()) {
                 return ResponseEntity(HttpStatus.NOT_FOUND)
             } else {
-                val genera = GeneraFactura(facturaService, codigo, numero)
+                val genera = Electronica(facturaService, codigo, numero)
 
-                genera.xml()
+                genera.generarFactura()
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
             }
         }

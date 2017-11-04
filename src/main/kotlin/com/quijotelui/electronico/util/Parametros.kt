@@ -7,9 +7,9 @@ class Parametros{
     companion object {
         fun getAmbiente(parametro: MutableList<Parametro>): String {
             if (parametro.isEmpty()) {
-                return "No existe valor para el parámetro Ambiente"
+                return "No existe valor para el parámetro: Ambiente"
             } else if (parametro.size > 1) {
-                return "Existen más de un valor para el parámetro Ambiente"
+                return "Existen más de un valor para el parámetro: Ambiente"
             } else {
                 println("Ambiente " + parametro[0].valor)
                 if (parametro[0].valor == "Pruebas") {
@@ -23,9 +23,9 @@ class Parametros{
 
         fun getEmision(parametro: MutableList<Parametro>) : String {
             if (parametro.isEmpty()) {
-                return "No existe valor para el parámetro Emisión"
+                return "No existe valor para el parámetro: Emisión"
             } else if (parametro.size > 1) {
-                return "Existen más de un valor para el parámetro Emisión"
+                return "Existen más de un valor para el parámetro: Emisión"
             } else {
                 println("Emisión " + parametro[0].valor)
                 if (parametro[0].valor == "Normal") {
@@ -37,15 +37,29 @@ class Parametros{
 
         fun getRuta(parametro: MutableList<Parametro>) : String {
             if (parametro.isEmpty()) {
-                return "No existe valor para el parámetro Ruta"
+                return "No existe valor para el parámetro: Ruta"
             } else if (parametro.size > 1) {
-                return "Existen más de un valor para el parámetro Ruta"
+                return "Existen más de un valor para el parámetro: Ruta"
             } else {
                 println("Ruta ${parametro[0].nombre} ${parametro[0].valor}"  )
                 return parametro[0].valor.toString()
 
             }
             return "El parámetro Ruta no fue encontrado"
+        }
+
+        fun getClaveElectronica(parametro: MutableList<Parametro>) : String {
+
+            if (parametro.isEmpty()) {
+                return "No existe valor para el parámetro: Clave Firma Electrónica"
+            } else if (parametro.size > 1) {
+                return "Existen más de un valor para el parámetro: Clave Firma Electrónica"
+            } else {
+//                println("Clave Firma Electrónica ${parametro[0].nombre} ${parametro[0].valor}"  )
+                val claveFirmaElectronica : String = parametro[0].valor.toString()
+                return Encriptar.decrypt(claveFirmaElectronica)
+            }
+            return "El parámetro Clave Firma Electrónica no fue encontrado"
         }
     }
 

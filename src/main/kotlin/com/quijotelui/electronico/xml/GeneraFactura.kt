@@ -30,7 +30,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
     /*
     Función que genera la facrua en XML
      */
-    fun xml(){
+    fun xml() : String {
 
         try {
             factura.setId(id = "comprobante")
@@ -58,11 +58,14 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
             marshaller.marshal(this.factura, out)
             println(stringWriter)
+
         }
         catch (e: Exception) {
             println("Error en GeneraFactura: ${e.message}")
+            return ""
         }
 
+        return this.claveAcceso.toString()
     }
 
     fun getInformacionTributaria() : InformacionTributaria{

@@ -40,5 +40,6 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	compile("com.oracle:ojdbc6:11.2.0")
+	compile("com.firmador:QuijoteLuiFirmador:1.0")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

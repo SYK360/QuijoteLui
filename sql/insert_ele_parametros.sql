@@ -1,0 +1,10 @@
+Insert into ELE_PARAMETROS  values (4,'Firmado','/data/work/tmp/facturacionelectronica/Firmados','La ubicación donde se genera el archivo XML firmado electrónicamente','Activo');
+Insert into ELE_PARAMETROS  values (5,'Enviado',null,null,'Activo');
+Insert into ELE_PARAMETROS  values (6,'Autorizado',null,null,'Activo');
+Insert into ELE_PARAMETROS  values (7,'NoAutorizado',null,null,'Activo');
+Insert into ELE_PARAMETROS  values (8,'PDF',null,null,'Activo');
+Insert into ELE_PARAMETROS  values (9,'Firma Electrónica','/data/BCE/QuijoteLui.p12','Es la ubicación del archivo de la firma electrónica','Activo');
+Insert into ELE_PARAMETROS  values (10,'Clave Firma Electrónica','****','Es la contraseña de la firma electrónica','Activo');
+Insert into ELE_PARAMETROS  values (1,'Ambiente','Pruebas','El código que conformará el tipo de ambiente según la clave de acceso: Pruebas = 1, Producción = 2','Activo');
+Insert into ELE_PARAMETROS  values (2,'Emisión','Normal','El código que conformará el tipo de emisión según la clave de acceso: Emisión Normal = 1','Activo');
+Insert into ELE_PARAMETROS  values (3,'Generado','/app/Quijotelui/comprobante/generado','La ubicación donde se genera el archivo XML','Activo');
