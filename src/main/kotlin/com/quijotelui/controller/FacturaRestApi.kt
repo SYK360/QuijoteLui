@@ -4,6 +4,7 @@ package com.quijotelui.controller
 import com.quijotelui.electronico.ejecutar.Electronica
 import com.quijotelui.model.Factura
 import com.quijotelui.service.IFacturaService
+import com.quijotelui.service.IParametroService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -19,6 +20,9 @@ class FacturaRestApi {
 
     @Autowired
     lateinit var facturaService : IFacturaService
+
+    @Autowired
+    lateinit var parametroService : IParametroService
 
     @GetMapping("/facturas")
     fun getFacturas() : ResponseEntity<MutableList<Factura>> {
@@ -45,7 +49,7 @@ class FacturaRestApi {
             if (factura.isEmpty()) {
                 return ResponseEntity(HttpStatus.NOT_FOUND)
             } else {
-                val genera = Electronica(facturaService, codigo, numero)
+                val genera = Electronica(facturaService, codigo, numero, parametroService)
 
                 genera.generarFactura()
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
