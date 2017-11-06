@@ -17,3 +17,11 @@ hs_err_pid*
 /app/QuijoteLuiFirmador/dist/
 /app/QuijoteEncriptar/nbproject/private/
 /app/QuijoteEncriptar/build/
+/app/QuijoteLuiCliSRI/nbproject/private/
+/app/QuijoteLuiCliSRI/build/
+/app/QuijoteLuiCliSRI/dist/
+/app/QuijoteluiXStream/nbproject/private/
+/app/QuijoteluiXStream/build/
+/app/QuijoteluiXStream/dist/
+/app/QuijoteLuiCliSRI_back/build/
+/app/QuijoteLuiCliSRI_back/nbproject/private/
