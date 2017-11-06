@@ -14,10 +14,8 @@ package com.quijoteluiclisri.util.xml;
 
 import com.quijoteluiclisri.exception.ConvertidorXMLException;
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
-import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.util.logging.Level;
@@ -41,12 +39,7 @@ public class Java2XML
       xmlComprobante.close();
       return xmlComprobante.toString().getBytes("UTF-8");
     }
-    catch (IOException ex)
-    {
-      Logger.getLogger(Java2XML.class.getName()).log(Level.SEVERE, null, ex);
-      throw new ConvertidorXMLException("Se produjo un error al convetir el archivo al formato XML");
-    }
-    catch (JAXBException ex)
+    catch (IOException | JAXBException ex)
     {
       Logger.getLogger(Java2XML.class.getName()).log(Level.SEVERE, null, ex);
       throw new ConvertidorXMLException("Se produjo un error al convetir el archivo al formato XML");

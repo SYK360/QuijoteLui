@@ -21,7 +21,6 @@ import ec.gob.sri.comprobantes.ws.aut.RespuestaComprobante;
 
 
 import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -31,13 +30,7 @@ import javax.xml.xpath.XPathConstants;
 public final class VerificacionComprobantesView
 
 {
-  
-  private String directorioEnviados;
-  private int showOnlyOnce = 0;
-  private int rowEvent = 0;
-  static final SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyy-hhmmss");
-
-  
+ 
   private void btnEnvioIndividualActionPerformed()
   {
  

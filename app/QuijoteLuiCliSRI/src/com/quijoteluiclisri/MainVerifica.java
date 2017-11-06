@@ -34,9 +34,9 @@ public class MainVerifica {
         AutorizacionDTO autorizacionDTO = null;
 
         try {
-            String nombreArchivo = "0710201701100245687700110010020000003371234567817.xml";
+            String nombreArchivo = "0710201701100245687700110010020000003381234567812.xml";
             byte[] archivoEnviado = ArchivoUtils.archivoToByte(new File("/data/work/tmp/facturacionelectronica/Firmados/"
-                    + "0710201701100245687700110010020000003371234567817.xml"));
+                    + "0710201701100245687700110010020000003381234567812.xml"));
             LectorXMLPath lectorXMLPath = new LectorXMLPath(archivoEnviado, XPathConstants.STRING);
             String claveAccesoComprobante = lectorXMLPath.getClaveAcceso();
             String codDoc = lectorXMLPath.getCodDoc();

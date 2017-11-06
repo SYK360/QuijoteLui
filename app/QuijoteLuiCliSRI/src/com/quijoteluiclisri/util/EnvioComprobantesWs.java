@@ -77,44 +77,6 @@ public class EnvioComprobantesWs
     }
     return response;
   }
-  
-  public RespuestaSolicitud enviarComprobanteLotes(String ruc, byte[] xml, String tipoComprobante, String versionXsd)
-  {
-    RespuestaSolicitud response = null;
-    try
-    {
-      RecepcionComprobantesOffline port = service.getRecepcionComprobantesOfflinePort();
-      
-      response = port.validarComprobante(xml);
-    }
-    catch (Exception e)
-    {
-      Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, e);
-      response = new RespuestaSolicitud();
-      response.setEstado(e.getMessage());
-      return response;
-    }
-    return response;
-  }
-  
-  public RespuestaSolicitud enviarComprobanteLotes(String ruc, File xml, String tipoComprobante, String versionXsd)
-  {
-    RespuestaSolicitud response = null;
-    try
-    {
-      RecepcionComprobantesOffline port = service.getRecepcionComprobantesOfflinePort();
-      response = port.validarComprobante(ArchivoUtils.archivoToByte(xml));
-    }
-    catch (Exception e)
-    {
-      Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, e);
-      response = new RespuestaSolicitud();
-      response.setEstado(e.getMessage());
-      return response;
-    }
-    return response;
-  }
-  
   public static RespuestaSolicitud obtenerRespuestaEnvio(File archivo, String ruc, String tipoComprobante, String claveDeAcceso, String urlWsdl)
   {
     RespuestaSolicitud respuesta = new RespuestaSolicitud();
@@ -153,20 +115,6 @@ public class EnvioComprobantesWs
     return respuesta;
   }
   
-  public static void guardarRespuesta(String claveDeAcceso, String archivo, String estado, java.util.Date fecha)
-  {
-    try
-    {
-      java.sql.Date sqlDate = new java.sql.Date(fecha.getTime());
-      
-      Respuesta item = new Respuesta(null, claveDeAcceso, archivo, estado, sqlDate);
-
-    }
-    catch (Exception ex)
-    {
-      Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, ex);
-    }
-  }
   
   public static String obtenerMensajeRespuesta(RespuestaSolicitud respuesta)
   {

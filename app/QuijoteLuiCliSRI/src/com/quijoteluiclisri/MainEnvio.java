@@ -6,9 +6,6 @@
 package com.quijoteluiclisri;
 
 import com.quijoteluiclisri.exception.ConvertidorXMLException;
-import com.quijoteluiclisri.exception.DirectorioException;
-import com.quijoteluiclisri.exception.MergeRespuestaException;
-import com.quijoteluiclisri.exception.RespuestaEnvioException;
 import com.quijoteluiclisri.util.ArchivoUtils;
 import com.quijoteluiclisri.util.EnvioComprobantesWs;
 import com.quijoteluiclisri.util.FormGenerales;
@@ -37,8 +34,8 @@ public class MainEnvio {
         try {
 
             File archivoXMLFirmadoFile = new File("/data/work/tmp/facturacionelectronica/Firmados/"
-                    + "0710201701100245687700110010020000003371234567817.xml");
-            String nombreArchivo = "0710201701100245687700110010020000003371234567817.xml";
+                    + "0710201701100245687700110010020000003381234567812.xml");
+            String nombreArchivo = "0710201701100245687700110010020000003381234567812.xml";
             byte[] archivoXMLFirmadoByte = ArchivoUtils.archivoToByte(archivoXMLFirmadoFile);
             LectorXMLPath lectorXMLPath;
             lectorXMLPath = new LectorXMLPath(archivoXMLFirmadoByte, XPathConstants.STRING);
@@ -50,7 +47,7 @@ public class MainEnvio {
             ArchivoUtils.validarRespuestaEnvio(respuestaSolicitudEnvio, archivoXMLFirmadoByte, nombreArchivo);
             System.out.println(respuestaSolicitudEnvio.getEstado() + " " + "El comprobante fue enviado, está pendiente de autorización");
 
-        } catch (IOException | ConvertidorXMLException | DirectorioException | MergeRespuestaException | RespuestaEnvioException ex) {
+        } catch (IOException | ConvertidorXMLException ex) {
             Logger.getLogger(MainEnvio.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

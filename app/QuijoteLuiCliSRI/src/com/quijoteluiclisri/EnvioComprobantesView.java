@@ -10,7 +10,6 @@ package com.quijoteluiclisri;
  * @author jorgequiguango
  */
 
-import com.quijoteluiclisri.exception.DirectorioException;
 import com.quijoteluiclisri.util.ArchivoUtils;
 import com.quijoteluiclisri.util.DirectorioEnum;
 import com.quijoteluiclisri.util.EnvioComprobantesWs;
@@ -21,8 +20,6 @@ import com.quijoteluiclisri.util.xml.LectorXMLPath;
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
 
 import java.io.File;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -33,22 +30,9 @@ import javax.xml.xpath.XPathConstants;
 
 public class EnvioComprobantesView
 {
-  private static final SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyy-hhmmss");
-  private String claveAcceso = null;
-
-  private Long secuencial;
-  private String directorioFirmados;
-  private String PARAM_TIPO_LOTE = "0";
-  private String VERSION = "1.0.0";
-  private int MAX_FILE_SIZE = 500;
-  private int showOnlyOnce = 0;
-  private int rowEvent = 0;
-
-  
-  
-  
+  private String claveAcceso = null;  
   private void moverListaArchivos(List<File> listaArchivos)
-    throws SQLException, ClassNotFoundException, DirectorioException
+    throws  ClassNotFoundException
   {
     for (File file : listaArchivos) {
         ArchivoUtils.copiarArchivo(file, DirectorioEnum.ENVIADOS);

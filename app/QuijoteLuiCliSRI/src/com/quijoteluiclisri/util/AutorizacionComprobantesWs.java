@@ -69,22 +69,6 @@ public class AutorizacionComprobantesWs
     return response;
   }
   
-  public RespuestaLote llamadaWsAutorizacionLote(String claveDeAcceso)
-  {
-    RespuestaLote response = null;
-    try
-    {
-      AutorizacionComprobantesOffline port = this.service.getAutorizacionComprobantesOfflinePort();
-      response = port.autorizacionComprobanteLote(claveDeAcceso);
-    }
-    catch (Exception e)
-    {
-      Logger.getLogger(AutorizacionComprobantesWs.class.getName()).log(Level.SEVERE, null, e);
-      return response;
-    }
-    return response;
-  }
-  
   public static String autorizarComprobanteIndividual(String claveDeAcceso, String nombreArchivo, String tipoAmbiente)
   {
     StringBuilder mensaje = new StringBuilder();

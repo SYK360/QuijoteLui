@@ -12,7 +12,6 @@ package com.quijoteluiclisri.util;
 import com.quijoteluiclisri.api.EstadoAutorizacion;
 import com.quijoteluiclisri.dto.AutorizacionDTO;
 import com.quijoteluiclisri.exception.ConvertidorXMLException;
-import com.quijoteluiclisri.exception.DirectorioException;
 import com.quijoteluiclisri.exception.MergeRespuestaException;
 import com.quijoteluiclisri.exception.RespuestaAutorizacionException;
 import com.quijoteluiclisri.util.xml.XStreamUtil;
@@ -24,6 +23,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AutorizacionComprobantesUtil {
 
@@ -36,14 +37,22 @@ public class AutorizacionComprobantesUtil {
     }
 
     public void validarRespuestaAutorizacion(AutorizacionDTO autorizacionDTO)
-            throws DirectorioException, MergeRespuestaException, RespuestaAutorizacionException, ConvertidorXMLException {
+            throws MergeRespuestaException, RespuestaAutorizacionException, ConvertidorXMLException {
         byte[] archivoRespuestaAutorizacionXML = obtenerRepuestaAutorizacionXML(autorizacionDTO.getAutorizacion());
         if (EstadoAutorizacion.AUT.equals(autorizacionDTO.getEstadoAutorizacion())) {
-            ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, DirectorioEnum.AUTORIZADOS);
+            try {
+                ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, DirectorioEnum.AUTORIZADOS);
+            } catch (Exception ex) {
+                Logger.getLogger(AutorizacionComprobantesUtil.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             if (EstadoAutorizacion.NAU.equals(autorizacionDTO.getEstadoAutorizacion())) {
-                ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, DirectorioEnum.NO_AUTORIZADOS);
-                throw new RespuestaAutorizacionException(String.format("Error al validar el comprobante estado : %s \n%s", new Object[]{autorizacionDTO.getEstadoAutorizacion().getDescripcion(), autorizacionDTO.getMensaje()}));
+                try {
+                    ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, DirectorioEnum.NO_AUTORIZADOS);
+                    throw new RespuestaAutorizacionException(String.format("Error al validar el comprobante estado : %s \n%s", new Object[]{autorizacionDTO.getEstadoAutorizacion().getDescripcion(), autorizacionDTO.getMensaje()}));
+                } catch (RespuestaAutorizacionException ex) {
+                    Logger.getLogger(AutorizacionComprobantesUtil.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             if (EstadoAutorizacion.PRO.equals(autorizacionDTO.getEstadoAutorizacion())) {
                 throw new RespuestaAutorizacionException(String.format("Error al validar el comprobante estado : %s \n", new Object[]{autorizacionDTO.getEstadoAutorizacion().getDescripcion()}));
