@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.quijoteluiclisri.util.xml;
+package com.quijotelui.ws.xml;
 
 /**
  *
@@ -12,7 +12,6 @@ package com.quijoteluiclisri.util.xml;
 
 
 
-import com.quijoteluiclisri.exception.ConvertidorXMLException;
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,10 +23,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
-public class Java2XML
+public class ObjectToXML
 {
-  public static byte[] convertirAXml(Object comprobante)
-    throws ConvertidorXMLException
+  public static byte[] convierteEnXml(Object comprobante)
   {
     try
     {
@@ -41,18 +39,13 @@ public class Java2XML
     }
     catch (IOException | JAXBException ex)
     {
-      Logger.getLogger(Java2XML.class.getName()).log(Level.SEVERE, null, ex);
-      throw new ConvertidorXMLException("Se produjo un error al convetir el archivo al formato XML");
+      Logger.getLogger(ObjectToXML.class.getName()).log(Level.SEVERE, null, ex);
+      System.out.println("Se produjo un error al convetir el archivo al formato XML");
     }
+      return null;
   }
   
-
-  
- 
-  
-  
-  
-  public static String marshalRespuestaSolicitud(RespuestaSolicitud respuesta, String pathArchivoSalida)
+  public static String convierteRespuestaSolicitudXml(RespuestaSolicitud respuesta, String pathArchivoSalida)
   {
     try
     {
@@ -67,7 +60,7 @@ public class Java2XML
     }
     catch (Exception ex)
     {
-      Logger.getLogger(Java2XML.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(ObjectToXML.class.getName()).log(Level.SEVERE, null, ex);
       return ex.getMessage();
     }
     return null;

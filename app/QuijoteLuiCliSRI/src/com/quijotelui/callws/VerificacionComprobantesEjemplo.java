@@ -1,22 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.quijoteluiclisri;
+package com.quijotelui.callws;
 
-/**
- *
- * @author jorgequiguango
- */
-import com.quijoteluiclisri.api.EstadoAutorizacion;
-import com.quijoteluiclisri.dto.AutorizacionDTO;
-import com.quijoteluiclisri.exception.RespuestaAutorizacionException;
-import com.quijoteluiclisri.util.ArchivoUtils;
-import com.quijoteluiclisri.util.AutorizacionComprobantesUtil;
-import com.quijoteluiclisri.util.AutorizacionComprobantesWs;
-import com.quijoteluiclisri.util.FormGenerales;
-import com.quijoteluiclisri.util.xml.LectorXMLPath;
+import com.quijotelui.ws.define.Estado;
+import com.quijotelui.ws.dto.AutorizacionDTO;
+import com.quijotelui.ws.util.ArchivoUtils;
+import com.quijotelui.ws.util.AutorizacionComprobantesUtil;
+import com.quijotelui.ws.util.AutorizacionComprobantesWs;
+import com.quijotelui.ws.xml.LectorXMLPath;
 import ec.gob.sri.comprobantes.ws.aut.RespuestaComprobante;
 
 
@@ -27,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.xpath.XPathConstants;
 
-public final class VerificacionComprobantesView
+public final class VerificacionComprobantesEjemplo
 
 {
  
@@ -59,19 +48,19 @@ public final class VerificacionComprobantesView
                   autorizacionDTO = autorizacionComprobantesUtil.obtenerEstadoAutorizaccion();
                   autorizacionComprobantesUtil.validarRespuestaAutorizacion(autorizacionDTO);
                   ((File)archivosSeleccionados.get(i)).delete();
-                  System.out.println(Integer.valueOf(i + 1)+ nombreArchivo+ FormGenerales.obtieneTipoDeComprobante(claveAccesoComprobante)+ autorizacionDTO.getEstadoAutorizacion().getDescripcion());
+                  System.out.println(Integer.valueOf(i + 1)+ nombreArchivo+ ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante)+ autorizacionDTO.getEstadoAutorizacion().getDescripcion());
                 }
                 else
                 {
-                  System.out.println(Integer.valueOf(i + 1)+ nombreArchivo+ FormGenerales.obtieneTipoDeComprobante(claveAccesoComprobante)+ EstadoAutorizacion.NPR.getDescripcion()+"El archivo no tiene autorizaciones relacionadas");
+                  System.out.println(Integer.valueOf(i + 1)+ nombreArchivo+ ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante)+ Estado.NPR.getDescripcion()+"El archivo no tiene autorizaciones relacionadas");
                 }
               }
-              catch (RespuestaAutorizacionException ex)
+              catch (Exception ex)
               {
-                if (EstadoAutorizacion.NAU.equals(autorizacionDTO.getEstadoAutorizacion())) {
+                if (Estado.NAU.equals(autorizacionDTO.getEstadoAutorizacion())) {
                   ((File)archivosSeleccionados.get(i)).delete();
                 }
-                System.out.println(Integer.valueOf(i + 1)+ nombreArchivo+FormGenerales.obtieneTipoDeComprobante(claveAccesoComprobante)+ autorizacionDTO.getEstadoAutorizacion().getDescripcion()+ex.getMessage());
+                System.out.println(Integer.valueOf(i + 1)+ nombreArchivo+ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante)+ autorizacionDTO.getEstadoAutorizacion().getDescripcion()+ex.getMessage());
               }
             }
             else
@@ -82,7 +71,7 @@ public final class VerificacionComprobantesView
           }
           catch (Exception ex)
           {
-            Logger.getLogger(VerificacionComprobantesView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VerificacionComprobantesEjemplo.class.getName()).log(Level.SEVERE, null, ex);
           }
         }
       }

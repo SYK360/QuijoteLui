@@ -1,20 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.quijoteluiclisri.util;
+package com.quijotelui.ws.util;
 
-/**
- *
- * @author jorgequiguango
- */
-import com.quijoteluiclisri.api.EstadoAutorizacion;
-import com.quijoteluiclisri.dto.AutorizacionDTO;
-import com.quijoteluiclisri.exception.ConvertidorXMLException;
-import com.quijoteluiclisri.exception.MergeRespuestaException;
-import com.quijoteluiclisri.exception.RespuestaAutorizacionException;
-import com.quijoteluiclisri.util.xml.XStreamUtil;
+import com.quijotelui.ws.define.Estado;
+import com.quijotelui.ws.dto.AutorizacionDTO;
+import com.quijotelui.ws.xml.XStreamAutorizacion;
 import com.thoughtworks.xstream.XStream;
 import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
 import ec.gob.sri.comprobantes.ws.aut.Mensaje;
@@ -37,42 +25,42 @@ public class AutorizacionComprobantesUtil {
     }
 
     public void validarRespuestaAutorizacion(AutorizacionDTO autorizacionDTO)
-            throws MergeRespuestaException, RespuestaAutorizacionException, ConvertidorXMLException {
+             {
         byte[] archivoRespuestaAutorizacionXML = obtenerRepuestaAutorizacionXML(autorizacionDTO.getAutorizacion());
-        if (EstadoAutorizacion.AUT.equals(autorizacionDTO.getEstadoAutorizacion())) {
+        if (Estado.AUT.equals(autorizacionDTO.getEstadoAutorizacion())) {
             try {
                 ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, DirectorioEnum.AUTORIZADOS);
             } catch (Exception ex) {
                 Logger.getLogger(AutorizacionComprobantesUtil.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            if (EstadoAutorizacion.NAU.equals(autorizacionDTO.getEstadoAutorizacion())) {
+            if (Estado.NAU.equals(autorizacionDTO.getEstadoAutorizacion())) {
                 try {
                     ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, DirectorioEnum.NO_AUTORIZADOS);
-                    throw new RespuestaAutorizacionException(String.format("Error al validar el comprobante estado : %s \n%s", new Object[]{autorizacionDTO.getEstadoAutorizacion().getDescripcion(), autorizacionDTO.getMensaje()}));
-                } catch (RespuestaAutorizacionException ex) {
+                    System.out.println("Error al validar el comprobante estado "+ autorizacionDTO.getEstadoAutorizacion().getDescripcion()+ autorizacionDTO.getMensaje());
+                } catch (Exception ex) {
                     Logger.getLogger(AutorizacionComprobantesUtil.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if (EstadoAutorizacion.PRO.equals(autorizacionDTO.getEstadoAutorizacion())) {
-                throw new RespuestaAutorizacionException(String.format("Error al validar el comprobante estado : %s \n", new Object[]{autorizacionDTO.getEstadoAutorizacion().getDescripcion()}));
+            if (Estado.PRO.equals(autorizacionDTO.getEstadoAutorizacion())) {
+                System.out.println("Error al validar el comprobante estado : " + autorizacionDTO.getEstadoAutorizacion().getDescripcion());
             }
         }
     }
 
     public AutorizacionDTO obtenerEstadoAutorizaccion() {
         for (Autorizacion autorizacion : this.respuestaComprobante.getAutorizaciones().getAutorizacion()) {
-            EstadoAutorizacion estadoAutorizacion = EstadoAutorizacion.getEstadoAutorizacion(autorizacion.getEstado());
-            if (EstadoAutorizacion.AUT.equals(estadoAutorizacion)) {
-                return new AutorizacionDTO(autorizacion, EstadoAutorizacion.AUT);
+            Estado estadoAutorizacion = Estado.getEstadoAutorizacion(autorizacion.getEstado());
+            if (Estado.AUT.equals(estadoAutorizacion)) {
+                return new AutorizacionDTO(autorizacion, Estado.AUT);
             }
-            if (EstadoAutorizacion.PRO.equals(estadoAutorizacion)) {
-                return new AutorizacionDTO(autorizacion, EstadoAutorizacion.AUT);
+            if (Estado.PRO.equals(estadoAutorizacion)) {
+                return new AutorizacionDTO(autorizacion, Estado.AUT);
             }
         }
         Autorizacion autorizacion = (Autorizacion) this.respuestaComprobante.getAutorizaciones().getAutorizacion().get(0);
 
-        return new AutorizacionDTO(autorizacion, EstadoAutorizacion.NAU, obtieneMensajesAutorizacion(autorizacion));
+        return new AutorizacionDTO(autorizacion, Estado.NAU, obtieneMensajesAutorizacion(autorizacion));
     }
 
     private void setXMLCDATA(Autorizacion autorizacion) {
@@ -80,11 +68,11 @@ public class AutorizacionComprobantesUtil {
     }
 
   private byte[] obtenerRepuestaAutorizacionXML(Autorizacion autorizacion)
-    throws ConvertidorXMLException
+    
   {
     try
     {
-      XStream xstream = XStreamUtil.getRespuestaXStream();
+      XStream xstream = XStreamAutorizacion.getRespuestaXStream();
       ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
       Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
       setXMLCDATA(autorizacion);
@@ -94,8 +82,9 @@ public class AutorizacionComprobantesUtil {
     }
     catch (IOException ex)
     {
-      throw new ConvertidorXMLException("Se produjo un error al convetir el archivo al formato XML", ex);
+      System.out.println("Se produjo un error al convetir el archivo al formato XML"+ ex.getMessage());
     }
+        return null;
   }
 
     public static String obtieneMensajesAutorizacion(Autorizacion autorizacion) {

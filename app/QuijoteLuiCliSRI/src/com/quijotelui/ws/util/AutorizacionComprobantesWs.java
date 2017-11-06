@@ -1,36 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.quijoteluiclisri.util;
+package com.quijotelui.ws.util;
 
-/**
- *
- * @author jorgequiguango
- */
-
-import com.quijoteluiclisri.exception.RespuestaAutorizacionException;
-
-import com.quijoteluiclisri.util.xml.XStreamUtil;
+import com.quijotelui.ws.xml.XStreamAutorizacion;
 import com.thoughtworks.xstream.XStream;
-
 import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
 import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesOffline;
 import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesOfflineService;
 import ec.gob.sri.comprobantes.ws.aut.Mensaje;
 import ec.gob.sri.comprobantes.ws.aut.RespuestaComprobante;
-import ec.gob.sri.comprobantes.ws.aut.RespuestaLote;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.xml.namespace.QName;
 
 public class AutorizacionComprobantesWs
@@ -49,7 +33,7 @@ public class AutorizacionComprobantesWs
     catch (Exception ex)
     {
       Logger.getLogger(AutorizacionComprobantesWs.class.getName()).log(Level.SEVERE, null, ex);
-      JOptionPane.showMessageDialog(new JFrame(), ex.getMessage(), "Se ha producido un error ", 0);
+      System.out.println(ex.getMessage() + " Se ha producido un error ");
     }
   }
   
@@ -80,7 +64,7 @@ public class AutorizacionComprobantesWs
       RespuestaComprobante respuesta = null;
       for (int i = 0; i < 5; i++)
       {
-        respuesta = new AutorizacionComprobantesWs(FormGenerales.devuelveUrlWs(tipoAmbiente, "AutorizacionComprobantesOffline")).llamadaWSAutorizacionInd(claveDeAcceso);
+        respuesta = new AutorizacionComprobantesWs(ArchivoUtils.devuelveUrlWs(tipoAmbiente, "AutorizacionComprobantesOffline")).llamadaWSAutorizacionInd(claveDeAcceso);
         if (!respuesta.getAutorizaciones().getAutorizacion().isEmpty()) {
           break;
         }
@@ -95,7 +79,7 @@ public class AutorizacionComprobantesWs
           
           item.setComprobante("<![CDATA[" + item.getComprobante() + "]]>");
           
-          XStream xstream = XStreamUtil.getRespuestaXStream();
+          XStream xstream = XStreamAutorizacion.getRespuestaXStream();
           Writer writer = null;
           ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
           writer = new OutputStreamWriter(outputStream, "UTF-8");
@@ -112,9 +96,7 @@ public class AutorizacionComprobantesWs
           {
             ArchivoUtils.stringToArchivo(dirNoAutorizados + File.separator + nombreArchivo, xmlAutorizacion);
             mensaje.append("|" + obtieneMensajesAutorizacion(item));
-            
-            verificarOCSP(item);
-            
+                        
             break;
           }
           if (item.getEstado().equals("EN PROCESO"))
@@ -126,7 +108,7 @@ public class AutorizacionComprobantesWs
         }
       }
     }
-    catch (Exception ex)
+    catch (IOException | InterruptedException ex)
     {
       String dirAutorizados;
       String dirNoAutorizados;
@@ -137,9 +119,9 @@ public class AutorizacionComprobantesWs
   }
   
   public static RespuestaComprobante autorizarComprobante(String claveDeAcceso, String tipoAmbiente)
-    throws RespuestaAutorizacionException
+    
   {
-    return new AutorizacionComprobantesWs(FormGenerales.devuelveUrlWs(tipoAmbiente, "AutorizacionComprobantesOffline")).llamadaWSAutorizacionInd(claveDeAcceso);
+    return new AutorizacionComprobantesWs(ArchivoUtils.devuelveUrlWs(tipoAmbiente, "AutorizacionComprobantesOffline")).llamadaWSAutorizacionInd(claveDeAcceso);
   }
  
   
@@ -156,22 +138,4 @@ public class AutorizacionComprobantesWs
     return mensaje.toString();
   }
   
-  public static boolean verificarOCSP(Autorizacion autorizacion)
-    throws SQLException, ClassNotFoundException
-  {
-    boolean respuesta = true;
-    for (Mensaje m : autorizacion.getMensajes().getMensaje()) {
-      if (m.getIdentificador().equals("61"))
-      {
-        int i = JOptionPane.showConfirmDialog(null, "No se puede validar el certificado digital.\n Desea emitir en contingencia?", "Advertencia", 0);
-        if (i == 0)
-        {
-            i=0;
-//          FormGenerales.actualizaEmisor(TipoEmisionEnum.PREAUTORIZADA.getCode(), emisor);
-        }
-        respuesta = false;
-      }
-    }
-    return respuesta;
-  }
 }

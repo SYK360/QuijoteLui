@@ -1,19 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.quijoteluiclisri.util;
+package com.quijotelui.ws.util;
 
-/**
- *
- * @author jorgequiguango
- */
-import com.quijoteluiclisri.exception.ConvertidorXMLException;
-import com.quijoteluiclisri.exception.MergeRespuestaException;
-
-import com.quijoteluiclisri.util.xml.Java2XML;
-import com.quijoteluiclisri.util.xml.LectorXPath;
+import com.quijotelui.ws.xml.ObjectToXML;
+import com.quijotelui.ws.xml.LectorXPath;
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -62,7 +50,7 @@ public class ArchivoUtils {
             out.close();
 
             return new File(rutaArchivo);
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             LOG.error(ex);
             return null;
         } finally {
@@ -70,7 +58,7 @@ public class ArchivoUtils {
                 if (fos != null) {
                     fos.close();
                 }
-            } catch (Exception ex) {
+            } catch (IOException ex) {
                 LOG.error(ex);
             }
         }
@@ -87,7 +75,6 @@ public class ArchivoUtils {
         return valor;
     }
 
-
     public static void firmarEnviarAutorizar(String pathCompletoArchivoAFirmar, String nombreArchivo, String ruc, String codDoc, String claveDeAcceso, String password)
             throws InterruptedException {
         RespuestaSolicitud respuestaRecepcion = new RespuestaSolicitud();
@@ -102,7 +89,7 @@ public class ArchivoUtils {
 
                 File archivoFirmado = new File(dirFirmados + File.separator + nombreArchivo);
 
-                respuestaRecepcion = EnvioComprobantesWs.obtenerRespuestaEnvio1(archivoFirmado, ruc, codDoc, claveDeAcceso, FormGenerales.devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
+                respuestaRecepcion = EnvioComprobantesWs.obtenerRespuestaEnvio1(archivoFirmado, ruc, codDoc, claveDeAcceso, devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
                 if (respuestaRecepcion.getEstado().equals("RECIBIDA")) {
                     System.out.println("El comprobante fue enviado, está pendiente de autorización");
                     File enviados = new File(dirEnviados);
@@ -117,7 +104,7 @@ public class ArchivoUtils {
                     }
                 } else if (respuestaRecepcion.getEstado().equals("DEVUELTA")) {
                     String dirRechazados = dirFirmados + File.separator + "rechazados";
-                    String resultado = FormGenerales.insertarCaracteres(EnvioComprobantesWs.obtenerMensajeRespuesta(respuestaRecepcion), "\n", 160);
+                    String resultado = insertarCaracteres(EnvioComprobantesWs.obtenerMensajeRespuesta(respuestaRecepcion), "\n", 160);
 
                     File rechazados = new File(dirRechazados);
                     if (!rechazados.exists()) {
@@ -145,11 +132,10 @@ public class ArchivoUtils {
     }
 
     public static RespuestaSolicitud enviar(File archivoFirmado, String ruc, String codDoc, String claveDeAcceso) {
-        return EnvioComprobantesWs.obtenerRespuestaEnvio(archivoFirmado, ruc, codDoc, claveDeAcceso, FormGenerales.devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
+        return EnvioComprobantesWs.obtenerRespuestaEnvio(archivoFirmado, ruc, codDoc, claveDeAcceso, devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
     }
 
-    public static void validarRespuestaEnvio(RespuestaSolicitud respuestaSolicitudEnvio, byte[] archivoFirmado, String nombreArchivo) 
-             {
+    public static void validarRespuestaEnvio(RespuestaSolicitud respuestaSolicitudEnvio, byte[] archivoFirmado, String nombreArchivo) {
         if (respuestaSolicitudEnvio.getEstado().equals("RECIBIDA")) {
             try {
                 crearArchivo(archivoFirmado, nombreArchivo, DirectorioEnum.ENVIADOS);
@@ -157,37 +143,30 @@ public class ArchivoUtils {
                 Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (respuestaSolicitudEnvio.getEstado().equals("DEVUELTA")) {
-            try {
-                byte[] archivoRespuesta = anadirMotivosRechazo(respuestaSolicitudEnvio, archivoFirmado);
-                crearArchivoDirectorioRechazados(archivoRespuesta, nombreArchivo);
-                System.out.println(String.format("Error al enviar el comprobante estado : %s \nRevisar la carpeta de rechazados "+respuestaSolicitudEnvio.getEstado()));
-            } catch (MergeRespuestaException ex) {
-                Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            byte[] archivoRespuesta = addMotivosRechazo(respuestaSolicitudEnvio, archivoFirmado);
+            crearArchivoDirectorioRechazados(archivoRespuesta, nombreArchivo);
+            System.out.println("Error al enviar el comprobante estado :  \nRevisar la carpeta de rechazados " + respuestaSolicitudEnvio.getEstado());
         }
     }
 
-
-    public static byte[] anadirMotivosRechazo(RespuestaSolicitud respuestaRecepcion, byte[] comprobante)
-            throws MergeRespuestaException {
+    public static byte[] addMotivosRechazo(RespuestaSolicitud respuestaRecepcion, byte[] comprobante) {
         try {
-            byte[] respuetaRecepcionXML = Java2XML.convertirAXml(respuestaRecepcion);
+            byte[] respuetaRecepcionXML = ObjectToXML.convierteEnXml(respuestaRecepcion);
             Document document = mergeArchivos(comprobante, respuetaRecepcionXML);
             return adjuntarArchivo(document);
-        } catch (ConvertidorXMLException ex) {
+        } catch (Exception ex) {
             java.util.logging.Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
 
-            throw new MergeRespuestaException("Se produjo un error al adjuntar los resultados de la respuesta al comprobante enviado");
+            System.out.println("Se produjo un error al adjuntar los resultados de la respuesta al comprobante enviado");
         }
+        return null;
     }
 
-    public static Document mergeArchivos(byte[] comprobante, byte[] respuesta)
-            throws MergeRespuestaException {
+    public static Document mergeArchivos(byte[] comprobante, byte[] respuesta) {
         return merge("*", new byte[][]{comprobante, respuesta});
     }
 
-    public static byte[] adjuntarArchivo(Document document)
-            throws MergeRespuestaException {
+    public static byte[] adjuntarArchivo(Document document) {
         try {
             DOMSource source = new DOMSource(document);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -199,8 +178,9 @@ public class ArchivoUtils {
         } catch (TransformerException ex) {
             java.util.logging.Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
 
-            throw new MergeRespuestaException("Se produjo un error al adjuntar los resultados de la respuesta al comprobante enviado");
+            System.out.println("Se produjo un error al adjuntar los resultados de la respuesta al comprobante enviado");
         }
+        return null;
     }
 
     private static Document merge(String exp, File... files)
@@ -226,8 +206,7 @@ public class ArchivoUtils {
         return base;
     }
 
-    private static Document merge(String exp, byte[]... archivosXML)
-            throws MergeRespuestaException {
+    private static Document merge(String exp, byte[]... archivosXML) {
         try {
             XPathFactory xPathFactory = XPathFactory.newInstance();
             XPath xpath = xPathFactory.newXPath();
@@ -248,8 +227,9 @@ public class ArchivoUtils {
         } catch (XPathExpressionException | SAXException | IOException | ParserConfigurationException ex) {
             java.util.logging.Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
 
-            throw new MergeRespuestaException("Se produjo un error al adjuntar los resultados de la respuesta al comprobante enviado");
+            System.out.println("Se produjo un error al adjuntar los resultados de la respuesta al comprobante enviado");
         }
+        return null;
     }
 
     public static boolean copiarArchivo(File archivoOrigen, String pathDestino) {
@@ -265,7 +245,7 @@ public class ArchivoUtils {
             in.close();
             out.close();
             return true;
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             LOG.error(ex);
         } finally {
             try {
@@ -277,8 +257,7 @@ public class ArchivoUtils {
         return false;
     }
 
-    public static boolean copiarArchivo(File archivoOrigen, DirectorioEnum directorioEnum)
-             {
+    public static boolean copiarArchivo(File archivoOrigen, DirectorioEnum directorioEnum) {
         try {
             File directorioDestino = new File("/tmp");
             return copiarArchivo(archivoOrigen, directorioDestino);
@@ -288,8 +267,7 @@ public class ArchivoUtils {
         return false;
     }
 
-    public static boolean copiarArchivo(File archivoOrigen, File directorioDestino)
-             {
+    public static boolean copiarArchivo(File archivoOrigen, File directorioDestino) {
         InputStream inStream = null;
         OutputStream outStream = null;
         try {
@@ -307,13 +285,12 @@ public class ArchivoUtils {
             return true;
         } catch (IOException ex) {
             LOG.error(ex);
-            System.out.println(String.format("Se produjo un error al consultar el direcotorio : %s "+directorioDestino.getName()));
+            System.out.println("Se produjo un error al consultar el direcotorio :  " + directorioDestino.getName());
         }
         return false;
     }
 
-    public static File crearArchivo(byte[] archivo, String nombreArchivo, DirectorioEnum directorioEnum)
-             {
+    public static File crearArchivo(byte[] archivo, String nombreArchivo, DirectorioEnum directorioEnum) {
         try {
 
             File directorioDestino = new File("/tmp");
@@ -325,17 +302,16 @@ public class ArchivoUtils {
             return archivoDestino;
         } catch (IOException ex) {
             LOG.error(ex);
-            System.out.println(String.format("Error al mover el archivo al directorio: %s", directorioEnum.toString()));
+            System.out.println("Error al mover el archivo al directorio: " + directorioEnum.toString());
         }
         return null;
     }
 
-    public static void crearArchivoDirectorioRechazados(byte[] archivo, String nombreArchivo)
-             {
+    public static void crearArchivoDirectorioRechazados(byte[] archivo, String nombreArchivo) {
         try {
 
-            File directorioDestino = new File("/tmp");
-            String rutaDirectorioRechazados = directorioDestino + File.separator + "rechazados";
+            File directorioDestino = new File("/data/work/tmp/facturacionelectronica/NoAutorizados");
+            String rutaDirectorioRechazados = directorioDestino + File.separator;
             File directorioRechazados = new File(rutaDirectorioRechazados);
             if (!directorioRechazados.exists()) {
                 directorioRechazados.mkdir();
@@ -347,7 +323,7 @@ public class ArchivoUtils {
             fileOutputStream.close();
         } catch (IOException ex) {
             LOG.error(ex);
-            System.out.println(String.format("Error al mover el archivo al directorio: %s"));
+            System.out.println("Error al mover el archivo al directorio: ");
         }
     }
 
@@ -355,5 +331,53 @@ public class ArchivoUtils {
             throws IOException {
         String archivo = FileUtils.readFileToString(file, "UTF-8");
         return archivo.getBytes(Charset.forName("UTF-8"));
+    }
+
+    public static String devuelveUrlWs(String ambiente, String nombreServicio) {
+        StringBuilder url = new StringBuilder();
+        String direccionIPServicio = null;
+
+        if (ambiente.equals("1") == true) {
+            direccionIPServicio = "https://celcer.sri.gob.ec";
+        } else if (ambiente.equals("2") == true) {
+            direccionIPServicio = "https://celcer.sri.gob.ec";
+        }
+        url.append(direccionIPServicio);
+
+        url.append("/comprobantes-electronicos-ws/");
+        url.append(nombreServicio);
+        url.append("?wsdl");
+        System.out.print(url.toString());
+
+        return url.toString();
+    }
+
+    public static String obtieneTipoDeComprobante(String claveDeAcceso) {
+        String abreviatura = null;
+        if ((claveDeAcceso != null) && (claveDeAcceso.length() == 49)) {
+            String tipo = claveDeAcceso.substring(8, 10);
+            if (tipo.equals(TipoComprobanteEnum.FACTURA.getCodigo())) {
+                abreviatura = TipoComprobanteEnum.FACTURA.getDescripcion();
+            } else if (tipo.equals(TipoComprobanteEnum.NOTA_DE_DEBITO.getCodigo())) {
+                abreviatura = TipoComprobanteEnum.NOTA_DE_DEBITO.getDescripcion();
+            } else if (tipo.equals(TipoComprobanteEnum.NOTA_DE_CREDITO.getCodigo())) {
+                abreviatura = TipoComprobanteEnum.NOTA_DE_CREDITO.getDescripcion();
+            } else if (tipo.equals(TipoComprobanteEnum.GUIA_DE_REMISION.getCodigo())) {
+                abreviatura = TipoComprobanteEnum.GUIA_DE_REMISION.getDescripcion();
+            } else if (tipo.equals(TipoComprobanteEnum.COMPROBANTE_DE_RETENCION.getCodigo())) {
+                abreviatura = TipoComprobanteEnum.COMPROBANTE_DE_RETENCION.getDescripcion();
+            }
+        }
+        return abreviatura;
+    }
+
+    public static String insertarCaracteres(String cadenaLarga, String aInsertar, int longitud) {
+        StringBuilder sb = new StringBuilder(cadenaLarga);
+
+        int i = 0;
+        while ((i = sb.indexOf(" ", i + longitud)) != -1) {
+            sb.replace(i, i + 1, aInsertar);
+        }
+        return sb.toString();
     }
 }

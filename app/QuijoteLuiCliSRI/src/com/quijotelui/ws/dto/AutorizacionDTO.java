@@ -1,33 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.quijoteluiclisri.dto;
+package com.quijotelui.ws.dto;
 
-/**
- *
- * @author jorgequiguango
- */
-
-
-
-import com.quijoteluiclisri.api.EstadoAutorizacion;
+import com.quijotelui.ws.define.Estado;
 import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
 
 public class AutorizacionDTO
 {
   private Autorizacion autorizacion;
-  private EstadoAutorizacion estadoAutorizacion;
+  private Estado estadoAutorizacion;
   String mensaje;
   
-  public AutorizacionDTO(Autorizacion autorizacion, EstadoAutorizacion estadoAutorizacion)
+  public AutorizacionDTO(Autorizacion autorizacion, Estado estadoAutorizacion)
   {
     this.autorizacion = autorizacion;
     this.estadoAutorizacion = estadoAutorizacion;
   }
   
-  public AutorizacionDTO(Autorizacion autorizacion, EstadoAutorizacion estadoAutorizacion, String mensaje)
+  public AutorizacionDTO(Autorizacion autorizacion, Estado estadoAutorizacion, String mensaje)
   {
     this.autorizacion = autorizacion;
     this.estadoAutorizacion = estadoAutorizacion;
@@ -44,12 +32,12 @@ public class AutorizacionDTO
     this.autorizacion = autorizacion;
   }
   
-  public EstadoAutorizacion getEstadoAutorizacion()
+  public Estado getEstadoAutorizacion()
   {
     return this.estadoAutorizacion;
   }
   
-  public void setEstadoAutorizacion(EstadoAutorizacion estadoAutorizacion)
+  public void setEstadoAutorizacion(Estado estadoAutorizacion)
   {
     this.estadoAutorizacion = estadoAutorizacion;
   }

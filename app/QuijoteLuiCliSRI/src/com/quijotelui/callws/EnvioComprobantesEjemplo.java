@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.quijoteluiclisri;
+package com.quijotelui.callws;
 
 /**
  *
  * @author jorgequiguango
  */
 
-import com.quijoteluiclisri.util.ArchivoUtils;
-import com.quijoteluiclisri.util.DirectorioEnum;
-import com.quijoteluiclisri.util.EnvioComprobantesWs;
-import com.quijoteluiclisri.util.FormGenerales;
-import com.quijoteluiclisri.util.xml.LectorXMLPath;
+import com.quijotelui.ws.util.ArchivoUtils;
+import com.quijotelui.ws.util.DirectorioEnum;
+import com.quijotelui.ws.util.EnvioComprobantesWs;
+import com.quijotelui.ws.xml.LectorXMLPath;
 
 
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 
 import javax.xml.xpath.XPathConstants;
 
-public class EnvioComprobantesView
+public class EnvioComprobantesEjemplo
 {
   private String claveAcceso = null;  
   private void moverListaArchivos(List<File> listaArchivos)
@@ -58,7 +58,7 @@ public class EnvioComprobantesView
           claveAccesoComprobante = lectorXMLPath.getClaveAcceso();
           String codDoc = lectorXMLPath.getCodDoc();
           String tipoComprobante = codDoc.substring(1);
-          respuestaSolicitudEnvio = EnvioComprobantesWs.obtenerRespuestaEnvio(archivoXMLFirmadoFile, "1002456877001", tipoComprobante, claveAccesoComprobante, FormGenerales.devuelveUrlWs(/*this.emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
+          respuestaSolicitudEnvio = EnvioComprobantesWs.obtenerRespuestaEnvio(archivoXMLFirmadoFile, "1002456877001", tipoComprobante, claveAccesoComprobante, ArchivoUtils.devuelveUrlWs(/*this.emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
           ArchivoUtils.validarRespuestaEnvio(respuestaSolicitudEnvio, archivoXMLFirmadoByte, nombreArchivo);
           System.out.println(respuestaSolicitudEnvio.getEstado() + " " +"El comprobante fue enviado, est�� pendiente de autorizaci��n");
           
@@ -70,9 +70,9 @@ public class EnvioComprobantesView
         System.out.println("Seleccione al menos un archivo - Seleccione archivos");
       }
     }
-    catch (Exception ex)
+    catch (IOException ex)
     {
-      Logger.getLogger(EnvioComprobantesView.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(EnvioComprobantesEjemplo.class.getName()).log(Level.SEVERE, null, ex);
       System.out.println("Error al tratar de enviar el comprobante hacia el SRI:");
     }
     

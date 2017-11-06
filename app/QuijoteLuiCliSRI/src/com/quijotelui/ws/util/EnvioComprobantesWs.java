@@ -1,15 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.quijoteluiclisri.util;
-
-/**
- *
- * @author jorgequiguango
- */
-
+package com.quijotelui.ws.util;
 
 import ec.gob.sri.comprobantes.ws.Comprobante;
 import ec.gob.sri.comprobantes.ws.Mensaje;
@@ -17,6 +6,7 @@ import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOffline;
 import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOfflineService;
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Level;
@@ -48,15 +38,10 @@ public class EnvioComprobantesWs
       service = new RecepcionComprobantesOfflineService(url, qname);
       return null;
     }
-    catch (MalformedURLException ex)
+    catch (MalformedURLException | WebServiceException ex)
     {
       Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, ex);
       return ex;
-    }
-    catch (WebServiceException ws)
-    {
-      Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, ws);
-      return ws;
     }
   }
   
@@ -68,7 +53,7 @@ public class EnvioComprobantesWs
       RecepcionComprobantesOffline port = service.getRecepcionComprobantesOfflinePort();
       response = port.validarComprobante(ArchivoUtils.archivoToByte(xmlFile));
     }
-    catch (Exception e)
+    catch (IOException e)
     {
       Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, e);
       response = new RespuestaSolicitud();
@@ -85,7 +70,7 @@ public class EnvioComprobantesWs
     {
       cliente = new EnvioComprobantesWs(urlWsdl);
     }
-    catch (Exception ex)
+    catch (MalformedURLException | WebServiceException ex)
     {
       Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, ex);
       respuesta.setEstado(ex.getMessage());
@@ -104,7 +89,7 @@ public class EnvioComprobantesWs
     {
       cliente = new EnvioComprobantesWs(urlWsdl);
     }
-    catch (Exception ex)
+    catch (MalformedURLException | WebServiceException ex)
     {
       Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, ex);
       respuesta.setEstado(ex.getMessage());
@@ -118,23 +103,23 @@ public class EnvioComprobantesWs
   
   public static String obtenerMensajeRespuesta(RespuestaSolicitud respuesta)
   {
-    StringBuilder mensajeDesplegable = new StringBuilder();
+    StringBuilder mensaje = new StringBuilder();
     if (respuesta.getEstado().equals("DEVUELTA") == true)
     {
       RespuestaSolicitud.Comprobantes comprobantes = respuesta.getComprobantes();
       for (Comprobante comp : comprobantes.getComprobante())
       {
-        mensajeDesplegable.append(comp.getClaveAcceso());
-        mensajeDesplegable.append("\n");
+        mensaje.append(comp.getClaveAcceso());
+        mensaje.append("\n");
         for (Mensaje m : comp.getMensajes().getMensaje())
         {
-          mensajeDesplegable.append(m.getMensaje()).append(" :\n");
-          mensajeDesplegable.append(m.getInformacionAdicional() != null ? m.getInformacionAdicional() : "");
-          mensajeDesplegable.append("\n");
+          mensaje.append(m.getMensaje()).append(" :\n");
+          mensaje.append(m.getInformacionAdicional() != null ? m.getInformacionAdicional() : "");
+          mensaje.append("\n");
         }
-        mensajeDesplegable.append("\n");
+        mensaje.append("\n");
       }
     }
-    return mensajeDesplegable.toString();
+    return mensaje.toString();
   }
 }

@@ -1,16 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.quijoteluiclisri.util.xml;
+package com.quijotelui.ws.xml;
 
-/**
- *
- * @author jorgequiguango
- */
-
-import com.quijoteluiclisri.exception.ConvertidorXMLException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,7 +29,6 @@ public class LectorXMLPath
   }
   
   private Document parseDocumento(byte[] archivoXML)
-    throws ConvertidorXMLException
   {
     try
     {
@@ -50,25 +38,16 @@ public class LectorXMLPath
       InputStream inputStream = new ByteArrayInputStream(archivoXML);
       return db.parse(new InputSource(inputStream));
     }
-    catch (SAXException ex)
+    catch (SAXException | IOException | ParserConfigurationException ex)
     {
       Logger.getLogger(LectorXPath.class.getName()).log(Level.SEVERE, null, ex);
-      throw new ConvertidorXMLException("Se produjo un error al convetir el archivo al formato XML");
+      System.out.println("Se produjo un error al convetir el archivo al formato XML");
     }
-    catch (IOException ex)
-    {
-      Logger.getLogger(LectorXPath.class.getName()).log(Level.SEVERE, null, ex);
-      throw new ConvertidorXMLException("Se produjo un error al convetir el archivo al formato XML");
-    }
-    catch (ParserConfigurationException ex)
-    {
-      Logger.getLogger(LectorXPath.class.getName()).log(Level.SEVERE, null, ex);
-      throw new ConvertidorXMLException("Se produjo un error al convetir el archivo al formato XML");
-    }
+      return null;
   }
   
   public Object obtenerValorXML(String expression)
-    throws ConvertidorXMLException
+    
   {
     try
     {
@@ -80,18 +59,18 @@ public class LectorXMLPath
     catch (XPathExpressionException ex)
     {
       Logger.getLogger(LectorXMLPath.class.getName()).log(Level.SEVERE, null, ex);
-      throw new ConvertidorXMLException("Se produjo un error al convetir el archivo al formato XML");
+      System.out.println("Se produjo un error al convetir el archivo al formato XML");
     }
+      return null;
   }
   
   public String getClaveAcceso()
-    throws ConvertidorXMLException
+    
   {
     return (String)obtenerValorXML("/*/infoTributaria/claveAcceso");
   }
   
   public String getCodDoc()
-    throws ConvertidorXMLException
   {
     return (String)obtenerValorXML("/*/infoTributaria/codDoc");
   }
