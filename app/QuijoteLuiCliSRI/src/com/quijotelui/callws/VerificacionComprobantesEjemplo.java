@@ -1,7 +1,7 @@
 package com.quijotelui.callws;
 
-import com.quijotelui.ws.define.Estado;
-import com.quijotelui.ws.dto.AutorizacionDTO;
+import com.quijotelui.ws.definicion.Estado;
+import com.quijotelui.ws.definicion.AutorizacionEstado;
 import com.quijotelui.ws.util.ArchivoUtils;
 import com.quijotelui.ws.util.AutorizacionComprobantesUtil;
 import com.quijotelui.ws.util.AutorizacionComprobantesWs;
@@ -25,7 +25,7 @@ public final class VerificacionComprobantesEjemplo
  
 
       RespuestaComprobante respuestaComprobante = null;
-      AutorizacionDTO autorizacionDTO = null;
+      AutorizacionEstado autorizacionDTO = null;
       List<File> archivosSeleccionados = new ArrayList();
       if (!archivosSeleccionados.isEmpty()) {
         for (int i = 0; i < archivosSeleccionados.size(); i++) {

@@ -5,8 +5,8 @@
  */
 package com.quijotelui.callws;
 
-import com.quijotelui.ws.define.Estado;
-import com.quijotelui.ws.dto.AutorizacionDTO;
+import com.quijotelui.ws.definicion.Estado;
+import com.quijotelui.ws.definicion.AutorizacionEstado;
 import com.quijotelui.ws.util.ArchivoUtils;
 import com.quijotelui.ws.util.AutorizacionComprobantesUtil;
 import com.quijotelui.ws.util.AutorizacionComprobantesWs;
@@ -30,7 +30,7 @@ public class MainVerifica {
     public static void main(String[] args) {
 
         RespuestaComprobante respuestaComprobante = null;
-        AutorizacionDTO autorizacionDTO = null;
+        AutorizacionEstado autorizacionDTO = null;
 
         try {
             String nombreArchivo = "0710201701100245687700110010030000012431234567812.xml";

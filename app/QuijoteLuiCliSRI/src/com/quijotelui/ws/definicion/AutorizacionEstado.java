@@ -1,21 +1,20 @@
-package com.quijotelui.ws.dto;
+package com.quijotelui.ws.definicion;
 
-import com.quijotelui.ws.define.Estado;
 import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
 
-public class AutorizacionDTO
+public class AutorizacionEstado
 {
   private Autorizacion autorizacion;
   private Estado estadoAutorizacion;
   String mensaje;
   
-  public AutorizacionDTO(Autorizacion autorizacion, Estado estadoAutorizacion)
+  public AutorizacionEstado(Autorizacion autorizacion, Estado estadoAutorizacion)
   {
     this.autorizacion = autorizacion;
     this.estadoAutorizacion = estadoAutorizacion;
   }
   
-  public AutorizacionDTO(Autorizacion autorizacion, Estado estadoAutorizacion, String mensaje)
+  public AutorizacionEstado(Autorizacion autorizacion, Estado estadoAutorizacion, String mensaje)
   {
     this.autorizacion = autorizacion;
     this.estadoAutorizacion = estadoAutorizacion;

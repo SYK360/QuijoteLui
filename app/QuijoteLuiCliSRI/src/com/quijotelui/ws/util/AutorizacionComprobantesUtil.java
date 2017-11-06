@@ -1,7 +1,7 @@
 package com.quijotelui.ws.util;
 
-import com.quijotelui.ws.define.Estado;
-import com.quijotelui.ws.dto.AutorizacionDTO;
+import com.quijotelui.ws.definicion.Estado;
+import com.quijotelui.ws.definicion.AutorizacionEstado;
 import com.quijotelui.ws.xml.XStreamAutorizacion;
 import com.thoughtworks.xstream.XStream;
 import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
@@ -24,7 +24,7 @@ public class AutorizacionComprobantesUtil {
         this.nombreArchivo = nombreArchivo;
     }
 
-    public void validarRespuestaAutorizacion(AutorizacionDTO autorizacionDTO)
+    public void validarRespuestaAutorizacion(AutorizacionEstado autorizacionDTO)
              {
         byte[] archivoRespuestaAutorizacionXML = obtenerRepuestaAutorizacionXML(autorizacionDTO.getAutorizacion());
         if (Estado.AUT.equals(autorizacionDTO.getEstadoAutorizacion())) {
@@ -48,19 +48,19 @@ public class AutorizacionComprobantesUtil {
         }
     }
 
-    public AutorizacionDTO obtenerEstadoAutorizaccion() {
+    public AutorizacionEstado obtenerEstadoAutorizaccion() {
         for (Autorizacion autorizacion : this.respuestaComprobante.getAutorizaciones().getAutorizacion()) {
             Estado estadoAutorizacion = Estado.getEstadoAutorizacion(autorizacion.getEstado());
             if (Estado.AUT.equals(estadoAutorizacion)) {
-                return new AutorizacionDTO(autorizacion, Estado.AUT);
+                return new AutorizacionEstado(autorizacion, Estado.AUT);
             }
             if (Estado.PRO.equals(estadoAutorizacion)) {
-                return new AutorizacionDTO(autorizacion, Estado.AUT);
+                return new AutorizacionEstado(autorizacion, Estado.AUT);
             }
         }
         Autorizacion autorizacion = (Autorizacion) this.respuestaComprobante.getAutorizaciones().getAutorizacion().get(0);
 
-        return new AutorizacionDTO(autorizacion, Estado.NAU, obtieneMensajesAutorizacion(autorizacion));
+        return new AutorizacionEstado(autorizacion, Estado.NAU, obtieneMensajesAutorizacion(autorizacion));
     }
 
     private void setXMLCDATA(Autorizacion autorizacion) {

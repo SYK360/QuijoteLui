@@ -1,6 +1,6 @@
 package com.quijotelui.ws.xml;
 
-import com.quijotelui.ws.define.ComprobanteXml;
+import com.quijotelui.ws.definicion.ComprobanteXml;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;

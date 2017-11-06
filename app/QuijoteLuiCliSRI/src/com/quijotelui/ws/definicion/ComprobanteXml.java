@@ -1,4 +1,4 @@
-package com.quijotelui.ws.define;
+package com.quijotelui.ws.definicion;
 
 public class ComprobanteXml
 {
