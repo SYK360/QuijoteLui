@@ -75,64 +75,57 @@ public class ArchivoUtils {
         return valor;
     }
 
-    public static void firmarEnviarAutorizar(String pathCompletoArchivoAFirmar, String nombreArchivo, String ruc, String codDoc, String claveDeAcceso, String password)
+    public static void archivoEnviarAutorizar(String nombreArchivo, String codDoc, String claveDeAcceso, String password)
             throws InterruptedException {
         RespuestaSolicitud respuestaRecepcion = new RespuestaSolicitud();
-        String respuestaFirma = null;
-        String respAutorizacion = null;
         try {
             String dirFirmados = "/firmados";
             String dirEnviados = "/enviados";
 
-            if (respuestaFirma == null) {
-                new File(pathCompletoArchivoAFirmar).delete();
+            File archivoFirmado = new File(dirFirmados + File.separator + nombreArchivo);
 
-                File archivoFirmado = new File(dirFirmados + File.separator + nombreArchivo);
-
-                respuestaRecepcion = EnvioComprobantesWs.obtenerRespuestaEnvio1(archivoFirmado, ruc, codDoc, claveDeAcceso, devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
-                if (respuestaRecepcion.getEstado().equals("RECIBIDA")) {
-                    System.out.println("El comprobante fue enviado, está pendiente de autorización");
-                    File enviados = new File(dirEnviados);
-                    if (!enviados.exists()) {
-                        new File(dirEnviados).mkdir();
-                    }
-                    if (!copiarArchivo(archivoFirmado, enviados.getPath() + File.separator + nombreArchivo)) {
-                        System.out.println("Error al mover archivo a carpeta enviados");
-                    } else {
-//            VisualizacionRideUtil.decodeArchivoSinAutorizacion(dirEnviados + File.separator + nombreArchivo, claveDeAcceso, null, codDoc);
-                        archivoFirmado.delete();
-                    }
-                } else if (respuestaRecepcion.getEstado().equals("DEVUELTA")) {
-                    String dirRechazados = dirFirmados + File.separator + "rechazados";
-                    String resultado = insertarCaracteres(EnvioComprobantesWs.obtenerMensajeRespuesta(respuestaRecepcion), "\n", 160);
-
-                    File rechazados = new File(dirRechazados);
-                    if (!rechazados.exists()) {
-                        new File(dirRechazados).mkdir();
-                    }
-                    if (!copiarArchivo(archivoFirmado, rechazados.getPath() + File.separator + nombreArchivo)) {
-                        System.out.println("Error al mover archivo a carpeta rechazados");
-                    } else {
-                        archivoFirmado.delete();
-                    }
-                    System.out.println("Error al tratar de enviar el comprobante hacia el SRI:\n" + resultado + "Se ha producido un error ");
+            respuestaRecepcion = EnvioComprobantesWs.obtenerRespuestaEnvio1(archivoFirmado, codDoc, devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
+            if (respuestaRecepcion.getEstado().equals("RECIBIDA")) {
+                System.out.println("El comprobante fue enviado, está pendiente de autorización");
+                File enviados = new File(dirEnviados);
+                if (!enviados.exists()) {
+                    new File(dirEnviados).mkdir();
                 }
-            } else {
-                System.out.println("Error al tratar de firmar digitalmente el archivo:\n" + respuestaFirma + "Se ha producido un error ");
+                if (!copiarArchivo(archivoFirmado, enviados.getPath() + File.separator + nombreArchivo)) {
+                    System.out.println("Error al mover archivo a carpeta enviados");
+                } else {
+//            VisualizacionRideUtil.decodeArchivoSinAutorizacion(dirEnviados + File.separator + nombreArchivo, claveDeAcceso, null, codDoc);
+                    archivoFirmado.delete();
+                }
+            } else if (respuestaRecepcion.getEstado().equals("DEVUELTA")) {
+                String dirRechazados = dirFirmados + File.separator + "rechazados";
+                String resultado = insertarCaracteres(EnvioComprobantesWs.obtenerMensajeRespuesta(respuestaRecepcion), "\n", 160);
+
+                File rechazados = new File(dirRechazados);
+                if (!rechazados.exists()) {
+                    new File(dirRechazados).mkdir();
+                }
+                if (!copiarArchivo(archivoFirmado, rechazados.getPath() + File.separator + nombreArchivo)) {
+                    System.out.println("Error al mover archivo a carpeta rechazados");
+                } else {
+                    archivoFirmado.delete();
+                }
+                System.out.println("Error al intentar enviar el comprobante al Web Service del SRI:\n" + resultado);
             }
+
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public static RespuestaSolicitud enviarComprobante(byte[] archivoFirmado, String dirFirmados, String ruc, String codDoc, String claveDeAcceso)
+    public static RespuestaSolicitud enviarComprobante(byte[] archivoFirmado, String dirFirmados, String codDoc, String claveDeAcceso)
             throws InterruptedException {
         RespuestaSolicitud respuestaSolicitudEnvio = new RespuestaSolicitud();
         return respuestaSolicitudEnvio;
     }
 
-    public static RespuestaSolicitud enviar(File archivoFirmado, String ruc, String codDoc, String claveDeAcceso) {
-        return EnvioComprobantesWs.obtenerRespuestaEnvio(archivoFirmado, ruc, codDoc, claveDeAcceso, devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
+    public static RespuestaSolicitud enviar(File archivoFirmado, String codDoc, String claveDeAcceso) {
+        return EnvioComprobantesWs.obtenerRespuestaEnvio(archivoFirmado, devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
     }
 
     public static void validarRespuestaEnvio(RespuestaSolicitud respuestaSolicitudEnvio, byte[] archivoFirmado, String nombreArchivo) {

@@ -54,16 +54,13 @@ public class EnvioComprobantesEjemplo
           String claveAccesoComprobante = "";
           File archivoXMLFirmadoFile = (File)archivosSeleccionados.get(i);
           byte[] archivoXMLFirmadoByte = ArchivoUtils.archivoToByte((File)archivosSeleccionados.get(i));
-          LectorXMLPath lectorXMLPath = new LectorXMLPath(ArchivoUtils.archivoToByte((File)archivosSeleccionados.get(i)), XPathConstants.STRING);
-          claveAccesoComprobante = lectorXMLPath.getClaveAcceso();
-          String codDoc = lectorXMLPath.getCodDoc();
-          String tipoComprobante = codDoc.substring(1);
-          respuestaSolicitudEnvio = EnvioComprobantesWs.obtenerRespuestaEnvio(archivoXMLFirmadoFile, "1002456877001", tipoComprobante, claveAccesoComprobante, ArchivoUtils.devuelveUrlWs(/*this.emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
+
+          respuestaSolicitudEnvio = EnvioComprobantesWs.obtenerRespuestaEnvio(archivoXMLFirmadoFile, ArchivoUtils.devuelveUrlWs(/*this.emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
           ArchivoUtils.validarRespuestaEnvio(respuestaSolicitudEnvio, archivoXMLFirmadoByte, nombreArchivo);
-          System.out.println(respuestaSolicitudEnvio.getEstado() + " " +"El comprobante fue enviado, est�� pendiente de autorizaci��n");
+          System.out.println(respuestaSolicitudEnvio.getEstado() + " " +"Comprobante enviado y pendiente de autorizar");
           
         }
-        System.out.println("Ha finalizado envio de archivos.\nRevisar tabla con resultados individuales ");
+        System.out.println("Ha finalizado envio de archivos.");
       }
       else
       {

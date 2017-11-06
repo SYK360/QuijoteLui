@@ -24,8 +24,7 @@ public class AutorizacionComprobantesUtil {
         this.nombreArchivo = nombreArchivo;
     }
 
-    public void validarRespuestaAutorizacion(AutorizacionEstado autorizacionDTO)
-             {
+    public void validarRespuestaAutorizacion(AutorizacionEstado autorizacionDTO) {
         byte[] archivoRespuestaAutorizacionXML = obtenerRepuestaAutorizacionXML(autorizacionDTO.getAutorizacion());
         if (Estado.AUT.equals(autorizacionDTO.getEstadoAutorizacion())) {
             try {
@@ -37,7 +36,7 @@ public class AutorizacionComprobantesUtil {
             if (Estado.NAU.equals(autorizacionDTO.getEstadoAutorizacion())) {
                 try {
                     ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, DirectorioEnum.NO_AUTORIZADOS);
-                    System.out.println("Error al validar el comprobante estado "+ autorizacionDTO.getEstadoAutorizacion().getDescripcion()+ autorizacionDTO.getMensaje());
+                    System.out.println("Error al validar el comprobante estado " + autorizacionDTO.getEstadoAutorizacion().getDescripcion() + autorizacionDTO.getMensaje());
                 } catch (Exception ex) {
                     Logger.getLogger(AutorizacionComprobantesUtil.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -67,25 +66,20 @@ public class AutorizacionComprobantesUtil {
         autorizacion.setComprobante("<![CDATA[" + autorizacion.getComprobante() + "]]>");
     }
 
-  private byte[] obtenerRepuestaAutorizacionXML(Autorizacion autorizacion)
-    
-  {
-    try
-    {
-      XStream xstream = XStreamAutorizacion.getRespuestaXStream();
-      ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-      Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
-      setXMLCDATA(autorizacion);
-      writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-      xstream.toXML(autorizacion, writer);
-      return outputStream.toByteArray();
-    }
-    catch (IOException ex)
-    {
-      System.out.println("Se produjo un error al convetir el archivo al formato XML"+ ex.getMessage());
-    }
+    private byte[] obtenerRepuestaAutorizacionXML(Autorizacion autorizacion) {
+        try {
+            XStream xstream = XStreamAutorizacion.getRespuestaXStream();
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
+            setXMLCDATA(autorizacion);
+            writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+            xstream.toXML(autorizacion, writer);
+            return outputStream.toByteArray();
+        } catch (IOException ex) {
+            System.out.println("Se produjo un error al convetir el archivo al formato XML" + ex.getMessage());
+        }
         return null;
-  }
+    }
 
     public static String obtieneMensajesAutorizacion(Autorizacion autorizacion) {
         StringBuilder mensaje = new StringBuilder();

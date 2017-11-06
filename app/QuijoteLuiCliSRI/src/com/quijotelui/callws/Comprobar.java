@@ -11,4 +11,28 @@ package com.quijotelui.callws;
  */
 public class Comprobar {
     
+    String archivoEnviado;
+    String destinoAutorizado;
+    String destinoNoAutorizado;
+    String direccionWebService;
+
+    public Comprobar(String archivoEnviado, String destinoAutorizado, String destinoNoAutorizado, String direccionWebService) {
+        this.archivoEnviado = archivoEnviado;
+        this.destinoAutorizado = destinoAutorizado;
+        this.destinoNoAutorizado = destinoNoAutorizado;
+        /*
+        *Web Service de Pruevas
+        *Recepción
+        *https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl
+        *
+        *Autorización
+        *https://celcer.sri.gob.ec/comprobantes-electronicos-ws/AutorizacionComprobantesOffline?wsdl
+        */
+        this.direccionWebService = direccionWebService;
+    }
+    
+    public void executeComprobar() {
+        
+    }
+    
 }
