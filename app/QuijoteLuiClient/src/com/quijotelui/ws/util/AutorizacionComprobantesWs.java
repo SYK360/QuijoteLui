@@ -101,8 +101,8 @@ public class AutorizacionComprobantesWs {
         return mensaje.toString();
     }
 
-    public static RespuestaComprobante autorizarComprobante(String claveDeAcceso, String tipoAmbiente) {
-        return new AutorizacionComprobantesWs(ArchivoUtils.devuelveUrlWs(tipoAmbiente, "AutorizacionComprobantesOffline")).llamadaWSAutorizacionInd(claveDeAcceso);
+    public static RespuestaComprobante autorizarComprobante(String claveDeAcceso, String direccionWS) {
+        return new AutorizacionComprobantesWs(direccionWS).llamadaWSAutorizacionInd(claveDeAcceso);
     }
 
     public static String obtieneMensajesAutorizacion(Autorizacion autorizacion) {
