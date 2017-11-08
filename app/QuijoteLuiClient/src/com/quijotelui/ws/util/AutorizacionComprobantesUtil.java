@@ -25,12 +25,12 @@ public class AutorizacionComprobantesUtil {
         this.nombreArchivo = nombreArchivo;
     }
 
-    public File validarRespuestaAutorizacion(AutorizacionEstado autorizacionDTO, String directorioAutorizado, String directorioNoAutorizado) {
+    public File validarRespuestaAutorizacion(AutorizacionEstado autorizacionEstado, String directorioAutorizado, String directorioNoAutorizado) {
         
         File archivoRespuesta = null;
         
-        byte[] archivoRespuestaAutorizacionXML = obtenerRepuestaAutorizacionXML(autorizacionDTO.getAutorizacion());
-        if (Estado.AUT.equals(autorizacionDTO.getEstadoAutorizacion())) {
+        byte[] archivoRespuestaAutorizacionXML = obtenerRepuestaAutorizacionXML(autorizacionEstado.getAutorizacion());
+        if (Estado.AUTORIZADO.equals(autorizacionEstado.getEstadoAutorizacion())) {
             try {
                 //Autorizado
                 archivoRespuesta = ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, directorioAutorizado);
@@ -38,17 +38,17 @@ public class AutorizacionComprobantesUtil {
                 Logger.getLogger(AutorizacionComprobantesUtil.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            if (Estado.NAU.equals(autorizacionDTO.getEstadoAutorizacion())) {
+            if (Estado.NO_AUTORIZADO.equals(autorizacionEstado.getEstadoAutorizacion())) {
                 try {
                     //No Autorizado
                     archivoRespuesta = ArchivoUtils.crearArchivo(archivoRespuestaAutorizacionXML, this.nombreArchivo, directorioNoAutorizado);
-                    System.out.println("Error al validar el comprobante estado " + autorizacionDTO.getEstadoAutorizacion().getDescripcion() + autorizacionDTO.getMensaje());
+                    System.out.println("Error al validar el comprobante estado " + autorizacionEstado.getEstadoAutorizacion().getDescripcion() + autorizacionEstado.getMensaje());
                 } catch (Exception ex) {
                     Logger.getLogger(AutorizacionComprobantesUtil.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if (Estado.PRO.equals(autorizacionDTO.getEstadoAutorizacion())) {
-                System.out.println("Error al validar el comprobante estado : " + autorizacionDTO.getEstadoAutorizacion().getDescripcion());
+            if (Estado.PROCESADO.equals(autorizacionEstado.getEstadoAutorizacion())) {
+                System.out.println("Error al validar el comprobante estado : " + autorizacionEstado.getEstadoAutorizacion().getDescripcion());
             }
         }
         return archivoRespuesta;
@@ -57,16 +57,16 @@ public class AutorizacionComprobantesUtil {
     public AutorizacionEstado obtenerEstadoAutorizaccion() {
         for (Autorizacion autorizacion : this.respuestaComprobante.getAutorizaciones().getAutorizacion()) {
             Estado estadoAutorizacion = Estado.getEstadoAutorizacion(autorizacion.getEstado());
-            if (Estado.AUT.equals(estadoAutorizacion)) {
-                return new AutorizacionEstado(autorizacion, Estado.AUT);
+            if (Estado.AUTORIZADO.equals(estadoAutorizacion)) {
+                return new AutorizacionEstado(autorizacion, Estado.AUTORIZADO);
             }
-            if (Estado.PRO.equals(estadoAutorizacion)) {
-                return new AutorizacionEstado(autorizacion, Estado.AUT);
+            if (Estado.PROCESADO.equals(estadoAutorizacion)) {
+                return new AutorizacionEstado(autorizacion, Estado.AUTORIZADO);
             }
         }
         Autorizacion autorizacion = (Autorizacion) this.respuestaComprobante.getAutorizaciones().getAutorizacion().get(0);
 
-        return new AutorizacionEstado(autorizacion, Estado.NAU, obtieneMensajesAutorizacion(autorizacion));
+        return new AutorizacionEstado(autorizacion, Estado.NO_AUTORIZADO, obtieneMensajesAutorizacion(autorizacion));
     }
 
     private void setXMLCDATA(Autorizacion autorizacion) {

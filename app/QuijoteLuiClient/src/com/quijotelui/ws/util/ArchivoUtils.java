@@ -128,16 +128,16 @@ public class ArchivoUtils {
         return EnvioComprobantesWs.obtenerRespuestaEnvio(archivoFirmado, devuelveUrlWs(/*emisor.getTipoAmbiente()*/"1", "RecepcionComprobantesOffline"));
     }
 
-    public static void validarRespuestaEnvio(RespuestaSolicitud respuestaSolicitudEnvio, byte[] archivoFirmado, String nombreArchivo) {
+    public static void validarRespuestaEnvio(RespuestaSolicitud respuestaSolicitudEnvio, byte[] archivoFirmado, String nombreArchivo, String directorioDestino, String directorioRechazado) {
         if (respuestaSolicitudEnvio.getEstado().equals("RECIBIDA")) {
             try {
-                crearArchivo(archivoFirmado, nombreArchivo, DirectorioEnum.ENVIADOS.toString());
+                crearArchivo(archivoFirmado, nombreArchivo, directorioDestino);
             } catch (Exception ex) {
                 Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (respuestaSolicitudEnvio.getEstado().equals("DEVUELTA")) {
             byte[] archivoRespuesta = addMotivosRechazo(respuestaSolicitudEnvio, archivoFirmado);
-            crearArchivoDirectorioRechazados(archivoRespuesta, nombreArchivo);
+            crearArchivoDirectorioRechazados(archivoRespuesta, nombreArchivo, directorioRechazado);
             System.out.println("Error al enviar el comprobante estado :  \nRevisar la carpeta de rechazados " + respuestaSolicitudEnvio.getEstado());
         }
     }
@@ -250,16 +250,6 @@ public class ArchivoUtils {
         return false;
     }
 
-    public static boolean copiarArchivo(File archivoOrigen, DirectorioEnum directorioEnum) {
-        try {
-            File directorioDestino = new File("/tmp");
-            return copiarArchivo(archivoOrigen, directorioDestino);
-        } catch (Exception ex) {
-            Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;
-    }
-
     public static boolean copiarArchivo(File archivoOrigen, File directorioDestino) {
         InputStream inStream = null;
         OutputStream outStream = null;
@@ -300,10 +290,10 @@ public class ArchivoUtils {
         return null;
     }
 
-    public static void crearArchivoDirectorioRechazados(byte[] archivo, String nombreArchivo) {
+    public static void crearArchivoDirectorioRechazados(byte[] archivo, String nombreArchivo, String directorio) {
         try {
 
-            File directorioDestino = new File("/data/work/tmp/facturacionelectronica/NoAutorizados");
+            File directorioDestino = new File(directorio);
             String rutaDirectorioRechazados = directorioDestino + File.separator;
             File directorioRechazados = new File(rutaDirectorioRechazados);
             if (!directorioRechazados.exists()) {

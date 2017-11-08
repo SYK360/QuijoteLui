@@ -12,11 +12,13 @@ public class Enviar {
 
     String archivoFirmado;
     String destinoEnviado;
+    String destinoRechazado;
     String direccionWebService;
 
-    public Enviar(String archivoFirmado, String destinoEnviado, String direccionWebService) {
+    public Enviar(String archivoFirmado, String destinoEnviado, String destinoRechazado, String direccionWebService) {
         this.archivoFirmado = archivoFirmado;
         this.destinoEnviado = destinoEnviado;
+        this.destinoRechazado = destinoRechazado;
         /*
         *Web Service de Pruevas
         *Recepción
@@ -39,7 +41,7 @@ public class Enviar {
             byte[] archivoXMLFirmadoByte = ArchivoUtils.archivoToByte(archivoXMLFirmadoFile);
 
             respuestaSolicitudEnvio = EnvioComprobantesWs.obtenerRespuestaEnvio(archivoXMLFirmadoFile, this.direccionWebService);
-            ArchivoUtils.validarRespuestaEnvio(respuestaSolicitudEnvio, archivoXMLFirmadoByte, nombreArchivo);
+            ArchivoUtils.validarRespuestaEnvio(respuestaSolicitudEnvio, archivoXMLFirmadoByte, nombreArchivo, this.destinoEnviado, this.destinoRechazado);
             System.out.println(respuestaSolicitudEnvio.getEstado() + " " + "El comprobante fue enviado, está pendiente de autorización");
             
             return respuestaSolicitudEnvio;

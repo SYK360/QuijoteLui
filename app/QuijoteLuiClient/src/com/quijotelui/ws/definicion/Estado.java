@@ -1,7 +1,7 @@
 package com.quijotelui.ws.definicion;
 
 public enum Estado {
-    AUT("AUTORIZADO"), NAU("NO AUTORIZADO"), PRO("EN PROCESO"), NPR("NO PROCESADO");
+    AUTORIZADO("AUTORIZADO"), NO_AUTORIZADO("NO AUTORIZADO"), PROCESADO("EN PROCESO"), NO_PROCESADO("NO PROCESADO");
 
     private String descripcion;
 

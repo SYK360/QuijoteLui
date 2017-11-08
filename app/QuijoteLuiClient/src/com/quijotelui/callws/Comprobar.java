@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.quijotelui.callws;
 
 import com.quijotelui.ws.definicion.AutorizacionEstado;
@@ -44,7 +39,7 @@ public class Comprobar {
         this.direccionWebService = direccionWebService;
     }
     
-    public void executeComprobar() {
+    public AutorizacionEstado executeComprobar() {
          RespuestaComprobante respuestaComprobante = null;
         AutorizacionEstado autorizacionEstado = null;
 
@@ -70,10 +65,10 @@ public class Comprobar {
                                 this.destinoNoAutorizado);
                         System.out.println(nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + autorizacionEstado.getEstadoAutorizacion().getDescripcion());
                     } else {
-                        System.out.println(nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + Estado.NPR.getDescripcion() + "El archivo no tiene autorizaciones relacionadas");
+                        System.out.println(nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + Estado.NO_PROCESADO.getDescripcion() + "El archivo no tiene autorizaciones relacionadas");
                     }
                 } catch (Exception ex) {
-                    if (Estado.NAU.equals(autorizacionEstado.getEstadoAutorizacion())) {
+                    if (Estado.NO_AUTORIZADO.equals(autorizacionEstado.getEstadoAutorizacion())) {
                         System.out.println("El comprobante no está Autorizado");
                     }
                     System.out.println( nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + autorizacionEstado.getEstadoAutorizacion().getDescripcion() + ex.getMessage());
@@ -85,6 +80,7 @@ public class Comprobar {
         } catch (IOException ex) {
             Logger.getLogger(Comprobar.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return autorizacionEstado;
         
     }
     

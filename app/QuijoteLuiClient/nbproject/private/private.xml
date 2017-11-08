@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/ws/definicion/AutorizacionEstado.java</file>
+            <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/callws/Enviar.java</file>
+            <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/callws/Comprobar.java</file>
+            <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/callws/Main.java</file>
+            <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/ws/definicion/Estado.java</file>
+            <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/ws/util/AutorizacionComprobantesUtil.java</file>
+        </group>
     </open-files>
 </project-private>
