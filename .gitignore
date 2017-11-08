@@ -25,3 +25,5 @@ hs_err_pid*
 /app/QuijoteluiXStream/dist/
 /app/QuijoteLuiCliSRI_back/build/
 /app/QuijoteLuiCliSRI_back/nbproject/private/
+/app/QuijoteLuiImprime/nbproject/private/
+/app/QuijoteLuiPrinter/nbproject/private/
