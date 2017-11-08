@@ -70,4 +70,15 @@
     nbproject/build-impl.xml file. 
 
     -->
+      <target name="-post-jar">
+        <jar jarfile="dist/QuijoteLuiPrinter-1.0.jar">
+            <zipfileset src="${dist.jar}" excludes="META-INF/*"/>
+            
+            <zipfileset src="lib/jasperreports-4.6.0.jar" excludes="META-INF/*"/>
+            
+            <manifest>
+                <attribute name="Main-Class" value="quijoteluiprinter.Main"/>
+            </manifest>
+        </jar>
+    </target>
 </project>

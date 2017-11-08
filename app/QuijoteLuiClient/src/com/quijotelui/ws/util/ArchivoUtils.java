@@ -131,7 +131,7 @@ public class ArchivoUtils {
     public static void validarRespuestaEnvio(RespuestaSolicitud respuestaSolicitudEnvio, byte[] archivoFirmado, String nombreArchivo) {
         if (respuestaSolicitudEnvio.getEstado().equals("RECIBIDA")) {
             try {
-                crearArchivo(archivoFirmado, nombreArchivo, DirectorioEnum.ENVIADOS);
+                crearArchivo(archivoFirmado, nombreArchivo, DirectorioEnum.ENVIADOS.toString());
             } catch (Exception ex) {
                 Logger.getLogger(ArchivoUtils.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -283,10 +283,10 @@ public class ArchivoUtils {
         return false;
     }
 
-    public static File crearArchivo(byte[] archivo, String nombreArchivo, DirectorioEnum directorioEnum) {
+    public static File crearArchivo(byte[] archivo, String nombreArchivo, String directorio) {
         try {
 
-            File directorioDestino = new File("/tmp");
+            File directorioDestino = new File(directorio);
             String rutaArchivoDestino = directorioDestino + File.separator + nombreArchivo;
             File archivoDestino = new File(rutaArchivoDestino);
             FileOutputStream fileOutputStream = new FileOutputStream(archivoDestino);
@@ -295,7 +295,7 @@ public class ArchivoUtils {
             return archivoDestino;
         } catch (IOException ex) {
             LOG.error(ex);
-            System.out.println("Error al mover el archivo al directorio: " + directorioEnum.toString());
+            System.out.println("Error al mover el archivo al directorio: " + directorio);
         }
         return null;
     }

@@ -65,7 +65,9 @@ public class Comprobar {
                     if (!respuestaComprobante.getAutorizaciones().getAutorizacion().isEmpty()) {
                         AutorizacionComprobantesUtil autorizacionComprobantesUtil = new AutorizacionComprobantesUtil(respuestaComprobante, nombreArchivo);
                         autorizacionEstado = autorizacionComprobantesUtil.obtenerEstadoAutorizaccion();
-                        autorizacionComprobantesUtil.validarRespuestaAutorizacion(autorizacionEstado);
+                        autorizacionComprobantesUtil.validarRespuestaAutorizacion(autorizacionEstado, 
+                                this.destinoAutorizado, 
+                                this.destinoNoAutorizado);
                         System.out.println(nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + autorizacionEstado.getEstadoAutorizacion().getDescripcion());
                     } else {
                         System.out.println(nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + Estado.NPR.getDescripcion() + "El archivo no tiene autorizaciones relacionadas");
@@ -81,7 +83,7 @@ public class Comprobar {
                 System.out.println("Error al tratar de enviar el comprobante hacia el SRI: Se ha producido un error ");
             }
         } catch (IOException ex) {
-            Logger.getLogger(VerificacionComprobantesEjemplo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Comprobar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

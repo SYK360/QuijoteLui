@@ -45,7 +45,7 @@ public class Enviar {
             return respuestaSolicitudEnvio;
 
         } catch (IOException ex) {
-            Logger.getLogger(MainEnvio.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Enviar.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
