@@ -5,15 +5,7 @@
  */
 package com.quijotelui.callws;
 
-import com.quijotelui.ws.util.ArchivoUtils;
-import com.quijotelui.ws.util.EnvioComprobantesWs;
-import com.quijotelui.ws.xml.LectorXMLPath;
-import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.xpath.XPathConstants;
 
 /**
  *
@@ -25,11 +17,11 @@ public class MainEnvio {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-          File archivoXMLFirmadoFile = new File("/data/work/tmp/facturacionelectronica/Firmados/"
-                    + "0710201701100245687700110010030000012431234567812.xml");
-          
-          System.out.println(archivoXMLFirmadoFile.getName());
-            String nombreArchivo = "0710201701100245687700110010030000012431234567812.xml";
+          Enviar enviar = new Enviar("/data/work/tmp/facturacionelectronica/Firmados/"
+                  + "1010201701100197312000110010030000012461234567817.xml", 
+                  "/tmp", 
+                  "https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl");
+          enviar.executeEnviar();
 
     }
 
