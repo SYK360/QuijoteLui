@@ -24,16 +24,22 @@ public class Main {
 
     static void imprimirNotaCreditoPDF() {
         NotaCreditoPDF pdf = new NotaCreditoPDF("/data/startup/quijotelu/Notas de Crédito Emitidas/Febrero2015/Disme/ele.xml");
-        pdf.genera("0203201512343510024568770013312187486", "02/03/2015 12:34:35.749");
+        pdf.genera("0203201512343510024568770013312187486", 
+                "02/03/2015 12:34:35.749",
+                "urlLogo");
     }
 
     static void imprimirFacturaPDF() {
-        FacturaPDF pdf = new FacturaPDF("/data/work/tmp/facturacionelectronica/Enviados/0710201701100245687700110010030000012431234567812.xml");
-        pdf.genera("0710201701100245687700110010030000012431234567812", "01/01/0001 00:00:00");
+        FacturaPDF pdf = new FacturaPDF("/app/Quijotelui/comprobante/generado/"
+                + "1010201701100197312000110010030000012461234567817.xml");
+        
+        pdf.genera("1010201701100197312000110010030000012461234567817", 
+                "01/01/0001 00:00:00",
+                "urlLogo");
     }
 
     static void imprimirGuiaRemisionPDF() {
         GuiaRemisionPDF pdf = new GuiaRemisionPDF("D:\\app\\quijotelu\\generado\\0409201506100245687700110010020000001211234567813.xml");
-        pdf.genera("", "");
+        pdf.genera("", "","urlLogo");
     }
 }

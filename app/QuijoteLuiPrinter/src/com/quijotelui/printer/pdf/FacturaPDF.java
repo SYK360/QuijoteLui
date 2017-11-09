@@ -58,11 +58,11 @@ public class FacturaPDF {
         this.rutaArchivo = RutaArchivo;
     }
 
-    public void genera(String numeroAutorizacion, String fechaAutorizacion) {
+    public void genera(String numeroAutorizacion, String fechaAutorizacion, String urlLogoJpeg) {
         Factura f = xmlToObject();
 
         FacturaReporte fr = new FacturaReporte(f);
-        generarReporte(fr, numeroAutorizacion, fechaAutorizacion);
+        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, urlLogoJpeg);
         xmlToObject();
     }
 
@@ -83,14 +83,14 @@ public class FacturaPDF {
 
     }
 
-    private void generarReporte(FacturaReporte xml, String numAut, String fechaAut) {
+    private void generarReporte(FacturaReporte xml, String numAut, String fechaAut, String urlLogoJpeg) {
 
-        generarReporte("./resources/reportes/factura.jasper", xml, numAut, fechaAut);
+        generarReporte("./resources/reportes/factura.jasper", xml, numAut, fechaAut, urlLogoJpeg);
 
     }
 
-    private void generarReporte(String urlReporte, FacturaReporte fact, String numAut, String fechaAut) {
-        Parametros p = new Parametros();
+    private void generarReporte(String urlReporte, FacturaReporte fact, String numAut, String fechaAut, String urlLogoJpeg) {
+        Parametros p = new Parametros(urlLogoJpeg);
         FileInputStream is = null;
         try {
             JRDataSource dataSource = new JRBeanCollectionDataSource(fact.getDetallesAdiciones());

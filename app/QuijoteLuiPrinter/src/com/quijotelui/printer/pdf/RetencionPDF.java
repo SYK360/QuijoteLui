@@ -53,11 +53,11 @@ public class RetencionPDF {
         this.rutaArchivo = RutaArchivo;
     }
 
-    public void genera(String numeroAutorizacion, String fechaAutorizacion) {
+    public void genera(String numeroAutorizacion, String fechaAutorizacion, String urlLogoJpeg) {
         ComprobanteRetencion f = xmlToObject();
 
         ComprobanteRetencionReporte fr = new ComprobanteRetencionReporte(f);
-        generarReporte(fr, numeroAutorizacion, fechaAutorizacion);
+        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, urlLogoJpeg);
         xmlToObject();
     }
 
@@ -78,14 +78,14 @@ public class RetencionPDF {
 
     }
 
-    public void generarReporte(ComprobanteRetencionReporte xml, String numAut, String fechaAut) {
+    public void generarReporte(ComprobanteRetencionReporte xml, String numAut, String fechaAut, String urlLogoJpeg) {
 
-        generarReporte("./resources/reportes/comprobanteRetencion.jasper", xml, numAut, fechaAut);
+        generarReporte("./resources/reportes/comprobanteRetencion.jasper", xml, numAut, fechaAut, urlLogoJpeg);
     }
 
-    public void generarReporte(String urlReporte, ComprobanteRetencionReporte rep, String numAut, String fechaAut) {
+    public void generarReporte(String urlReporte, ComprobanteRetencionReporte rep, String numAut, String fechaAut, String urlLogoJpeg) {
         FileInputStream is = null;
-        Parametros p = new Parametros();
+        Parametros p = new Parametros(urlLogoJpeg);
         try {
             JRDataSource dataSource = new JRBeanCollectionDataSource(rep.getDetallesAdiciones());
             is = new FileInputStream(urlReporte);

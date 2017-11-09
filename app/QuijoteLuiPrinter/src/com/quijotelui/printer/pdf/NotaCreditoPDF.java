@@ -60,11 +60,11 @@ public class NotaCreditoPDF {
         this.rutaArchivo = rutaArchivo;
     }
 
-    public void genera(String numeroAutorizacion, String fechaAutorizacion) {
+    public void genera(String numeroAutorizacion, String fechaAutorizacion, String urlLogoJpeg) {
         NotaCredito nc = xmlToObject();
 
         NotaCreditoReporte fr = new NotaCreditoReporte(nc);
-        generarReporte(fr, numeroAutorizacion, fechaAutorizacion);
+        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, urlLogoJpeg);
         xmlToObject();
     }
 
@@ -85,14 +85,14 @@ public class NotaCreditoPDF {
 
     }
 
-    public void generarReporte(NotaCreditoReporte xml, String numAut, String fechaAut) {
+    public void generarReporte(NotaCreditoReporte xml, String numAut, String fechaAut, String urlLogoJpeg) {
 
-        generarReporte("./resources/reportes/notaCredito.jasper", xml, numAut, fechaAut);
+        generarReporte("./resources/reportes/notaCredito.jasper", xml, numAut, fechaAut, urlLogoJpeg);
     }
 
-    public void generarReporte(String urlReporte, NotaCreditoReporte rep, String numAut, String fechaAut) {
+    public void generarReporte(String urlReporte, NotaCreditoReporte rep, String numAut, String fechaAut, String urlLogoJpeg) {
         FileInputStream is = null;
-        Parametros p = new Parametros();
+        Parametros p = new Parametros(urlLogoJpeg);
         try {
             JRDataSource dataSource = new JRBeanCollectionDataSource(rep.getDetallesAdiciones());
             is = new FileInputStream(urlReporte);

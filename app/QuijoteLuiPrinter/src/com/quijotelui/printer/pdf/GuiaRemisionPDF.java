@@ -55,11 +55,11 @@ public class GuiaRemisionPDF {
         this.rutaArchivo = rutaArchivo;
     }
 
-    public void genera(String numeroAutorizacion, String fechaAutorizacion) {
+    public void genera(String numeroAutorizacion, String fechaAutorizacion, String urlLogoJpeg) {
         GuiaRemision f = xmlToObject();
 
         GuiaRemisionReporte fr = new GuiaRemisionReporte(f);
-        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, f);
+        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, f, urlLogoJpeg);
         //xmlToObject();
     }
 
@@ -80,14 +80,14 @@ public class GuiaRemisionPDF {
 
     }
 
-    public void generarReporte(GuiaRemisionReporte xml, String numAut, String fechaAut, GuiaRemision gr) {        
-        generarReporte("./resources/reportes/guiaRemisionFinal.jasper", xml, numAut, fechaAut, gr);
+    public void generarReporte(GuiaRemisionReporte xml, String numAut, String fechaAut, GuiaRemision gr, String urlLogoJpeg) {        
+        generarReporte("./resources/reportes/guiaRemisionFinal.jasper", xml, numAut, fechaAut, gr, urlLogoJpeg);
 
     }
 
-    public void generarReporte(String urlReporte, GuiaRemisionReporte rep, String numAut, String fechaAut, GuiaRemision guiaRemision) {
+    public void generarReporte(String urlReporte, GuiaRemisionReporte rep, String numAut, String fechaAut, GuiaRemision guiaRemision, String urlLogoJpeg) {
         FileInputStream is = null;
-        Parametros p = new Parametros();
+        Parametros p = new Parametros(urlLogoJpeg);
         try {
             JRDataSource dataSource = new JRBeanCollectionDataSource(rep.getGuiaRemisionList());
             is = new FileInputStream(urlReporte);

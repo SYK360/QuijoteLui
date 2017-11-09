@@ -29,6 +29,17 @@ import java.util.logging.Logger;
  * @author jorjoluiso
  */
 public class Parametros {
+    
+    String direccionLogoJpeg;
+
+    public Parametros(String direccionLogoJpeg) {
+        /*
+        Ejemplo:
+        resources/images/logo.jpeg
+        */
+        this.direccionLogoJpeg = direccionLogoJpeg;
+    }
+    
 
     public Map<String, Object> obtenerParametrosInfoTriobutaria(InfoTributaria infoTributaria, String numAut, String fechaAut) {
         Map param = new HashMap();
@@ -37,7 +48,7 @@ public class Parametros {
         param.put("RAZON_SOCIAL", infoTributaria.getRazonSocial());
         param.put("DIR_MATRIZ", infoTributaria.getDirMatriz());
         try {
-            param.put("LOGO", new FileInputStream("resources/images/logo.jpeg"));
+            param.put("LOGO", new FileInputStream(this.direccionLogoJpeg));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Parametros.class.getName()).log(Level.SEVERE, null, ex);
         }
