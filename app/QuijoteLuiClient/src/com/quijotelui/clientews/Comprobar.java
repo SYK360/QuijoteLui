@@ -6,6 +6,7 @@ import com.quijotelui.ws.util.ArchivoUtils;
 import com.quijotelui.ws.util.AutorizacionComprobantesUtil;
 import com.quijotelui.ws.util.AutorizacionComprobantesWs;
 import com.quijotelui.ws.xml.LectorXMLPath;
+import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
 import ec.gob.sri.comprobantes.ws.aut.RespuestaComprobante;
 import java.io.File;
 import java.io.IOException;
@@ -41,7 +42,7 @@ public class Comprobar {
     
     public AutorizacionEstado executeComprobar() {
          RespuestaComprobante respuestaComprobante = null;
-        AutorizacionEstado autorizacionEstado = null;
+        AutorizacionEstado autorizacionEstado = new AutorizacionEstado(new Autorizacion(), Estado.NO_AUTORIZADO);
 
         try {
             
