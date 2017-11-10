@@ -47,7 +47,7 @@ dependencies {
 //	Librería para generar el archivo xml en la carpeta rechazado cuando sea el caso.
 //	Obligatorio para QuijoteLuiClient
 	compile group: 'xalan', name: 'serializer', version: '2.7.1'
-//	compile("com.quijotelui.printer:QuijoteLuiPrinter:1.0")
+	compile("com.quijotelui.printer:QuijoteLuiPrinter:1.0")
 //	Maven Local QuijoteLui -- fin
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

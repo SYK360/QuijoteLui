@@ -38,10 +38,10 @@ class FacturaRestApi {
     }
 
     /*
-    Ejecuta el comprobante electrónico
+    Genera, firma y envía el comprobante electrónico
      */
-    @GetMapping("/factura/codigo/{codigo}/numero/{numero}")
-    fun generaXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
+    @GetMapping("/facturaEnviar/codigo/{codigo}/numero/{numero}")
+    fun enviaXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
 
         if (codigo == null || numero == null) {
             return ResponseEntity(HttpStatus.CONFLICT)
@@ -54,7 +54,31 @@ class FacturaRestApi {
             } else {
                 val genera = Electronica(facturaService, codigo, numero, parametroService)
 
-                genera.generarFactura()
+                genera.enviarFactura()
+                return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
+            }
+        }
+
+    }
+
+    /*
+    Autoriza el comprobante electrónico
+    */
+    @GetMapping("/facturaAutorizar/codigo/{codigo}/numero/{numero}")
+    fun autorizaXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
+
+        if (codigo == null || numero == null) {
+            return ResponseEntity(HttpStatus.CONFLICT)
+        }
+        else {
+            val factura = facturaService.findByComprobante(codigo, numero)
+
+            if (factura.isEmpty()) {
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            } else {
+                val genera = Electronica(facturaService, codigo, numero, parametroService)
+
+                genera.comprobarFactura()
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
             }
         }

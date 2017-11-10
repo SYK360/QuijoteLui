@@ -5,10 +5,10 @@ import com.quijotelui.clientews.Enviar
 import com.quijotelui.firmador.XAdESBESSignature
 import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.printer.pdf.FacturaPDF
 import com.quijotelui.service.IFacturaService
 import com.quijotelui.service.IParametroService
 import java.io.File
-import java.util.concurrent.TimeUnit
 
 class Electronica(val codigo : String, val numero : String, val parametroService : IParametroService) {
 
@@ -20,22 +20,25 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         this.facturaService = facturaService
     }
 
-    fun generarFactura() {
+    fun enviarFactura() {
+
         val genera = GeneraFactura(this.facturaService!!, codigo, numero)
         this.claveAcceso = genera.xml()
 
         firmar()
         enviar()
+        imprimirFactura("","")
 
-        println("Espere 9 segundos por favor")
-        TimeUnit.SECONDS.sleep(9)
-
-        comprobar()
-
-//        imprimirFactura()
     }
 
-    fun firmar() {
+    fun comprobarFactura() {
+
+        comprobar()
+        imprimirFactura("","")
+
+    }
+
+    private fun firmar() {
         val xadesBesFirma = XAdESBESSignature()
         val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
         val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
@@ -50,7 +53,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 "$firmaElectronica")
     }
 
-    fun enviar() {
+    private fun enviar() {
         try{
             val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
             val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
@@ -72,7 +75,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
     }
 
-    fun comprobar() {
+    private fun comprobar() {
         val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
         val rutaAutorizado= Parametros.getRuta(parametroService.findByNombre("Autorizado"))
         val rutaNoAutorizado= Parametros.getRuta(parametroService.findByNombre("NoAutorizado"))
@@ -90,16 +93,16 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         println("Estado del comprobante ${this.claveAcceso} : ${autorizacion.estadoAutorizacion.descripcion}")
     }
 
-//    fun imprimirFactura() {
-//
-//        val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
-//        val rutaReportes= Parametros.getRuta(parametroService.findByNombre("Reportes"))
-//        val logo= Parametros.getRuta(parametroService.findByNombre("Logo"))
-//        val rutaPDF= Parametros.getRuta(parametroService.findByNombre("PDF"))
-//
-//        val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
-//        pdf.genera(rutaGenerado + File.separatorChar + this.claveAcceso + ".xml",
-//                "1234",
-//                "01 - 01 - 0001")
-//    }
+    private fun imprimirFactura(autorizacion : String, fechaAutorizacion : String) {
+
+        val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
+        val rutaReportes= Parametros.getRuta(parametroService.findByNombre("Reportes"))
+        val logo= Parametros.getRuta(parametroService.findByNombre("Logo"))
+        val rutaPDF= Parametros.getRuta(parametroService.findByNombre("PDF"))
+
+        val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
+        pdf.genera(rutaGenerado + File.separatorChar + this.claveAcceso + ".xml",
+                autorizacion,
+                fechaAutorizacion)
+    }
 }
