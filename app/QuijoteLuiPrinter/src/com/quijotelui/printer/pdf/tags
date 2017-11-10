@@ -1,0 +1,17 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+calcularDescuento	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    private String calcularDescuento(FacturaReporte fact) {$/;"	m	language:Java	class:FacturaPDF	file:
+com.quijotelui.printer.pdf	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^package com.quijotelui.printer.pdf;$/;"	p	language:Java
+directorioDestino	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    String directorioDestino;$/;"	f	language:Java	class:FacturaPDF
+directorioLogo	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    String directorioLogo;$/;"	f	language:Java	class:FacturaPDF
+directorioReportes	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    String directorioReportes;$/;"	f	language:Java	class:FacturaPDF
+FacturaPDF	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    public FacturaPDF(String directorioReportes, String directorioLogo, String directorioDestino) {$/;"	m	language:Java	class:FacturaPDF
+FacturaPDF	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^public class FacturaPDF {$/;"	c	language:Java
+genera	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    public void genera(String rutaArchivo, String numeroAutorizacion, String fechaAutorizacion) {$/;"	m	language:Java	class:FacturaPDF
+generarReporte	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    private void generarReporte(FacturaReporte xml, String numAut, String fechaAut) {$/;"	m	language:Java	class:FacturaPDF	file:
+generarReporte	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    private void generarReporte(String urlReporte, FacturaReporte fact, String numAut, String fechaAut) {$/;"	m	language:Java	class:FacturaPDF	file:
+getTotales	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    private TotalComprobante getTotales(Factura.InfoFactura infoFactura) {$/;"	m	language:Java	class:FacturaPDF	file:
+obtenerInfoFactura	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    private Map<String, Object> obtenerInfoFactura(Factura.InfoFactura infoFactura, FacturaReporte fact) {$/;"	m	language:Java	class:FacturaPDF	file:
+obtenerMapaParametrosReportes	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    private Map<String, Object> obtenerMapaParametrosReportes(Map<String, Object> mapa1, Map<String, Object> mapa2) {$/;"	m	language:Java	class:FacturaPDF	file:
+rutaArchivo	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    String rutaArchivo;\/\/"\/app\/quijotelu\/generado\/1912201401100245687700110010030000000031234567810.xml"  $/;"	f	language:Java	class:FacturaPDF
+savePdfReport	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    private void savePdfReport(JasperPrint jp, String nombrePDF) {$/;"	m	language:Java	class:FacturaPDF	file:
+xmlToObject	/data/git/QuijoteLui/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java	/^    private Factura xmlToObject() {$/;"	m	language:Java	class:FacturaPDF	file:

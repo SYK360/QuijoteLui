@@ -16,7 +16,6 @@
  */
 package com.quijotelui.printer.pdf;
 
-
 import com.quijotelui.printer.adicional.DetallesAdicionalesReporte;
 import com.quijotelui.printer.utilidades.TipoImpuestoEnum;
 import com.quijotelui.printer.utilidades.TipoImpuestoIvaEnum;
@@ -65,7 +64,6 @@ public class FacturaPDF {
     public void genera(String rutaArchivo, String numeroAutorizacion, String fechaAutorizacion) {
         
         this.rutaArchivo = rutaArchivo;
-
         
         Factura f = xmlToObject();
 
