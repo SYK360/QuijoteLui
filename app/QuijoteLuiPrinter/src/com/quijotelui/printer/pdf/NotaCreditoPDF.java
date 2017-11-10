@@ -17,16 +17,15 @@
 package com.quijotelui.printer.pdf;
 
 
-import com.quijotelui.printer.DetallesAdicionalesReporte;
-import com.quijotelui.printer.TipoImpuestoEnum;
-import com.quijotelui.printer.TipoImpuestoIvaEnum;
-import com.quijotelui.printer.TotalComprobante;
+import com.quijotelui.printer.adicional.DetallesAdicionalesReporte;
+import com.quijotelui.printer.utilidades.TipoImpuestoEnum;
+import com.quijotelui.printer.utilidades.TipoImpuestoIvaEnum;
+import com.quijotelui.printer.adicional.TotalComprobante;
 import com.quijotelui.printer.notacredito.NotaCredito;
 import com.quijotelui.printer.notacredito.NotaCreditoReporte;
 import com.quijotelui.printer.notacredito.TotalConImpuestos;
 import com.quijotelui.printer.parametros.Parametros;
-import com.quijotelui.printer.utilidades.DirectorioConfiguracion;
-import com.quijotelui.printer.utilidades.StringUtil;
+import com.quijotelui.printer.utilidades.Tipos;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -55,17 +54,24 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 public class NotaCreditoPDF {
 
     String rutaArchivo;
+    String directorioReportes;
+    String directorioLogo;
+    String directorioDestino;
 
-    public NotaCreditoPDF(String rutaArchivo) {
-        this.rutaArchivo = rutaArchivo;
+    public NotaCreditoPDF(String directorioReportes, String directorioLogo, String directorioDestino) {
+        this.directorioReportes = directorioReportes;
+        this.directorioLogo = directorioLogo;
+        this.directorioDestino = directorioDestino;
     }
-
-    public void genera(String numeroAutorizacion, String fechaAutorizacion, String urlLogoJpeg) {
+   
+    public void genera(String rutaArchivo, String numeroAutorizacion, String fechaAutorizacion) {
+        
+        this.rutaArchivo = rutaArchivo;
+        
         NotaCredito nc = xmlToObject();
 
         NotaCreditoReporte fr = new NotaCreditoReporte(nc);
-        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, urlLogoJpeg);
-        xmlToObject();
+        generarReporte(fr, numeroAutorizacion, fechaAutorizacion);
     }
 
     private NotaCredito xmlToObject() {
@@ -85,14 +91,14 @@ public class NotaCreditoPDF {
 
     }
 
-    public void generarReporte(NotaCreditoReporte xml, String numAut, String fechaAut, String urlLogoJpeg) {
+    public void generarReporte(NotaCreditoReporte xml, String numAut, String fechaAut) {
 
-        generarReporte("./resources/reportes/notaCredito.jasper", xml, numAut, fechaAut, urlLogoJpeg);
+        generarReporte(this.directorioReportes + File.separator + "notaCredito.jasper", xml, numAut, fechaAut);
     }
 
-    public void generarReporte(String urlReporte, NotaCreditoReporte rep, String numAut, String fechaAut, String urlLogoJpeg) {
+    public void generarReporte(String urlReporte, NotaCreditoReporte rep, String numAut, String fechaAut) {
         FileInputStream is = null;
-        Parametros p = new Parametros(urlLogoJpeg);
+        Parametros p = new Parametros(this.directorioReportes, this.directorioLogo);
         try {
             JRDataSource dataSource = new JRBeanCollectionDataSource(rep.getDetallesAdiciones());
             is = new FileInputStream(urlReporte);
@@ -113,9 +119,8 @@ public class NotaCreditoPDF {
     }
 
     private void savePdfReport(JasperPrint jp, String nombrePDF) {
-        DirectorioConfiguracion directorio = new DirectorioConfiguracion();
         try {
-            OutputStream output = new FileOutputStream(new File(directorio.getRutaArchivoPDF() + File.separatorChar + nombrePDF + ".pdf"));
+            OutputStream output = new FileOutputStream(new File(this.directorioDestino + File.separatorChar + nombrePDF + ".pdf"));
             JasperExportManager.exportReportToPdfStream(jp, output);
             output.close();
         } catch (JRException | FileNotFoundException ex) {
@@ -149,7 +154,7 @@ public class NotaCreditoPDF {
         param.put("EXENTO_IVA", BigDecimal.ZERO);
         param.put("NUM_DOC_MODIFICADO", infoNC.getNumDocModificado());
         param.put("FECHA_EMISION_DOC_SUSTENTO", infoNC.getFechaEmisionDocSustento());
-        param.put("DOC_MODIFICADO", StringUtil.obtenerDocumentoModificado(infoNC.getCodDocModificado()));
+        param.put("DOC_MODIFICADO", Tipos.obtenerDocumentoModificado(infoNC.getCodDocModificado()));
         param.put("TOTAL_DESCUENTO", obtenerTotalDescuento(nc));
         param.put("RAZON_MODIF", infoNC.getMotivo());
         param.put("IRBPNR", BigDecimal.ZERO);

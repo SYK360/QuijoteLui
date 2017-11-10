@@ -16,8 +16,8 @@
  */
 package com.quijotelui.printer.notacredito;
 
-import com.quijotelui.printer.DetallesAdicionalesReporte;
-import com.quijotelui.printer.InformacionAdicional;
+import com.quijotelui.printer.adicional.DetallesAdicionalesReporte;
+import com.quijotelui.printer.adicional.InformacionAdicional;
 import java.util.ArrayList;
 import java.util.List;
 

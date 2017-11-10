@@ -17,14 +17,13 @@
 package com.quijotelui.printer.pdf;
 
 
-import com.quijotelui.printer.DetallesAdicionalesReporte;
-import com.quijotelui.printer.TipoImpuestoEnum;
-import com.quijotelui.printer.TipoImpuestoIvaEnum;
-import com.quijotelui.printer.TotalComprobante;
+import com.quijotelui.printer.adicional.DetallesAdicionalesReporte;
+import com.quijotelui.printer.utilidades.TipoImpuestoEnum;
+import com.quijotelui.printer.utilidades.TipoImpuestoIvaEnum;
+import com.quijotelui.printer.adicional.TotalComprobante;
 import com.quijotelui.printer.factura.Factura;
 import com.quijotelui.printer.factura.FacturaReporte;
 import com.quijotelui.printer.parametros.Parametros;
-import com.quijotelui.printer.utilidades.DirectorioConfiguracion;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -53,23 +52,31 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 public class FacturaPDF {
 
     String rutaArchivo;//"/app/quijotelu/generado/1912201401100245687700110010030000000031234567810.xml"  
+    String directorioReportes;
+    String directorioLogo;
+    String directorioDestino;
 
-    public FacturaPDF(String RutaArchivo) {
-        this.rutaArchivo = RutaArchivo;
+    public FacturaPDF(String directorioReportes, String directorioLogo, String directorioDestino) {
+        this.directorioReportes = directorioReportes;
+        this.directorioLogo = directorioLogo;
+        this.directorioDestino = directorioDestino;
     }
 
-    public void genera(String numeroAutorizacion, String fechaAutorizacion, String urlLogoJpeg) {
+    public void genera(String rutaArchivo, String numeroAutorizacion, String fechaAutorizacion) {
+        
+        this.rutaArchivo = rutaArchivo;
+
+        
         Factura f = xmlToObject();
 
         FacturaReporte fr = new FacturaReporte(f);
-        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, urlLogoJpeg);
-        xmlToObject();
+        generarReporte(fr, numeroAutorizacion, fechaAutorizacion);
     }
 
     private Factura xmlToObject() {
         Factura factura = null;
         try {
-            File file = new File(rutaArchivo);
+            File file = new File(this.rutaArchivo);
             JAXBContext jaxbContext = JAXBContext.newInstance(Factura.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -83,19 +90,26 @@ public class FacturaPDF {
 
     }
 
-    private void generarReporte(FacturaReporte xml, String numAut, String fechaAut, String urlLogoJpeg) {
+    private void generarReporte(FacturaReporte xml, String numAut, String fechaAut) {
 
-        generarReporte("./resources/reportes/factura.jasper", xml, numAut, fechaAut, urlLogoJpeg);
+        generarReporte(this.directorioReportes + File.separator + "factura.jasper", xml, numAut, fechaAut);
 
     }
 
-    private void generarReporte(String urlReporte, FacturaReporte fact, String numAut, String fechaAut, String urlLogoJpeg) {
-        Parametros p = new Parametros(urlLogoJpeg);
+    private void generarReporte(String urlReporte, FacturaReporte fact, String numAut, String fechaAut) {
+        Parametros p = new Parametros(this.directorioReportes, this.directorioLogo);
         FileInputStream is = null;
         try {
             JRDataSource dataSource = new JRBeanCollectionDataSource(fact.getDetallesAdiciones());
             is = new FileInputStream(urlReporte);
-            JasperPrint reporte_view = JasperFillManager.fillReport(is, obtenerMapaParametrosReportes(p.obtenerParametrosInfoTriobutaria(fact.getFactura().getInfoTributaria(), numAut, fechaAut), obtenerInfoFactura(fact.getFactura().getInfoFactura(), fact)), dataSource);
+            JasperPrint reporte_view = JasperFillManager.fillReport(is, 
+                    obtenerMapaParametrosReportes(
+                            p.obtenerParametrosInfoTriobutaria(fact.getFactura().getInfoTributaria(), 
+                                    numAut, 
+                                    fechaAut), 
+                            obtenerInfoFactura(fact.getFactura().getInfoFactura(), 
+                                    fact)), 
+                    dataSource);
             savePdfReport(reporte_view, fact.getFactura().getInfoTributaria().claveAcceso);
         } catch (FileNotFoundException | JRException ex) {
             Logger.getLogger(FacturaPDF.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,11 +125,11 @@ public class FacturaPDF {
     }
 
     private void savePdfReport(JasperPrint jp, String nombrePDF) {
-        DirectorioConfiguracion directorio = new DirectorioConfiguracion();
         try {
-            OutputStream output = new FileOutputStream(new File(directorio.getRutaArchivoPDF() + File.separatorChar + nombrePDF + ".pdf"));
+            OutputStream output = new FileOutputStream(new File(this.directorioDestino + File.separatorChar + nombrePDF + ".pdf"));
             JasperExportManager.exportReportToPdfStream(jp, output);
             output.close();
+            System.out.println("PDF: Guardado en " + this.directorioDestino + File.separatorChar + nombrePDF + ".pdf");
         } catch (JRException | FileNotFoundException ex) {
             Logger.getLogger(FacturaPDF.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

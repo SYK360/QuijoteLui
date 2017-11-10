@@ -16,11 +16,10 @@
  */
 package com.quijotelui.printer.pdf;
 
-import com.quijotelui.printer.InformacionAdicional;
+import com.quijotelui.printer.adicional.InformacionAdicional;
 import com.quijotelui.printer.guia.GuiaRemision;
 import com.quijotelui.printer.guia.GuiaRemisionReporte;
 import com.quijotelui.printer.parametros.Parametros;
-import com.quijotelui.printer.utilidades.DirectorioConfiguracion;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -50,17 +49,25 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 public class GuiaRemisionPDF {
 
     String rutaArchivo;
+    String directorioReportes;
+    String directorioLogo;
+    String directorioDestino;
 
-    public GuiaRemisionPDF(String rutaArchivo) {
-        this.rutaArchivo = rutaArchivo;
+    public GuiaRemisionPDF(String directorioReportes, String directorioLogo, String directorioDestino) {
+        this.directorioReportes = directorioReportes;
+        this.directorioLogo = directorioLogo;
+        this.directorioDestino = directorioDestino;
     }
 
-    public void genera(String numeroAutorizacion, String fechaAutorizacion, String urlLogoJpeg) {
+
+
+    public void genera(String rutaArchivo, String numeroAutorizacion, String fechaAutorizacion) {
+        this.rutaArchivo = rutaArchivo;
+        
         GuiaRemision f = xmlToObject();
 
         GuiaRemisionReporte fr = new GuiaRemisionReporte(f);
-        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, f, urlLogoJpeg);
-        //xmlToObject();
+        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, f);
     }
 
     private GuiaRemision xmlToObject() {
@@ -80,14 +87,14 @@ public class GuiaRemisionPDF {
 
     }
 
-    public void generarReporte(GuiaRemisionReporte xml, String numAut, String fechaAut, GuiaRemision gr, String urlLogoJpeg) {        
-        generarReporte("./resources/reportes/guiaRemisionFinal.jasper", xml, numAut, fechaAut, gr, urlLogoJpeg);
+    public void generarReporte(GuiaRemisionReporte xml, String numAut, String fechaAut, GuiaRemision gr) {        
+        generarReporte(this.directorioReportes + File.separator + "guiaRemisionFinal.jasper", xml, numAut, fechaAut, gr);
 
     }
 
-    public void generarReporte(String urlReporte, GuiaRemisionReporte rep, String numAut, String fechaAut, GuiaRemision guiaRemision, String urlLogoJpeg) {
+    public void generarReporte(String urlReporte, GuiaRemisionReporte rep, String numAut, String fechaAut, GuiaRemision guiaRemision) {
         FileInputStream is = null;
-        Parametros p = new Parametros(urlLogoJpeg);
+        Parametros p = new Parametros(this.directorioReportes, this.directorioLogo);
         try {
             JRDataSource dataSource = new JRBeanCollectionDataSource(rep.getGuiaRemisionList());
             is = new FileInputStream(urlReporte);
@@ -108,9 +115,8 @@ public class GuiaRemisionPDF {
     }
 
     private void savePdfReport(JasperPrint jp, String nombrePDF) {
-        DirectorioConfiguracion directorio = new DirectorioConfiguracion();
         try {
-            OutputStream output = new FileOutputStream(new File(directorio.getRutaArchivoPDF() + File.separatorChar + nombrePDF + ".pdf"));
+            OutputStream output = new FileOutputStream(new File(this.directorioDestino + File.separatorChar + nombrePDF + ".pdf"));
             JasperExportManager.exportReportToPdfStream(jp, output);
             //JasperExportManager.exportReportToHtmlFile(jp, "D:\\app\\quijotelu\\pdf\\test.html");
             output.close();

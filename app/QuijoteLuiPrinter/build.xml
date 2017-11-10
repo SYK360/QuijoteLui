@@ -75,6 +75,26 @@
             <zipfileset src="${dist.jar}" excludes="META-INF/*"/>
             
             <zipfileset src="lib/jasperreports-4.6.0.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-anim.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-awt-util.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-bridge.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-css.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-dom.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-ext.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-gvt.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-parser.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-script.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-svg-dom.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-svggen.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-util.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-xml.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/barcode4j-2.0.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/commons-beanutils-1.8.2.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/commons-collections-3.2.1.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/commons-digester-1.7.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/commons-logging-1.1.3.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/iText-2.1.7.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/xml-apis-ext.jar" excludes="META-INF/*"/>
             
             <manifest>
                 <attribute name="Main-Class" value="quijoteluiprinter.Main"/>

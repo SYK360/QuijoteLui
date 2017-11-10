@@ -20,7 +20,6 @@ package com.quijotelui.printer.pdf;
 import com.quijotelui.printer.parametros.Parametros;
 import com.quijotelui.printer.retencion.ComprobanteRetencion;
 import com.quijotelui.printer.retencion.ComprobanteRetencionReporte;
-import com.quijotelui.printer.utilidades.DirectorioConfiguracion;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -48,17 +47,23 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 public class RetencionPDF {
 
     String rutaArchivo;
+    String directorioReportes;
+    String directorioLogo;
+    String directorioDestino;
 
-    public RetencionPDF(String RutaArchivo) {
-        this.rutaArchivo = RutaArchivo;
-    }
+    public RetencionPDF(String directorioReportes, String directorioLogo, String directorioDestino) {
+        this.directorioReportes = directorioReportes;
+        this.directorioLogo = directorioLogo;
+        this.directorioDestino = directorioDestino;
+    }    
 
-    public void genera(String numeroAutorizacion, String fechaAutorizacion, String urlLogoJpeg) {
+    public void genera(String rutaArchivo, String numeroAutorizacion, String fechaAutorizacion) {
+        
+        this.rutaArchivo = rutaArchivo;
         ComprobanteRetencion f = xmlToObject();
 
         ComprobanteRetencionReporte fr = new ComprobanteRetencionReporte(f);
-        generarReporte(fr, numeroAutorizacion, fechaAutorizacion, urlLogoJpeg);
-        xmlToObject();
+        generarReporte(fr, numeroAutorizacion, fechaAutorizacion);
     }
 
     private ComprobanteRetencion xmlToObject() {
@@ -78,14 +83,14 @@ public class RetencionPDF {
 
     }
 
-    public void generarReporte(ComprobanteRetencionReporte xml, String numAut, String fechaAut, String urlLogoJpeg) {
+    public void generarReporte(ComprobanteRetencionReporte xml, String numAut, String fechaAut) {
 
-        generarReporte("./resources/reportes/comprobanteRetencion.jasper", xml, numAut, fechaAut, urlLogoJpeg);
+        generarReporte(this.directorioReportes + File.separator + "comprobanteRetencion.jasper", xml, numAut, fechaAut);
     }
 
-    public void generarReporte(String urlReporte, ComprobanteRetencionReporte rep, String numAut, String fechaAut, String urlLogoJpeg) {
+    public void generarReporte(String urlReporte, ComprobanteRetencionReporte rep, String numAut, String fechaAut) {
         FileInputStream is = null;
-        Parametros p = new Parametros(urlLogoJpeg);
+        Parametros p = new Parametros(this.directorioReportes, this.directorioLogo);
         try {
             JRDataSource dataSource = new JRBeanCollectionDataSource(rep.getDetallesAdiciones());
             is = new FileInputStream(urlReporte);
@@ -106,9 +111,9 @@ public class RetencionPDF {
     }
 
     private void savePdfReport(JasperPrint jp, String nombrePDF) {
-        DirectorioConfiguracion directorio = new DirectorioConfiguracion();
+        
         try {
-            OutputStream output = new FileOutputStream(new File(directorio.getRutaArchivoPDF() + File.separatorChar + nombrePDF + ".pdf"));
+            OutputStream output = new FileOutputStream(new File(this.directorioDestino + File.separatorChar + nombrePDF + ".pdf"));
             JasperExportManager.exportReportToPdfStream(jp, output);
             output.close();
         } catch (JRException | FileNotFoundException ex) {

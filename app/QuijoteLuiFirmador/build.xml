@@ -74,7 +74,7 @@
         <jar jarfile="dist/QuijoteLuiFirmador-1.0.jar">
             <zipfileset src="${dist.jar}" excludes="META-INF/*"/>
             
-            <zipfileset src="lib/batik-anim.jar" excludes="META-INF/*"/>
+<!--            <zipfileset src="lib/batik-anim.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/batik-awt-util.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/batik-bridge.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/batik-css.jar" excludes="META-INF/*"/>
@@ -86,7 +86,7 @@
             <zipfileset src="lib/batik-svg-dom.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/batik-svggen.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/batik-util.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-xml.jar" excludes="META-INF/*"/>
+            <zipfileset src="lib/batik-xml.jar" excludes="META-INF/*"/>-->
             <zipfileset src="lib/bcmail-jdk16-1.45.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/bcprov-jdk16-1.45.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/bctsp-jdk16-1.45.jar" excludes="META-INF/*"/>

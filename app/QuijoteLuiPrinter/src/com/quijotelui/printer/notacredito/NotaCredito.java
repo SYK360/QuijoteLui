@@ -9,7 +9,7 @@ package com.quijotelui.printer.notacredito;
  *
  * @author jorjoluiso
  */
-import com.quijotelui.printer.InfoTributaria;
+import com.quijotelui.printer.adicional.InfoTributaria;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;

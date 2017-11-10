@@ -9,7 +9,7 @@ package com.quijotelui.printer.retencion;
  *
  * @author jorjoluiso
  */
-import com.quijotelui.printer.InfoTributaria;
+import com.quijotelui.printer.adicional.InfoTributaria;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;

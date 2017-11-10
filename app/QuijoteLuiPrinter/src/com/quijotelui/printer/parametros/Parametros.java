@@ -16,7 +16,8 @@
  */
 package com.quijotelui.printer.parametros;
 
-import com.quijotelui.printer.InfoTributaria;
+import com.quijotelui.printer.adicional.InfoTributaria;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -30,13 +31,16 @@ import java.util.logging.Logger;
  */
 public class Parametros {
     
+    String direccionReportes;
     String direccionLogoJpeg;
+    
 
-    public Parametros(String direccionLogoJpeg) {
+    public Parametros(String direccionReportes, String direccionLogoJpeg) {
         /*
         Ejemplo:
         resources/images/logo.jpeg
         */
+        this.direccionReportes = direccionReportes;
         this.direccionLogoJpeg = direccionLogoJpeg;
     }
     
@@ -49,10 +53,14 @@ public class Parametros {
         param.put("DIR_MATRIZ", infoTributaria.getDirMatriz());
         try {
             param.put("LOGO", new FileInputStream(this.direccionLogoJpeg));
+//            param.put("LOGO", new FileInputStream("resources/images/logo.jpeg"));
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Parametros.class.getName()).log(Level.SEVERE, null, ex);
         }
-        param.put("SUBREPORT_DIR", "./resources/reportes/");
+//        param.put("SUBREPORT_DIR", "./resources/reportes/");
+
+        param.put("SUBREPORT_DIR", this.direccionReportes + File.separator);
         if (infoTributaria.tipoEmision.equals("1")) {
             param.put("TIPO_EMISION", "Normal");
         } else {

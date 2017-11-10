@@ -16,7 +16,7 @@
  */
 package com.quijotelui.printer.guia;
 
-import com.quijotelui.printer.utilidades.StringUtil;
+import com.quijotelui.printer.utilidades.Tipos;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -148,7 +148,7 @@ public class GuiaRemisionReporte {
         this.guiaRemisionList = new ArrayList();
         for (Destinatario dest : this.guiaRemision.getDestinatarios().getDestinatario()) {
             GuiaRemisionReporte gr = new GuiaRemisionReporte();
-            gr.setNombreComprobante(StringUtil.obtenerDocumentoModificado(dest.getCodDocSustento()));
+            gr.setNombreComprobante(Tipos.obtenerDocumentoModificado(dest.getCodDocSustento()));
             gr.setNumDocSustento(dest.getNumDocSustento());
             gr.setFechaEmisionSustento(dest.getFechaEmisionDocSustento());
             gr.setNumeroAutorizacion(dest.getNumAutDocSustento());
