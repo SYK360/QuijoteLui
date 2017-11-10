@@ -71,7 +71,7 @@
 
     -->
     <target name="-post-jar">
-        <jar jarfile="dist/QuijoteLuiFirmador-1.1.jar">
+        <jar jarfile="dist/QuijoteLuiFirmador-1.2.jar">
             <zipfileset src="${dist.jar}" excludes="META-INF/*"/>
             
             <zipfileset src="lib/bcmail-jdk16-1.45.jar" excludes="META-INF/*"/>
@@ -84,7 +84,7 @@
             <zipfileset src="lib/MITyCLibCert-1.1.7.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/MITyCLibTSA-1.1.7.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/MITyCLibXADES-1.1.7.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/xalan-2.7.1.jar" excludes="META-INF/*"/>
+            <!--<zipfileset src="lib/xalan-2.7.1.jar" excludes="META-INF/*"/>-->
             <zipfileset src="lib/xml-apis-ext.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/xml-apis.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/xmlpull-1.1.3.1.jar" excludes="META-INF/*"/>

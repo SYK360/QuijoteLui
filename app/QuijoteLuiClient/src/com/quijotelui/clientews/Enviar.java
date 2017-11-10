@@ -49,7 +49,7 @@ public class Enviar {
         } catch (IOException ex) {
             Logger.getLogger(Enviar.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return respuestaSolicitudEnvio;
     }
 
 }

@@ -49,9 +49,9 @@
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.51" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.1.51" level="project" />
     <orderEntry type="library" name="Gradle: com.oracle:ojdbc6:11.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.quijotelui.firmador:QuijoteLuiFirmador:1.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.quijotelui.clientews:QuijoteLuiClient:1.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.quijotelui.printer:QuijoteLuiPrinter:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.quijotelui.firmador:QuijoteLuiFirmador:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.quijotelui.clientews:QuijoteLuiClient:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: xalan:serializer:2.7.1" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.5.8.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:1.5.8.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:1.5.8.RELEASE" level="project" />
@@ -68,6 +68,7 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:4.3.12.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.51" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.51" level="project" />
+    <orderEntry type="library" name="Gradle: xml-apis:xml-apis:1.4.01" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test:1.5.8.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:1.5.8.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.jayway.jsonpath:json-path:2.2.0" level="project" />

@@ -27,10 +27,12 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         firmar()
         enviar()
 
-        println("Espere 10 segundos por favor")
-        TimeUnit.SECONDS.sleep(10)
+        println("Espere 9 segundos por favor")
+        TimeUnit.SECONDS.sleep(9)
 
         comprobar()
+
+//        imprimirFactura()
     }
 
     fun firmar() {
@@ -49,21 +51,25 @@ class Electronica(val codigo : String, val numero : String, val parametroService
     }
 
     fun enviar() {
-        val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
-        val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
-        val rutaRechazado= Parametros.getRuta(parametroService.findByNombre("Rechazado"))
-        val direccionWebServiceEnviado = Parametros.getRuta(parametroService.findByNombre("Web Service Recepción"))
+        try{
+            val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
+            val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
+            val rutaRechazado= Parametros.getRuta(parametroService.findByNombre("Rechazado"))
+            val direccionWebServiceEnviado = Parametros.getRuta(parametroService.findByNombre("Web Service Recepción"))
 
-        val enviar = Enviar(rutaFirmado + File.separatorChar + this.claveAcceso + ".xml",
-                rutaEnviado,
-                rutaRechazado,
-                direccionWebServiceEnviado)
+            val enviar = Enviar(rutaFirmado + File.separatorChar + this.claveAcceso + ".xml",
+                    rutaEnviado,
+                    rutaRechazado,
+                    direccionWebServiceEnviado)
 
-        val respuesta = checkNotNull(enviar.executeEnviar()){
-            return
+            val respuesta = enviar.executeEnviar()
+
+            println("Estado del comprobante ${this.claveAcceso} : ${respuesta.estado}")
+        }
+        catch (e: Exception) {
+            println("Error : ${e.message}" )
         }
 
-        println("Estado del comprobante ${this.claveAcceso} : ${respuesta.estado}")
     }
 
     fun comprobar() {
@@ -83,4 +89,17 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
         println("Estado del comprobante ${this.claveAcceso} : ${autorizacion.estadoAutorizacion.descripcion}")
     }
+
+//    fun imprimirFactura() {
+//
+//        val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
+//        val rutaReportes= Parametros.getRuta(parametroService.findByNombre("Reportes"))
+//        val logo= Parametros.getRuta(parametroService.findByNombre("Logo"))
+//        val rutaPDF= Parametros.getRuta(parametroService.findByNombre("PDF"))
+//
+//        val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
+//        pdf.genera(rutaGenerado + File.separatorChar + this.claveAcceso + ".xml",
+//                "1234",
+//                "01 - 01 - 0001")
+//    }
 }

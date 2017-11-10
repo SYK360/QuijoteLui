@@ -138,7 +138,7 @@ public class ArchivoUtils {
         } else if (respuestaSolicitudEnvio.getEstado().equals("DEVUELTA")) {
             byte[] archivoRespuesta = addMotivosRechazo(respuestaSolicitudEnvio, archivoFirmado);
             crearArchivoDirectorioRechazados(archivoRespuesta, nombreArchivo, directorioRechazado);
-            System.out.println("Error al enviar el comprobante estado :  \nRevisar la carpeta de rechazados " + respuestaSolicitudEnvio.getEstado());
+            System.out.println("Error al enviar el comprobante estado :  Revisar la carpeta de rechazados " + respuestaSolicitudEnvio.getEstado());
         }
     }
 

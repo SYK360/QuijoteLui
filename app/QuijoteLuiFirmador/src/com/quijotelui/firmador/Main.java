@@ -29,9 +29,10 @@ public class Main {
         XAdESBESSignature xadesBesFirma = new XAdESBESSignature();
         Scanner scanner = new Scanner(System.in);
 
-        String urlArchivo = "/data/work/tmp/facturacionelectronica/Generados/0311201701100245687700110010100000000171234567816.xml";
-        String nombreArchivo = "0311201701100245687700110010100000000171234567816.xml";
-        String urlOutArchivo = "/data/work/tmp/facturacionelectronica/Firmados";
+        String urlArchivo = "/app/Quijotelui/comprobante/generado/"
+                + "1210201701100245687700110010030000012481234567810.xml";
+        String nombreArchivo = "1210201701100245687700110010030000012481234567810.xml";
+        String urlOutArchivo = "/tmp";
         String PKCS12_RESOURCE = "/data/BCE";
         String PKCS12_PASSWORD = "";
 
