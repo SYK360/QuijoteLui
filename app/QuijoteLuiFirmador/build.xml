@@ -71,22 +71,9 @@
 
     -->
     <target name="-post-jar">
-        <jar jarfile="dist/QuijoteLuiFirmador-1.0.jar">
+        <jar jarfile="dist/QuijoteLuiFirmador-1.1.jar">
             <zipfileset src="${dist.jar}" excludes="META-INF/*"/>
             
-<!--            <zipfileset src="lib/batik-anim.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-awt-util.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-bridge.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-css.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-dom.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-ext.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-gvt.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-parser.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-script.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-svg-dom.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-svggen.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-util.jar" excludes="META-INF/*"/>
-            <zipfileset src="lib/batik-xml.jar" excludes="META-INF/*"/>-->
             <zipfileset src="lib/bcmail-jdk16-1.45.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/bcprov-jdk16-1.45.jar" excludes="META-INF/*"/>
             <zipfileset src="lib/bctsp-jdk16-1.45.jar" excludes="META-INF/*"/>
@@ -105,7 +92,7 @@
             <zipfileset src="lib/xstream-1.4.1.jar" excludes="META-INF/*"/>
             
             <manifest>
-                <attribute name="Main-Class" value="com.firmador.Main"/>
+                <attribute name="Main-Class" value="com.quijotelui.firmador.Main"/>
             </manifest>
         </jar>
     </target>

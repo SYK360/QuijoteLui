@@ -1,8 +1,9 @@
 # Package Files #
-*.jar
+
 *.war
 *.ear
 *.class
+*.jar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
@@ -10,6 +11,7 @@ hs_err_pid*
 
 
 /.nb-gradle/
+/.gradle/
 /build/
 /out/
 /app/QuijoteLuiFirmador/nbproject/private/
@@ -17,15 +19,9 @@ hs_err_pid*
 /app/QuijoteLuiFirmador/dist/
 /app/QuijoteEncriptar/nbproject/private/
 /app/QuijoteEncriptar/build/
-/app/QuijoteLuiCliSRI/nbproject/private/
-/app/QuijoteLuiCliSRI/build/
-/app/QuijoteLuiCliSRI/dist/
-/app/QuijoteluiXStream/nbproject/private/
-/app/QuijoteluiXStream/build/
-/app/QuijoteluiXStream/dist/
-/app/QuijoteLuiCliSRI_back/build/
-/app/QuijoteLuiCliSRI_back/nbproject/private/
-/app/QuijoteLuiImprime/nbproject/private/
+/app/QuijoteLuiClient/nbproject/private/
+/app/QuijoteLuiClient/build/
+/app/QuijoteLuiClient/dist/
 /app/QuijoteLuiPrinter/nbproject/private/
 /app/QuijoteLuiPrinter/build/
 /app/QuijoteLuiPrinter/dist/

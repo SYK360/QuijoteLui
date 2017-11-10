@@ -2,7 +2,91 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ff1b2b3-b03a-41f1-917f-f8b978681da4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/lib/cliente-ws-offline.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/lib/commons-io.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/lib/log4j-1.2.16.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/lib/xmlpull-1.1.3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/lib/xstream-1.4.10.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/DNIeJCAProvider-1.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/MITyCLibAPI-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/MITyCLibCert-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/MITyCLibCrypt-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/MITyCLibOCSP-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/MITyCLibPolicy-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/MITyCLibTSA-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/MITyCLibTrust-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/MITyCLibXADES-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/bcmail-jdk16-1.45.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/bcprov-jdk16-1.45.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/bctsp-jdk16-1.45.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/commons-logging-1.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/iaikPkcs11Wrapper-1.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/jss-4.2.5.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/serializer-2.7.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/sunpkcs11-1.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/xalan-2.7.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/xml-apis-1.3.04.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/xml-apis-ext.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/xml-apis.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/xmlpull-1.1.3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/xmlsec-1.4.2-ADSI-1.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/xmlsec-1.4.2-ADSI-1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/lib/xstream-1.4.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/barcode4j-2.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-anim.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-awt-util.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-bridge.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-css.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-dom.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-ext.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-gvt.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-parser.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-script.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-svg-dom.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-svggen.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-util.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/batik-xml.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/commons-beanutils-1.8.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/commons-collections-3.2.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/commons-digester-1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/commons-logging-1.1.3.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/iText-2.1.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/jasperreports-4.6.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/lib/xml-apis-ext.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_quijotelui_clientews_QuijoteLuiClient_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_quijotelui_firmador_QuijoteLuiFirmador_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_quijotelui_printer_QuijoteLuiPrinter_1_0.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firmador_QuijoteLuiFirmador_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/dist/README.TXT" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/src/com/quijotelui/callws/Comprobar.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/src/com/quijotelui/clientews/Comprobar.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/src/com/quijotelui/callws/Enviar.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/src/com/quijotelui/clientews/Enviar.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/src/com/quijotelui/callws/Main.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/src/com/quijotelui/clientews/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/src/com/firmador/GenericXMLSignature.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/src/com/quijotelui/firmador/GenericXMLSignature.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/src/com/firmador/Main.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/src/com/quijotelui/firmador/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/src/com/firmador/PassStoreKS.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/src/com/quijotelui/firmador/PassStoreKS.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/src/com/firmador/XAdESBESSignature.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/src/com/quijotelui/firmador/XAdESBESSignature.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.2.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileContent/fileContent.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/resourceHashesCache.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/QuijoteLui_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/QuijoteLui_main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/QuijoteLui_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/QuijoteLui_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/build.xml" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/build/built-jar.properties" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/build/built-jar.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/nbproject/project.properties" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/nbproject/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/build.xml" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/nbproject/project.properties" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/nbproject/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -56,7 +140,40 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Electronica.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+              <folding>
+                <element signature="e#45#427#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacturaRestApi.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="56" column="33" lean-forward="false" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -337,8 +454,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="3018426988000" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="1441336374" />
+        <entry key="$PROJECT_DIR$" value="3018952738000" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3696528852" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -544,7 +661,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Impuesto.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IImpuestoDao.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ImpuestoDaoImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IImpuestoService.kt" />
@@ -578,14 +694,10 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/FacturaServiceImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/InformacionDaoImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/Factura.kt" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Encriptar.java" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Parametros.kt" />
         <option value="$PROJECT_DIR$/sql/insert_ele_parametros.sql" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" />
         <option value="$PROJECT_DIR$/sql/oracle/ele_documentos_electronicos.sql" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/DocumentoElectronico.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IDocumentoElectronicoDao.kt" />
@@ -595,14 +707,19 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ElectronicoServiceImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Encriptar.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="100" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="827" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="469" />
+    <option name="y" value="34" />
+    <option name="width" value="1390" />
+    <option name="height" value="826" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -619,9 +736,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -681,39 +797,13 @@
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
               <item name="electronico" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="ejecutar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1070,7 +1160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510190643586</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Añádido dirección del Logo">
+      <created>1510190687154</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1510190687154</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1083,12 +1180,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="100" y="20" width="1600" height="864" extended-state="6" />
+    <frame x="469" y="34" width="1390" height="826" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
@@ -1098,8 +1195,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26064515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24477611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967743" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967743" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1112,6 +1209,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1159,13 +1257,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ContribuyenteServiceImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/FacturaDetalleServiceImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1250,13 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ImpuestoDaoImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1320,21 +1404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="58" lean-forward="false" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="42" column="48" lean-forward="false" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/FacturaDaoImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1023">
@@ -1377,13 +1446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/insert_ele_parametros.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Parametros.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -1396,23 +1458,6 @@
         <state relative-caret-position="220">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="51" column="89" lean-forward="false" selection-start-line="51" selection-start-column="89" selection-end-line="51" selection-end-column="89" />
-          <folding>
-            <element signature="e#36#614#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="40" column="1" lean-forward="false" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1540,6 +1585,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/tags">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/insert_ele_parametros.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="56" column="33" lean-forward="false" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+          <folding>
+            <element signature="e#45#427#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
           <folding />
         </state>
       </provider>

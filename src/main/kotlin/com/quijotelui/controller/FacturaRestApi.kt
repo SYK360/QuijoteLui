@@ -37,6 +37,9 @@ class FacturaRestApi {
         return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
     }
 
+    /*
+    Ejecuta el comprobante electrónico
+     */
     @GetMapping("/factura/codigo/{codigo}/numero/{numero}")
     fun generaXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
 
