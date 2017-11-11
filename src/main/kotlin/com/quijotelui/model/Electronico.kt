@@ -1,16 +1,15 @@
 package com.quijotelui.model
 
 import java.io.Serializable
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "ele_documentos_electronicos")
 class Electronico : Serializable {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
+    @SequenceGenerator(name = "id_Sequence", sequenceName = "SEQ_ELE_DOCUMENTOS")
     @Column(name = "id")
     var id : Long? = null
 

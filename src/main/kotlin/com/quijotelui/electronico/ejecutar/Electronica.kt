@@ -46,7 +46,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         firmar()
         val respuesta = enviar()
         val electronico = Electronico()
-        electronico.id = 0
+
         electronico.codigo = this.codigo
         electronico.numero = this.numero
         electronico.observacion = respuesta?.estado
