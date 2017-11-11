@@ -17,6 +17,8 @@ import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
 import com.quijotelui.ws.definicion.Estado
+import ec.gob.sri.comprobantes.ws.Comprobante
+import ec.gob.sri.comprobantes.ws.Mensaje
 import ec.gob.sri.comprobantes.ws.aut.Autorizacion
 
 
@@ -86,7 +88,14 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         val direccionWebServiceEnviado = Parametros.getRuta(parametroService.findByNombre("Web Service Recepción"))
 
         if (!isWSDLAlive(direccionWebServiceEnviado)){
-            respuesta.estado = "No existe conexión con el Web Service $direccionWebServiceEnviado"
+            var comprobante = Comprobante()
+            comprobante.claveAcceso = this.claveAcceso
+            var mensaje = Mensaje()
+            mensaje.mensaje = "No existe conexión con el Web Service $direccionWebServiceEnviado"
+            mensaje.tipo = "ERROR"
+            comprobante.mensajes.mensaje.add(Mensaje())
+            respuesta.comprobantes.comprobante.add(comprobante)
+            respuesta.estado = "ERROR"
             return respuesta
         }
 
