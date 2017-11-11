@@ -10,8 +10,17 @@ import com.quijotelui.printer.pdf.FacturaPDF
 import com.quijotelui.service.IElectronicoService
 import com.quijotelui.service.IFacturaService
 import com.quijotelui.service.IParametroService
+import com.quijotelui.ws.definicion.AutorizacionEstado
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud
 import java.io.File
+import java.io.IOException
+import java.net.HttpURLConnection
+import java.net.URL
+import com.quijotelui.ws.definicion.Estado
+import ec.gob.sri.comprobantes.ws.aut.Autorizacion
+
+
+
 
 class Electronica(val codigo : String, val numero : String, val parametroService : IParametroService) {
 
@@ -72,47 +81,57 @@ class Electronica(val codigo : String, val numero : String, val parametroService
     }
 
     private fun enviar(): RespuestaSolicitud? {
-        try{
-            val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
-            val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
-            val rutaRechazado= Parametros.getRuta(parametroService.findByNombre("Rechazado"))
-            val direccionWebServiceEnviado = Parametros.getRuta(parametroService.findByNombre("Web Service Recepción"))
 
-            val enviar = Enviar(rutaFirmado + File.separatorChar + this.claveAcceso + ".xml",
+        var respuesta = RespuestaSolicitud()
+        val direccionWebServiceEnviado = Parametros.getRuta(parametroService.findByNombre("Web Service Recepción"))
+
+        if (!isWSDLAlive(direccionWebServiceEnviado)){
+            respuesta.estado = "No existe conexión con el Web Service $direccionWebServiceEnviado"
+            return respuesta
+        }
+
+        val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
+        val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
+        val rutaRechazado= Parametros.getRuta(parametroService.findByNombre("Rechazado"))
+
+
+        val enviar = Enviar(rutaFirmado + File.separatorChar + this.claveAcceso + ".xml",
                     rutaEnviado,
                     rutaRechazado,
                     direccionWebServiceEnviado)
 
-            val respuesta = enviar.executeEnviar()
+        respuesta = enviar.executeEnviar()
 
-            println("Estado del comprobante ${this.claveAcceso} : ${respuesta.estado}")
-            return respuesta
-        }
-        catch (e: Exception) {
-            println("Error : ${e.message}" )
-        }
-        var respuesta = RespuestaSolicitud()
-        respuesta.estado = "Error en el envío"
+        println("Estado del comprobante ${this.claveAcceso} : ${respuesta.estado}")
 
         return respuesta
+
     }
 
-    private fun comprobar() {
+    private fun comprobar(): AutorizacionEstado {
+
+        var autorizacionEstado = AutorizacionEstado(Autorizacion(), Estado.NO_AUTORIZADO)
+        val direccionWebServiceAutorizacion = Parametros.getRuta(parametroService.findByNombre("Web Service Autorización"))
+
+        if (!isWSDLAlive(direccionWebServiceAutorizacion)){
+            return autorizacionEstado
+        }
+
         val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
         val rutaAutorizado= Parametros.getRuta(parametroService.findByNombre("Autorizado"))
         val rutaNoAutorizado= Parametros.getRuta(parametroService.findByNombre("NoAutorizado"))
-        val direccionWebServiceAutorizacion = Parametros.getRuta(parametroService.findByNombre("Web Service Autorización"))
+
 
         val comprobar = Comprobar(rutaEnviado + File.separatorChar + this.claveAcceso + ".xml",
                 rutaAutorizado,
                 rutaNoAutorizado,
                 direccionWebServiceAutorizacion)
 
-        val autorizacion = checkNotNull(comprobar.executeComprobar()){
-            return
-        }
+        autorizacionEstado = comprobar.executeComprobar()
 
-        println("Estado del comprobante ${this.claveAcceso} : ${autorizacion.estadoAutorizacion.descripcion}")
+        println("Estado del comprobante ${this.claveAcceso} : ${autorizacionEstado.estadoAutorizacion.descripcion}")
+
+        return autorizacionEstado
     }
 
     private fun imprimirFactura(autorizacion : String, fechaAutorizacion : String) {
@@ -126,5 +145,26 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         pdf.genera(rutaGenerado + File.separatorChar + this.claveAcceso + ".xml",
                 autorizacion,
                 fechaAutorizacion)
+    }
+
+    private fun isWSDLAlive(direccionWSDL : String) : Boolean {
+        var c: HttpURLConnection? = null
+        try {
+            val u = URL(direccionWSDL)
+            c = u.openConnection() as HttpURLConnection
+            c.requestMethod = "GET"
+            c.inputStream
+            if (c.responseCode == 200) {
+                return true
+            }
+        } catch (e: IOException) {
+            println("Error de conexión con WSDL : " + e.message)
+            return false
+        } finally {
+            if (c != null) {
+                c.disconnect()
+            }
+        }
+        return false
     }
 }

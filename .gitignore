@@ -25,3 +25,5 @@ hs_err_pid*
 /app/QuijoteLuiPrinter/nbproject/private/
 /app/QuijoteLuiPrinter/build/
 /app/QuijoteLuiPrinter/dist/
+/app/checkAliveWS/nbproject/private/
+/app/checkAliveWS/build/
