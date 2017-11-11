@@ -15,4 +15,8 @@ class ElectronicoServiceImpl : IElectronicoService {
         return electronicoDao.findAll()
     }
 
+    override fun saveElectronico(electronico: Electronico) {
+        electronicoDao.saveElectronico(electronico)
+    }
+
 }

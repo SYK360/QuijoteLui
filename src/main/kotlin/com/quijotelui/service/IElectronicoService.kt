@@ -5,5 +5,5 @@ import com.quijotelui.model.Electronico
 interface IElectronicoService {
 
     fun findAll() : MutableList<Electronico>
-
+    fun saveElectronico(electronico : Electronico)
 }

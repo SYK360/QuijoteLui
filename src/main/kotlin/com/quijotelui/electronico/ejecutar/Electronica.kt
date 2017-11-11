@@ -5,19 +5,28 @@ import com.quijotelui.clientews.Enviar
 import com.quijotelui.firmador.XAdESBESSignature
 import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.model.Electronico
 import com.quijotelui.printer.pdf.FacturaPDF
+import com.quijotelui.service.IElectronicoService
 import com.quijotelui.service.IFacturaService
 import com.quijotelui.service.IParametroService
+import ec.gob.sri.comprobantes.ws.RespuestaSolicitud
 import java.io.File
 
 class Electronica(val codigo : String, val numero : String, val parametroService : IParametroService) {
 
     var claveAcceso : String? = null
     private var facturaService : IFacturaService? = null
+    private var electronicoService : IElectronicoService? = null
 
-    constructor(facturaService : IFacturaService, codigo : String, numero : String, parametroService : IParametroService)
+    constructor(facturaService : IFacturaService,
+                codigo : String,
+                numero : String,
+                parametroService : IParametroService,
+                electronicoService : IElectronicoService)
             : this(codigo, numero, parametroService) {
         this.facturaService = facturaService
+        this.electronicoService = electronicoService
     }
 
     fun enviarFactura() {
@@ -26,7 +35,16 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         this.claveAcceso = genera.xml()
 
         firmar()
-        enviar()
+        val respuesta = enviar()
+        val electronico = Electronico()
+        electronico.id = 0
+        electronico.codigo = this.codigo
+        electronico.numero = this.numero
+        electronico.observacion = respuesta?.estado
+        electronico.estado = respuesta?.estado
+
+        electronicoService?.saveElectronico(electronico)
+
         imprimirFactura("","")
 
     }
@@ -53,7 +71,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 "$firmaElectronica")
     }
 
-    private fun enviar() {
+    private fun enviar(): RespuestaSolicitud? {
         try{
             val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
             val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
@@ -68,11 +86,15 @@ class Electronica(val codigo : String, val numero : String, val parametroService
             val respuesta = enviar.executeEnviar()
 
             println("Estado del comprobante ${this.claveAcceso} : ${respuesta.estado}")
+            return respuesta
         }
         catch (e: Exception) {
             println("Error : ${e.message}" )
         }
+        var respuesta = RespuestaSolicitud()
+        respuesta.estado = "Error en el envío"
 
+        return respuesta
     }
 
     private fun comprobar() {

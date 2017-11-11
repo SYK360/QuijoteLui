@@ -17,4 +17,27 @@ class ElectronicoDaoImpl : IElectronicoDao {
     override fun findAll(): MutableList<Electronico> {
         return entityMAnager.createQuery("from Electronico").resultList as MutableList<Electronico>
     }
+
+    @Override
+    override fun saveElectronico(electronico: Electronico) {
+        entityMAnager.persist(electronico)
+    }
+
+    @Override
+    override fun updateElectronico(electronico: Electronico) {
+        val e = findById(electronico.id!!)
+        e.codigo = electronico.codigo
+        e.numero = electronico.numero
+        e.numeroAutorizacion = electronico.numeroAutorizacion
+        e.fechaAutorizacion = electronico.fechaAutorizacion
+        e.observacion = electronico.observacion
+        e.estado = electronico.estado
+        entityMAnager.flush()
+    }
+
+    @Override
+    override fun findById(id : Long): Electronico {
+        return entityMAnager.find(Electronico::class.java, id)
+    }
+
 }
