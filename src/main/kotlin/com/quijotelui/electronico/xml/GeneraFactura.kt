@@ -26,6 +26,18 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
     val factura = Factura()
     var claveAcceso : String? = null
+        get(){
+            val informacionTributaria = InformacionTributaria()
+
+            informacionTributaria.ambiente = Parametros.getAmbiente(facturaService.findParametroByNombre("Ambiente"))
+            informacionTributaria.tipoEmision = Parametros.getEmision(facturaService.findParametroByNombre("Emisión"))
+
+            return getClaveAcceso(
+                    getContribuyente(this.contribuyenteFactura),
+                    getFactura(this.contribuyenteFactura),
+                    informacionTributaria.ambiente!!,
+                    informacionTributaria.tipoEmision!!)
+        }
 
     /*
     Función que genera la facrua en XML
@@ -68,7 +80,8 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return this.claveAcceso.toString()
     }
 
-    fun getInformacionTributaria() : InformacionTributaria{
+
+    private fun getInformacionTributaria() : InformacionTributaria{
 
         val informacionTributaria = InformacionTributaria()
 
@@ -96,7 +109,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
     }
 
-    fun getInformacionFactura() : InformacionFactura {
+    private fun getInformacionFactura() : InformacionFactura {
 
         val informacionFactura = InformacionFactura()
 
@@ -128,7 +141,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
     }
 
-    fun getImpuesto() : TotalConImpuestos {
+    private fun getImpuesto() : TotalConImpuestos {
 
         val impuestos = facturaService.findImpuestoByComprobante(codigo, numero)
         var totalConImpuestos = TotalConImpuestos()
@@ -148,7 +161,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
     }
 
-    fun getPago() : Pagos {
+    private fun getPago() : Pagos {
 
         val pagosComprobante = facturaService.findPagoByComprobante(codigo, numero)
         var pagos = Pagos()
@@ -166,7 +179,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return pagos
     }
 
-    fun getDetalle() : Detalles {
+    private fun getDetalle() : Detalles {
         val facturaDetalles = facturaService.findFacturaDetalleByComprobante(codigo, numero)
         var detalles = Detalles()
 
@@ -187,7 +200,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return detalles
     }
 
-    fun getDetalleImpuestos(detalle : FacturaDetalle) : Impuestos {
+    private fun getDetalleImpuestos(detalle : FacturaDetalle) : Impuestos {
         /*
         Los detalles de impuestos por
         producto, solo está habilitado para el IVA.
@@ -209,7 +222,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return impuestos
     }
 
-    fun getInformacionAdicional() : InformacionAdicional {
+    private fun getInformacionAdicional() : InformacionAdicional {
 
         val facturaDocumento = getFactura(this.contribuyenteFactura)
 
@@ -227,7 +240,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return informacionAdicional
     }
 
-    fun getContribuyente(contribuyenteComprobante: MutableList<Any>) : Contribuyente {
+    private fun getContribuyente(contribuyenteComprobante: MutableList<Any>) : Contribuyente {
         var contribuyente = Contribuyente()
         for (i in contribuyenteComprobante.indices) {
             val row = contribuyenteComprobante[i] as Array<Any>
@@ -236,7 +249,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return contribuyente
     }
 
-    fun getFactura (contribuyenteConprobante : MutableList<Any>) : com.quijotelui.model.Factura {
+    private fun getFactura (contribuyenteConprobante : MutableList<Any>) : com.quijotelui.model.Factura {
         var factura = com.quijotelui.model.Factura()
         for (i in contribuyenteConprobante.indices) {
             val row = contribuyenteConprobante[i] as Array<Any>
@@ -245,7 +258,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return factura
     }
 
-    fun getClaveAcceso(contribuyente: Contribuyente, factura: com.quijotelui.model.Factura, ambiente : String, emision : String) : String {
+    private fun getClaveAcceso(contribuyente: Contribuyente, factura: com.quijotelui.model.Factura, ambiente : String, emision : String) : String {
 
         val m11 = Modulo11()
         val claveAcceso = SimpleDateFormat("ddMMyyyy").format(factura.fecha) +

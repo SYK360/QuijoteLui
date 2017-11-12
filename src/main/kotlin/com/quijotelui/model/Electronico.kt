@@ -1,6 +1,8 @@
 package com.quijotelui.model
 
+import org.hibernate.annotations.Type
 import java.io.Serializable
+import java.util.*
 import javax.persistence.*
 
 @Entity
@@ -23,7 +25,9 @@ class Electronico : Serializable {
     var numeroAutorizacion : String? = null
 
     @Column(name = "fecha_autorizacion")
-    var fechaAutorizacion : String? = null
+    @Temporal(TemporalType.TIMESTAMP)
+//    @Type(type="date")
+    var fechaAutorizacion : Date? = null
 
     @Column(name = "observacion")
     var observacion : String? = null
