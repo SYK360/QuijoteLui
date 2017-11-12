@@ -32,7 +32,7 @@ class FacturaDaoImpl : IFacturaDao {
                 "where codigo = :codigo " +
                 "and numero = :numero")
                 .setParameter("codigo", codigo)
-                .setParameter("numero",numero).resultList as MutableList<Factura>
+                .setParameter("numero", numero).resultList as MutableList<Factura>
     }
 
     @Override
@@ -41,7 +41,7 @@ class FacturaDaoImpl : IFacturaDao {
                 "where codigo = :codigo " +
                 "and numero = :numero")
                 .setParameter("codigo", codigo)
-                .setParameter("numero",numero).resultList as MutableList<FacturaDetalle>
+                .setParameter("numero", numero).resultList as MutableList<FacturaDetalle>
     }
 
     @Override
@@ -92,7 +92,7 @@ class FacturaDaoImpl : IFacturaDao {
                 "where codigo = :codigo " +
                 "and numero = :numero")
                 .setParameter("codigo", codigo)
-                .setParameter("numero",numero).resultList as MutableList<Impuesto>
+                .setParameter("numero", numero).resultList as MutableList<Impuesto>
     }
 
     @Override
@@ -101,7 +101,7 @@ class FacturaDaoImpl : IFacturaDao {
                 "where codigo = :codigo " +
                 "and numero = :numero")
                 .setParameter("codigo", codigo)
-                .setParameter("numero",numero).resultList as MutableList<Pago>
+                .setParameter("numero", numero).resultList as MutableList<Pago>
     }
 
     @Override

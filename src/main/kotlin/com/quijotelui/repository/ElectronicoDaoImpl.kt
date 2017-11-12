@@ -40,4 +40,12 @@ class ElectronicoDaoImpl : IElectronicoDao {
         return entityMAnager.find(Electronico::class.java, id)
     }
 
+    @Override
+    override fun findByComprobante(codigo: String, numero: String): MutableList<Electronico> {
+        return entityMAnager.createQuery("from Electronico " +
+                "where codigo = :codigo " +
+                "and numero = :numero")
+                .setParameter("codigo", codigo)
+                .setParameter("numero", numero).resultList as MutableList<Electronico>
+    }
 }

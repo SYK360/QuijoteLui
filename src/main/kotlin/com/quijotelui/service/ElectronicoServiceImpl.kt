@@ -15,8 +15,19 @@ class ElectronicoServiceImpl : IElectronicoService {
         return electronicoDao.findAll()
     }
 
+    override fun findByComprobante(codigo: String, numero: String): MutableList<Electronico> {
+        return electronicoDao.findByComprobante(codigo, numero)
+    }
+
     override fun saveElectronico(electronico: Electronico) {
         electronicoDao.saveElectronico(electronico)
     }
 
+    override fun findById(id: Long): Electronico {
+        return electronicoDao.findById(id)
+    }
+
+    override fun updateElectronico(electronico: Electronico) {
+        electronicoDao.updateElectronico(electronico)
+    }
 }

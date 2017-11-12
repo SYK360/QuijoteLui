@@ -1,28 +1,13 @@
 package com.quijotelui.electronico.ejecutar
 
-import com.quijotelui.clientews.Comprobar
-import com.quijotelui.clientews.Enviar
-import com.quijotelui.firmador.XAdESBESSignature
-import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.electronico.xml.GeneraFactura
 import com.quijotelui.model.Electronico
-import com.quijotelui.printer.pdf.FacturaPDF
 import com.quijotelui.service.IElectronicoService
 import com.quijotelui.service.IFacturaService
 import com.quijotelui.service.IParametroService
-import com.quijotelui.ws.definicion.AutorizacionEstado
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud
-import java.io.File
-import java.io.IOException
-import java.net.HttpURLConnection
-import java.net.URL
-import com.quijotelui.ws.definicion.Estado
 import ec.gob.sri.comprobantes.ws.Comprobante
-import ec.gob.sri.comprobantes.ws.Mensaje
-import ec.gob.sri.comprobantes.ws.aut.Autorizacion
-
-
-
+import java.time.LocalDateTime
 
 class Electronica(val codigo : String, val numero : String, val parametroService : IParametroService) {
 
@@ -43,137 +28,74 @@ class Electronica(val codigo : String, val numero : String, val parametroService
     fun enviarFactura() {
 
         val genera = GeneraFactura(this.facturaService!!, codigo, numero)
+        val procesar = ProcesarElectronica(parametroService)
         this.claveAcceso = genera.xml()
 
-        firmar()
-        val respuesta = enviar()
-        val electronico = Electronico()
+        procesar.firmar(this.claveAcceso!!)
 
-        electronico.codigo = this.codigo
-        electronico.numero = this.numero
-        electronico.observacion = respuesta?.estado
-        electronico.estado = respuesta?.estado
+        val respuesta = procesar.enviar(this.claveAcceso!!)
+        respuesta?.let { grabarRespuestaEnvio(it) }
 
-        electronicoService?.saveElectronico(electronico)
 
-        imprimirFactura("","")
+        procesar.imprimirFactura(this.claveAcceso!!,"","")
 
     }
 
     fun comprobarFactura() {
 
-        comprobar()
-        imprimirFactura("","")
+        val procesar = ProcesarElectronica(parametroService)
+
+        procesar.comprobar(this.claveAcceso!!)
+        procesar.imprimirFactura(this.claveAcceso!!,"","")
 
     }
 
-    private fun firmar() {
-        val xadesBesFirma = XAdESBESSignature()
-        val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
-        val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
-        val rutaFirmaElectronica = Parametros.getRuta(parametroService.findByNombre("Firma Electrónica"))
-        val firmaElectronica = Parametros.getClaveElectronica(parametroService.findByNombre("Clave Firma Electrónica"))
+    private fun grabarRespuestaEnvio(respuesta : RespuestaSolicitud) {
 
+        var comprobante: Comprobante
+        var electronico = Electronico()
+        val fecha = LocalDateTime.now()
+        var mensaje = "$fecha |"
 
-        xadesBesFirma.firmar("$rutaGenerado" + "${File.separatorChar}" + "${this.claveAcceso}.xml",
-                "${this.claveAcceso}.xml",
-                "$rutaFirmado",
-                "$rutaFirmaElectronica",
-                "$firmaElectronica")
-    }
-
-    private fun enviar(): RespuestaSolicitud? {
-
-        var respuesta = RespuestaSolicitud()
-        val direccionWebServiceEnviado = Parametros.getRuta(parametroService.findByNombre("Web Service Recepción"))
-
-        if (!isWSDLAlive(direccionWebServiceEnviado)){
-            var comprobante = Comprobante()
-            comprobante.claveAcceso = this.claveAcceso
-            var mensaje = Mensaje()
-            mensaje.mensaje = "No existe conexión con el Web Service $direccionWebServiceEnviado"
-            mensaje.tipo = "ERROR"
-            comprobante.mensajes.mensaje.add(Mensaje())
-            respuesta.comprobantes.comprobante.add(comprobante)
-            respuesta.estado = "ERROR"
-            return respuesta
-        }
-
-        val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
-        val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
-        val rutaRechazado= Parametros.getRuta(parametroService.findByNombre("Rechazado"))
-
-
-        val enviar = Enviar(rutaFirmado + File.separatorChar + this.claveAcceso + ".xml",
-                    rutaEnviado,
-                    rutaRechazado,
-                    direccionWebServiceEnviado)
-
-        respuesta = enviar.executeEnviar()
-
-        println("Estado del comprobante ${this.claveAcceso} : ${respuesta.estado}")
-
-        return respuesta
-
-    }
-
-    private fun comprobar(): AutorizacionEstado {
-
-        var autorizacionEstado = AutorizacionEstado(Autorizacion(), Estado.NO_AUTORIZADO)
-        val direccionWebServiceAutorizacion = Parametros.getRuta(parametroService.findByNombre("Web Service Autorización"))
-
-        if (!isWSDLAlive(direccionWebServiceAutorizacion)){
-            return autorizacionEstado
-        }
-
-        val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
-        val rutaAutorizado= Parametros.getRuta(parametroService.findByNombre("Autorizado"))
-        val rutaNoAutorizado= Parametros.getRuta(parametroService.findByNombre("NoAutorizado"))
-
-
-        val comprobar = Comprobar(rutaEnviado + File.separatorChar + this.claveAcceso + ".xml",
-                rutaAutorizado,
-                rutaNoAutorizado,
-                direccionWebServiceAutorizacion)
-
-        autorizacionEstado = comprobar.executeComprobar()
-
-        println("Estado del comprobante ${this.claveAcceso} : ${autorizacionEstado.estadoAutorizacion.descripcion}")
-
-        return autorizacionEstado
-    }
-
-    private fun imprimirFactura(autorizacion : String, fechaAutorizacion : String) {
-
-        val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
-        val rutaReportes= Parametros.getRuta(parametroService.findByNombre("Reportes"))
-        val logo= Parametros.getRuta(parametroService.findByNombre("Logo"))
-        val rutaPDF= Parametros.getRuta(parametroService.findByNombre("PDF"))
-
-        val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
-        pdf.genera(rutaGenerado + File.separatorChar + this.claveAcceso + ".xml",
-                autorizacion,
-                fechaAutorizacion)
-    }
-
-    private fun isWSDLAlive(direccionWSDL : String) : Boolean {
-        var c: HttpURLConnection? = null
-        try {
-            val u = URL(direccionWSDL)
-            c = u.openConnection() as HttpURLConnection
-            c.requestMethod = "GET"
-            c.inputStream
-            if (c.responseCode == 200) {
-                return true
-            }
-        } catch (e: IOException) {
-            println("Error de conexión con WSDL : " + e.message)
-            return false
-        } finally {
-            if (c != null) {
-                c.disconnect()
+        if (respuesta.comprobantes.comprobante.size > 0) {
+            for (i in respuesta.comprobantes.comprobante.indices) {
+                comprobante = respuesta.comprobantes.comprobante[i] as ec.gob.sri.comprobantes.ws.Comprobante
+                mensaje = mensaje + " " + comprobante.claveAcceso + ": "
+                for (m in comprobante.mensajes.mensaje.indices) {
+                    val mensajeRespuesta = comprobante.mensajes.mensaje[m]
+                    mensaje = mensaje + " " + mensajeRespuesta.mensaje
+                }
+                mensaje += " "
             }
         }
-        return false
+
+        if (mensaje.equals("RECIBIDA")){
+            mensaje = "$mensaje Conexión exitosa"
+        }
+
+        if (this.electronicoService!!.findByComprobante(this.codigo, this.numero).isEmpty()) {
+
+            electronico.codigo = this.codigo
+            electronico.numero = this.numero
+            electronico.observacion = mensaje
+            electronico.estado = respuesta.estado
+
+            this.electronicoService?.saveElectronico(electronico)
+        }
+        else{
+            var electronicoUpdate = this.electronicoService!!.findByComprobante(this.codigo, this.numero)
+
+            for (e in electronicoUpdate.indices) {
+                electronico = electronicoUpdate[e]
+            }
+
+            electronico.observacion = mensaje + " | " + electronico.observacion
+            electronico.estado = respuesta.estado
+
+            this.electronicoService!!.updateElectronico(electronico)
+        }
+
     }
+
+
 }
