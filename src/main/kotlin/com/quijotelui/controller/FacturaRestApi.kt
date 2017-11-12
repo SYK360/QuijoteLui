@@ -1,6 +1,5 @@
 package com.quijotelui.controller
 
-
 import com.quijotelui.electronico.ejecutar.Electronica
 import com.quijotelui.model.Factura
 import com.quijotelui.service.IElectronicoService
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import java.util.concurrent.TimeUnit
 
 
 @RestController
@@ -62,14 +62,13 @@ class FacturaRestApi {
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
             }
         }
-
     }
 
     /*
     Autoriza el comprobante electrónico
     */
     @GetMapping("/facturaAutorizar/codigo/{codigo}/numero/{numero}")
-    fun autorizaXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
+    fun autorizarXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
 
         if (codigo == null || numero == null) {
             return ResponseEntity(HttpStatus.CONFLICT)
@@ -81,6 +80,34 @@ class FacturaRestApi {
                 return ResponseEntity(HttpStatus.NOT_FOUND)
             } else {
                 val genera = Electronica(facturaService, codigo, numero, parametroService, electronicoService)
+
+                genera.comprobarFactura()
+                return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
+            }
+        }
+    }
+
+    /*
+    Envía y Autoriza el comprobante electrónico
+    */
+    @GetMapping("/facturaProcesar/codigo/{codigo}/numero/{numero}")
+    fun procesarXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
+
+        if (codigo == null || numero == null) {
+            return ResponseEntity(HttpStatus.CONFLICT)
+        }
+        else {
+            val factura = facturaService.findByComprobante(codigo, numero)
+
+            if (factura.isEmpty()) {
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            } else {
+                val genera = Electronica(facturaService, codigo, numero, parametroService, electronicoService)
+
+                genera.enviarFactura()
+
+                println("Espere 3 segundos por favor")
+                TimeUnit.SECONDS.sleep(3)
 
                 genera.comprobarFactura()
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)

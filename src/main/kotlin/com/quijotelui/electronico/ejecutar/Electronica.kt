@@ -39,7 +39,6 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         val respuesta = procesar.enviar(this.claveAcceso!!)
         respuesta?.let { grabarRespuestaEnvio(it) }
 
-
         procesar.imprimirFactura(this.claveAcceso!!,"","")
 
     }
@@ -104,7 +103,6 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
             this.electronicoService!!.updateElectronico(electronico)
         }
-
     }
 
     private fun grabarAutorizacion(autorizacionEstado : AutorizacionEstado) {
@@ -169,5 +167,4 @@ class Electronica(val codigo : String, val numero : String, val parametroService
             this.electronicoService!!.updateElectronico(electronico)
         }
     }
-
 }
