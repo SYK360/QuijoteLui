@@ -34,10 +34,18 @@ class FacturaRestApi {
         return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
     }
 
-    @GetMapping("/factura/{fecha}")
+    @GetMapping("/facturaFecha/{fecha}")
     fun getByFecha(@PathVariable(value = "fecha") fecha : String) : ResponseEntity<MutableList<Factura>> {
 
         val factura = facturaService.findByFecha(fecha)
+        return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
+    }
+
+    @GetMapping("/facturaFechas/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}")
+    fun getByFechas(@PathVariable(value = "fechaInicio") fechaInicio : String,
+                    @PathVariable(value = "fechaFin") fechaFin : String) : ResponseEntity<MutableList<Factura>> {
+
+        val factura = facturaService.findByFechas(fechaInicio, fechaFin)
         return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
     }
 
@@ -45,7 +53,8 @@ class FacturaRestApi {
     Genera, firma y envía el comprobante electrónico
      */
     @GetMapping("/facturaEnviar/codigo/{codigo}/numero/{numero}")
-    fun enviaXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
+    fun enviaXml(@PathVariable(value = "codigo") codigo : String,
+                 @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
 
         if (codigo == null || numero == null) {
             return ResponseEntity(HttpStatus.CONFLICT)

@@ -105,6 +105,15 @@ class FacturaDaoImpl : IFacturaDao {
     }
 
     @Override
+    override fun findByFechas(fechaInicio: Date, fechaFin: Date): MutableList<Factura> {
+        return entityMAnager.createQuery("from Factura " +
+                "where fecha between :fechaInicio and :fechaFin").
+                setParameter("fechaInicio", fechaInicio).
+                setParameter("fechaFin", fechaFin).
+                resultList as MutableList<Factura>
+    }
+
+    @Override
     override fun findInformacionByDocumento(documento: String): MutableList<Informacion> {
         return entityMAnager.createQuery("from Informacion " +
                 "where documento = :documento")

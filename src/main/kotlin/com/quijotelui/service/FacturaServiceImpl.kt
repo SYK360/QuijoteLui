@@ -30,6 +30,24 @@ class FacturaServiceImpl : IFacturaService {
         return facturaDao.findByFecha(fechaInDateType)
     }
 
+    override fun findByFechas(fechaInicio: String, fechaFin: String): MutableList<Factura> {
+        println("Fecha Inicio en String: $fechaInicio")
+        println("Fecha Fin en String: $fechaFin")
+
+        val simpleDateFormatInicio = SimpleDateFormat("yyyy-MM-dd")
+        val fechaInDateTypeInicio : Date
+        fechaInDateTypeInicio = simpleDateFormatInicio.parse(fechaInicio)
+
+        val simpleDateFormatFin = SimpleDateFormat("yyyy-MM-dd")
+        val fechaInDateTypeFin : Date
+        fechaInDateTypeFin = simpleDateFormatFin.parse(fechaFin)
+
+        println("Fecha Inicio en String: $fechaInDateTypeInicio")
+        println("Fecha Fin en String: $fechaInDateTypeFin")
+
+        return facturaDao.findByFechas(fechaInDateTypeInicio, fechaInDateTypeFin)
+    }
+
     override fun findByComprobante(codigo: String, numero: String): MutableList<Factura> {
         return facturaDao.findByComprobante(codigo, numero)
     }

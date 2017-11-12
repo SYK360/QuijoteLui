@@ -5,6 +5,7 @@
         <group>
             <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/clientews/Comprobar.java</file>
             <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/clientews/Main.java</file>
+            <file>file:/data/git/QuijoteLui/app/QuijoteLuiClient/src/com/quijotelui/ws/util/AutorizacionComprobantesUtil.java</file>
         </group>
     </open-files>
 </project-private>
