@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><autorizacion>
+  <estado>AUTORIZADO</estado>
+  <numeroAutorizacion>2111201701200211100000000417923792539</numeroAutorizacion>
+  <fechaAutorizacion class="fechaAutorizacion">22/11/2017 08:52:27.000</fechaAutorizacion>
+  <comprobante><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprobante" version="1.1.0">
+    <infoTributaria>
+        <ambiente>2</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>ACTIVE FUN DIVERSION S.A.</razonSocial>
+        <nombreComercial>ACTIVE FUN DIVERSION S.A.</nombreComercial>
+        <ruc>1792379253001</ruc>
+        <claveAcceso>2111201701179237925300120021110000000041234567816</claveAcceso>
+        <codDoc>01</codDoc>
+        <estab>002</estab>
+        <ptoEmi>111</ptoEmi>
+        <secuencial>000000004</secuencial>
+        <dirMatriz>CC EL RECREO</dirMatriz>
+    </infoTributaria>
+    <infoFactura>
+        <fechaEmision>21/11/2017</fechaEmision>
+        <dirEstablecimiento>CC EL RECREO</dirEstablecimiento>
+        <obligadoContabilidad>SI</obligadoContabilidad>
+        <comercioExterior>EXPORTADOR</comercioExterior>
+        
+        <lugarIncoTerm>GUAYAQUIL</lugarIncoTerm>
+        <paisOrigen>593</paisOrigen>
+        <puertoEmbarque>GUAYAQUIL</puertoEmbarque>
+        <puertoDestino>PERU</puertoDestino>
+        <paisDestino>120</paisDestino>
+        <paisAdquisicion>120</paisAdquisicion>
+        <tipoIdentificacionComprador>06</tipoIdentificacionComprador>
+        <razonSocialComprador>ACTIVE FUN DIVERSION PERU SAC</razonSocialComprador>
+        <identificacionComprador>20556738964</identificacionComprador>
+        <totalSinImpuestos>17860.00</totalSinImpuestos>
+        <incoTermTotalSinImpuestos>FOB</incoTermTotalSinImpuestos>
+        <totalDescuento>0.00</totalDescuento>
+        <totalConImpuestos>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>0</codigoPorcentaje>
+                <baseImponible>17860.0</baseImponible>
+                <valor>0.0</valor>
+            </totalImpuesto>
+        </totalConImpuestos>
+        <propina>0.00</propina>
+        <importeTotal>17860.00</importeTotal>
+        <moneda>DOLAR</moneda>
+        <pagos>
+            <pago>
+                <formaPago>20</formaPago>
+                <total>17860.0</total>
+                <plazo>0</plazo>
+            </pago>
+        </pagos>
+    </infoFactura>
+    <detalles>
+        <detalle>
+            <codigoPrincipal>SKY-001</codigoPrincipal>
+            <descripcion>Juegos de columpios desarmados en 113 piezas</descripcion>
+            <cantidad>1.0</cantidad>
+            <precioUnitario>9675.0</precioUnitario>
+            <descuento>0.0</descuento>
+            <precioTotalSinImpuesto>9675.0</precioTotalSinImpuesto>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>0</codigoPorcentaje>
+                    <tarifa>0.00</tarifa>
+                    <baseImponible>9675.00</baseImponible>
+                    <valor>0.00</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+        <detalle>
+            <codigoPrincipal>AST-001</codigoPrincipal>
+            <descripcion>Juegos de resbaladeras desarmadas en 10 piezas</descripcion>
+            <cantidad>1.0</cantidad>
+            <precioUnitario>5460.0</precioUnitario>
+            <descuento>0.0</descuento>
+            <precioTotalSinImpuesto>5460.0</precioTotalSinImpuesto>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>0</codigoPorcentaje>
+                    <tarifa>0.00</tarifa>
+                    <baseImponible>5460.00</baseImponible>
+                    <valor>0.00</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+        <detalle>
+            <codigoPrincipal>LAB-C3</codigoPrincipal>
+            <descripcion>Juegos de laberintos de tobogan y resbaladeras desarmadas en 370 piezas</descripcion>
+            <cantidad>1.0</cantidad>
+            <precioUnitario>2725.0</precioUnitario>
+            <descuento>0.0</descuento>
+            <precioTotalSinImpuesto>2725.0</precioTotalSinImpuesto>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>0</codigoPorcentaje>
+                    <tarifa>0.00</tarifa>
+                    <baseImponible>2725.00</baseImponible>
+                    <valor>0.00</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+    </detalles>
+    <infoAdicional>
+        <campoAdicional nombre="Dirección">Calle Clemente X Nro. 410 Urb. Orrantia Magdalena del Mar</campoAdicional>
+        <campoAdicional nombre="Pago">OTROS CON UTILIZACION DEL SISTEMA FINANCIERO</campoAdicional>
+    </infoAdicional>
+<ds:Signature Id="Signature435004" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#">
+<ds:SignedInfo Id="Signature-SignedInfo574619">
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference Id="SignedPropertiesID65194" Type="http://uri.etsi.org/01903#SignedProperties" URI="#Signature435004-SignedProperties135103">
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>sNrsTF0g0OTCEdr2wnaEvCZ1ABM=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference URI="#Certificate1590966">
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>aublOotVu1eWiurJ5198lp+1ges=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Id="Reference-ID-165206" URI="#comprobante">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>W970GED8/uxGDlExmWWCdLGQ4Rs=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue Id="SignatureValue544975">
+t+wRjc6DjmPv1qjHvQQhmNt0EMte+UVNFfy6BjzZyimG71iAE1TafzDFnF0kRldjECCdd6V6uwXY
+JQkhTiaVP8kC6AOv2aSmQRKBdIjguucVV3tnbzJXxstl1QFqk8G1q2KAPR0Sd8Ycd7LCYED1hhy2
+s2AwNIlYzfiWZrKW/ij7w5KhwR7G3TWOSSpqt0clA6t98FIm52yFoJn8C3AzFdU/I/rqx4CqgTlD
+flBhvUv8DAzM5oAiqnxt0dZJzYDpBib5Ue1Ppvp0Nxa08B7XFEzo7WRC2dP2yWo8PiZi2E94q/7/
+MFjGaVC0dV2ljAj3uGzUGnpPhF/MZm0hAyXStA==
+</ds:SignatureValue>
+<ds:KeyInfo Id="Certificate1590966">
+<ds:X509Data>
+<ds:X509Certificate>
+MIIJ2jCCB8KgAwIBAgIETkWd+DANBgkqhkiG9w0BAQsFADCBoTELMAkGA1UEBhMCRUMxIjAgBgNV
+BAoTGUJBTkNPIENFTlRSQUwgREVMIEVDVUFET1IxNzA1BgNVBAsTLkVOVElEQUQgREUgQ0VSVElG
+SUNBQ0lPTiBERSBJTkZPUk1BQ0lPTi1FQ0lCQ0UxDjAMBgNVBAcTBVFVSVRPMSUwIwYDVQQDExxB
+QyBCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMB4XDTE1MTIwODE4MTg1MFoXDTE3MTIwODE4NDg1
+MFowgbQxCzAJBgNVBAYTAkVDMSIwIAYDVQQKExlCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMTcw
+NQYDVQQLEy5FTlRJREFEIERFIENFUlRJRklDQUNJT04gREUgSU5GT1JNQUNJT04tRUNJQkNFMQ4w
+DAYDVQQHEwVRVUlUTzE4MBEGA1UEBRMKMDAwMDE0MTQyODAjBgNVBAMTHFJPQkVSVEhPIEFORFJF
+UyBWSVRFUkkgVEVSQU4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDDwPh1zCE6q5ft
+XoWNGmzag3NC0wkjg1FfDG/Y9850oD5sNtQt0z38qkUZTtHIvecuE2DUSgPK2Dd9DPMKsyzXXrd/
+hyqGGxCsXK2aADAtadIaOpto5LtTEckr+1UIlDfk3hEhjNzM6lMysU323xgRWc41vjpTguvzI4x+
+4Pfdo+CMAEOFrTWYMhiH8jYRUn87aXSchBxCc4OmeAP4zx2Y1J4huCswNbjsWNNkBcUATGGTSLVy
+hMW7GeZvOM1s/KWFlaF0YS4ygrTKZMWk0VIOKQqQhMckUoV1yMyk5GpSHVl5RuW6T1fVZBenCP/x
+ZCXxXRp95iersHkZ5m3VvK5FAgMBAAGjggUDMIIE/zALBgNVHQ8EBAMCB4AwZwYDVR0gBGAwXjBc
+BgsrBgEEAYKoOwICATBNMEsGCCsGAQUFBwIBFj9odHRwOi8vd3d3LmVjaS5iY2UuZWMvcG9saXRp
+Y2EtY2VydGlmaWNhZG8vcGVyc29uYS1qdXJpZGljYS5wZGYwgZEGCCsGAQUFBwEBBIGEMIGBMD4G
+CCsGAQUFBzABhjJodHRwOi8vb2NzcC5lY2kuYmNlLmVjL2VqYmNhL3B1YmxpY3dlYi9zdGF0dXMv
+b2NzcDA/BggrBgEFBQcwAYYzaHR0cDovL29jc3AxLmVjaS5iY2UuZWMvZWpiY2EvcHVibGljd2Vi
+L3N0YXR1cy9vY3NwMCcGCisGAQQBgqg7AwoEGRMXQUNUSVZFIEZVTiBESVZFUlNJT04gU0EwHQYK
+KwYBBAGCqDsDCwQPEw0xNzkyMzc5MjUzMDAxMBoGCisGAQQBgqg7AwEEDBMKMTAwMTY2NTgwOTAf
+BgorBgEEAYKoOwMCBBETD1JPQkVSVEhPIEFORFJFUzAWBgorBgEEAYKoOwMDBAgTBlZJVEVSSTAV
+BgorBgEEAYKoOwMEBAcTBVRFUkFOMBgGCisGAQQBgqg7AwUEChMIQ09OVEFET1IwHAYKKwYBBAGC
+qDsDBwQOEwxBViBNQUxET05BRE8wGQYKKwYBBAGCqDsDCAQLEwkwMjI2MTY5OTQwFQYKKwYBBAGC
+qDsDCQQHEwVRdWl0bzAXBgorBgEEAYKoOwMMBAkTB0VDVUFET1IwIAYKKwYBBAGCqDsDMwQSExBT
+T0ZUV0FSRS1BUkNISVZPMCQGA1UdEQQdMBuBGWNvbnRhYmlsaWRhZEBtcmpveS5jb20uZWMwggHf
+BgNVHR8EggHWMIIB0jCCAc6gggHKoIIBxoaB1WxkYXA6Ly9iY2VxbGRhcHN1YnAxLmJjZS5lYy9j
+bj1DUkwyODAsY249QUMlMjBCQU5DTyUyMENFTlRSQUwlMjBERUwlMjBFQ1VBRE9SLGw9UVVJVE8s
+b3U9RU5USURBRCUyMERFJTIwQ0VSVElGSUNBQ0lPTiUyMERFJTIwSU5GT1JNQUNJT04tRUNJQkNF
+LG89QkFOQ08lMjBDRU5UUkFMJTIwREVMJTIwRUNVQURPUixjPUVDP2NlcnRpZmljYXRlUmV2b2Nh
+dGlvbkxpc3Q/YmFzZYY0aHR0cDovL3d3dy5lY2kuYmNlLmVjL0NSTC9lY2lfYmNlX2VjX2NybGZp
+bGVjb21iLmNybKSBtTCBsjELMAkGA1UEBhMCRUMxIjAgBgNVBAoTGUJBTkNPIENFTlRSQUwgREVM
+IEVDVUFET1IxNzA1BgNVBAsTLkVOVElEQUQgREUgQ0VSVElGSUNBQ0lPTiBERSBJTkZPUk1BQ0lP
+Ti1FQ0lCQ0UxDjAMBgNVBAcTBVFVSVRPMSUwIwYDVQQDExxBQyBCQU5DTyBDRU5UUkFMIERFTCBF
+Q1VBRE9SMQ8wDQYDVQQDEwZDUkwyODAwKwYDVR0QBCQwIoAPMjAxNTEyMDgxODE4NTBagQ8yMDE3
+MTIwODE4NDg1MFowHwYDVR0jBBgwFoAUGPnw++YyHJlmOSrKi7JpfUknv84wHQYDVR0OBBYEFNd/
+JzQyMH8djhFXj5iDUk8a++NhMAkGA1UdEwQCMAAwGQYJKoZIhvZ9B0EABAwwChsEVjguMQMCBLAw
+DQYJKoZIhvcNAQELBQADggIBAGvZyMrN+w1eVvoU9BhkohenPFkjo6glpiNQCkfWigDOf81UHcXx
+Cm32CPgeJLAdw5s12QUwHjx10aP4Yfpk+RmD0nGF4TcYxHu58LcULetFPWSafldwX8eJ2IrzGp/L
+0RnQQ62YkRnKS7zfb7uu+6rdTaJtetPXw1clQiDv9JZELLXzGB4WZMe+z85ZbkyUu+zwpj3cNRhX
+RrTW2b025qbd3atS80c2iY5k9mLHc/PX1LZ8WxquaySUPUQC28wZkfAnvtt3qkAwKdX98LXrB+1c
+ppCCIuOumrBJgioFSMHbXbkEYNfceOFr65B5c8Gji6BM5Rjz5GW0TKpfQHowMn5LAfKxRyzo6hj8
+utYsfAYGJmL0cpkt0jIZGKZw7J8sDk46quQh5P9OP1Ke3Gdy8WzuGGsLDaFMUMDaGp3YTQBkMFO0
+SkeeHOjXfHpNib6Zd4LJ9QUHLDIEN2UasGERN1EBylMKzL32IxM7iZuW4BWLNP/0fEzotRLbQecu
+orLXGyOw0TnTPY6IX6vscJOV328eeBkma0a+rRKyXA8S+WD20uz2pyQomcQ9GAKzTt2Pl0LvDwKf
+JsKar4FcE7i7M6nc7FXO+NWeHmyFKjuNRcBjC+iRhFmwmvVWVG3bEbRcL8lFoNvAIFfeYW5DOE6e
+v4MqBaV1PfinnBTt1D71t5Ug
+</ds:X509Certificate>
+</ds:X509Data>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+w8D4dcwhOquX7V6FjRps2oNzQtMJI4NRXwxv2PfOdKA+bDbULdM9/KpFGU7RyL3nLhNg1EoDytg3
+fQzzCrMs1163f4cqhhsQrFytmgAwLWnSGjqbaOS7UxHJK/tVCJQ35N4RIYzczOpTMrFN9t8YEVnO
+Nb46U4Lr8yOMfuD33aPgjABDha01mDIYh/I2EVJ/O2l0nIQcQnODpngD+M8dmNSeIbgrMDW47FjT
+ZAXFAExhk0i1coTFuxnmbzjNbPylhZWhdGEuMoK0ymTFpNFSDikKkITHJFKFdcjMpORqUh1ZeUbl
+uk9X1WQXpwj/8WQl8V0afeYnq7B5GeZt1byuRQ==
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+</ds:KeyInfo>
+<ds:Object Id="Signature435004-Object42568"><etsi:QualifyingProperties Target="#Signature435004"><etsi:SignedProperties Id="Signature435004-SignedProperties135103"><etsi:SignedSignatureProperties><etsi:SigningTime>2017-11-22T08:53:39-05:00</etsi:SigningTime><etsi:SigningCertificate><etsi:Cert><etsi:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>znlJWdM13DVF2BvhxQCEJoaaCKA=</ds:DigestValue></etsi:CertDigest><etsi:IssuerSerial><ds:X509IssuerName>CN=AC BANCO CENTRAL DEL ECUADOR,L=QUITO,OU=ENTIDAD DE CERTIFICACION DE INFORMACION-ECIBCE,O=BANCO CENTRAL DEL ECUADOR,C=EC</ds:X509IssuerName><ds:X509SerialNumber>1313185272</ds:X509SerialNumber></etsi:IssuerSerial></etsi:Cert></etsi:SigningCertificate></etsi:SignedSignatureProperties><etsi:SignedDataObjectProperties><etsi:DataObjectFormat ObjectReference="#Reference-ID-165206"><etsi:Description>contenido comprobante</etsi:Description><etsi:MimeType>text/xml</etsi:MimeType></etsi:DataObjectFormat></etsi:SignedDataObjectProperties></etsi:SignedProperties></etsi:QualifyingProperties></ds:Object></ds:Signature></factura>]]></comprobante>
+  <mensajes/>
+</autorizacion>  

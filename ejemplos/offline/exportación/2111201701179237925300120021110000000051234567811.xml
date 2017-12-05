@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<factura id="comprobante" version="1.1.0">
+    <infoTributaria>
+        <ambiente>2</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>ACTIVE FUN DIVERSION S.A.</razonSocial>
+        <nombreComercial>ACTIVE FUN DIVERSION S.A.</nombreComercial>
+        <ruc>1792379253001</ruc>
+        <claveAcceso>2111201701179237925300120021110000000051234567811</claveAcceso>
+        <codDoc>01</codDoc>
+        <estab>002</estab>
+        <ptoEmi>111</ptoEmi>
+        <secuencial>000000005</secuencial>
+        <dirMatriz>CC EL RECREO</dirMatriz>
+    </infoTributaria>
+    <infoFactura>
+        <fechaEmision>21/11/2017</fechaEmision>
+        <dirEstablecimiento>CC EL RECREO</dirEstablecimiento>
+        <obligadoContabilidad>SI</obligadoContabilidad>
+        <comercioExterior>EXPORTADOR</comercioExterior>
+        
+        <lugarIncoTerm>GUAYAQUIL</lugarIncoTerm>
+        <paisOrigen>593</paisOrigen>
+        <puertoEmbarque>GUAYAQUIL</puertoEmbarque>
+        <puertoDestino>PERU</puertoDestino>
+        <paisDestino>120</paisDestino>
+        <paisAdquisicion>120</paisAdquisicion>
+        <tipoIdentificacionComprador>06</tipoIdentificacionComprador>
+        <razonSocialComprador>ACTIVE FUN DIVERSION PERU SAC</razonSocialComprador>
+        <identificacionComprador>20556738964</identificacionComprador>
+        <totalSinImpuestos>17860.00</totalSinImpuestos>
+        <incoTermTotalSinImpuestos>FOB</incoTermTotalSinImpuestos>
+        <totalDescuento>0.00</totalDescuento>
+        <totalConImpuestos>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>0</codigoPorcentaje>
+                <baseImponible>17860.0</baseImponible>
+                <valor>0.0</valor>
+            </totalImpuesto>
+        </totalConImpuestos>
+        <propina>0.00</propina>
+        <fleteInternacional>600.00</fleteInternacional>
+        <seguroInternacional>200.03</seguroInternacional>
+        <importeTotal>18660.03</importeTotal>
+        <moneda>DOLAR</moneda>
+        <pagos>
+            <pago>
+                <formaPago>20</formaPago>
+                <total>18660.03</total>
+                <plazo>0</plazo>
+            </pago>
+        </pagos>
+    </infoFactura>
+    <detalles>
+        <detalle>
+            <codigoPrincipal>SKY-001</codigoPrincipal>
+            <descripcion>Juegos de columpios desarmados en 113 piezas</descripcion>
+            <cantidad>1.0</cantidad>
+            <precioUnitario>9675.0</precioUnitario>
+            <descuento>0.0</descuento>
+            <precioTotalSinImpuesto>9675.0</precioTotalSinImpuesto>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>0</codigoPorcentaje>
+                    <tarifa>0.00</tarifa>
+                    <baseImponible>9675.00</baseImponible>
+                    <valor>0.00</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+        <detalle>
+            <codigoPrincipal>AST-001</codigoPrincipal>
+            <descripcion>Juegos de resbaladeras desarmadas en 10 piezas</descripcion>
+            <cantidad>1.0</cantidad>
+            <precioUnitario>5460.0</precioUnitario>
+            <descuento>0.0</descuento>
+            <precioTotalSinImpuesto>5460.0</precioTotalSinImpuesto>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>0</codigoPorcentaje>
+                    <tarifa>0.00</tarifa>
+                    <baseImponible>5460.00</baseImponible>
+                    <valor>0.00</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+        <detalle>
+            <codigoPrincipal>LAB-C3</codigoPrincipal>
+            <descripcion>Juegos de laberintos de tobogan y resbaladeras desarmadas en 370 piezas</descripcion>
+            <cantidad>1.0</cantidad>
+            <precioUnitario>2725.0</precioUnitario>
+            <descuento>0.0</descuento>
+            <precioTotalSinImpuesto>2725.0</precioTotalSinImpuesto>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>0</codigoPorcentaje>
+                    <tarifa>0.00</tarifa>
+                    <baseImponible>2725.00</baseImponible>
+                    <valor>0.00</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+    </detalles>
+    <infoAdicional>
+        <campoAdicional nombre="Dirección">Calle Clemente X Nro. 410 Urb. Orrantia Magdalena del Mar</campoAdicional>
+        <campoAdicional nombre="Pago">OTROS CON UTILIZACION DEL SISTEMA FINANCIERO</campoAdicional>
+    </infoAdicional>
+</factura>
+ 
