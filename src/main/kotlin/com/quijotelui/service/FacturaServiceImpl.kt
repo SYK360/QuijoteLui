@@ -1,5 +1,6 @@
 package com.quijotelui.service
 
+import com.quijotelui.electronico.util.Fechas
 import com.quijotelui.model.*
 import com.quijotelui.repository.IFacturaDao
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,31 +20,19 @@ class FacturaServiceImpl : IFacturaService {
 
     override fun findByFecha(fecha: String): MutableList<Factura> {
 
-        println("Fecha en String: $fecha")
+        val fechas = Fechas()
 
-        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
-        val fechaInDateType : Date
-        fechaInDateType = simpleDateFormat.parse(fecha)
-
-        println("Fecha en Date: $fechaInDateType")
+        val fechaInDateType = fechas.toDate(fecha)
 
         return facturaDao.findByFecha(fechaInDateType)
     }
 
     override fun findByFechas(fechaInicio: String, fechaFin: String): MutableList<Factura> {
-        println("Fecha Inicio en String: $fechaInicio")
-        println("Fecha Fin en String: $fechaFin")
 
-        val simpleDateFormatInicio = SimpleDateFormat("yyyy-MM-dd")
-        val fechaInDateTypeInicio : Date
-        fechaInDateTypeInicio = simpleDateFormatInicio.parse(fechaInicio)
+        val fechas = Fechas()
 
-        val simpleDateFormatFin = SimpleDateFormat("yyyy-MM-dd")
-        val fechaInDateTypeFin : Date
-        fechaInDateTypeFin = simpleDateFormatFin.parse(fechaFin)
-
-        println("Fecha Inicio en String: $fechaInDateTypeInicio")
-        println("Fecha Fin en String: $fechaInDateTypeFin")
+        val fechaInDateTypeInicio = fechas.toDate(fechaInicio)
+        val fechaInDateTypeFin = fechas.toDate(fechaFin)
 
         return facturaDao.findByFechas(fechaInDateTypeInicio, fechaInDateTypeFin)
     }
