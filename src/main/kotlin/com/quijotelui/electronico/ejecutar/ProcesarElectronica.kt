@@ -104,7 +104,7 @@ class ProcesarElectronica(val parametroService : IParametroService) {
         return autorizacionEstado
     }
 
-    fun imprimirFactura(claveAcceso : String, autorizacion : String, fechaAutorizacion : String) {
+    fun imprimirFactura(claveAcceso : String, autorizacion : String? = "", fechaAutorizacion : String? = "") {
 
         val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
         val rutaReportes= Parametros.getRuta(parametroService.findByNombre("Reportes"))
@@ -112,6 +112,8 @@ class ProcesarElectronica(val parametroService : IParametroService) {
         val rutaPDF= Parametros.getRuta(parametroService.findByNombre("PDF"))
 
         val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
+
+
         pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
                 autorizacion,
                 fechaAutorizacion)

@@ -55,7 +55,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
         procesar.imprimirFactura(this.claveAcceso!!,
                 autorizacionEstado.autorizacion.numeroAutorizacion,
-                autorizacionEstado.autorizacion.fechaAutorizacion.toString())
+                autorizacionEstado.autorizacion.fechaAutorizacion?.toString())
     }
 
     private fun grabarRespuestaEnvio(respuesta : RespuestaSolicitud) {
@@ -149,21 +149,25 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                     "${autorizacionEstado.autorizacion.fechaAutorizacion} " + electronico.observacion
             electronico.numeroAutorizacion = autorizacionEstado.autorizacion.numeroAutorizacion
 
-            fecha = autorizacionEstado.autorizacion.fechaAutorizacion.year.toString() + "-" +
-                    autorizacionEstado.autorizacion.fechaAutorizacion.month.toString() +  "-" +
-                    autorizacionEstado.autorizacion.fechaAutorizacion.day.toString() + " " +
-                    autorizacionEstado.autorizacion.fechaAutorizacion.hour.toString() + ":" +
-                    autorizacionEstado.autorizacion.fechaAutorizacion.minute.toString()
+            if (autorizacionEstado.autorizacion.fechaAutorizacion!=null) {
 
-            electronico.estado = autorizacionEstado.autorizacion.estado
 
-            val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
-            val fechaInDateType : Date
-            fechaInDateType = simpleDateFormat.parse(fecha)
-            println("Fecha autorización: $fechaInDateType")
+                fecha = autorizacionEstado.autorizacion.fechaAutorizacion.year.toString() + "-" +
+                        autorizacionEstado.autorizacion.fechaAutorizacion.month.toString() + "-" +
+                        autorizacionEstado.autorizacion.fechaAutorizacion.day.toString() + " " +
+                        autorizacionEstado.autorizacion.fechaAutorizacion.hour.toString() + ":" +
+                        autorizacionEstado.autorizacion.fechaAutorizacion.minute.toString()
 
-            electronico.fechaAutorizacion = fechaInDateType
+                electronico.estado = autorizacionEstado.autorizacion.estado
 
+                val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
+                val fechaInDateType: Date
+                fechaInDateType = simpleDateFormat.parse(fecha)
+                println("Fecha autorización: $fechaInDateType")
+
+                electronico.fechaAutorizacion = fechaInDateType
+
+            }
             this.electronicoService!!.updateElectronico(electronico)
         }
     }
