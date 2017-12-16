@@ -23,4 +23,15 @@ class ReporteRestApi {
         val reporteFactura = reporteFacturaService.findByFechas(fechaInicio, fechaFin)
         return ResponseEntity<MutableList<ReporteFactura>>(reporteFactura, HttpStatus.OK)
     }
+
+    @CrossOrigin(value = "*")
+    @GetMapping("/reporte_factura_estado/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}/estado/{estado}")
+    fun getByFechasEstado(@PathVariable(value = "fechaInicio") fechaInicio : String,
+                          @PathVariable(value = "fechaFin") fechaFin : String,
+                          @PathVariable(value = "estado") estado : String)
+            : ResponseEntity<MutableList<ReporteFactura>> {
+
+        val reporteFactura = reporteFacturaService.findByFechasEstado(fechaInicio, fechaFin, estado)
+        return ResponseEntity<MutableList<ReporteFactura>>(reporteFactura, HttpStatus.OK)
+    }
 }

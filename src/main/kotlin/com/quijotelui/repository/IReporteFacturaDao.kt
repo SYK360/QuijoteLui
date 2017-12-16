@@ -5,7 +5,8 @@ import java.util.*
 
 interface IReporteFacturaDao {
 
-    fun findAll() : MutableList<ReporteFactura>
     fun findByFechas(fechaInicio : Date, fechaFin : Date) : MutableList<ReporteFactura>
+    fun findByFechasAutorizado(fechaInicio : Date, fechaFin : Date) : MutableList<ReporteFactura>
+    fun findByFechasNoAutorizado(fechaInicio : Date, fechaFin : Date) : MutableList<ReporteFactura>
 
 }

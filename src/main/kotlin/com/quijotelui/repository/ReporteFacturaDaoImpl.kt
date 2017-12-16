@@ -24,7 +24,22 @@ class ReporteFacturaDaoImpl : IReporteFacturaDao {
     }
 
     @Override
-    override fun findAll(): MutableList<ReporteFactura> {
-        return entityMAnager.createQuery("from ReporteFactura").resultList as MutableList<ReporteFactura>
+    override fun findByFechasAutorizado(fechaInicio: Date, fechaFin: Date): MutableList<ReporteFactura> {
+        return entityMAnager.createQuery("from ReporteFactura " +
+                "where fecha between :fechaInicio and :fechaFin " +
+                "and estado = 'AUTORIZADO'").
+                setParameter("fechaInicio", fechaInicio).
+                setParameter("fechaFin", fechaFin).
+                resultList as MutableList<ReporteFactura>
+    }
+
+    @Override
+    override fun findByFechasNoAutorizado(fechaInicio: Date, fechaFin: Date): MutableList<ReporteFactura> {
+        return entityMAnager.createQuery("from ReporteFactura " +
+                "where fecha between :fechaInicio and :fechaFin " +
+                "and estado != 'AUTORIZADO'").
+                setParameter("fechaInicio", fechaInicio).
+                setParameter("fechaFin", fechaFin).
+                resultList as MutableList<ReporteFactura>
     }
 }
