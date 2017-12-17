@@ -1,7 +1,6 @@
 package com.quijotelui.controller
 
 import com.quijotelui.electronico.ejecutar.Electronica
-import com.quijotelui.model.Factura
 import com.quijotelui.model.ReporteFactura
 import com.quijotelui.service.IElectronicoService
 import com.quijotelui.service.IFacturaService
@@ -56,7 +55,7 @@ class ReporteRestApi {
     fun autorizarFacturas(@PathVariable(value = "fechaInicio") fechaInicio : String,
                         @PathVariable(value = "fechaFin") fechaFin : String) : ResponseEntity<MutableList<ReporteFactura>> {
 
-        val factura = reporteFacturaService.findByFechasEstado(
+        var factura = reporteFacturaService.findByFechasEstado(
                 fechaInicio,
                 fechaFin,
                 "NoAutorizados")
@@ -88,11 +87,17 @@ class ReporteRestApi {
             }
         }
 
-        val facturaTodas = reporteFacturaService.findByFechasEstado(
-                fechaInicio,
-                fechaFin,
-                "Todos")
+        factura.clear()
 
-        return ResponseEntity<MutableList<ReporteFactura>>(facturaTodas, HttpStatus.OK)
+        factura = reporteFacturaService.findByFechas(fechaInicio, fechaFin)
+        if (factura.size > 0) {
+            println("Estado de facturas")
+            for (i in factura.indices) {
+                val row = factura.get(i)
+                println("$i - ${row.codigo} ${row.numero} ${row.estado}")
+            }
+        }
+
+        return ResponseEntity<MutableList<ReporteFactura>>(factura, HttpStatus.OK)
     }
 }

@@ -135,7 +135,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
             electronico.fechaAutorizacion = fechaInDateType
 
             this.electronicoService!!.saveElectronico(electronico)
-
+            println("Guardado ${electronico.codigo} ${electronico.numero}")
         }
         // Si existe en la base de datos se actualiza
         else {
@@ -169,6 +169,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
             }
             this.electronicoService!!.updateElectronico(electronico)
+            println("Guardado ${electronico.codigo} ${electronico.numero}")
         }
     }
 }
