@@ -52,5 +52,5 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 //	Correo Electrónico
 	compile group: 'org.apache.commons', name: 'commons-email', version: '1.5'
-	compile group: 'javax.mail', name: 'javax.mail-api', version: '1.6.0'
+	compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
 }

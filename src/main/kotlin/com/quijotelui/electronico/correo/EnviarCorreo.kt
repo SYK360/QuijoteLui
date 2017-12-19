@@ -7,9 +7,9 @@ import java.io.File
 
 class EnviarCorreo(val servidor : String, val puerto : Int) {
 
-    val email = HtmlEmail()
-    var pdfAdjunto = EmailAttachment()
-    var xmlAdjunto = EmailAttachment()
+    private val email = HtmlEmail()
+    private var pdfAdjunto = EmailAttachment()
+    private var xmlAdjunto = EmailAttachment()
 
     init {
         email.hostName = servidor

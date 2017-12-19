@@ -19,6 +19,14 @@ class InformacionDaoImpl : IInformacionDao {
                 "where documento = :documento")
                 .setParameter("documento", documento)
                 .resultList as MutableList<Informacion>
+    }
 
+    @Override
+    override fun correoByDocumento(documento: String): MutableList<Informacion> {
+        return entityMAnager.createQuery("from Informacion " +
+                "where documento = :documento " +
+                "and nombre = 'Email'")
+                .setParameter("documento", documento)
+                .resultList as MutableList<Informacion>
     }
 }

@@ -15,4 +15,10 @@ class InformacionServiceImpl : IInformacionService {
     override fun findByDocumento(documento: String): MutableList<Informacion> {
         return informacionDao.findByDocumento(documento)
     }
+
+    @Override
+    override fun correoByDocumento(documento: String): MutableList<Informacion> {
+        return informacionDao.correoByDocumento(documento)
+    }
+
 }
