@@ -50,4 +50,7 @@ dependencies {
 	compile("com.quijotelui.printer:QuijoteLuiPrinter:1.0")
 //	Maven Local QuijoteLui -- fin
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+//	Correo Electrónico
+	compile group: 'org.apache.commons', name: 'commons-email', version: '1.5'
+	compile group: 'javax.mail', name: 'javax.mail-api', version: '1.6.0'
 }
