@@ -59,9 +59,11 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 autorizacionEstado.autorizacion.numeroAutorizacion,
                 autorizacionEstado.autorizacion.fechaAutorizacion?.toString())
 
+        println("Estado de ${codigo} ${numero} para envío al correo: ${autorizacionEstado.autorizacion.estado}")
         if (autorizacionEstado.autorizacion.estado == "AUTORIZADO"){
             if (codigo == "FAC") {
                 val correo = EnviarCorreo(codigo, numero, parametroService, informacionService, facturaService!!)
+                correo.enviar()
             }
         }
     }
