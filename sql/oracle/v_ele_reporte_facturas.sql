@@ -28,6 +28,6 @@ CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_FACTURAS ("ID", "CODIGO", "NUMERO", "
     ) correo_electronico,
     nvl((SELECT e.ESTADO FROM ELE_DOCUMENTOS_ELECTRONICOS e
 where e.CODIGO = f.codigo
-and e.numero = f.numero),'NO AUTORIZADO') estado
+and e.numero = f.numero),'NO ENVIADO') estado
 FROM
     v_ele_facturas f;

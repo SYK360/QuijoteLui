@@ -68,9 +68,7 @@ class ReporteRestApi {
 
                 val factura = facturaService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
-                if (factura.isEmpty()) {
-                    return ResponseEntity(HttpStatus.NOT_FOUND)
-                } else {
+                if (!factura.isEmpty()) {
                     val genera = Electronica(facturaService,
                             row.codigo.toString(),
                             row.numero.toString(),
