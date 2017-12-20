@@ -1,9 +1,11 @@
 package com.quijotelui.electronico.ejecutar
 
+import com.quijotelui.electronico.correo.EnviarCorreo
 import com.quijotelui.electronico.xml.GeneraFactura
 import com.quijotelui.model.Electronico
 import com.quijotelui.service.IElectronicoService
 import com.quijotelui.service.IFacturaService
+import com.quijotelui.service.IInformacionService
 import com.quijotelui.service.IParametroService
 import com.quijotelui.ws.definicion.AutorizacionEstado
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud
@@ -43,7 +45,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
     }
 
-    fun comprobarFactura() {
+    fun comprobarFactura(informacionService : IInformacionService) {
         val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
         this.claveAcceso = genera.claveAcceso
 
@@ -56,6 +58,12 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         procesar.imprimirFactura(this.claveAcceso!!,
                 autorizacionEstado.autorizacion.numeroAutorizacion,
                 autorizacionEstado.autorizacion.fechaAutorizacion?.toString())
+
+        if (autorizacionEstado.autorizacion.estado == "AUTORIZADO"){
+            if (codigo == "FAC") {
+                val correo = EnviarCorreo(codigo, numero, parametroService, informacionService, facturaService!!)
+            }
+        }
     }
 
     private fun grabarRespuestaEnvio(respuesta : RespuestaSolicitud) {

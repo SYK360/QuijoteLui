@@ -2,12 +2,13 @@ package com.quijotelui.controller
 
 import com.quijotelui.electronico.correo.EnviarCorreo
 import com.quijotelui.model.Informacion
+import com.quijotelui.service.IFacturaService
 import com.quijotelui.service.IInformacionService
+import com.quijotelui.service.IParametroService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.io.File
 
 @RestController
 @RequestMapping("/rest/v1")
@@ -16,22 +17,28 @@ class CorreoRestApi {
     @Autowired
     lateinit var informacionService : IInformacionService
 
+    @Autowired
+    lateinit var parametroService : IParametroService
+
+    @Autowired
+    lateinit var facturaService : IFacturaService
+
     @CrossOrigin(value = "*")
-    @GetMapping("/correo/{documento}")
-    fun getContribuyentes(@PathVariable(value = "documento") documento : String)
+    @GetMapping("/correo/codigo/{codigo}/numero/{numero}")
+    fun enviaArchivos(@PathVariable(value = "codigo") codigo : String,
+                 @PathVariable(value = "numero") numero : String)
             : ResponseEntity<MutableList<Informacion>> {
 
-        val informacion = informacionService.correoByDocumento(documento)
+        if (codigo == null || numero == null) {
+            return ResponseEntity(HttpStatus.CONFLICT)
+        }
 
-        val correo = EnviarCorreo("smtp.googlemail.com", 465)
+        var correo : EnviarCorreo? = null
 
-        correo.remitente("chaskiq.ecuador@gmail.com", "Gluc4g0n")
-        correo.pdf(File("/app/Quijotelui/comprobante/pdf/" +
-                "1310201701100245687700110010020000003441234567810.pdf"),"Factura PDF")
-        correo.xml(File("/app/Quijotelui/comprobante/autorizado/" +
-                "1310201701100245687700110010020000003451234567816.xml"), "Factura XML")
-        correo.enviar("jorjoluiso@hotmail.com", "Prueba de Envío", "Hola")
+        if (codigo == "FAC") {
+            correo = EnviarCorreo(codigo, numero, parametroService, informacionService, facturaService)
+        }
 
-        return ResponseEntity<MutableList<Informacion>>(informacion, HttpStatus.OK)
+        return correo!!.enviar()
     }
 }

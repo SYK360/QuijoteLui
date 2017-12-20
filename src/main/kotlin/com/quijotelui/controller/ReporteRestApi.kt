@@ -2,10 +2,7 @@ package com.quijotelui.controller
 
 import com.quijotelui.electronico.ejecutar.Electronica
 import com.quijotelui.model.ReporteFactura
-import com.quijotelui.service.IElectronicoService
-import com.quijotelui.service.IFacturaService
-import com.quijotelui.service.IParametroService
-import com.quijotelui.service.IReporteFacturaService
+import com.quijotelui.service.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -27,6 +24,9 @@ class ReporteRestApi {
 
     @Autowired
     lateinit var electronicoService : IElectronicoService
+
+    @Autowired
+    lateinit var informacionService : IInformacionService
 
 
     @CrossOrigin(value = "*")
@@ -82,7 +82,7 @@ class ReporteRestApi {
                     println("Espere 3 segundos por favor")
                     TimeUnit.SECONDS.sleep(3)
 
-                    genera.comprobarFactura()
+                    genera.comprobarFactura(informacionService)
                 }
             }
         }

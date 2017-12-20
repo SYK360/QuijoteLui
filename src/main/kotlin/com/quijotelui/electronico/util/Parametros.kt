@@ -1,5 +1,6 @@
 package com.quijotelui.electronico.util
 
+import com.quijotelui.electronico.correo.ConfiguracionCorreo
 import com.quijotelui.model.Parametro
 
 class Parametros{
@@ -60,6 +61,35 @@ class Parametros{
                 return Encriptar.decrypt(claveFirmaElectronica)
             }
             return "El parámetro Clave Firma Electrónica no fue encontrado"
+        }
+
+        fun getDatosCorreo(parametro: MutableList<Parametro>) : ConfiguracionCorreo {
+            var servidor = ""
+            var puerto = 0
+            var correo = ""
+            var clave = ""
+
+            if (parametro.isEmpty()) {
+                return ConfiguracionCorreo(servidor, puerto, correo, clave)
+            }
+            else {
+                for (i in parametro.indices) {
+                    if (parametro[i].nombre.toString() == "Servidor Correo"){
+                        servidor = parametro[i].valor.toString()
+                    }
+                    if (parametro[i].nombre.equals("Puerto Servidor Correo")){
+                        puerto = parametro[i].valor!!.toInt()
+                    }
+                    if (parametro[i].nombre.equals("Correo")){
+                        correo = parametro[i].valor.toString()
+                    }
+                    if (parametro[i].nombre.equals("Clave Correo")){
+                        clave = parametro[i].valor.toString()
+                    }
+                }
+                println("Configuración Correo: $servidor $puerto $correo $clave")
+                return ConfiguracionCorreo(servidor, puerto, correo, Encriptar.decrypt(clave))
+            }
         }
     }
 
