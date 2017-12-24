@@ -3,8 +3,10 @@ package com.quijotelui.electronico.ejecutar
 import com.quijotelui.clientews.Comprobar
 import com.quijotelui.clientews.Enviar
 import com.quijotelui.electronico.util.Parametros
+import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.firmador.XAdESBESSignature
 import com.quijotelui.printer.pdf.FacturaPDF
+import com.quijotelui.printer.pdf.RetencionPDF
 import com.quijotelui.service.IParametroService
 import com.quijotelui.ws.definicion.AutorizacionEstado
 import com.quijotelui.ws.definicion.Estado
@@ -104,20 +106,34 @@ class ProcesarElectronica(val parametroService : IParametroService) {
         return autorizacionEstado
     }
 
-    fun imprimirFactura(claveAcceso : String, autorizacion : String? = "", fechaAutorizacion : String? = "") {
+    /*
+    Imprime el comprobante
+    Tipo:  Factura, Retención
+     */
+
+    fun imprimirPDF(claveAcceso : String, autorizacion : String? = "", fechaAutorizacion : String? = "", tipo : TipoComprobante) {
 
         val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
         val rutaReportes= Parametros.getRuta(parametroService.findByNombre("Reportes"))
         val logo= Parametros.getRuta(parametroService.findByNombre("Logo"))
         val rutaPDF= Parametros.getRuta(parametroService.findByNombre("PDF"))
 
-        val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
 
+        if (tipo == TipoComprobante.FACTURA) {
+            val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
+            pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
+                    autorizacion,
+                    fechaAutorizacion)
+        }
+        else if (tipo == TipoComprobante.RETENCION) {
+            val pdf = RetencionPDF(rutaReportes, logo, rutaPDF)
+            pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
+                    autorizacion,
+                    fechaAutorizacion)
+        }
 
-        pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
-                autorizacion,
-                fechaAutorizacion)
     }
+
 
     private fun isWSDLAlive(direccionWSDL : String) : Boolean {
         var c: HttpURLConnection? = null

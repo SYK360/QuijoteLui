@@ -1,7 +1,7 @@
 package com.quijotelui.repository
 
 import com.quijotelui.model.ReporteFactura
-import java.util.*
+import java.util.Date
 
 interface IReporteFacturaDao {
 

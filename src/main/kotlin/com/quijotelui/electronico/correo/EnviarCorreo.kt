@@ -2,10 +2,12 @@ package com.quijotelui.electronico.correo
 
 import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.electronico.xml.GeneraRetencion
 import com.quijotelui.model.Informacion
 import com.quijotelui.service.IFacturaService
 import com.quijotelui.service.IInformacionService
 import com.quijotelui.service.IParametroService
+import com.quijotelui.service.IRetencionService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import java.io.File
@@ -17,6 +19,7 @@ class EnviarCorreo(val codigo : String,
 
     var claveAcceso : String? = null
     private var facturaService : IFacturaService? = null
+    private var retencionService : IRetencionService? = null
 
     constructor(codigo : String,
                 numero : String,
@@ -25,6 +28,15 @@ class EnviarCorreo(val codigo : String,
                 facturaService : IFacturaService)
             : this(codigo, numero, parametroService, informacionService) {
         this.facturaService = facturaService
+    }
+
+    constructor(codigo : String,
+                numero : String,
+                parametroService : IParametroService,
+                informacionService : IInformacionService,
+                retencionService : IRetencionService)
+            : this(codigo, numero, parametroService, informacionService) {
+        this.retencionService = retencionService
     }
 
     fun enviar() : ResponseEntity<MutableList<Informacion>> {
@@ -41,6 +53,19 @@ class EnviarCorreo(val codigo : String,
             descripcion = "Factura"
 
             val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
+            claveAcceso = genera.claveAcceso
+            println("Clave de Acceso: $claveAcceso")
+        }
+
+        else if (codigo == "RET") {
+            val retencion = retencionService!!.findByComprobante(codigo, numero)
+            if (retencion.isEmpty()) {
+                return ResponseEntity(HttpStatus.CONFLICT)
+            }
+            documento = retencion[0].documento!!
+            descripcion = "Retención"
+
+            val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
             claveAcceso = genera.claveAcceso
             println("Clave de Acceso: $claveAcceso")
         }

@@ -1,6 +1,7 @@
 package com.quijotelui.electronico.ejecutar
 
 import com.quijotelui.electronico.correo.EnviarCorreo
+import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.electronico.xml.GeneraFactura
 import com.quijotelui.electronico.xml.GeneraRetencion
 import com.quijotelui.model.Electronico
@@ -51,22 +52,22 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         val respuesta = procesar.enviar(this.claveAcceso!!)
         respuesta?.let { grabarRespuestaEnvio(it) }
 
-        procesar.imprimirFactura(this.claveAcceso!!,"","")
+        procesar.imprimirPDF(this.claveAcceso!!,"","", TipoComprobante.FACTURA)
 
     }
 
     fun enviarRetencion() {
 
         val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
-//        val procesar = ProcesarElectronica(parametroService)
+        val procesar = ProcesarElectronica(parametroService)
         this.claveAcceso = genera.xml()
 
-//        procesar.firmar(this.claveAcceso!!)
-//
-//        val respuesta = procesar.enviar(this.claveAcceso!!)
-//        respuesta?.let { grabarRespuestaEnvio(it) }
-//
-//        procesar.imprimirFactura(this.claveAcceso!!,"","")
+        procesar.firmar(this.claveAcceso!!)
+
+        val respuesta = procesar.enviar(this.claveAcceso!!)
+        respuesta?.let { grabarRespuestaEnvio(it) }
+
+        procesar.imprimirPDF(this.claveAcceso!!,"","", TipoComprobante.RETENCION)
 
     }
 
@@ -80,14 +81,39 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
         grabarAutorizacion(autorizacionEstado)
 
-        procesar.imprimirFactura(this.claveAcceso!!,
+        procesar.imprimirPDF(this.claveAcceso!!,
                 autorizacionEstado.autorizacion.numeroAutorizacion,
-                autorizacionEstado.autorizacion.fechaAutorizacion?.toString())
+                autorizacionEstado.autorizacion.fechaAutorizacion?.toString(),
+                TipoComprobante.FACTURA)
 
         println("Estado de ${codigo} ${numero} para envío al correo: ${autorizacionEstado.autorizacion.estado}")
         if (autorizacionEstado.autorizacion.estado == "AUTORIZADO"){
             if (codigo == "FAC") {
                 val correo = EnviarCorreo(codigo, numero, parametroService, informacionService, facturaService!!)
+                correo.enviar()
+            }
+        }
+    }
+
+    fun comprobarRetencion(informacionService : IInformacionService) {
+        val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
+        this.claveAcceso = genera.claveAcceso
+
+        val procesar = ProcesarElectronica(parametroService)
+
+        val autorizacionEstado = procesar.comprobar(this.claveAcceso!!)
+
+        grabarAutorizacion(autorizacionEstado)
+
+        procesar.imprimirPDF(this.claveAcceso!!,
+                autorizacionEstado.autorizacion.numeroAutorizacion,
+                autorizacionEstado.autorizacion.fechaAutorizacion?.toString(),
+                TipoComprobante.RETENCION)
+
+        println("Estado de ${codigo} ${numero} para envío al correo: ${autorizacionEstado.autorizacion.estado}")
+        if (autorizacionEstado.autorizacion.estado == "AUTORIZADO"){
+            if (codigo == "RET") {
+                val correo = EnviarCorreo(codigo, numero, parametroService, informacionService, retencionService!!)
                 correo.enviar()
             }
         }
