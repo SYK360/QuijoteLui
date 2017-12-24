@@ -7,8 +7,13 @@ import javax.xml.bind.annotation.XmlElement
 import javax.xml.bind.annotation.XmlRootElement
 import javax.xml.bind.annotation.XmlType
 
-@XmlRootElement
-@XmlType(propOrder = arrayOf("infoTributaria", "infoCompRetencion", "impuestos", "infoAdicional"))
+@XmlRootElement(name = "comprobanteRetencion")
+@XmlType(propOrder = arrayOf(
+        "informacionTributaria",
+        "informacionRetencion",
+        "impuestos",
+        "informacionAdicional"
+))
 class Retencion{
 
     @XmlAttribute
@@ -28,5 +33,29 @@ class Retencion{
 
     @XmlElement(name = "infoAdicional")
     private  var informacionAdicional = InformacionAdicional()
+
+    fun setId(id : String) {
+        this.id = id
+    }
+
+    fun setVersion(version : String) {
+        this.version = version
+    }
+
+    fun setInformacionTributaria(informacionTributaria : InformacionTributaria) {
+        this.informacionTributaria = informacionTributaria
+    }
+
+    fun setInformacionRetencion(informacionRetencion : InformacionRetencion) {
+        this.informacionRetencion = informacionRetencion
+    }
+
+    fun setImpuestos(impuestos : Impuestos) {
+        this.impuestos = impuestos
+    }
+
+    fun setInformacionAdicional(informacionAdicional : InformacionAdicional) {
+        this.informacionAdicional = informacionAdicional
+    }
 
 }

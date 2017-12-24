@@ -13,17 +13,18 @@ import javax.xml.bind.annotation.XmlType
         "tipoIdentificacionSujetoRetenido",
         "razonSocialSujetoRetenido",
         "identificacionSujetoRetenido",
-        "periodoFiscal"))
+        "periodoFiscal"
+))
 
-class InformacionRetencion {
+class InformacionRetencion (
 
-    @XmlElement var fechaEmision: String? = null
-    @XmlElement var dirEstablecimiento: String? = null
-    @XmlElement var contribuyenteEspecial: String? = null
-    @XmlElement var obligadoContabilidad: String? = null
-    @XmlElement var tipoIdentificacionSujetoRetenido: String? = null
-    @XmlElement var razonSocialSujetoRetenido: String? = null
-    @XmlElement var identificacionSujetoRetenido: String? = null
+    @XmlElement var fechaEmision: String? = null,
+    @XmlElement var dirEstablecimiento: String? = null,
+    @XmlElement var contribuyenteEspecial: String? = null,
+    @XmlElement var obligadoContabilidad: String? = null,
+    @XmlElement var tipoIdentificacionSujetoRetenido: String? = null,
+    @XmlElement var razonSocialSujetoRetenido: String? = null,
+    @XmlElement var identificacionSujetoRetenido: String? = null,
     @XmlElement var periodoFiscal: String? = null
 
-}
+)

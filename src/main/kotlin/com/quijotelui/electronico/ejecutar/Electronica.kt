@@ -2,11 +2,9 @@ package com.quijotelui.electronico.ejecutar
 
 import com.quijotelui.electronico.correo.EnviarCorreo
 import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.electronico.xml.GeneraRetencion
 import com.quijotelui.model.Electronico
-import com.quijotelui.service.IElectronicoService
-import com.quijotelui.service.IFacturaService
-import com.quijotelui.service.IInformacionService
-import com.quijotelui.service.IParametroService
+import com.quijotelui.service.*
 import com.quijotelui.ws.definicion.AutorizacionEstado
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud
 import ec.gob.sri.comprobantes.ws.Comprobante
@@ -18,6 +16,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
     var claveAcceso : String? = null
     private var facturaService : IFacturaService? = null
+    private var retencionService : IRetencionService? = null
     private var electronicoService : IElectronicoService? = null
 
     constructor(facturaService : IFacturaService,
@@ -27,6 +26,17 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 electronicoService : IElectronicoService)
             : this(codigo, numero, parametroService) {
         this.facturaService = facturaService
+        this.electronicoService = electronicoService
+    }
+
+
+    constructor(retencionService : IRetencionService,
+                codigo : String,
+                numero : String,
+                parametroService : IParametroService,
+                electronicoService : IElectronicoService)
+            : this(codigo, numero, parametroService) {
+        this.retencionService = retencionService
         this.electronicoService = electronicoService
     }
 
@@ -42,6 +52,21 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         respuesta?.let { grabarRespuestaEnvio(it) }
 
         procesar.imprimirFactura(this.claveAcceso!!,"","")
+
+    }
+
+    fun enviarRetencion() {
+
+        val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
+//        val procesar = ProcesarElectronica(parametroService)
+        this.claveAcceso = genera.xml()
+
+//        procesar.firmar(this.claveAcceso!!)
+//
+//        val respuesta = procesar.enviar(this.claveAcceso!!)
+//        respuesta?.let { grabarRespuestaEnvio(it) }
+//
+//        procesar.imprimirFactura(this.claveAcceso!!,"","")
 
     }
 

@@ -52,4 +52,7 @@ class Retencion : Serializable {
     @Column(name = "periodo_fiscal")
     var periodoFiscal : String? = null
 
+    @Column(name = "direccion_establecimiento")
+    var direccionEstablecimiento : String? = null
+
 }

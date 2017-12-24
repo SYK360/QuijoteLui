@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 
 @RestController
 @RequestMapping("/rest/v1")
-class ReporteRestApi {
+class ReporteFacturaRestApi {
 
     @Autowired
     lateinit var reporteFacturaService : IReporteFacturaService

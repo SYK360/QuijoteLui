@@ -40,7 +40,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         }
 
     /*
-    Función que genera la facrua en XML
+        Función que genera la factura en XML
      */
     fun xml() : String {
 
@@ -73,7 +73,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
         }
         catch (e: Exception) {
-            println("Error en GeneraFactura: ${e.message}")
+            println("Error en Genera Factura: ${e.message}")
             return ""
         }
 

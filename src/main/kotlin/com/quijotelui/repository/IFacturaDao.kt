@@ -16,5 +16,4 @@ interface IFacturaDao {
     fun findFacturaDetalleByComprobante(codigo : String, numero : String) : MutableList<FacturaDetalle>
     fun findInformacionByDocumento(documento : String) : MutableList<Informacion>
 
-
 }
