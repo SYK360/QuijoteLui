@@ -9,7 +9,7 @@ import javax.persistence.Table
 
 @Entity
 @Immutable
-@Table(name = "v_ele_guias_destinatario")
+@Table(name = "v_ele_guias_receptor")
 class GuiaDestinatario : Serializable {
 
     @Id
