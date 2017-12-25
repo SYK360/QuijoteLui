@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlType
 class Destinatario (
 
         @XmlElement var identificacionDestinatario: String? = null,
-        @XmlElement var  razonSocialDestinatario: String? = null,
+        @XmlElement var razonSocialDestinatario: String? = null,
         @XmlElement var dirDestinatario: String? = null,
         @XmlElement var motivoTraslado: String? = null,
         @XmlElement var docAduaneroUnico: String? = null,

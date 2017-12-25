@@ -13,3 +13,6 @@ grant select on BAN_RETENCION_C to quijotelui;
 grant select on V_PROVEEDOR to quijotelui;
 grant select on BAN_RETENCION_D to quijotelui;
 grant select on BAN_TIPO_RETENCION to quijotelui;
+grant select on PED_DESPACHO_C to quijotelui;
+grant select on PED_TRANSPORTISTA to quijotelui;
+grant select on PED_DESPACHO_D to quijotelui;
