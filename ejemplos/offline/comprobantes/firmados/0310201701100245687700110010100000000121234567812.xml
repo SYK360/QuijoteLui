@@ -44,7 +44,7 @@
             </pago>
         </pagos>
     </infoFactura>
-    <detalles>
+    <motivos>
         <detalle>
             <codigoPrincipal>1</codigoPrincipal>
             <codigoAuxiliar>1</codigoAuxiliar>
@@ -63,7 +63,7 @@
                 </destinatario>
             </impuestos>
         </detalle>
-    </detalles>
+    </motivos>
     <infoAdicional>
         <campoAdicional nombre="Dirección">Los Nogales</campoAdicional>
         <campoAdicional nombre="Teléfono">062542125</campoAdicional>

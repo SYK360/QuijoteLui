@@ -16,13 +16,13 @@ CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_FACTURAS ("ID", "CODIGO", "NUMERO", "
     f.razon_social,
     (
         SELECT
-            i.valor
+            informacionNotaDebito.valor
         FROM
-            v_ele_informaciones i
+            v_ele_informaciones informacionNotaDebito
         WHERE
-                i.nombre = 'Email'
+                informacionNotaDebito.nombre = 'Email'
             AND
-                i.documento = f.DOCUMENTO
+                informacionNotaDebito.documento = f.DOCUMENTO
             AND
                 ROWNUM = 1
     ) correo_electronico,

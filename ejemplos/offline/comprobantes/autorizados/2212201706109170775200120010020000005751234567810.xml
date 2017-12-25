@@ -31,7 +31,7 @@
             <razonSocialDestinatario>LUBRITECNIC CIA. LTDA.</razonSocialDestinatario>
             <dirDestinatario>VIA A QUEVEDO KM4 1/2 Y AV. EL COOPERATIVISMO</dirDestinatario>
             <motivoTraslado>Venta de productos</motivoTraslado>
-            <detalles>
+            <motivos>
                 <detalle>
                     <codigoInterno>2119</codigoInterno>
                     <descripcion>FULLRUN - 235/75R17.5 16PR TB666 MIXTA LLANTA</descripcion>
@@ -57,7 +57,7 @@
                     <descripcion>FULLRUN - 12R22.5 18PR TB875 MIXTA LLANTA</descripcion>
                     <cantidad>50</cantidad>
                 </detalle>
-            </detalles>
+            </motivos>
         </destinatario>
     </destinatarios>
 </guiaRemision>

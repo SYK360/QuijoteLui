@@ -1,4 +1,4 @@
-package com.quijotelui.electronico.comprobantes.nota.credito
+package com.quijotelui.electronico.comprobantes.nota.debito
 
 import com.quijotelui.electronico.comprobantes.InformacionTributaria
 import comprobantes.InformacionAdicional
@@ -8,8 +8,8 @@ import javax.xml.bind.annotation.XmlRootElement
 import javax.xml.bind.annotation.XmlType
 
 @XmlRootElement
-@XmlType(propOrder = arrayOf("infoTributaria", "infoNotaCredito", "detalles", "infoAdicional"))
-class NotaCredito {
+@XmlType(propOrder = arrayOf("infoTributaria", "infoNotaDebito", "motivos", "infoAdicional"))
+class NotaDebito {
 
     @XmlAttribute
     private var id : String? = null
@@ -20,11 +20,11 @@ class NotaCredito {
     @XmlElement(name = "infoTributaria")
     private var informacionTributaria = InformacionTributaria()
 
-    @XmlElement(name = "infoNotaCredito")
-    private var informacionNotaCredito = InformacionNotaCredito()
+    @XmlElement(name = "infoNotaDebito")
+    private var informacionNotaDebito = InformacionNotaDebito()
 
     @XmlElement
-    private var detalles = Detalles()
+    private var motivos = Motivos()
 
     @XmlElement(name = "infoAdicional")
     private  var informacionAdicional = InformacionAdicional()
@@ -41,12 +41,12 @@ class NotaCredito {
         this.informacionTributaria = informacionTributaria
     }
 
-    fun setInformacionNotaCredito(informacionFactura : InformacionNotaCredito) {
-        this.informacionNotaCredito = informacionFactura
+    fun setInformacionNotaCredito(informacionFactura : InformacionNotaDebito) {
+        this.informacionNotaDebito = informacionFactura
     }
 
-    fun setDetalles(detalles : Detalles) {
-        this.detalles = detalles
+    fun setMotivos(motivos: Motivos) {
+        this.motivos = motivos
     }
 
     fun setInformacionAdicional(informacionAdicional: InformacionAdicional) {

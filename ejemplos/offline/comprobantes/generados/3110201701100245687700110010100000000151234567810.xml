@@ -51,7 +51,7 @@
             </pago>
         </pagos>
     </infoFactura>
-    <detalles>
+    <motivos>
         <detalle>
             <codigoPrincipal>1</codigoPrincipal>
             <descripcion>MI PRODUCTO CON IVA</descripcion>
@@ -86,7 +86,7 @@
                 </destinatario>
             </impuestos>
         </detalle>
-    </detalles>
+    </motivos>
     <infoAdicional>
         <campoAdicional nombre="Dirección">Los Nogales</campoAdicional>
         <campoAdicional nombre="Teléfono">036214568</campoAdicional>

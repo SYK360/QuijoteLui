@@ -89,7 +89,7 @@
 	<field name="docAduanero" class="java.lang.String"/>
 	<field name="codigoEstab" class="java.lang.String"/>
 	<field name="ruta" class="java.lang.String"/>
-	<field name="detalles" class="java.util.Collection"/>
+	<field name="motivos" class="java.util.Collection"/>
 	<variable name="variable1" class="java.lang.String"/>
 	<title>
 		<band height="441" splitType="Stretch">
@@ -527,7 +527,7 @@
 			</textField>
 			<subreport>
 				<reportElement x="15" y="168" width="528" height="36" uuid="0ed6021a-c2f7-4f5e-8f0c-a01ed17e422f"/>
-				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{detalles})]]></dataSourceExpression>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{motivos})]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "guiaRemisionDetalles.jasper"]]></subreportExpression>
 			</subreport>
 		</band>

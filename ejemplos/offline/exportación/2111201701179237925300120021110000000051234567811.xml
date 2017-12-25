@@ -52,7 +52,7 @@
             </pago>
         </pagos>
     </infoFactura>
-    <detalles>
+    <motivos>
         <detalle>
             <codigoPrincipal>SKY-001</codigoPrincipal>
             <descripcion>Juegos de columpios desarmados en 113 piezas</descripcion>
@@ -104,7 +104,7 @@
                 </destinatario>
             </impuestos>
         </detalle>
-    </detalles>
+    </motivos>
     <infoAdicional>
         <campoAdicional nombre="Dirección">Calle Clemente X Nro. 410 Urb. Orrantia Magdalena del Mar</campoAdicional>
         <campoAdicional nombre="Pago">OTROS CON UTILIZACION DEL SISTEMA FINANCIERO</campoAdicional>

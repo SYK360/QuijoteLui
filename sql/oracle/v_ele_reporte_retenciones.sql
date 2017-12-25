@@ -11,13 +11,13 @@ CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_RETENCIONES ("ID", "CODIGO", "NUMERO"
     r.razon_social,
     (
         SELECT
-            i.valor
+            informacionNotaDebito.valor
         FROM
-            v_ele_informaciones i
+            v_ele_informaciones informacionNotaDebito
         WHERE
-                i.nombre = 'Email'
+                informacionNotaDebito.nombre = 'Email'
             AND
-                i.documento = r.DOCUMENTO
+                informacionNotaDebito.documento = r.DOCUMENTO
             AND
                 ROWNUM = 1
     ) correo_electronico,
