@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guiaRemision id="comprobante" version="1.1.0">
+    <infoTributaria>
+        <ambiente>2</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>DISTRIBUIDORA MERCANTIL ESPINOZA DISME CIA LTDA</razonSocial>
+        <nombreComercial>DISME CIA LTDA</nombreComercial>
+        <ruc>1091707752001</ruc>
+        <claveAcceso>2212201706109170775200120010020000005751234567810</claveAcceso>
+        <codDoc>06</codDoc>
+        <estab>001</estab>
+        <ptoEmi>002</ptoEmi>
+        <secuencial>000000575</secuencial>
+        <dirMatriz>AV. MARIANO ACOSTA 32-60 Y AGUSTIN ROSALES</dirMatriz>
+    </infoTributaria>
+    <infoGuiaRemision>
+        <dirEstablecimiento>AV. MARIANO ACOSTA 32-60 Y AGUSTIN ROSALES</dirEstablecimiento>
+        <dirPartida>AV. MARIANO ACOSTA 32-60 Y AGUSTIN ROSALES / IBARRA</dirPartida>
+        <razonSocialTransportista>FERNANDO MUENALA</razonSocialTransportista>
+        <tipoIdentificacionTransportista>06</tipoIdentificacionTransportista>
+        <rucTransportista>100199481-1</rucTransportista>
+        <obligadoContabilidad>SI</obligadoContabilidad>
+        <contribuyenteEspecial>00870</contribuyenteEspecial>
+        <fechaIniTransporte>22/12/2017</fechaIniTransporte>
+        <fechaFinTransporte>25/12/2017</fechaFinTransporte>
+        <placa>ICL-654</placa>
+    </infoGuiaRemision>
+    <destinatarios>
+        <destinatario>
+            <identificacionDestinatario>2390001862001</identificacionDestinatario>
+            <razonSocialDestinatario>LUBRITECNIC CIA. LTDA.</razonSocialDestinatario>
+            <dirDestinatario>VIA A QUEVEDO KM4 1/2 Y AV. EL COOPERATIVISMO</dirDestinatario>
+            <motivoTraslado>Venta de productos</motivoTraslado>
+            <detalles>
+                <detalle>
+                    <codigoInterno>2119</codigoInterno>
+                    <descripcion>FULLRUN - 235/75R17.5 16PR TB666 MIXTA LLANTA</descripcion>
+                    <cantidad>22</cantidad>
+                </detalle>
+                <detalle>
+                    <codigoInterno>1306</codigoInterno>
+                    <descripcion>FULLRUN - 12R22.5 18PR TB900 TRACCION LLANTA</descripcion>
+                    <cantidad>30</cantidad>
+                </detalle>
+                <detalle>
+                    <codigoInterno>1020</codigoInterno>
+                    <descripcion>FULLRUN - 7.50R16(TTF) 16PR TB913 TRACCIÓN LLANTA</descripcion>
+                    <cantidad>13</cantidad>
+                </detalle>
+                <detalle>
+                    <codigoInterno>1017</codigoInterno>
+                    <descripcion>FULLRUN - 11.00R20(TTF) 18PR TB875 MIXTA LLANTA</descripcion>
+                    <cantidad>4</cantidad>
+                </detalle>
+                <detalle>
+                    <codigoInterno>1078</codigoInterno>
+                    <descripcion>FULLRUN - 12R22.5 18PR TB875 MIXTA LLANTA</descripcion>
+                    <cantidad>50</cantidad>
+                </detalle>
+            </detalles>
+        </destinatario>
+    </destinatarios>
+</guiaRemision>

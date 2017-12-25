@@ -6,6 +6,7 @@ import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.firmador.XAdESBESSignature
 import com.quijotelui.printer.pdf.FacturaPDF
+import com.quijotelui.printer.pdf.GuiaRemisionPDF
 import com.quijotelui.printer.pdf.RetencionPDF
 import com.quijotelui.service.IParametroService
 import com.quijotelui.ws.definicion.AutorizacionEstado
@@ -131,9 +132,14 @@ class ProcesarElectronica(val parametroService : IParametroService) {
                     autorizacion,
                     fechaAutorizacion)
         }
+        else if (tipo == TipoComprobante.GUIA) {
+            val pdf = GuiaRemisionPDF(rutaReportes, logo, rutaPDF)
+            pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
+                    autorizacion,
+                    fechaAutorizacion)
+        }
 
     }
-
 
     private fun isWSDLAlive(direccionWSDL : String) : Boolean {
         var c: HttpURLConnection? = null

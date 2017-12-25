@@ -28,9 +28,6 @@ class RetencionRestApi {
     @Autowired
     lateinit var electronicoService : IElectronicoService
 
-    @Autowired
-    lateinit var informacionService : IInformacionService
-
     @GetMapping("/retenciones")
     fun getRetenciones(): ResponseEntity<MutableList<Retencion>> {
         val retenciones = retencionService.findAll()
@@ -70,6 +67,5 @@ class RetencionRestApi {
             }
         }
     }
-
 
 }

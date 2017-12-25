@@ -165,7 +165,7 @@ class GeneraRetencion(val retencionService : IRetencionService, val codigo : Str
         return informacionAdicional
     }
 
-    private fun getContribuyente(contribuyenteComprobante: MutableList<Any>) : Contribuyente {
+    private fun getContribuyente(contribuyenteComprobante : MutableList<Any>) : Contribuyente {
         var contribuyente = Contribuyente()
         for (i in contribuyenteComprobante.indices) {
             val row = contribuyenteComprobante[i] as Array<Any>
@@ -175,20 +175,20 @@ class GeneraRetencion(val retencionService : IRetencionService, val codigo : Str
     }
 
     private fun getRetencion(contribuyenteConprobante : MutableList<Any>) : com.quijotelui.model.Retencion {
-        var retencion = com.quijotelui.model.Retencion()
+        var retencionModel = com.quijotelui.model.Retencion()
         for (i in contribuyenteConprobante.indices) {
             val row = contribuyenteConprobante[i] as Array<Any>
-            retencion = row[1] as com.quijotelui.model.Retencion
+            retencionModel = row[1] as com.quijotelui.model.Retencion
         }
-        return retencion
+        return retencionModel
     }
 
-    private fun getClaveAcceso(contribuyente: Contribuyente, factura : com.quijotelui.model.Retencion, ambiente : String, emision : String) : String {
+    private fun getClaveAcceso(contribuyente: Contribuyente, retencionModel : com.quijotelui.model.Retencion, ambiente : String, emision : String) : String {
 
         val m11 = Modulo11()
-        val claveAcceso = SimpleDateFormat("ddMMyyyy").format(factura.fecha) +
-                factura.codigoDocumento + contribuyente.ruc + ambiente +
-                factura.establecimiento + factura.puntoEmision + factura.secuencial +
+        val claveAcceso = SimpleDateFormat("ddMMyyyy").format(retencionModel.fecha) +
+                retencionModel.codigoDocumento + contribuyente.ruc + ambiente +
+                retencionModel.establecimiento + retencionModel.puntoEmision + retencionModel.secuencial +
                 "12345678" + emision
 
         return claveAcceso + m11.modulo11(claveAcceso)

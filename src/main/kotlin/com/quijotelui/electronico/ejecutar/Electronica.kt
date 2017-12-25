@@ -3,6 +3,7 @@ package com.quijotelui.electronico.ejecutar
 import com.quijotelui.electronico.correo.EnviarCorreo
 import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.electronico.xml.GeneraGuia
 import com.quijotelui.electronico.xml.GeneraRetencion
 import com.quijotelui.model.Electronico
 import com.quijotelui.service.*
@@ -18,6 +19,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
     var claveAcceso : String? = null
     private var facturaService : IFacturaService? = null
     private var retencionService : IRetencionService? = null
+    private var guiaService : IGuiaService? = null
     private var electronicoService : IElectronicoService? = null
 
     constructor(facturaService : IFacturaService,
@@ -30,7 +32,6 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         this.electronicoService = electronicoService
     }
 
-
     constructor(retencionService : IRetencionService,
                 codigo : String,
                 numero : String,
@@ -38,6 +39,16 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 electronicoService : IElectronicoService)
             : this(codigo, numero, parametroService) {
         this.retencionService = retencionService
+        this.electronicoService = electronicoService
+    }
+
+    constructor(guiaService: IGuiaService,
+                codigo : String,
+                numero : String,
+                parametroService : IParametroService,
+                electronicoService : IElectronicoService)
+            : this(codigo, numero, parametroService) {
+        this.guiaService = guiaService
         this.electronicoService = electronicoService
     }
 
@@ -68,6 +79,21 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         respuesta?.let { grabarRespuestaEnvio(it) }
 
         procesar.imprimirPDF(this.claveAcceso!!,"","", TipoComprobante.RETENCION)
+
+    }
+
+    fun enviarGuia() {
+
+        val genera = GeneraGuia(this.guiaService!!, this.codigo, this.numero)
+        val procesar = ProcesarElectronica(parametroService)
+        this.claveAcceso = genera.xml()
+
+        procesar.firmar(this.claveAcceso!!)
+
+        val respuesta = procesar.enviar(this.claveAcceso!!)
+        respuesta?.let { grabarRespuestaEnvio(it) }
+
+        procesar.imprimirPDF(this.claveAcceso!!,"","", TipoComprobante.GUIA)
 
     }
 

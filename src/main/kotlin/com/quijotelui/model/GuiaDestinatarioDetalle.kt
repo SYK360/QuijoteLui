@@ -2,6 +2,7 @@ package com.quijotelui.model
 
 import org.hibernate.annotations.Immutable
 import java.io.Serializable
+import java.math.BigDecimal
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -32,6 +33,6 @@ class GuiaDestinatarioDetalle : Serializable  {
     var nombreArticulo : String? = null
 
     @Column(name = "cantidad")
-    var cantidad : String? = null
+    var cantidad : BigDecimal? = null
 
 }

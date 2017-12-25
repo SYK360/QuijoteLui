@@ -250,20 +250,20 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
     }
 
     private fun getFactura (contribuyenteConprobante : MutableList<Any>) : com.quijotelui.model.Factura {
-        var factura = com.quijotelui.model.Factura()
+        var facturaModel = com.quijotelui.model.Factura()
         for (i in contribuyenteConprobante.indices) {
             val row = contribuyenteConprobante[i] as Array<Any>
-            factura = row[1] as com.quijotelui.model.Factura
+            facturaModel = row[1] as com.quijotelui.model.Factura
         }
-        return factura
+        return facturaModel
     }
 
-    private fun getClaveAcceso(contribuyente: Contribuyente, factura: com.quijotelui.model.Factura, ambiente : String, emision : String) : String {
+    private fun getClaveAcceso(contribuyente: Contribuyente, facturaModel: com.quijotelui.model.Factura, ambiente : String, emision : String) : String {
 
         val m11 = Modulo11()
-        val claveAcceso = SimpleDateFormat("ddMMyyyy").format(factura.fecha) +
-                factura.codigoDocumento + contribuyente.ruc + ambiente +
-                factura.establecimiento + factura.puntoEmision + factura.secuencial +
+        val claveAcceso = SimpleDateFormat("ddMMyyyy").format(facturaModel.fecha) +
+                facturaModel.codigoDocumento + contribuyente.ruc + ambiente +
+                facturaModel.establecimiento + facturaModel.puntoEmision + facturaModel.secuencial +
                 "12345678" + emision
 
         return claveAcceso + m11.modulo11(claveAcceso)

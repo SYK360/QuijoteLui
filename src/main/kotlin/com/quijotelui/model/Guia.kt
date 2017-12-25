@@ -43,6 +43,10 @@ class Guia : Serializable {
     @Type(type="date")
     var fecha : Date? = null
 
+    @Column(name = "fecha_fin")
+    @Type(type="date")
+    var fechaFin : Date? = null
+
     @Column(name = "direccion_partida")
     var direccionPartida : String? = null
 
@@ -57,5 +61,8 @@ class Guia : Serializable {
 
     @Column(name = "placa")
     var placa : String? = null
+
+    @Column(name = "direccion_establecimiento")
+    var direccionEstablecimiento : String? = null
 
 }
