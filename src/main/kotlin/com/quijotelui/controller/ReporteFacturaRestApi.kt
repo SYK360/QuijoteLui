@@ -51,7 +51,7 @@ class ReporteFacturaRestApi {
     }
 
     @CrossOrigin(value = "*")
-    @GetMapping("/facturaAutorizarFechas/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}")
+    @GetMapping("/factura_autoriza/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}")
     fun autorizarFacturas(@PathVariable(value = "fechaInicio") fechaInicio : String,
                         @PathVariable(value = "fechaFin") fechaFin : String) : ResponseEntity<MutableList<ReporteFactura>> {
 
@@ -93,6 +93,39 @@ class ReporteFacturaRestApi {
             for (i in factura.indices) {
                 val row = factura.get(i)
                 println("$i - ${row.codigo} ${row.numero} ${row.estado}")
+            }
+        }
+
+        return ResponseEntity<MutableList<ReporteFactura>>(factura, HttpStatus.OK)
+    }
+
+    @CrossOrigin(value = "*")
+    @GetMapping("/factura_verifica/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}")
+    fun verificarFacturas(@PathVariable(value = "fechaInicio") fechaInicio : String,
+                          @PathVariable(value = "fechaFin") fechaFin : String) : ResponseEntity<MutableList<ReporteFactura>> {
+
+        var factura = reporteFacturaService.findByFechasEstado(
+                fechaInicio,
+                fechaFin,
+                "NoAutorizados")
+
+        println("Facturas entre: $fechaInicio y  $fechaFin")
+        if (factura.size > 0) {
+            for (i in factura.indices) {
+                val row = factura.get(i)
+                println("$i - ${row.codigo} ${row.numero}")
+
+                val factura = facturaService.findByComprobante(row.codigo.toString(), row.numero.toString())
+
+                if (!factura.isEmpty()) {
+                    val genera = Electronica(facturaService,
+                            row.codigo.toString(),
+                            row.numero.toString(),
+                            parametroService,
+                            electronicoService)
+
+                    genera.comprobarFactura(informacionService)
+                }
             }
         }
 

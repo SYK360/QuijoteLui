@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ff1b2b3-b03a-41f1-917f-f8b978681da4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_retenciones.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/TipoComprobante.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/ReporteRetencion.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IReporteRetencionDao.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ReporteRetencionDaoImpl.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IReporteRetencionService.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteRetencionServiceImpl.kt" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IReporteFacturaDao.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IReporteFacturaDao.kt" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -68,23 +59,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReporteRetencionServiceImpl.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteRetencionServiceImpl.kt">
+      <file leaf-file-name="ReporteRetencionRestApi.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="380">
+              <caret line="106" column="36" lean-forward="false" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="36" />
               <folding>
-                <element signature="e#32#284#0" expanded="true" />
+                <element signature="e#35#623#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReporteFacturaServiceImpl.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteFacturaServiceImpl.kt">
+      <file leaf-file-name="ElectronicoRestApi.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ElectronicoRestApi.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="120">
+              <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReporteFacturaRestApi.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="102" column="34" lean-forward="false" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArchivosRestApi.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -604,12 +615,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Fechas.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteFacturaServiceImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ContribuyenteRestApi.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/FacturaServiceImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ElectronicoServiceImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ElectronicoRestApi.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IInformacionDao.kt" />
@@ -633,7 +642,6 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Contribuyente.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IFacturaDao.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/RetencionRestApi.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/retencion/InformacionRetencion.kt" />
         <option value="$PROJECT_DIR$/sql/oracle/v_ele_retenciones.sql" />
@@ -655,6 +663,9 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ReporteRetencionDaoImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IReporteRetencionService.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteRetencionServiceImpl.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt" />
       </list>
     </option>
   </component>
@@ -679,7 +690,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -725,34 +737,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="electronico" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
@@ -765,8 +750,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1158,7 +1142,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1600" height="864" extended-state="6" />
+    <frame x="199" y="417" width="1600" height="864" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1173,7 +1157,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22387096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22709678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967743" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1238,20 +1222,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/Impuestos.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/Impuesto.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/FacturaDetalle.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="677">
@@ -1305,23 +1275,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1329,7 +1282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1337,7 +1289,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1345,7 +1296,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1353,14 +1303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1060">
           <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/RetencionRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="51" column="65" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -1379,7 +1321,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="77" lean-forward="false" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1398,7 +1339,7 @@
         <state relative-caret-position="417">
           <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding>
-            <element signature="e#59#191#0" expanded="true" />
+            <element signature="e#59#191#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1407,7 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="76" column="4" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="77" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1415,7 +1355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="16" column="81" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,7 +1363,7 @@
         <state relative-caret-position="300">
           <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding>
-            <element signature="e#35#195#0" expanded="true" />
+            <element signature="e#35#195#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1433,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="121" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,7 +1380,7 @@
         <state relative-caret-position="280">
           <caret line="14" column="81" lean-forward="false" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
           <folding>
-            <element signature="e#32#192#0" expanded="true" />
+            <element signature="e#32#192#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1452,7 +1390,7 @@
         <state relative-caret-position="1260">
           <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding>
-            <element signature="e#35#391#0" expanded="true" />
+            <element signature="e#35#391#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1470,7 +1408,7 @@
         <state relative-caret-position="569">
           <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
           <folding>
-            <element signature="e#59#347#0" expanded="true" />
+            <element signature="e#59#347#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1504,7 +1442,7 @@
         <state relative-caret-position="2600">
           <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="200" selection-end-column="5" />
           <folding>
-            <element signature="e#40#749#0" expanded="true" />
+            <element signature="e#40#749#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1514,7 +1452,7 @@
         <state relative-caret-position="1760">
           <caret line="133" column="31" lean-forward="true" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
           <folding>
-            <element signature="e#40#893#0" expanded="true" />
+            <element signature="e#40#893#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1527,14 +1465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="127" column="50" lean-forward="false" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-240">
@@ -1543,21 +1473,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding>
-            <element signature="e#45#569#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_retenciones.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1573,7 +1492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="65" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1592,7 +1510,7 @@
         <state relative-caret-position="60">
           <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding>
-            <element signature="e#35#99#0" expanded="true" />
+            <element signature="e#35#99#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1601,9 +1519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#35#101#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1611,25 +1526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="34" column="63" lean-forward="false" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-          <folding>
-            <element signature="e#35#294#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ReporteFacturaDaoImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="42" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IReporteFacturaService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1649,6 +1545,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteRetencionServiceImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding>
+            <element signature="e#32#284#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteFacturaServiceImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1657,13 +1563,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteRetencionServiceImpl.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/RetencionRestApi.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="537">
+          <caret line="51" column="65" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
           <folding>
-            <element signature="e#32#284#0" expanded="true" />
+            <element signature="e#45#569#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IReporteFacturaService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ReporteFacturaDaoImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="106" column="36" lean-forward="false" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="36" />
+          <folding>
+            <element signature="e#35#623#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="102" column="34" lean-forward="false" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ElectronicoRestApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
