@@ -27,7 +27,7 @@
         <periodoFiscal>12/2017</periodoFiscal>
     </infoCompRetencion>
     <impuestos>
-        <impuesto>
+        <destinatario>
             <codigo>2</codigo>
             <codigoRetencion>3</codigoRetencion>
             <baseImponible>1.12</baseImponible>
@@ -36,8 +36,8 @@
             <codDocSustento>01</codDocSustento>
             <numDocSustento>001001123456789</numDocSustento>
             <fechaEmisionDocSustento>21/12/2017</fechaEmisionDocSustento>
-        </impuesto>
-        <impuesto>
+        </destinatario>
+        <destinatario>
             <codigo>1</codigo>
             <codigoRetencion>303</codigoRetencion>
             <baseImponible>10</baseImponible>
@@ -46,7 +46,7 @@
             <codDocSustento>01</codDocSustento>
             <numDocSustento>001001123456789</numDocSustento>
             <fechaEmisionDocSustento>21/12/2017</fechaEmisionDocSustento>
-        </impuesto>
+        </destinatario>
     </impuestos>
     <infoAdicional>
         <campoAdicional nombre="Dirección">Los Laureles</campoAdicional>

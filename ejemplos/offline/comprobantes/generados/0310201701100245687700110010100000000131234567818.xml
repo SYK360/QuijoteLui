@@ -52,13 +52,13 @@
             <descuento>0</descuento>
             <precioTotalSinImpuesto>10.00</precioTotalSinImpuesto>
             <impuestos>
-                <impuesto>
+                <destinatario>
                     <codigo>2</codigo>
                     <codigoPorcentaje>2</codigoPorcentaje>
                     <tarifa>12</tarifa>
                     <baseImponible>10.00</baseImponible>
                     <valor>1.20</valor>
-                </impuesto>
+                </destinatario>
             </impuestos>
         </detalle>
     </detalles>
