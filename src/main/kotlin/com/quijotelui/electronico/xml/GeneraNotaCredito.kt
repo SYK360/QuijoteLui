@@ -126,7 +126,7 @@ class GeneraNotaCredito (val notaCreditoService: INotaCreditoService, val codigo
 
         informacionNotaCredito.moneda="DOLAR"
         informacionNotaCredito.setMotivo(notaCreditoComprobante.motivo!!)
-        
+
         return informacionNotaCredito
 
     }

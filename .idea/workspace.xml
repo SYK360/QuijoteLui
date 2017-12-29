@@ -91,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
-              <caret line="128" column="8" lean-forward="false" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding>
                 <element signature="e#40#924#0" expanded="true" />
               </folding>
@@ -1718,7 +1718,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
-          <caret line="128" column="8" lean-forward="false" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding>
             <element signature="e#40#924#0" expanded="true" />
           </folding>
