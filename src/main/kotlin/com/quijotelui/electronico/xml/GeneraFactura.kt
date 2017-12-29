@@ -191,6 +191,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
             detalle.precioUnitario = facturaDetalles[i].precioUnitario?.setScale(2, BigDecimal.ROUND_HALF_UP)
             detalle.descuento = facturaDetalles[i].descuento?.setScale(2, BigDecimal.ROUND_HALF_UP)
             detalle.precioTotalSinImpuesto = facturaDetalles[i].precioTotalSinImpuesto?.setScale(2, BigDecimal.ROUND_HALF_UP)
+            
 
             detalle.setImpuestos(getDetalleImpuestos(facturaDetalles[i]))
 

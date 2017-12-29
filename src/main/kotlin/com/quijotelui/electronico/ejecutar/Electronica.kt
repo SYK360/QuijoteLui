@@ -4,6 +4,7 @@ import com.quijotelui.electronico.correo.EnviarCorreo
 import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.electronico.xml.GeneraFactura
 import com.quijotelui.electronico.xml.GeneraGuia
+import com.quijotelui.electronico.xml.GeneraNotaCredito
 import com.quijotelui.electronico.xml.GeneraRetencion
 import com.quijotelui.model.Electronico
 import com.quijotelui.service.*
@@ -19,6 +20,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
     var claveAcceso : String? = null
     private var facturaService : IFacturaService? = null
     private var retencionService : IRetencionService? = null
+    private var notaCreditoService : INotaCreditoService? = null
     private var guiaService : IGuiaService? = null
     private var electronicoService : IElectronicoService? = null
 
@@ -52,49 +54,49 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         this.electronicoService = electronicoService
     }
 
-    fun enviarFactura() {
-
-        val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
-        val procesar = ProcesarElectronica(parametroService)
-        this.claveAcceso = genera.xml()
-
-        procesar.firmar(this.claveAcceso!!)
-
-        val respuesta = procesar.enviar(this.claveAcceso!!)
-        respuesta?.let { grabarRespuestaEnvio(it) }
-
-        procesar.imprimirPDF(this.claveAcceso!!,"","", TipoComprobante.FACTURA)
-
+    constructor(notaCreditoService: INotaCreditoService,
+                codigo : String,
+                numero : String,
+                parametroService : IParametroService,
+                electronicoService : IElectronicoService)
+            : this(codigo, numero, parametroService) {
+        this.notaCreditoService = notaCreditoService
+        this.electronicoService = electronicoService
     }
 
-    fun enviarRetencion() {
+    fun enviar(tipo : TipoComprobante) {
 
-        val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
+        if (tipo == TipoComprobante.FACTURA) {
+            val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
+            this.claveAcceso = genera.xml()
+        }
+        else if (tipo == TipoComprobante.RETENCION) {
+            val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
+            this.claveAcceso = genera.xml()
+        }
+        else if (tipo == TipoComprobante.NOTA_CREDITO) {
+            val genera = GeneraNotaCredito(this.notaCreditoService!!, this.codigo, this.numero)
+            this.claveAcceso = genera.xml()
+            return
+        }
+        else if (tipo == TipoComprobante.GUIA) {
+            val genera = GeneraGuia(this.guiaService!!, this.codigo, this.numero)
+            this.claveAcceso = genera.xml()
+        }
+
+        if (this.claveAcceso == ""){
+            println("Error al generar la Clave de Acceso")
+            return
+        }
+
         val procesar = ProcesarElectronica(parametroService)
-        this.claveAcceso = genera.xml()
+        if (procesar.firmar(this.claveAcceso!!)) {
 
-        procesar.firmar(this.claveAcceso!!)
+            val respuesta = procesar.enviar(this.claveAcceso!!)
+            respuesta?.let { grabarRespuestaEnvio(it) }
 
-        val respuesta = procesar.enviar(this.claveAcceso!!)
-        respuesta?.let { grabarRespuestaEnvio(it) }
-
-        procesar.imprimirPDF(this.claveAcceso!!,"","", TipoComprobante.RETENCION)
-
-    }
-
-    fun enviarGuia() {
-
-        val genera = GeneraGuia(this.guiaService!!, this.codigo, this.numero)
-        val procesar = ProcesarElectronica(parametroService)
-        this.claveAcceso = genera.xml()
-
-        procesar.firmar(this.claveAcceso!!)
-
-        val respuesta = procesar.enviar(this.claveAcceso!!)
-        respuesta?.let { grabarRespuestaEnvio(it) }
-
-        procesar.imprimirPDF(this.claveAcceso!!,"","", TipoComprobante.GUIA)
-
+            procesar.imprimirPDF(this.claveAcceso!!, "", "", TipoComprobante.FACTURA)
+        }
     }
 
     fun comprobarFactura(informacionService : IInformacionService) {

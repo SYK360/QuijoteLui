@@ -1,6 +1,7 @@
 package com.quijotelui.controller
 
 import com.quijotelui.electronico.ejecutar.Electronica
+import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.model.Factura
 import com.quijotelui.service.IElectronicoService
 import com.quijotelui.service.IFacturaService
@@ -69,7 +70,7 @@ class FacturaRestApi {
             } else {
                 val genera = Electronica(facturaService, codigo, numero, parametroService, electronicoService)
 
-                genera.enviarFactura()
+                genera.enviar(TipoComprobante.FACTURA)
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
             }
         }
@@ -78,7 +79,7 @@ class FacturaRestApi {
     /*
     Autoriza el comprobante electrónico
     */
-    @GetMapping("/facturaAutorizar/codigo/{codigo}/numero/{numero}")
+    @GetMapping("/factura_autorizar/codigo/{codigo}/numero/{numero}")
     fun autorizarXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
 
         if (codigo == null || numero == null) {
@@ -115,7 +116,7 @@ class FacturaRestApi {
             } else {
                 val genera = Electronica(facturaService, codigo, numero, parametroService, electronicoService)
 
-                genera.enviarFactura()
+                genera.enviar(TipoComprobante.FACTURA)
 
                 println("Espere 3 segundos por favor")
                 TimeUnit.SECONDS.sleep(3)

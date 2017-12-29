@@ -1,6 +1,7 @@
 package com.quijotelui.controller
 
 import com.quijotelui.electronico.ejecutar.Electronica
+import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.model.ReporteRetencion
 import com.quijotelui.service.IRetencionService
 import com.quijotelui.service.IParametroService
@@ -79,7 +80,7 @@ class ReporteRetencionRestApi {
                             parametroService,
                             electronicoService)
 
-                    genera.enviarRetencion()
+                    genera.enviar(TipoComprobante.RETENCION)
 
                     println("Espere 3 segundos por favor")
                     TimeUnit.SECONDS.sleep(3)

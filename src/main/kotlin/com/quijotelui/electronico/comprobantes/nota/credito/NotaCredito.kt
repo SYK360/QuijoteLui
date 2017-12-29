@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement
 import javax.xml.bind.annotation.XmlType
 
 @XmlRootElement
-@XmlType(propOrder = arrayOf("infoTributaria", "infoNotaCredito", "detalles", "infoAdicional"))
+@XmlType(propOrder = arrayOf("informacionTributaria", "informacionNotaCredito", "detalles", "informacionAdicional"))
 class NotaCredito {
 
     @XmlAttribute

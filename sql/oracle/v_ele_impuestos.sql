@@ -1,48 +1,65 @@
-CREATE OR REPLACE FORCE VIEW V_ELE_IMPUESTOS (
-    "ID",
-    "CODIGO",
-    "NUMERO",
-    "CODIGO_IMPUESTO",
-    "CODIGO_PORCENTAJE",
-    "BASE_IMPONIBLE",
-    "TARIFA",
-    "VALOR"
-) AS
-    SELECT DISTINCT
-        f.num_factura AS id,
-        f.cod_documento AS codigo,
-        TO_CHAR(f.num_factura,'fm000000000000000') AS numero,
-        CAST('2' AS VARCHAR2(1) ) AS codigo_impuesto,
+CREATE OR REPLACE FORCE VIEW "V_ELE_IMPUESTOS" ("ID", "CODIGO", "NUMERO", "CODIGO_IMPUESTO", "CODIGO_PORCENTAJE", "BASE_IMPONIBLE", "TARIFA", "VALOR") AS
+  WITH data as(
+SELECT DISTINCT
+    f.cod_documento AS codigo,
+    TO_CHAR(f.NUM_FACTURA,'fm000000000000000') AS numero,
+    cast('2' as varchar2(1)) AS codigo_impuesto,
+    DECODE(
+        d.porcentaje_iva,
+        0,
+        '0',
+        12,
+        '2',
+        14,
+        '3',
+        '-1'
+    ) AS codigo_porcentaje,
+    decode(d.porcentaje_iva,0,f.total_sin_iva,round(
+        f.total_con_iva - f.descuentos,
+        2
+    )) AS base_imponible,
+    d.porcentaje_iva AS tarifa,
+    round(f.iva,2) AS valor
+FROM
+    DISMEMAYOR.fac_factura_c f
+    INNER JOIN DISMEMAYOR.FAC_FACTURA_D d ON
+        f.cod_empresa = d.cod_empresa
+    AND
+        f.cod_documento = d.cod_documento
+    AND
+        f.num_factura = d.num_factura
+    AND
+        nvl(f.estado,'G') <> 'A'
+    AND
+        f.num_factura > 1001000000000
+union all
+SELECT
+    distinct
+    d.cod_documento AS codigo,
+    TO_CHAR(d.num_devolucion,'fm000000000000000') AS numero,
+    CAST('2' AS VARCHAR2(1) ) AS codigo_impuesto,
         DECODE(
-            d.porcentaje_iva,
-            0,
-            '0',
-            12,
-            '2',
-            14,
-            '3',
-            '-1'
-        ) AS codigo_porcentaje,
-        DECODE(
-            d.porcentaje_iva,
-            0,
-            f.total_sin_iva,
-            round(
-                f.total_con_iva - f.descuentos,
-                2
-            )
-        ) AS base_imponible,
-        d.porcentaje_iva AS tarifa,
-        round(f.iva,2) AS valor
-    FROM
-        dismemayor.fac_factura_c f
-        INNER JOIN dismemayor.fac_factura_d d ON
-            f.cod_empresa = d.cod_empresa
-        AND
-            f.cod_documento = d.cod_documento
-        AND
-            f.num_factura = d.num_factura
-        AND
-            nvl(f.estado,'G') <> 'A'
-        AND
-            f.num_factura > 1001000000000;
+        dd.porcentaje_iva,
+        0,
+        '0',
+        12,
+        '2',
+        14,
+        '3',
+        '-1'
+    ) AS codigo_porcentaje,
+    decode(dd.porcentaje_iva,0,d.total_sin_iva,round(
+        d.total_con_iva - d.descuentos,
+        2
+    )) AS base_imponible,
+    dd.porcentaje_iva AS tarifa,
+    round(d.iva,2) AS valor
+FROM
+    dismemayor.fac_devolucion_c d
+    INNER JOIN dismemayor.fac_devolucion_d dd ON d.cod_empresa = dd.cod_empresa
+                                      AND d.cod_documento = dd.cod_documento
+                                      AND d.num_devolucion = dd.num_devolucion
+    where d.num_devolucion >    1001000000000
+)
+SELECT rownum as id, codigo, numero, codigo_impuesto, codigo_porcentaje, base_imponible, tarifa, valor
+from data;

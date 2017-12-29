@@ -1,6 +1,7 @@
 package com.quijotelui.controller
 
 import com.quijotelui.electronico.ejecutar.Electronica
+import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.model.Retencion
 import com.quijotelui.service.IElectronicoService
 import com.quijotelui.service.IInformacionService
@@ -34,7 +35,7 @@ class RetencionRestApi {
         return ResponseEntity<MutableList<Retencion>>(retenciones, HttpStatus.OK)
     }
 
-    @GetMapping("/retencion/codigo/{codigo}/numero/{numero}")
+    @GetMapping("/notaCredito/codigo/{codigo}/numero/{numero}")
     fun getRetencion(@PathVariable(value = "codigo") codigo: String,
                      @PathVariable(value = "numero") numero: String): ResponseEntity<MutableList<Any>> {
 
@@ -46,7 +47,7 @@ class RetencionRestApi {
     /*
      *  Genera, firma y envía el comprobante electrónico
      */
-    @GetMapping("/retencionEnviar/codigo/{codigo}/numero/{numero}")
+    @GetMapping("/retencion_enviar/codigo/{codigo}/numero/{numero}")
     fun enviaXml(@PathVariable(value = "codigo") codigo : String,
                  @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Retencion>> {
 
@@ -62,7 +63,7 @@ class RetencionRestApi {
             else {
                 val genera = Electronica(retencionService, codigo, numero, parametroService, electronicoService)
 
-                genera.enviarRetencion()
+                genera.enviar(TipoComprobante.RETENCION)
                 return ResponseEntity<MutableList<Retencion>>(retencion, HttpStatus.OK)
             }
         }

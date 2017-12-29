@@ -37,4 +37,5 @@ class RetencionServiceImpl : IRetencionService {
     override fun findInformacionByDocumento(documento: String): MutableList<Informacion> {
         return retencionDao.findInformacionByDocumento(documento)
     }
+
 }

@@ -2,6 +2,7 @@ package com.quijotelui.electronico.ejecutar
 
 import com.quijotelui.clientews.Comprobar
 import com.quijotelui.clientews.Enviar
+import com.quijotelui.electronico.util.Archivos
 import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.firmador.XAdESBESSignature
@@ -22,19 +23,23 @@ import java.net.URL
 
 class ProcesarElectronica(val parametroService : IParametroService) {
 
-    fun firmar(claveAcceso : String) {
+    fun firmar(claveAcceso : String) : Boolean {
         val xadesBesFirma = XAdESBESSignature()
         val rutaGenerado = Parametros.getRuta(parametroService.findByNombre("Generado"))
         val rutaFirmado = Parametros.getRuta(parametroService.findByNombre("Firmado"))
         val rutaFirmaElectronica = Parametros.getRuta(parametroService.findByNombre("Firma Electrónica"))
         val firmaElectronica = Parametros.getClaveElectronica(parametroService.findByNombre("Clave Firma Electrónica"))
 
+        if (!Archivos.esDirectorio(rutaFirmado) && !Archivos.esArchivo(rutaFirmaElectronica)) {
+            return false
+        }
 
         xadesBesFirma.firmar("$rutaGenerado" + "${File.separatorChar}" + "${claveAcceso}.xml",
                 "${claveAcceso}.xml",
                 "$rutaFirmado",
                 "$rutaFirmaElectronica",
                 "$firmaElectronica")
+        return true
     }
 
     fun enviar(claveAcceso : String): RespuestaSolicitud? {

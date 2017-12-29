@@ -3,8 +3,9 @@ package com.quijotelui.controller
 import com.quijotelui.electronico.ejecutar.Electronica
 import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.model.Guia
+import com.quijotelui.model.NotaCredito
 import com.quijotelui.service.IElectronicoService
-import com.quijotelui.service.IGuiaService
+import com.quijotelui.service.INotaCreditoService
 import com.quijotelui.service.IParametroService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -16,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/rest/v1")
-class GuiaRestApi {
+class NotaCreditoRestApi {
 
     @Autowired
-    lateinit var guiaService: IGuiaService
+    lateinit var notaCreditoService: INotaCreditoService
 
     @Autowired
     lateinit var parametroService : IParametroService
@@ -27,11 +28,11 @@ class GuiaRestApi {
     @Autowired
     lateinit var electronicoService : IElectronicoService
 
-    @GetMapping("/guia/codigo/{codigo}/numero/{numero}")
-    fun getGuia(@PathVariable(value = "codigo") codigo: String,
-                     @PathVariable(value = "numero") numero: String): ResponseEntity<MutableList<Any>> {
+    @GetMapping("/nota_credito/codigo/{codigo}/numero/{numero}")
+    fun getNotaCredito(@PathVariable(value = "codigo") codigo: String,
+                @PathVariable(value = "numero") numero: String): ResponseEntity<MutableList<Any>> {
 
-        val guia = guiaService.findContribuyenteByComprobante(codigo, numero)
+        val guia = notaCreditoService.findContribuyenteByComprobante(codigo, numero)
 
         return ResponseEntity<MutableList<Any>>(guia, HttpStatus.OK)
     }
@@ -39,24 +40,24 @@ class GuiaRestApi {
     /*
  *  Genera, firma y envía el comprobante electrónico
  */
-    @GetMapping("/guiaEnviar/codigo/{codigo}/numero/{numero}")
+    @GetMapping("/nota_credito_enviar/codigo/{codigo}/numero/{numero}")
     fun enviaXml(@PathVariable(value = "codigo") codigo : String,
-                 @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Guia>> {
+                 @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<NotaCredito>> {
 
         if (codigo == null || numero == null) {
             return ResponseEntity(HttpStatus.CONFLICT)
         }
         else {
-            val guia = guiaService.findByComprobante(codigo, numero)
+            val notaCredito = notaCreditoService.findByComprobante(codigo, numero)
 
-            if (guia.isEmpty()) {
+            if (notaCredito.isEmpty()) {
                 return ResponseEntity(HttpStatus.NOT_FOUND)
             }
             else {
-                val genera = Electronica(guiaService, codigo, numero, parametroService, electronicoService)
+                val genera = Electronica(notaCreditoService, codigo, numero, parametroService, electronicoService)
 
-                genera.enviar(TipoComprobante.GUIA)
-                return ResponseEntity<MutableList<Guia>>(guia, HttpStatus.OK)
+                genera.enviar(TipoComprobante.NOTA_CREDITO)
+                return ResponseEntity<MutableList<NotaCredito>>(notaCredito, HttpStatus.OK)
             }
         }
     }

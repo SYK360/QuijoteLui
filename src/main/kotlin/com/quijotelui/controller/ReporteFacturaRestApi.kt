@@ -1,6 +1,7 @@
 package com.quijotelui.controller
 
 import com.quijotelui.electronico.ejecutar.Electronica
+import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.model.ReporteFactura
 import com.quijotelui.service.*
 import org.springframework.beans.factory.annotation.Autowired
@@ -75,7 +76,7 @@ class ReporteFacturaRestApi {
                             parametroService,
                             electronicoService)
 
-                    genera.enviarFactura()
+                    genera.enviar(TipoComprobante.FACTURA)
 
                     println("Espere 3 segundos por favor")
                     TimeUnit.SECONDS.sleep(3)

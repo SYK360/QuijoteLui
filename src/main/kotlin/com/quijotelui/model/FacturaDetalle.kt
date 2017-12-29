@@ -49,4 +49,5 @@ class FacturaDetalle : Serializable {
 
     @Column(name = "precio_total_sin_impuesto")
     var precioTotalSinImpuesto : BigDecimal? = null
+
 }
