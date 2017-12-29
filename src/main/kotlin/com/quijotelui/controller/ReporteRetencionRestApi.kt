@@ -36,7 +36,7 @@ class ReporteRetencionRestApi {
 
     @CrossOrigin(value = "*")
     @GetMapping("/reporte_retencion/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}")
-    fun getRetencionesByFechas(@PathVariable(value = "fechaInicio") fechaInicio : String,
+    fun getRetencionByFechas(@PathVariable(value = "fechaInicio") fechaInicio : String,
                             @PathVariable(value = "fechaFin") fechaFin : String)
             : ResponseEntity<MutableList<ReporteRetencion>> {
 
@@ -51,13 +51,13 @@ class ReporteRetencionRestApi {
                                   @PathVariable(value = "estado") estado : String)
             : ResponseEntity<MutableList<ReporteRetencion>> {
 
-        val reporteRtencion = reporteRetencionService.findByFechasEstado(fechaInicio, fechaFin, estado)
-        return ResponseEntity<MutableList<ReporteRetencion>>(reporteRtencion, HttpStatus.OK)
+        val reporteRetencion = reporteRetencionService.findByFechasEstado(fechaInicio, fechaFin, estado)
+        return ResponseEntity<MutableList<ReporteRetencion>>(reporteRetencion, HttpStatus.OK)
     }
 
     @CrossOrigin(value = "*")
     @GetMapping("/retencion_autoriza/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}")
-    fun autorizarRetenciones(@PathVariable(value = "fechaInicio") fechaInicio : String,
+    fun autorizarRetencion(@PathVariable(value = "fechaInicio") fechaInicio : String,
                           @PathVariable(value = "fechaFin") fechaFin : String) : ResponseEntity<MutableList<ReporteRetencion>> {
 
         var retenciones = reporteRetencionService.findByFechasEstado(
@@ -85,7 +85,7 @@ class ReporteRetencionRestApi {
                     println("Espere 3 segundos por favor")
                     TimeUnit.SECONDS.sleep(3)
 
-                    genera.comprobarRetencion(informacionService)
+                    genera.comprobar(informacionService, TipoComprobante.RETENCION)
                 }
             }
         }
@@ -94,7 +94,7 @@ class ReporteRetencionRestApi {
 
         retenciones = reporteRetencionService.findByFechas(fechaInicio, fechaFin)
         if (retenciones.size > 0) {
-            println("Estado de facturas")
+            println("Estado de retenciones")
             for (i in retenciones.indices) {
                 val row = retenciones.get(i)
                 println("$i - ${row.codigo} ${row.numero} ${row.estado}")
@@ -106,36 +106,36 @@ class ReporteRetencionRestApi {
 
     @CrossOrigin(value = "*")
     @GetMapping("/retencion_verifica/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}")
-    fun verificarRetenciones(@PathVariable(value = "fechaInicio") fechaInicio : String,
+    fun verificarRetencion(@PathVariable(value = "fechaInicio") fechaInicio : String,
                           @PathVariable(value = "fechaFin") fechaFin : String) :
             ResponseEntity<MutableList<ReporteRetencion>> {
 
-        var factura = reporteRetencionService.findByFechasEstado(
+        var reporteRetencion = reporteRetencionService.findByFechasEstado(
                 fechaInicio,
                 fechaFin,
                 "NoAutorizados")
 
-        println("Facturas entre: $fechaInicio y  $fechaFin")
-        if (factura.size > 0) {
-            for (i in factura.indices) {
-                val row = factura.get(i)
+        println("Retenciones entre: $fechaInicio y  $fechaFin")
+        if (reporteRetencion.size > 0) {
+            for (i in reporteRetencion.indices) {
+                val row = reporteRetencion.get(i)
                 println("$i - ${row.codigo} ${row.numero}")
 
-                val factura = retencionService.findByComprobante(row.codigo.toString(), row.numero.toString())
+                val retencion = retencionService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
-                if (!factura.isEmpty()) {
+                if (!retencion.isEmpty()) {
                     val genera = Electronica(retencionService,
                             row.codigo.toString(),
                             row.numero.toString(),
                             parametroService,
                             electronicoService)
 
-                    genera.comprobarFactura(informacionService)
+                    genera.comprobar(informacionService, TipoComprobante.RETENCION)
                 }
             }
         }
 
-        return ResponseEntity<MutableList<ReporteRetencion>>(factura, HttpStatus.OK)
+        return ResponseEntity<MutableList<ReporteRetencion>>(reporteRetencion, HttpStatus.OK)
     }
 
 }

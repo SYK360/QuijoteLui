@@ -93,7 +93,7 @@ class FacturaRestApi {
             } else {
                 val genera = Electronica(facturaService, codigo, numero, parametroService, electronicoService)
 
-                genera.comprobarFactura(informacionService)
+                genera.comprobar(informacionService, TipoComprobante.FACTURA)
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
             }
         }
@@ -121,7 +121,7 @@ class FacturaRestApi {
                 println("Espere 3 segundos por favor")
                 TimeUnit.SECONDS.sleep(3)
 
-                genera.comprobarFactura(informacionService)
+                genera.comprobar(informacionService, TipoComprobante.FACTURA)
                 return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
             }
         }

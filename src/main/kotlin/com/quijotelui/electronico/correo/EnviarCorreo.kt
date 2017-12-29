@@ -1,13 +1,12 @@
 package com.quijotelui.electronico.correo
 
 import com.quijotelui.electronico.util.Parametros
+import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.electronico.xml.GeneraNotaCredito
 import com.quijotelui.electronico.xml.GeneraRetencion
 import com.quijotelui.model.Informacion
-import com.quijotelui.service.IFacturaService
-import com.quijotelui.service.IInformacionService
-import com.quijotelui.service.IParametroService
-import com.quijotelui.service.IRetencionService
+import com.quijotelui.service.*
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import java.io.File
@@ -17,9 +16,10 @@ class EnviarCorreo(val codigo : String,
                    val parametroService : IParametroService,
                    val informacionService : IInformacionService) {
 
-    var claveAcceso : String? = null
+    var documento : String = ""
     private var facturaService : IFacturaService? = null
     private var retencionService : IRetencionService? = null
+    private var notaCreditoService : INotaCreditoService? = null
 
     constructor(codigo : String,
                 numero : String,
@@ -39,39 +39,65 @@ class EnviarCorreo(val codigo : String,
         this.retencionService = retencionService
     }
 
-    fun enviar() : ResponseEntity<MutableList<Informacion>> {
+    constructor(codigo : String,
+                numero : String,
+                parametroService : IParametroService,
+                informacionService : IInformacionService,
+                notaCreditoService : INotaCreditoService)
+            : this(codigo, numero, parametroService, informacionService) {
+        this.notaCreditoService = notaCreditoService
+    }
 
-        var documento = ""
-        var descripcion = ""
+    private fun getClaveAcceso(tipo : TipoComprobante) : String {
 
-        if (codigo == "FAC") {
-            val factura = facturaService!!.findByComprobante(codigo, numero)
-            if (factura.isEmpty()) {
-                return ResponseEntity(HttpStatus.CONFLICT)
+        when (tipo) {
+            TipoComprobante.FACTURA -> {
+                val factura = facturaService!!.findByComprobante(codigo, numero)
+                if (factura.isEmpty()) {
+                    return ""
+                }
+                this.documento = factura[0].documento!!
+
+                val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
+                return genera.claveAcceso.toString()
             }
-            documento = factura[0].documento!!
-            descripcion = "Factura"
+            TipoComprobante.RETENCION -> {
+                val retencion = retencionService!!.findByComprobante(codigo, numero)
+                if (retencion.isEmpty()) {
+                    return ""
+                }
+                this.documento = retencion[0].documento!!
 
-            val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
-            claveAcceso = genera.claveAcceso
-            println("Clave de Acceso: $claveAcceso")
+                val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
+                return genera.claveAcceso.toString()
+            }
+            TipoComprobante.NOTA_CREDITO -> {
+                val notaCredito = notaCreditoService!!.findByComprobante(codigo, numero)
+                if (notaCredito.isEmpty()) {
+                    return ""
+                }
+                this.documento = notaCredito[0].documento!!
+
+                val genera = GeneraNotaCredito(this.notaCreditoService!!, this.codigo, this.numero)
+                return genera.claveAcceso.toString()
+            }
+            else -> return ""
         }
 
-        else if (codigo == "RET") {
-            val retencion = retencionService!!.findByComprobante(codigo, numero)
-            if (retencion.isEmpty()) {
-                return ResponseEntity(HttpStatus.CONFLICT)
-            }
-            documento = retencion[0].documento!!
-            descripcion = "Retención"
+    }
 
-            val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
-            claveAcceso = genera.claveAcceso
-            println("Clave de Acceso: $claveAcceso")
+    fun enviar(tipo : TipoComprobante) : ResponseEntity<MutableList<Informacion>> {
+
+
+        val descripcion : String = tipo.toString()
+
+        val claveAcceso : String = getClaveAcceso(tipo)
+        if (claveAcceso == "") {
+            return ResponseEntity(HttpStatus.CONFLICT)
         }
+        println("Clave de Acceso: " + claveAcceso)
 
-
-        val informacion = informacionService.correoByDocumento(documento)
+        val informacion = informacionService.correoByDocumento(this.documento)
         val parametro = parametroService.findAll()
         val datosCorreo = Parametros.getDatosCorreo(parametro)
 

@@ -99,9 +99,9 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         }
     }
 
-    fun comprobarFactura(informacionService : IInformacionService) {
-        val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
-        this.claveAcceso = genera.claveAcceso
+    fun comprobar(informacionService : IInformacionService, tipo: TipoComprobante) {
+
+        this.claveAcceso = generaClaveAcceso(tipo)
 
         val procesar = ProcesarElectronica(parametroService)
 
@@ -112,39 +112,44 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         procesar.imprimirPDF(this.claveAcceso!!,
                 autorizacionEstado.autorizacion.numeroAutorizacion,
                 autorizacionEstado.autorizacion.fechaAutorizacion?.toString(),
-                TipoComprobante.FACTURA)
+                tipo)
 
         println("Estado de ${codigo} ${numero} para envío al correo: ${autorizacionEstado.autorizacion.estado}")
         if (autorizacionEstado.autorizacion.estado == "AUTORIZADO"){
-            if (codigo == "FAC") {
+            if (tipo == TipoComprobante.FACTURA) {
                 val correo = EnviarCorreo(codigo, numero, parametroService, informacionService, facturaService!!)
-                correo.enviar()
+                correo.enviar(tipo)
+            }
+            else if (tipo == TipoComprobante.RETENCION) {
+                val correo = EnviarCorreo(codigo, numero, parametroService, informacionService, retencionService!!)
+                correo.enviar(tipo)
+            }
+            else if (tipo == TipoComprobante.NOTA_CREDITO) {
+                val correo = EnviarCorreo(codigo, numero, parametroService, informacionService, notaCreditoService!!)
+                correo.enviar(tipo)
             }
         }
     }
 
-    fun comprobarRetencion(informacionService : IInformacionService) {
-        val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
-        this.claveAcceso = genera.claveAcceso
-
-        val procesar = ProcesarElectronica(parametroService)
-
-        val autorizacionEstado = procesar.comprobar(this.claveAcceso!!)
-
-        grabarAutorizacion(autorizacionEstado)
-
-        procesar.imprimirPDF(this.claveAcceso!!,
-                autorizacionEstado.autorizacion.numeroAutorizacion,
-                autorizacionEstado.autorizacion.fechaAutorizacion?.toString(),
-                TipoComprobante.RETENCION)
-
-        println("Estado de ${codigo} ${numero} para envío al correo: ${autorizacionEstado.autorizacion.estado}")
-        if (autorizacionEstado.autorizacion.estado == "AUTORIZADO"){
-            if (codigo == "RET") {
-                val correo = EnviarCorreo(codigo, numero, parametroService, informacionService, retencionService!!)
-                correo.enviar()
-            }
+    fun generaClaveAcceso(tipo : TipoComprobante) :String {
+        if (tipo == TipoComprobante.FACTURA) {
+            val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
+            return genera.claveAcceso.toString()
         }
+        else if (tipo == TipoComprobante.RETENCION) {
+            val genera = GeneraRetencion(this.retencionService!!, this.codigo, this.numero)
+            return genera.claveAcceso.toString()
+        }
+        else if (tipo == TipoComprobante.NOTA_CREDITO) {
+            val genera = GeneraNotaCredito(this.notaCreditoService!!, this.codigo, this.numero)
+            return genera.claveAcceso.toString()
+        }
+        else if (tipo == TipoComprobante.GUIA) {
+            val genera = GeneraGuia(this.guiaService!!, this.codigo, this.numero)
+            return genera.claveAcceso.toString()
+        }
+
+        return ""
     }
 
     private fun grabarRespuestaEnvio(respuesta : RespuestaSolicitud) {

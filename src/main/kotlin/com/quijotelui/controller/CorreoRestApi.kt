@@ -1,6 +1,7 @@
 package com.quijotelui.controller
 
 import com.quijotelui.electronico.correo.EnviarCorreo
+import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.model.Informacion
 import com.quijotelui.service.IFacturaService
 import com.quijotelui.service.IInformacionService
@@ -33,12 +34,13 @@ class CorreoRestApi {
             return ResponseEntity(HttpStatus.CONFLICT)
         }
 
-        var correo : EnviarCorreo? = null
+        var correo : EnviarCorreo
 
         if (codigo == "FAC") {
             correo = EnviarCorreo(codigo, numero, parametroService, informacionService, facturaService)
+            correo.enviar(TipoComprobante.FACTURA)
         }
 
-        return correo!!.enviar()
+        return ResponseEntity(HttpStatus.CONFLICT)
     }
 }
