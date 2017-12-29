@@ -1,13 +1,11 @@
 package com.quijotelui.electronico.xml
 
 import com.quijotelui.electronico.comprobantes.InformacionTributaria
-import com.quijotelui.electronico.comprobantes.nota.credito.InformacionNotaCredito
-import com.quijotelui.electronico.comprobantes.nota.credito.NotaCredito
-import com.quijotelui.electronico.comprobantes.nota.credito.TotalConImpuestos
-import com.quijotelui.electronico.comprobantes.nota.credito.TotalImpuesto
+import com.quijotelui.electronico.comprobantes.nota.credito.*
 import com.quijotelui.electronico.util.Modulo11
 import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.model.Contribuyente
+import com.quijotelui.model.NotaCreditoDetalle
 import com.quijotelui.service.INotaCreditoService
 import comprobantes.CampoAdicional
 import comprobantes.InformacionAdicional
@@ -41,14 +39,14 @@ class GeneraNotaCredito (val notaCreditoService: INotaCreditoService, val codigo
         }
     fun xml() : String {
 
-//        try {
+        try {
             notaCredito.setId(id = "comprobante")
             notaCredito.setVersion(version = "1.0.0")
 
             notaCredito.setInformacionTributaria(getInformacionTributaria())
             notaCredito.setInformacionNotaCredito(getInformacionNotaCredito())
-//            notaCredito.setImpuestos(getImpuestos())
-//            notaCredito.setInformacionAdicional(getInformacionAdicional())
+            notaCredito.setDetalles(getDetalle())
+            notaCredito.setInformacionAdicional(getInformacionAdicional())
 
             val jaxbContext = JAXBContext.newInstance(NotaCredito::class.java)
             val marshaller = jaxbContext.createMarshaller()
@@ -68,11 +66,11 @@ class GeneraNotaCredito (val notaCreditoService: INotaCreditoService, val codigo
             marshaller.marshal(this.notaCredito, out)
             println(stringWriter)
 
-//        }
-//        catch (e: Exception) {
-//            println("Error en Genera Nota de Crédito: ${e.message}")
-//            return ""
-//        }
+        }
+        catch (e: Exception) {
+            println("Error en Genera Nota de Crédito: ${e.message}")
+            return ""
+        }
 
         return this.claveAcceso.toString()
     }
@@ -81,10 +79,8 @@ class GeneraNotaCredito (val notaCreditoService: INotaCreditoService, val codigo
 
         val informacionTributaria = InformacionTributaria()
 
-
         var contribuyente = getContribuyente(this.contribuyenteNotaCredito)
         var retencionDocumento = getNotaCredito(this.contribuyenteNotaCredito)
-
 
         informacionTributaria.ambiente = Parametros.getAmbiente(notaCreditoService.findParametroByNombre("Ambiente"))
         informacionTributaria.tipoEmision = Parametros.getEmision(notaCreditoService.findParametroByNombre("Emisión"))
@@ -148,6 +144,43 @@ class GeneraNotaCredito (val notaCreditoService: INotaCreditoService, val codigo
 
         return totalConImpuestos
 
+    }
+
+    private fun getDetalle() : Detalles {
+        val notaCreditoDetalles = notaCreditoService.findNotaCreditoDetalleByComprobante(codigo, numero)
+        var detalles = Detalles()
+
+        for (i in notaCreditoDetalles.indices){
+            var detalle = Detalle()
+            detalle.codigoInterno = notaCreditoDetalles[i].codigoInterno
+            detalle.descripcion = notaCreditoDetalles[i].descripcion
+            detalle.cantidad = notaCreditoDetalles[i].cantidad?.setScale(2, BigDecimal.ROUND_HALF_UP)
+            detalle.precioUnitario = notaCreditoDetalles[i].precioUnitario?.setScale(2, BigDecimal.ROUND_HALF_UP)
+            detalle.descuento = notaCreditoDetalles[i].descuento?.setScale(2, BigDecimal.ROUND_HALF_UP)
+            detalle.precioTotalSinImpuesto = notaCreditoDetalles[i].precioTotalSinImpuesto?.setScale(2, BigDecimal.ROUND_HALF_UP)
+
+            detalle.setImpuestos(getDetalleImpuestos(notaCreditoDetalles[i]))
+
+            detalles.setDetalle(detalle)
+        }
+
+        return detalles
+    }
+
+    private fun getDetalleImpuestos(detalle : NotaCreditoDetalle) : Impuestos {
+
+        val impuesto = Impuesto()
+        var impuestos = Impuestos()
+
+        impuesto.codigo = "2"
+        impuesto.codigoPorcentaje = detalle.codigoPorcentaje
+        impuesto.tarifa = detalle.porcentajeIva
+        impuesto.baseImponible = detalle.precioTotalSinImpuesto?.setScale(2, BigDecimal.ROUND_HALF_UP)
+        impuesto.valor = detalle.valorIva?.setScale(2, BigDecimal.ROUND_HALF_UP)
+
+        impuestos.setImpuesto(impuesto)
+
+        return impuestos
     }
 
     private fun getInformacionAdicional() : InformacionAdicional {

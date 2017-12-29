@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ff1b2b3-b03a-41f1-917f-f8b978681da4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/NotaCreditoRestApi.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Archivos.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/INotaCreditoDao.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/NotaCreditoDaoImpl.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/INotaCreditoService.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/NotaCreditoServiceImpl.kt" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_impuestos.sql" afterPath="$PROJECT_DIR$/sql/oracle/v_ele_impuestos.sql" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/GuiaRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/GuiaRestApi.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/RetencionRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/RetencionRestApi.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/NotaCredito.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/NotaCredito.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/FacturaDetalle.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/FacturaDetalle.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/NotaCreditoDetalle.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/NotaCreditoDetalle.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/RetencionServiceImpl.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/RetencionServiceImpl.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -76,40 +56,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GeneraFactura.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="161" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneraNotaCredito.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-              <folding>
-                <element signature="e#40#924#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TotalImpuesto.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/TotalImpuesto.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -138,6 +85,7 @@
       <find>contribuyenteEspecial</find>
       <find>InformacionRetencion</find>
       <find>;</find>
+      <find>fac</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -701,6 +649,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -741,66 +691,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="electronico" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="electronico" type="462c0819:PsiDirectoryNode" />
-              <item name="comprobantes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="electronico" type="462c0819:PsiDirectoryNode" />
-              <item name="comprobantes" type="462c0819:PsiDirectoryNode" />
-              <item name="factura" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="electronico" type="462c0819:PsiDirectoryNode" />
-              <item name="ejecutar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="electronico" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
@@ -814,8 +705,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1231,7 +1120,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="199" y="417" width="1600" height="864" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1245,11 +1133,10 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2283871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2316129" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967743" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967743" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967742" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1264,6 +1151,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -1314,20 +1202,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/debito/NotaDebito.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="59" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/debito/Pago.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="59" lean-forward="false" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/debito/Pagos.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1377,13 +1251,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/Factura.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1410,7 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1425,7 +1291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1433,7 +1298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1441,7 +1305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="81" lean-forward="false" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1457,7 +1320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="82" column="59" lean-forward="false" selection-start-line="82" selection-start-column="59" selection-end-line="82" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,7 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="657">
           <caret line="83" column="49" lean-forward="false" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1489,9 +1350,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="689">
           <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-          <folding>
-            <element signature="e#30#251#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1499,7 +1357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1507,7 +1364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1515,7 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="14" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1523,7 +1378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="63" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1531,9 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="e#32#192#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1541,7 +1392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1549,7 +1399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
           <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1557,7 +1406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="62" column="0" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="62" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1601,7 +1449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1625,7 +1472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="66" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1637,19 +1483,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="161" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_impuestos.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1657,7 +1494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1665,17 +1501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="95" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/NotaCreditoDaoImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="e#35#260#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1683,7 +1508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1691,9 +1515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="13" column="91" lean-forward="false" selection-start-line="13" selection-start-column="91" selection-end-line="13" selection-end-column="91" />
-          <folding>
-            <element signature="e#32#233#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1701,9 +1522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="26" column="71" lean-forward="false" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
-          <folding>
-            <element signature="e#32#218#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1715,13 +1533,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/Factura.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/Detalles.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/Detalle.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/NotaCreditoDaoImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="37" column="52" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="52" />
+          <folding>
+            <element signature="e#35#260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="176" column="23" lean-forward="false" selection-start-line="176" selection-start-column="23" selection-end-line="176" selection-end-column="23" />
           <folding>
-            <element signature="e#40#924#0" expanded="true" />
+            <element signature="e#40#726#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="223" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
