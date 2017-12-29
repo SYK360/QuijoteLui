@@ -71,7 +71,7 @@
 
     -->
     <target name="-post-jar">
-        <jar jarfile="dist/QuijoteLuiClient-1.1.jar">
+        <jar jarfile="dist/QuijoteLuiClient-1.2.jar">
             <zipfileset src="${dist.jar}" excludes="META-INF/*"/>
             
             <zipfileset src="lib/cliente-ws-offline.jar" excludes="META-INF/*"/>

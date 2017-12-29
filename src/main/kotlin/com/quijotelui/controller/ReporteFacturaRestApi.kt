@@ -76,12 +76,15 @@ class ReporteFacturaRestApi {
                             parametroService,
                             electronicoService)
 
-                    genera.enviar(TipoComprobante.FACTURA)
+                    val respuesta = genera.enviar(TipoComprobante.FACTURA)
+                    println("Restpuesta: $respuesta")
 
-                    println("Espere 3 segundos por favor")
-                    TimeUnit.SECONDS.sleep(3)
+                    if (respuesta != "DEVUELTA") {
+                        println("Espere 3 segundos por favor")
+                        TimeUnit.SECONDS.sleep(3)
 
-                    genera.comprobar(informacionService, TipoComprobante.FACTURA)
+                        genera.comprobar(informacionService, TipoComprobante.FACTURA)
+                    }
                 }
             }
         }

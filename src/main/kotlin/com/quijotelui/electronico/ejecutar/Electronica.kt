@@ -64,7 +64,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         this.electronicoService = electronicoService
     }
 
-    fun enviar(tipo : TipoComprobante) {
+    fun enviar(tipo : TipoComprobante) : String {
 
         if (tipo == TipoComprobante.FACTURA) {
             val genera = GeneraFactura(this.facturaService!!, this.codigo, this.numero)
@@ -77,7 +77,6 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         else if (tipo == TipoComprobante.NOTA_CREDITO) {
             val genera = GeneraNotaCredito(this.notaCreditoService!!, this.codigo, this.numero)
             this.claveAcceso = genera.xml()
-            return
         }
         else if (tipo == TipoComprobante.GUIA) {
             val genera = GeneraGuia(this.guiaService!!, this.codigo, this.numero)
@@ -86,17 +85,23 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
         if (this.claveAcceso == ""){
             println("Error al generar la Clave de Acceso")
-            return
+            return ""
         }
 
         val procesar = ProcesarElectronica(parametroService)
+        var respuestaEstado = ""
         if (procesar.firmar(this.claveAcceso!!)) {
 
             val respuesta = procesar.enviar(this.claveAcceso!!)
-            respuesta?.let { grabarRespuestaEnvio(it) }
+            respuesta?.let {
+                respuestaEstado = grabarRespuestaEnvio(it)
+            }
 
             procesar.imprimirPDF(this.claveAcceso!!, "", "", TipoComprobante.FACTURA)
         }
+
+        return respuestaEstado
+
     }
 
     fun comprobar(informacionService : IInformacionService, tipo: TipoComprobante) {
@@ -152,7 +157,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         return ""
     }
 
-    private fun grabarRespuestaEnvio(respuesta : RespuestaSolicitud) {
+    private fun grabarRespuestaEnvio(respuesta : RespuestaSolicitud) : String {
 
         var comprobante: Comprobante
         var electronico = Electronico()
@@ -197,6 +202,8 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
             this.electronicoService!!.updateElectronico(electronico)
         }
+
+        return respuesta.estado
     }
 
     private fun grabarAutorizacion(autorizacionEstado : AutorizacionEstado) {

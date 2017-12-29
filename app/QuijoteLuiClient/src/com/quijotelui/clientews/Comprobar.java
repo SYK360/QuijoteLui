@@ -19,12 +19,15 @@ import javax.xml.xpath.XPathConstants;
  * @author jorgequiguango
  */
 public class Comprobar {
-    
+
     String archivoEnviado;
     String destinoAutorizado;
     String destinoNoAutorizado;
     String direccionWebService;
 
+    /*
+    Esté constructor se usa cuando se dispone del archivo enviado
+    */
     public Comprobar(String archivoEnviado, String destinoAutorizado, String destinoNoAutorizado, String direccionWebService) {
         this.archivoEnviado = archivoEnviado;
         this.destinoAutorizado = destinoAutorizado;
@@ -36,21 +39,41 @@ public class Comprobar {
         *
         *Autorización
         *https://celcer.sri.gob.ec/comprobantes-electronicos-ws/AutorizacionComprobantesOffline?wsdl
-        */
+         */
+        this.direccionWebService = direccionWebService;
+    }
+
+    /*
+    Esté constructor se usa cuando se dispone solo de la clave de acceso
+    */
+    public Comprobar(String destinoAutorizado, String destinoNoAutorizado, String direccionWebService) {
+        this.destinoAutorizado = destinoAutorizado;
+        this.destinoNoAutorizado = destinoNoAutorizado;
+        /*
+        *Web Service de Pruevas
+        *Recepción
+        *https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl
+        *
+        *Autorización
+        *https://celcer.sri.gob.ec/comprobantes-electronicos-ws/AutorizacionComprobantesOffline?wsdl
+         */
         this.direccionWebService = direccionWebService;
     }
     
+    /*
+    Esté constructor se usa cuando se dispone del archivo enviado
+    */
     public AutorizacionEstado executeComprobar() {
-         RespuestaComprobante respuestaComprobante = null;
+        RespuestaComprobante respuestaComprobante = null;
         AutorizacionEstado autorizacionEstado = new AutorizacionEstado(new Autorizacion(), Estado.NO_AUTORIZADO);
 
         try {
-            
+
             File archivoXMLEnviado = new File(this.archivoEnviado);
             String nombreArchivo = archivoXMLEnviado.getName();
-            
+
             byte[] enviado = ArchivoUtils.archivoToByte(archivoXMLEnviado);
-            
+
             LectorXMLPath lectorXMLPath = new LectorXMLPath(enviado, XPathConstants.STRING);
             String claveAccesoComprobante = lectorXMLPath.getClaveAcceso();
             String codDoc = lectorXMLPath.getCodDoc();
@@ -61,8 +84,8 @@ public class Comprobar {
                     if (!respuestaComprobante.getAutorizaciones().getAutorizacion().isEmpty()) {
                         AutorizacionComprobantesUtil autorizacionComprobantesUtil = new AutorizacionComprobantesUtil(respuestaComprobante, nombreArchivo);
                         autorizacionEstado = autorizacionComprobantesUtil.obtenerEstadoAutorizaccion();
-                        autorizacionComprobantesUtil.validarRespuestaAutorizacion(autorizacionEstado, 
-                                this.destinoAutorizado, 
+                        autorizacionComprobantesUtil.validarRespuestaAutorizacion(autorizacionEstado,
+                                this.destinoAutorizado,
                                 this.destinoNoAutorizado);
                         System.out.println(nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + autorizacionEstado.getEstadoAutorizacion().getDescripcion());
                     } else {
@@ -72,7 +95,7 @@ public class Comprobar {
                     if (Estado.NO_AUTORIZADO.equals(autorizacionEstado.getEstadoAutorizacion())) {
                         System.out.println("El comprobante no está Autorizado");
                     }
-                    System.out.println( nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + autorizacionEstado.getEstadoAutorizacion().getDescripcion() + ex.getMessage());
+                    System.out.println(nombreArchivo + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + autorizacionEstado.getEstadoAutorizacion().getDescripcion() + ex.getMessage());
                 }
             } else {
                 System.out.println("La información <codDoc> y <claveAcceso> son obligatorias para la comprobación de un archivo");
@@ -82,7 +105,40 @@ public class Comprobar {
             Logger.getLogger(Comprobar.class.getName()).log(Level.SEVERE, null, ex);
         }
         return autorizacionEstado;
-        
+
     }
-    
+    /*
+    Está función se usa cuando se dispone solo de la clave de acceso
+    */
+    public AutorizacionEstado executeComprobar(String claveAccesoComprobante) {
+        RespuestaComprobante respuestaComprobante = null;
+        AutorizacionEstado autorizacionEstado = new AutorizacionEstado(new Autorizacion(), Estado.NO_AUTORIZADO);
+
+        if ((claveAccesoComprobante != null)) {
+            try {
+                respuestaComprobante = AutorizacionComprobantesWs.autorizarComprobante(claveAccesoComprobante, this.direccionWebService);
+                if (!respuestaComprobante.getAutorizaciones().getAutorizacion().isEmpty()) {
+                    AutorizacionComprobantesUtil autorizacionComprobantesUtil = new AutorizacionComprobantesUtil(respuestaComprobante, claveAccesoComprobante + ".xml");
+                    autorizacionEstado = autorizacionComprobantesUtil.obtenerEstadoAutorizaccion();
+                    autorizacionComprobantesUtil.validarRespuestaAutorizacion(autorizacionEstado,
+                            this.destinoAutorizado,
+                            this.destinoNoAutorizado);
+                    System.out.println(claveAccesoComprobante + " " + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + " " + autorizacionEstado.getEstadoAutorizacion().getDescripcion());
+                } else {
+                    System.out.println(claveAccesoComprobante + " " + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + " " + Estado.NO_PROCESADO.getDescripcion() + "El archivo no tiene autorizaciones relacionadas");
+                }
+            } catch (Exception ex) {
+                if (Estado.NO_AUTORIZADO.equals(autorizacionEstado.getEstadoAutorizacion())) {
+                    System.out.println("El comprobante no está Autorizado");
+                }
+                System.out.println(claveAccesoComprobante + ArchivoUtils.obtieneTipoDeComprobante(claveAccesoComprobante) + autorizacionEstado.getEstadoAutorizacion().getDescripcion() + ex.getMessage());
+            }
+        } else {
+            System.out.println("La información <codDoc> y <claveAcceso> son obligatorias para la comprobación de un archivo");
+            System.out.println("Error al tratar de enviar el comprobante hacia el SRI: Se ha producido un error ");
+        }
+        return autorizacionEstado;
+
+    }
+
 }
