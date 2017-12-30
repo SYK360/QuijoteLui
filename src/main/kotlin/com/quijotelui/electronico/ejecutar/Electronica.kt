@@ -97,7 +97,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 respuestaEstado = grabarRespuestaEnvio(it)
             }
 
-            procesar.imprimirPDF(this.claveAcceso!!, "", "", TipoComprobante.FACTURA)
+            procesar.imprimirPDF(this.claveAcceso!!, "", "", tipo)
         }
 
         return respuestaEstado

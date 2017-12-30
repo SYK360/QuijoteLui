@@ -8,6 +8,7 @@ import com.quijotelui.electronico.util.TipoComprobante
 import com.quijotelui.firmador.XAdESBESSignature
 import com.quijotelui.printer.pdf.FacturaPDF
 import com.quijotelui.printer.pdf.GuiaRemisionPDF
+import com.quijotelui.printer.pdf.NotaCreditoPDF
 import com.quijotelui.printer.pdf.RetencionPDF
 import com.quijotelui.service.IParametroService
 import com.quijotelui.ws.definicion.AutorizacionEstado
@@ -134,6 +135,12 @@ class ProcesarElectronica(val parametroService : IParametroService) {
         }
         else if (tipo == TipoComprobante.RETENCION) {
             val pdf = RetencionPDF(rutaReportes, logo, rutaPDF)
+            pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
+                    autorizacion,
+                    fechaAutorizacion)
+        }
+        else if (tipo == TipoComprobante.NOTA_CREDITO) {
+            val pdf = NotaCreditoPDF(rutaReportes, logo, rutaPDF)
             pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
                     autorizacion,
                     fechaAutorizacion)
