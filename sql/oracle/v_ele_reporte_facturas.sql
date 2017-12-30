@@ -30,4 +30,5 @@ CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_FACTURAS ("ID", "CODIGO", "NUMERO", "
 where e.CODIGO = f.codigo
 and e.numero = f.numero),'NO ENVIADO') estado
 FROM
-    v_ele_facturas f;
+    v_ele_facturas f
+    order by f.id asc;

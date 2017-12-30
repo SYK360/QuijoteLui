@@ -25,4 +25,5 @@ CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_RETENCIONES ("ID", "CODIGO", "NUMERO"
 where e.CODIGO = r.codigo
 and e.numero = r.numero),'NO ENVIADO') estado
 FROM
-    v_ele_retenciones r;
+    v_ele_retenciones r
+    order by r.id asc;
