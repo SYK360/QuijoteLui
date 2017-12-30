@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="comprobanteRetencion" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3eaa0e8-2300-4d0d-bb98-ea16c8d01451">
 	<property name="ireport.zoom" value="2.0"/>
-	<property name="ireport.x" value="109"/>
-	<property name="ireport.y" value="670"/>
+	<property name="ireport.x" value="18"/>
+	<property name="ireport.y" value="718"/>
 	<parameter name="RUC" class="java.lang.String"/>
 	<parameter name="NUM_AUT" class="java.lang.String"/>
 	<parameter name="FECHA_AUT" class="java.lang.String"/>
@@ -92,8 +92,8 @@
 				<reportElement mode="Transparent" x="0" y="169" width="225" height="165" uuid="56a35a33-f1d8-4b9e-a264-8a30ff9fe9d9"/>
 			</rectangle>
 			<textField>
-				<reportElement mode="Transparent" x="262" y="115" width="253" height="25" uuid="21f91fd0-ee8f-4123-835f-7cff0bd5583a"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement mode="Transparent" x="238" y="115" width="314" height="25" uuid="21f91fd0-ee8f-4123-835f-7cff0bd5583a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="11" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($P{NUM_AUT}==null)?"NO ENVIADA":$P{NUM_AUT}]]></textFieldExpression>

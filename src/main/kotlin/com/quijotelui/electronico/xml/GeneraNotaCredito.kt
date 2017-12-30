@@ -117,7 +117,10 @@ class GeneraNotaCredito (val notaCreditoService: INotaCreditoService, val codigo
         informacionNotaCredito.identificacionComprador = notaCreditoComprobante.documento
         informacionNotaCredito.totalSinImpuestos = notaCreditoComprobante.totalSinIva!!.setScale(2, BigDecimal.ROUND_HALF_UP) +
                 notaCreditoComprobante.totalConIva!!.setScale(2, BigDecimal.ROUND_HALF_UP)
-
+        informacionNotaCredito.valorModificacion = notaCreditoComprobante.totalModificado!!.setScale(2, BigDecimal.ROUND_HALF_UP)
+        informacionNotaCredito.codDocModificado = notaCreditoComprobante.documentoModificado
+        informacionNotaCredito.numDocModificado = notaCreditoComprobante.modificado
+        informacionNotaCredito.fechaEmisionDocSustento = notaCreditoComprobante.fechaModificado
         informacionNotaCredito.setTotalConImpuestos(getImpuesto())
 
         informacionNotaCredito.moneda="DOLAR"

@@ -2,10 +2,10 @@ package com.quijotelui.controller
 
 import com.quijotelui.electronico.util.Parametros
 import com.quijotelui.electronico.xml.GeneraFactura
+import com.quijotelui.electronico.xml.GeneraGuia
+import com.quijotelui.electronico.xml.GeneraNotaCredito
 import com.quijotelui.electronico.xml.GeneraRetencion
-import com.quijotelui.service.IFacturaService
-import com.quijotelui.service.IParametroService
-import com.quijotelui.service.IRetencionService
+import com.quijotelui.service.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -29,6 +29,12 @@ class ArchivosRestApi {
 
     @Autowired
     lateinit var retencionService : IRetencionService
+
+    @Autowired
+    lateinit var notaCreditoService : INotaCreditoService
+
+    @Autowired
+    lateinit var guiaService : IGuiaService
 
     @CrossOrigin(value = "*")
     @GetMapping("/pdf/codigo/{codigo}/numero/{numero}")
@@ -58,6 +64,29 @@ class ArchivosRestApi {
 
             val genera = GeneraRetencion(retencionService, codigo, numero)
             claveAcceso = genera.claveAcceso.toString()
+        }
+        else if (codigo == "DVC" || codigo == "NCC") {
+            val notaCredito = notaCreditoService.findByComprobante(codigo, numero)
+
+            if (notaCredito.isEmpty()) {
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            }
+
+            val genera = GeneraNotaCredito(notaCreditoService, codigo, numero)
+            claveAcceso = genera.claveAcceso.toString()
+        }
+        else if (codigo == "GUI") {
+            val guia = guiaService.findByComprobante(codigo, numero)
+
+            if (guia.isEmpty()) {
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            }
+
+            val genera = GeneraGuia(guiaService, codigo, numero)
+            claveAcceso = genera.claveAcceso.toString()
+        }
+        else {
+            return ResponseEntity(HttpStatus.CONFLICT)
         }
 
         println("Clave de Acceso del PDF:" + claveAcceso)
@@ -108,6 +137,33 @@ class ArchivosRestApi {
 
             val genera = GeneraRetencion(retencionService, codigo, numero)
             claveAcceso = genera.claveAcceso.toString()
+        }
+        else if (codigo == "DVC" || codigo == "NCC") {
+            val notaCredito = notaCreditoService.findByComprobante(codigo, numero)
+
+            if (notaCredito.isEmpty()) {
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            }
+
+            val genera = GeneraNotaCredito(notaCreditoService, codigo, numero)
+            claveAcceso = genera.claveAcceso.toString()
+        }
+        else if (codigo == "GUI") {
+            val guia = guiaService.findByComprobante(codigo, numero)
+
+            if (guia.isEmpty()) {
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            }
+
+            val genera = GeneraGuia(guiaService, codigo, numero)
+            claveAcceso = genera.claveAcceso.toString()
+        }
+        else {
+            return ResponseEntity(HttpStatus.CONFLICT)
+        }
+
+        if (claveAcceso == "") {
+            return ResponseEntity(HttpStatus.CONFLICT)
         }
 
         println("Clave de Acceso del XML:" + claveAcceso)

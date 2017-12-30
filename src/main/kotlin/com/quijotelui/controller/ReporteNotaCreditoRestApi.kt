@@ -76,7 +76,7 @@ class ReporteNotaCreditoRestApi {
                             parametroService,
                             electronicoService)
 
-                    genera.enviar(TipoComprobante.RETENCION)
+                    genera.enviar(TipoComprobante.NOTA_CREDITO)
 
                     println("Espere 3 segundos por favor")
                     TimeUnit.SECONDS.sleep(3)
