@@ -86,7 +86,7 @@ class ProcesarElectronica(val parametroService : IParametroService) {
 
     }
 
-    fun comprobar(claveAcceso : String): AutorizacionEstado {
+    fun comprobar(claveAcceso : String) : AutorizacionEstado {
 
         var autorizacionEstado = AutorizacionEstado(Autorizacion(), Estado.NO_AUTORIZADO)
         val direccionWebServiceAutorizacion = Parametros.getRuta(parametroService.findByNombre("Web Service Autorización"))
@@ -95,17 +95,14 @@ class ProcesarElectronica(val parametroService : IParametroService) {
             return autorizacionEstado
         }
 
-        val rutaEnviado= Parametros.getRuta(parametroService.findByNombre("Enviado"))
         val rutaAutorizado= Parametros.getRuta(parametroService.findByNombre("Autorizado"))
         val rutaNoAutorizado= Parametros.getRuta(parametroService.findByNombre("NoAutorizado"))
 
-
-        val comprobar = Comprobar(rutaEnviado + File.separatorChar + claveAcceso + ".xml",
-                rutaAutorizado,
+        val comprobar = Comprobar(rutaAutorizado,
                 rutaNoAutorizado,
                 direccionWebServiceAutorizacion)
 
-        autorizacionEstado = comprobar.executeComprobar()
+        autorizacionEstado = comprobar.executeComprobar(claveAcceso)
 
         println("Estado del comprobante ${claveAcceso} : ${autorizacionEstado.estadoAutorizacion.descripcion}")
 
@@ -124,6 +121,10 @@ class ProcesarElectronica(val parametroService : IParametroService) {
         val logo= Parametros.getRuta(parametroService.findByNombre("Logo"))
         val rutaPDF= Parametros.getRuta(parametroService.findByNombre("PDF"))
 
+        if (!Archivos.esArchivo(rutaGenerado + File.separatorChar + claveAcceso + ".xml")) {
+            println("No existe el archivo Generado: $claveAcceso.xml")
+            return
+        }
 
         if (tipo == TipoComprobante.FACTURA) {
             val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: com.quijotelui.clientews:QuijoteLuiClient:1.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/quijotelui/clientews/QuijoteLuiClient/1.2/QuijoteLuiClient-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
