@@ -127,29 +127,31 @@ class ProcesarElectronica(val parametroService : IParametroService) {
             return
         }
 
-        if (tipo == TipoComprobante.FACTURA) {
-            val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
-            pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
-                    autorizacion,
-                    fechaAutorizacion)
-        }
-        else if (tipo == TipoComprobante.RETENCION) {
-            val pdf = RetencionPDF(rutaReportes, logo, rutaPDF)
-            pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
-                    autorizacion,
-                    fechaAutorizacion)
-        }
-        else if (tipo == TipoComprobante.NOTA_CREDITO) {
-            val pdf = NotaCreditoPDF(rutaReportes, logo, rutaPDF)
-            pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
-                    autorizacion,
-                    fechaAutorizacion)
-        }
-        else if (tipo == TipoComprobante.GUIA) {
-            val pdf = GuiaRemisionPDF(rutaReportes, logo, rutaPDF)
-            pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
-                    autorizacion,
-                    fechaAutorizacion)
+        when (tipo) {
+            TipoComprobante.FACTURA -> {
+                val pdf = FacturaPDF(rutaReportes, logo, rutaPDF)
+                pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
+                        autorizacion,
+                        fechaAutorizacion)
+            }
+            TipoComprobante.RETENCION -> {
+                val pdf = RetencionPDF(rutaReportes, logo, rutaPDF)
+                pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
+                        autorizacion,
+                        fechaAutorizacion)
+            }
+            TipoComprobante.NOTA_CREDITO -> {
+                val pdf = NotaCreditoPDF(rutaReportes, logo, rutaPDF)
+                pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
+                        autorizacion,
+                        fechaAutorizacion)
+            }
+            TipoComprobante.GUIA -> {
+                val pdf = GuiaRemisionPDF(rutaReportes, logo, rutaPDF)
+                pdf.genera(rutaGenerado + File.separatorChar + claveAcceso + ".xml",
+                        autorizacion,
+                        fechaAutorizacion)
+            }
         }
 
     }
