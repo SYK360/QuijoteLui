@@ -16,6 +16,14 @@ public class DetallesAdicionalesReporte
   private String codigoPrincipal;
   private String codigoAuxiliar;
   private String cantidad;
+
+    public List<FormasPago> getFormasPago() {
+        return formasPago;
+    }
+
+    public void setFormasPago(List<FormasPago> formasPago) {
+        this.formasPago = formasPago;
+    }
   private String descripcion;
   private String precioUnitario;
   private String precioTotalSinImpuesto;
@@ -27,6 +35,7 @@ public class DetallesAdicionalesReporte
   private String detalle3;
   private String fechaEmisionCcompModificado;
   private List<InformacionAdicional> infoAdicional;
+  private List<FormasPago> formasPago;
   private String razonModificacion;
   private String valorModificacion;
   private String baseImponible;

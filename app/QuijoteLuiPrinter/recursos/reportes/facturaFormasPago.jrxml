@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="facturaInfoAdicional" language="groovy" pageWidth="300" pageHeight="500" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d687d131-f2c8-4202-9ec6-40df545d6d6b">
+	<property name="ireport.zoom" value="3.1384283767210035"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="formaPago" class="java.lang.String"/>
+	<field name="valor" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="c02e699a-185c-4d52-9e68-ab3fbb601d13" x="0" y="1" width="251" height="13"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="6b1e2e9a-c3ac-4a29-938a-441bfa5a09e4" x="68" y="1" width="128" height="13"/>
+				<textElement/>
+				<text><![CDATA[Forma de Pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="507144df-e26f-4173-a4a2-59f95b673925" x="212" y="0" width="31" height="13"/>
+				<textElement/>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="8cb45cd2-c151-42f3-8fd2-f9a0ecdcd65f" x="204" y="1" width="1" height="12"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="9566ae24-d948-404f-808d-554af52cc932" x="0" y="1" width="251" height="11"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="76a2c15a-293b-4661-943d-e150bd676905" x="4" y="3" width="200" height="9"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formaPago}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="bd8fc27c-0a40-4169-b79e-2bbb7a44462e" stretchType="RelativeToTallestObject" x="205" y="3" width="46" height="9"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="fb111da7-3325-4062-9606-98433cfaa2b6" x="204" y="1" width="1" height="11"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

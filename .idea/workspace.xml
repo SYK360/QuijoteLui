@@ -3,13 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="8ff1b2b3-b03a-41f1-917f-f8b978681da4" name="Default" comment="Correción de versiones">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/comprobanteRetencion.jasper" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/comprobanteRetencion.jasper" />
-      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/comprobanteRetencion.jrxml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/comprobanteRetencion.jrxml" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/nbproject/private/private.xml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/nbproject/private/private.xml" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/factura.jasper" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/factura.jasper" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/factura.jrxml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/factura.jrxml" />
       <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/facturaInfoAdicional.jasper" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/facturaInfoAdicional.jasper" />
       <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/facturaInfoAdicional.jrxml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/facturaInfoAdicional.jrxml" />
-      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/notaCredito.jasper" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/notaCredito.jasper" />
-      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/notaCredito.jrxml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/notaCredito.jrxml" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql" afterPath="$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/adicional/DetallesAdicionalesReporte.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/adicional/DetallesAdicionalesReporte.java" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/factura/Factura.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/factura/Factura.java" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/factura/FacturaReporte.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/factura/FacturaReporte.java" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/parametros/Parametros.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/parametros/Parametros.java" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/com/quijotelui/printer/pdf/FacturaPDF.java" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/quijoteluiprinter/Main.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/src/quijoteluiprinter/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -74,11 +78,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArchivosRestApi.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArchivosRestApi.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="329">
               <caret line="165" column="54" lean-forward="false" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InformacionFactura.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/InformacionFactura.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-428">
+              <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InformacionAdicional.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/InformacionAdicional.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneraFactura.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2023">
+              <caret line="261" column="16" lean-forward="false" selection-start-line="261" selection-start-column="16" selection-end-line="261" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -707,17 +741,6 @@
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-              <item name="oracle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -740,15 +763,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
@@ -758,6 +772,16 @@
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
               <item name="electronico" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
+              <item name="electronico" type="462c0819:PsiDirectoryNode" />
+              <item name="comprobantes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
@@ -1272,20 +1296,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/INotaCreditoService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="91" lean-forward="false" selection-start-line="13" selection-start-column="91" selection-end-line="13" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/NotaCreditoServiceImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="26" column="71" lean-forward="false" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/TotalImpuesto.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1474,6 +1484,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1510,14 +1521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="45" column="58" lean-forward="false" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="261" column="16" lean-forward="false" selection-start-line="261" selection-start-column="16" selection-end-line="261" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1646,6 +1649,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="165" column="54" lean-forward="false" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/InformacionFactura.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-428">
+          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/InformacionAdicional.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2023">
+          <caret line="261" column="16" lean-forward="false" selection-start-line="261" selection-start-column="16" selection-end-line="261" selection-end-column="16" />
           <folding />
         </state>
       </provider>

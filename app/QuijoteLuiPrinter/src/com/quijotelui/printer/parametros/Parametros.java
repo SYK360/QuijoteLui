@@ -61,6 +61,7 @@ public class Parametros {
 //        param.put("SUBREPORT_DIR", "./resources/reportes/");
 
         param.put("SUBREPORT_DIR", this.direccionReportes + File.separator);
+        param.put("SUBREPORT_PAGOS", this.direccionReportes + File.separator);
         if (infoTributaria.tipoEmision.equals("1")) {
             param.put("TIPO_EMISION", "Normal");
         } else {
