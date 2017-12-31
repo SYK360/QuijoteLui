@@ -39,6 +39,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
                     informacionTributaria.tipoEmision!!)
         }
 
+    var informacionExtra = mutableListOf<CampoAdicional>()
     /*
         Función que genera la factura en XML
      */
@@ -165,6 +166,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
         val pagosComprobante = facturaService.findPagoByComprobante(codigo, numero)
         var pagos = Pagos()
+        this.informacionExtra.clear()
 
         for (pagoComprobante in pagosComprobante){
             var pago = Pago()
@@ -174,6 +176,16 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
             pago.unidadTiempo = pagoComprobante.tiempo
 
             pagos.setPago(pago)
+
+            //Para cargar las formas de pago en la sección de información adicional
+            val campoFormaPago = CampoAdicional()
+            val campoTotal = CampoAdicional()
+            campoFormaPago.setNombre("Pago")
+            campoFormaPago.setValor(pagoComprobante.formaPagoDescripcion!!)
+            campoTotal.setNombre("Total")
+            campoTotal.setValor(pagoComprobante.total?.setScale(2, BigDecimal.ROUND_HALF_UP).toString())
+            informacionExtra.add(campoFormaPago)
+            informacionExtra.add(campoTotal)
         }
 
         return pagos
@@ -230,12 +242,16 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         val informaciones = facturaService.findInformacionByDocumento(facturaDocumento.documento.toString())
         var informacionAdicional = InformacionAdicional()
 
-        for (informacion in informaciones){
+        for (informacion in informaciones) {
             val campoAdicional = CampoAdicional()
             campoAdicional.setNombre(informacion.nombre.toString())
             campoAdicional.setValor(informacion.valor.toString())
 
             informacionAdicional.setCampoAdicional(campoAdicional)
+        }
+        //Carga la forma de pago en información adicional
+        for (i in this.informacionExtra.indices) {
+            informacionAdicional.setCampoAdicional(informacionExtra[i])
         }
 
         return informacionAdicional

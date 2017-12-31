@@ -71,7 +71,7 @@
 
     -->
       <target name="-post-jar">
-        <jar jarfile="dist/QuijoteLuiPrinter-1.0.jar">
+        <jar jarfile="dist/QuijoteLuiPrinter-1.1.jar">
             <zipfileset src="${dist.jar}" excludes="META-INF/*"/>
             
             <zipfileset src="lib/jasperreports-4.6.0.jar" excludes="META-INF/*"/>

@@ -12,7 +12,7 @@ $ mvn install:install-file -Dfile=/data/git/QuijoteLui/app/QuijoteLuiClient/dist
 
 Añadir el programa de Reportes en PDF al repositorio de maven local:
 
-$ mvn install:install-file -Dfile=/data/git/QuijoteLui/app/QuijoteLuiPrinter/dist/QuijoteLuiPrinter-1.0.jar -DgroupId=com.quijotelui.printer -DartifactId=QuijoteLuiPrinter -Dversion=1.0 -Dpackaging=jar
+$ mvn install:install-file -Dfile=/data/git/QuijoteLui/app/QuijoteLuiPrinter/dist/QuijoteLuiPrinter-1.1.jar -DgroupId=com.quijotelui.printer -DartifactId=QuijoteLuiPrinter -Dversion=1.1 -Dpackaging=jar
 
 
 Añadir oracle jdbc

@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="factura" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a90b5cc6-9a35-48d7-a2d0-ef67a99b13b8">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="624"/>
+	<property name="ireport.y" value="96"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -96,7 +96,7 @@
 		<band height="802" splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="372" splitType="Stretch">
+		<band height="370" splitType="Stretch">
 			<rectangle radius="10">
 				<reportElement mode="Transparent" x="256" y="1" width="295" height="317" backcolor="#FFFFFF" uuid="33be5cc5-f3a2-4007-ae22-37b88924c6b6"/>
 			</rectangle>
@@ -146,17 +146,17 @@
 				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
 			</image>
 			<rectangle radius="10">
-				<reportElement mode="Transparent" x="0" y="159" width="256" height="159" uuid="5d4941fc-b1f2-4942-acbf-dde893953955"/>
+				<reportElement mode="Transparent" x="0" y="141" width="252" height="177" uuid="5d4941fc-b1f2-4942-acbf-dde893953955"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="6" y="221" width="49" height="25" uuid="fb88b912-2ada-4f45-87cc-1f49b87aaa4a"/>
+				<reportElement x="6" y="198" width="49" height="41" uuid="fb88b912-2ada-4f45-87cc-1f49b87aaa4a"/>
 				<textElement verticalAlignment="Top">
 					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Dirección Matriz:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="6" y="255" width="51" height="25" uuid="3d67a632-9da3-4019-9335-7304a8bfe8aa"/>
+				<reportElement x="6" y="239" width="51" height="41" uuid="3d67a632-9da3-4019-9335-7304a8bfe8aa"/>
 				<textElement verticalAlignment="Middle">
 					<font size="8" isBold="true"/>
 				</textElement>
@@ -213,21 +213,21 @@
 				<textFieldExpression><![CDATA[$P{CLAVE_ACC}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="7" y="162" width="248" height="13" uuid="a47536ca-59fb-4ddd-992a-023bc9134958"/>
+				<reportElement x="7" y="150" width="248" height="13" uuid="a47536ca-59fb-4ddd-992a-023bc9134958"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{RAZON_SOCIAL}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="59" y="221" width="197" height="13" uuid="75b51905-f406-45f9-8081-f8f96a76f164"/>
+				<reportElement x="57" y="205" width="193" height="29" uuid="75b51905-f406-45f9-8081-f8f96a76f164"/>
 				<textElement verticalAlignment="Top">
 					<font size="7" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{DIR_MATRIZ}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="59" y="262" width="197" height="13" uuid="d52207d8-d465-4fe4-ba28-3dadd03162f0"/>
+				<reportElement x="59" y="245" width="189" height="35" uuid="d52207d8-d465-4fe4-ba28-3dadd03162f0"/>
 				<textElement verticalAlignment="Top">
 					<font size="7" isBold="false"/>
 				</textElement>
@@ -331,7 +331,7 @@
 				<textFieldExpression><![CDATA[$P{AMBIENTE}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="7" y="193" width="249" height="13" uuid="279c88b1-536f-4e47-9ed9-bfe990bcd56b"/>
+				<reportElement x="7" y="177" width="249" height="13" uuid="279c88b1-536f-4e47-9ed9-bfe990bcd56b"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
@@ -491,7 +491,7 @@
 				<reportElement mode="Transparent" x="358" y="75" width="130" height="15" uuid="a094ec2c-59c1-4d6e-ab76-f8e611bb5aac"/>
 			</rectangle>
 			<rectangle>
-				<reportElement mode="Transparent" x="-5" y="0" width="361" height="165" uuid="868d1434-2747-4e91-81eb-ff6f8e8bad8d"/>
+				<reportElement mode="Transparent" x="1" y="0" width="355" height="165" uuid="868d1434-2747-4e91-81eb-ff6f8e8bad8d"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="41" y="8" width="152" height="13" uuid="475d8009-7373-46e0-b307-7d9cb377d8d9"/>

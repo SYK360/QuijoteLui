@@ -51,7 +51,7 @@
     <orderEntry type="library" name="Gradle: com.quijotelui.firmador:QuijoteLuiFirmador:1.2" level="project" />
     <orderEntry type="library" name="Gradle: com.quijotelui.clientews:QuijoteLuiClient:1.2" level="project" />
     <orderEntry type="library" name="Gradle: xalan:serializer:2.7.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.quijotelui.printer:QuijoteLuiPrinter:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.quijotelui.printer:QuijoteLuiPrinter:1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-email:1.5" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.mail:javax.mail:1.6.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:1.5.9.RELEASE" level="project" />

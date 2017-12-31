@@ -61,7 +61,7 @@ public class FacturaPDF {
         this.directorioDestino = directorioDestino;
     }
 
-    public void genera(String rutaArchivo, String numeroAutorizacion, String fechaAutorizacion) throws JRException {
+    public void genera(String rutaArchivo, String numeroAutorizacion, String fechaAutorizacion) {
         
         this.rutaArchivo = rutaArchivo;
         
@@ -88,13 +88,13 @@ public class FacturaPDF {
 
     }
 
-    private void generarReporte(FacturaReporte xml, String numAut, String fechaAut) throws JRException {
+    private void generarReporte(FacturaReporte xml, String numAut, String fechaAut) {
 
         generarReporte(this.directorioReportes + File.separator + "factura.jasper", xml, numAut, fechaAut);
 
     }
 
-    private void generarReporte(String urlReporte, FacturaReporte fact, String numAut, String fechaAut) throws JRException {
+    private void generarReporte(String urlReporte, FacturaReporte fact, String numAut, String fechaAut) {
         Parametros p = new Parametros(this.directorioReportes, this.directorioLogo);
         FileInputStream is = null;
         try {
@@ -109,7 +109,7 @@ public class FacturaPDF {
                                     fact)), 
                     dataSource);
             savePdfReport(reporte_view, fact.getFactura().getInfoTributaria().claveAcceso);
-        } catch (FileNotFoundException /*| JRException */ex) {
+        } catch (FileNotFoundException | JRException /*| JRException */ex) {
             Logger.getLogger(FacturaPDF.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {

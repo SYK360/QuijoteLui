@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: com.quijotelui.printer:QuijoteLuiPrinter:1.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/quijotelui/printer/QuijoteLuiPrinter/1.1/QuijoteLuiPrinter-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
