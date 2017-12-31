@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ff1b2b3-b03a-41f1-917f-f8b978681da4" name="Default" comment="Correción de versiones">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/comprobanteRetencion.jasper" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/comprobanteRetencion.jasper" />
       <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/comprobanteRetencion.jrxml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/comprobanteRetencion.jrxml" />
       <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/facturaInfoAdicional.jasper" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/facturaInfoAdicional.jasper" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteNotaCreditoRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteNotaCreditoRestApi.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/facturaInfoAdicional.jrxml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/facturaInfoAdicional.jrxml" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/notaCredito.jasper" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/notaCredito.jasper" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/notaCredito.jrxml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/recursos/reportes/notaCredito.jrxml" />
+      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql" afterPath="$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -617,7 +619,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/debito/Motivo.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/debito/Motivos.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/debito/NotaDebito.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/debito/Pago.kt" />
@@ -668,6 +669,7 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteNotaCreditoRestApi.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt" />
+        <option value="$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql" />
       </list>
     </option>
   </component>
@@ -706,6 +708,12 @@
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+              <item name="oracle" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
@@ -1264,13 +1272,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/INotaCreditoDao.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/INotaCreditoService.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -1629,6 +1630,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-717">
           <caret line="122" column="8" lean-forward="false" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-606">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

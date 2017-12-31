@@ -18,16 +18,16 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="20" splitType="Stretch">
+		<band height="37" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="2" width="58" height="18" uuid="63bbeb36-090a-4c08-a90f-3137bab55026"/>
+				<reportElement x="0" y="2" width="58" height="32" uuid="63bbeb36-090a-4c08-a90f-3137bab55026"/>
 				<textElement>
 					<font fontName="Monospaced" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="58" y="2" width="242" height="18" uuid="cf4144b6-d823-4ef5-95cf-b6fbe5546b7a"/>
+				<reportElement x="58" y="2" width="242" height="32" uuid="cf4144b6-d823-4ef5-95cf-b6fbe5546b7a"/>
 				<textElement>
 					<font fontName="Monospaced" size="8"/>
 				</textElement>

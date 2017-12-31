@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="comprobanteRetencion" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3eaa0e8-2300-4d0d-bb98-ea16c8d01451">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="18"/>
-	<property name="ireport.y" value="718"/>
+	<property name="ireport.y" value="766"/>
 	<parameter name="RUC" class="java.lang.String"/>
 	<parameter name="NUM_AUT" class="java.lang.String"/>
 	<parameter name="FECHA_AUT" class="java.lang.String"/>
@@ -443,10 +443,10 @@
 	<summary>
 		<band height="182" splitType="Stretch">
 			<rectangle>
-				<reportElement mode="Transparent" x="2" y="19" width="351" height="146" uuid="e2898020-e3b7-4ea0-b012-f73e74af9c6f"/>
+				<reportElement mode="Transparent" x="2" y="19" width="432" height="146" uuid="e2898020-e3b7-4ea0-b012-f73e74af9c6f"/>
 			</rectangle>
 			<subreport>
-				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="8" y="42" width="332" height="112" uuid="4561192b-88f6-457d-a2d4-dea9f746ccb0">
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="8" y="42" width="413" height="112" uuid="4561192b-88f6-457d-a2d4-dea9f746ccb0">
 					<printWhenExpression><![CDATA[$F{infoAdicional}!=null]]></printWhenExpression>
 				</reportElement>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{infoAdicional})]]></dataSourceExpression>
