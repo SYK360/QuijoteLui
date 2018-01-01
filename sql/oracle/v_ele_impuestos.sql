@@ -1,4 +1,4 @@
-CREATE OR REPLACE FORCE VIEW "V_ELE_IMPUESTOS" ("ID", "CODIGO", "NUMERO", "CODIGO_IMPUESTO", "CODIGO_PORCENTAJE", "BASE_IMPONIBLE", "TARIFA", "VALOR") AS
+CREATE OR REPLACE FORCE VIEW V_ELE_IMPUESTOS ("ID", "CODIGO", "NUMERO", "CODIGO_IMPUESTO", "CODIGO_PORCENTAJE", "BASE_IMPONIBLE", "TARIFA", "VALOR") AS
   WITH data as(
 SELECT DISTINCT
     f.cod_documento AS codigo,
@@ -60,6 +60,23 @@ FROM
                                       AND d.cod_documento = dd.cod_documento
                                       AND d.num_devolucion = dd.num_devolucion
     where d.num_devolucion >    1001000000000
+union all
+SELECT
+        nc.cod_documento AS codigo,
+        TO_CHAR(nc.num_abono,'fm000000000000000') AS numero,
+        DECODE(dismemayor.fun_get_porcentaje_iva,14,'3',12,'2',0,'0') AS codigo_impuesto,
+        CAST('2' AS VARCHAR2(1) ) as codigo_porcentaje,
+        round(nc.total_capital / ( (dismemayor.fun_get_porcentaje_iva / 100) + 1),2) as base_imponible,
+        dismemayor.fun_get_porcentaje_iva AS tarifa,
+        round( (dnc.capital * dismemayor.fun_get_porcentaje_iva) / (dismemayor.fun_get_porcentaje_iva + 100),2) AS valor
+    FROM
+        dismemayor.cxc_abono_c nc
+        INNER JOIN dismemayor.cxc_abono_d dnc ON nc.cod_empresa = dnc.cod_empresa
+                                                 AND nc.cod_documento = dnc.cod_documento
+                                                 AND nc.num_abono = dnc.num_abono
+        INNER JOIN dismemayor.cxc_tipo_motivo m ON nc.cod_motivo = m.cod_motivo
+    WHERE
+        nc.cod_documento = 'NCC'
 )
 SELECT rownum as id, codigo, numero, codigo_impuesto, codigo_porcentaje, base_imponible, tarifa, valor
 from data;

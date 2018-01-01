@@ -97,7 +97,6 @@ public class FacturaReporte {
             detAd.setInfoAdicional(getInfoAdicional());
             
             if (getFormasPago() != null) {
-                System.out.println("Forma de Pago");
                 detAd.setFormasPago(getFormasPago());
             }
             this.detallesAdiciones.add(detAd);
