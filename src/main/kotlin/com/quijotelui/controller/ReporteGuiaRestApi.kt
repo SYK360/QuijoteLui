@@ -55,27 +55,27 @@ class ReporteGuiaRestApi {
     fun autorizarGuia(@PathVariable(value = "fechaInicio") fechaInicio : String,
                              @PathVariable(value = "fechaFin") fechaFin : String) : ResponseEntity<MutableList<ReporteGuia>> {
 
-        var guias = reporteGuiaService.findByFechasEstado(
+        var reporteGuia = reporteGuiaService.findByFechasEstado(
                 fechaInicio,
                 fechaFin,
                 "NoAutorizados")
 
         println("Guías entre: $fechaInicio y  $fechaFin")
-        if (guias.size > 0) {
-            for (i in guias.indices) {
-                val row = guias.get(i)
+        if (reporteGuia.size > 0) {
+            for (i in reporteGuia.indices) {
+                val row = reporteGuia.get(i)
                 println("$i - ${row.codigo} ${row.numero}")
 
-                val retencion = guiaService.findByComprobante(row.codigo.toString(), row.numero.toString())
+                val guia = guiaService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
-                if (!retencion.isEmpty()) {
+                if (!guia.isEmpty()) {
                     val genera = Electronica(guiaService,
                             row.codigo.toString(),
                             row.numero.toString(),
                             parametroService,
                             electronicoService)
 
-                    genera.enviar(TipoComprobante.RETENCION)
+                    genera.enviar(TipoComprobante.GUIA)
 
                     println("Espere 3 segundos por favor")
                     TimeUnit.SECONDS.sleep(3)
@@ -85,18 +85,18 @@ class ReporteGuiaRestApi {
             }
         }
 
-        guias.clear()
+        reporteGuia.clear()
 
-        guias = reporteGuiaService.findByFechas(fechaInicio, fechaFin)
-        if (guias.size > 0) {
+        reporteGuia = reporteGuiaService.findByFechas(fechaInicio, fechaFin)
+        if (reporteGuia.size > 0) {
             println("Estado de guías")
-            for (i in guias.indices) {
-                val row = guias.get(i)
+            for (i in reporteGuia.indices) {
+                val row = reporteGuia.get(i)
                 println("$i - ${row.codigo} ${row.numero} ${row.estado}")
             }
         }
 
-        return ResponseEntity<MutableList<ReporteGuia>>(guias, HttpStatus.OK)
+        return ResponseEntity<MutableList<ReporteGuia>>(reporteGuia, HttpStatus.OK)
     }
 
     @CrossOrigin(value = "*")
