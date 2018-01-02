@@ -48,7 +48,7 @@ public class ComprobanteRetencionReporte
   public List<DetallesAdicionalesReporte> getDetallesAdiciones()
   {
     this.detallesAdiciones = new ArrayList();
-    System.out.println(this.comprobanteRetencion.getImpuestos().getImpuesto().size());
+//    System.out.println(this.comprobanteRetencion.getImpuestos().getImpuesto().size());
     for (Impuesto im : this.comprobanteRetencion.getImpuestos().getImpuesto()) {
       DetallesAdicionalesReporte detAd = new DetallesAdicionalesReporte();
       detAd.setBaseImponible(im.getBaseImponible().toString());

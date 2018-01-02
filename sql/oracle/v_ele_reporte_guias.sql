@@ -15,4 +15,4 @@ CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_GUIAS ("ID", "CODIGO", "NUMERO", "EST
 and e.numero = g.numero),'NO ENVIADO') estado
 FROM
     v_ele_guias g
-     order by g.id asc;
+     order by g.id desc;

@@ -110,7 +110,7 @@ public class FacturaReporte {
     }
 
     public List<InformacionAdicional> getInfoAdicional() {
-        System.out.println("--->" + getFactura());
+//        System.out.println("--->" + getFactura());
         if (getFactura().getInfoAdicional() != null) {
             this.infoAdicional = new ArrayList();
             if ((getFactura().getInfoAdicional().getCampoAdicional() != null) && (!this.factura.getInfoAdicional().getCampoAdicional().isEmpty())) {
@@ -127,7 +127,7 @@ public class FacturaReporte {
     }
 
     public List<FormasPago> getFormasPago() {
-        System.out.println("--->" + getFactura());
+//        System.out.println("--->" + getFactura());
         if (getFactura().getInfoFactura().getPagos() != null) {
             this.formasPago = new ArrayList();
             if ((getFactura().getInfoFactura().getPagos().getPagos() != null) && (!this.factura.getInfoFactura().getPagos().getPagos().isEmpty())) {

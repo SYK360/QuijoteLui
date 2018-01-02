@@ -74,7 +74,7 @@ public class RetencionPDF {
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             factura = (ComprobanteRetencion) jaxbUnmarshaller.unmarshal(file);
-            System.out.println(factura);
+//            System.out.println(factura);
 
         } catch (JAXBException ex) {
             Logger.getLogger(RetencionPDF.class.getName()).log(Level.SEVERE, null, ex);

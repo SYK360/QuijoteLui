@@ -26,4 +26,4 @@ where e.CODIGO = r.codigo
 and e.numero = r.numero),'NO ENVIADO') estado
 FROM
     v_ele_retenciones r
-    order by r.id asc;
+    order by r.id desc;

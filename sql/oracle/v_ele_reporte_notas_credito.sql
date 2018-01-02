@@ -31,4 +31,4 @@ CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_NOTAS_CREDITO ("ID", "CODIGO", "NUMER
 and e.numero = nc.numero),'NO ENVIADO') estado
 FROM
     v_ele_notas_credito nc
-     order by nc.id asc;
+     order by nc.id desc;

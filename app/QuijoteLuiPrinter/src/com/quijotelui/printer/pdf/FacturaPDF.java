@@ -79,7 +79,7 @@ public class FacturaPDF {
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             factura = (Factura) jaxbUnmarshaller.unmarshal(file);
-            System.out.println(factura);
+//            System.out.println(factura);
 
         } catch (JAXBException ex) {
             Logger.getLogger(FacturaPDF.class.getName()).log(Level.SEVERE, null, ex);
