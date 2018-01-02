@@ -10,6 +10,10 @@ import com.quijotelui.service.*
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import java.io.File
+import javax.mail.internet.AddressException
+import javax.mail.internet.InternetAddress
+
+
 
 class EnviarCorreo(val codigo : String,
                    val numero : String,
@@ -86,6 +90,19 @@ class EnviarCorreo(val codigo : String,
 
     }
 
+    fun isValidEmailAddress(email : String): Boolean {
+
+        try {
+            val emailAddr = InternetAddress(email)
+            emailAddr.validate()
+        } catch (ex: AddressException) {
+            return false
+        }
+
+        return true
+
+    }
+
     fun enviar(tipo : TipoComprobante) : ResponseEntity<MutableList<Informacion>> {
 
 
@@ -98,6 +115,11 @@ class EnviarCorreo(val codigo : String,
         println("Clave de Acceso: " + claveAcceso)
 
         val informacion = informacionService.correoByDocumento(this.documento)
+
+        if (informacion.isEmpty()) {
+            return ResponseEntity(HttpStatus.CONFLICT)
+        }
+
         val parametro = parametroService.findAll()
         val datosCorreo = Parametros.getDatosCorreo(parametro)
 
@@ -118,6 +140,10 @@ class EnviarCorreo(val codigo : String,
                     "$claveAcceso.xml"), "$descripcion XML")
 
             for (i in informacion.indices) {
+                if (!isValidEmailAddress(informacion[i].valor.toString())) {
+                    println("Correo no válido: ${informacion[i].valor.toString()}")
+                    return ResponseEntity(HttpStatus.CONFLICT)
+                }
                 correo.destinatario(informacion[i].valor.toString())
             }
             correo.enviar("$descripcion Electrónica",
