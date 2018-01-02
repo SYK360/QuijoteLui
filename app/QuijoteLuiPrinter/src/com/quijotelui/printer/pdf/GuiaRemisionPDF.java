@@ -78,7 +78,7 @@ public class GuiaRemisionPDF {
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             guiaRemision = (GuiaRemision) jaxbUnmarshaller.unmarshal(file);
-            System.out.println(guiaRemision);
+//            System.out.println(guiaRemision);
 
         } catch (JAXBException ex) {
             Logger.getLogger(GuiaRemisionPDF.class.getName()).log(Level.SEVERE, null, ex);

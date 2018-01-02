@@ -82,7 +82,7 @@ public class NotaCreditoPDF {
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             notaCredito = (NotaCredito) jaxbUnmarshaller.unmarshal(file);
-            System.out.println(notaCredito);
+//            System.out.println(notaCredito);
 
         } catch (JAXBException ex) {
             Logger.getLogger(NotaCreditoPDF.class.getName()).log(Level.SEVERE, null, ex);
