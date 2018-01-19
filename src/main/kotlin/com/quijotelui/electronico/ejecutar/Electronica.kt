@@ -214,6 +214,16 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
         var electronico = Electronico()
         var fecha : String? = null
+        var mensaje = ""
+
+        //            Mejorar
+//            print("Estado autorización: " + autorizacionEstado.estadoAutorizacion.descripcion)
+        for (m in autorizacionEstado.autorizacion.mensajes.mensaje.indices) {
+            val mensajeRespuesta = autorizacionEstado.autorizacion.mensajes.mensaje[m]
+            if (mensajeRespuesta.mensaje != null) {
+                mensaje = mensaje + " " +mensajeRespuesta.mensaje + " " + mensajeRespuesta.informacionAdicional
+            }
+        }
 
         // Si no existe en la base de datos se inserta
         if (this.electronicoService!!.findByComprobante(this.codigo, this.numero).isEmpty()) {
@@ -250,6 +260,8 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 electronico = electronicoUpdate[e]
             }
 
+            electronico.observacion = mensaje + electronico.observacion
+
             if (autorizacionEstado.autorizacion.fechaAutorizacion!=null) {
 
                 electronico.observacion = " | ${autorizacionEstado.autorizacion.numeroAutorizacion} " +
@@ -273,6 +285,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 electronico.fechaAutorizacion = fechaInDateType
 
             }
+
             this.electronicoService!!.updateElectronico(electronico)
             println("Guardado ${electronico.codigo} ${electronico.numero}")
         }

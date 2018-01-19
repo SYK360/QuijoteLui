@@ -175,6 +175,8 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
             pago.plazo = pagoComprobante.plazo
             pago.unidadTiempo = pagoComprobante.tiempo
 
+//            println("Pagos: ${pago.formaPago}  ${pago.total}")
+
             pagos.setPago(pago)
 
             //Para cargar las formas de pago en la sección de información adicional
