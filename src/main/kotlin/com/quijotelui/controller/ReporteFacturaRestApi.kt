@@ -135,4 +135,50 @@ class ReporteFacturaRestApi {
 
         return ResponseEntity<MutableList<ReporteFactura>>(factura, HttpStatus.OK)
     }
+
+    @CrossOrigin(value = "*")
+    @GetMapping("/factura_enviar/fechaInicio/{fechaInicio}/fechaFin/{fechaFin}")
+    fun enviarFactura(@PathVariable(value = "fechaInicio") fechaInicio : String,
+                         @PathVariable(value = "fechaFin") fechaFin : String) : ResponseEntity<MutableList<ReporteFactura>> {
+
+        var reporteFactura = reporteFacturaService.findByFechasEstado(
+                fechaInicio,
+                fechaFin,
+                "NoAutorizados")
+
+        println("Facturas entre: $fechaInicio y  $fechaFin")
+        if (reporteFactura.size > 0) {
+            for (i in reporteFactura.indices) {
+                val row = reporteFactura.get(i)
+                println("$i - ${row.codigo} ${row.numero}")
+
+                val factura = facturaService.findByComprobante(row.codigo.toString(), row.numero.toString())
+
+                if (!factura.isEmpty()) {
+                    val genera = Electronica(facturaService,
+                            row.codigo.toString(),
+                            row.numero.toString(),
+                            parametroService,
+                            electronicoService)
+
+                    val respuesta = genera.enviar(TipoComprobante.FACTURA)
+                    println("Restpuesta: $respuesta")
+
+                }
+            }
+        }
+
+        reporteFactura.clear()
+
+        reporteFactura = reporteFacturaService.findByFechas(fechaInicio, fechaFin)
+        if (reporteFactura.size > 0) {
+            println("Estado de facturas")
+            for (i in reporteFactura.indices) {
+                val row = reporteFactura.get(i)
+                println("$i - ${row.codigo} ${row.numero} ${row.estado}")
+            }
+        }
+
+        return ResponseEntity<MutableList<ReporteFactura>>(reporteFactura, HttpStatus.OK)
+    }
 }

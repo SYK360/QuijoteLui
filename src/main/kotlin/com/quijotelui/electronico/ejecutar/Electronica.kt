@@ -164,17 +164,21 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         val fecha = LocalDateTime.now()
         var mensaje = "$fecha |"
 
+
         if (respuesta.comprobantes.comprobante.size > 0) {
             for (i in respuesta.comprobantes.comprobante.indices) {
                 comprobante = respuesta.comprobantes.comprobante[i] as ec.gob.sri.comprobantes.ws.Comprobante
-                mensaje = mensaje + " " + comprobante.claveAcceso + ": "
+//                mensaje = mensaje + " " + comprobante.claveAcceso + ": "
                 for (m in comprobante.mensajes.mensaje.indices) {
                     val mensajeRespuesta = comprobante.mensajes.mensaje[m]
-                    mensaje = mensaje + " " + mensajeRespuesta.mensaje
+                    if (mensajeRespuesta.mensaje != null) {
+                        mensaje = mensaje + " " + mensajeRespuesta.mensaje + " " + mensajeRespuesta.informacionAdicional
+                    }
                 }
                 mensaje += " "
             }
         }
+
 
         if (mensaje.equals("RECIBIDA")){
             mensaje = "$mensaje Conexión exitosa"
@@ -246,11 +250,11 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 electronico = electronicoUpdate[e]
             }
 
-            electronico.observacion = " | ${autorizacionEstado.autorizacion.numeroAutorizacion} " +
-                    "${autorizacionEstado.autorizacion.fechaAutorizacion} " + electronico.observacion
-            electronico.numeroAutorizacion = autorizacionEstado.autorizacion.numeroAutorizacion
-
             if (autorizacionEstado.autorizacion.fechaAutorizacion!=null) {
+
+                electronico.observacion = " | ${autorizacionEstado.autorizacion.numeroAutorizacion} " +
+                        "${autorizacionEstado.autorizacion.fechaAutorizacion} " + electronico.observacion
+                electronico.numeroAutorizacion = autorizacionEstado.autorizacion.numeroAutorizacion
 
 
                 fecha = autorizacionEstado.autorizacion.fechaAutorizacion.year.toString() + "-" +
@@ -264,7 +268,7 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
                 val fechaInDateType: Date
                 fechaInDateType = simpleDateFormat.parse(fecha)
-                println("Fecha autorización: $fechaInDateType")
+                println("Fecha autorización: $fechaInDateType - Fecha Cruda : ${autorizacionEstado.autorizacion.fechaAutorizacion}")
 
                 electronico.fechaAutorizacion = fechaInDateType
 

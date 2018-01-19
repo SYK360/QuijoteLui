@@ -1,4 +1,4 @@
-CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_FACTURAS ("ID", "CODIGO", "NUMERO", "ESTABLECIMIENTO", "PUNTO_EMISION", "SECUENCIAL", "FECHA", "TOTAL_SIN_IVA", "TOTAL_CON_IVA", "IVA", "DESCUENTOS", "TOTAL", "DOCUMENTO", "RAZON_SOCIAL", "CORREO_ELECTRONICO", "ESTADO") AS
+CREATE OR REPLACE FORCE VIEW "V_ELE_REPORTE_FACTURAS" ("ID", "CODIGO", "NUMERO", "ESTABLECIMIENTO", "PUNTO_EMISION", "SECUENCIAL", "FECHA", "TOTAL_SIN_IVA", "TOTAL_CON_IVA", "IVA", "DESCUENTOS", "TOTAL", "DOCUMENTO", "RAZON_SOCIAL", "CORREO_ELECTRONICO", "ESTADO") AS
   SELECT
     f.id,
     f.codigo,
@@ -16,13 +16,13 @@ CREATE OR REPLACE FORCE VIEW V_ELE_REPORTE_FACTURAS ("ID", "CODIGO", "NUMERO", "
     f.razon_social,
     (
         SELECT
-            informacionNotaDebito.valor
+            i.valor
         FROM
-            v_ele_informaciones informacionNotaDebito
+            v_ele_informaciones i
         WHERE
-                informacionNotaDebito.nombre = 'Email'
+                i.nombre = 'Email'
             AND
-                informacionNotaDebito.documento = f.DOCUMENTO
+                i.documento = f.DOCUMENTO
             AND
                 ROWNUM = 1
     ) correo_electronico,
@@ -31,4 +31,5 @@ where e.CODIGO = f.codigo
 and e.numero = f.numero),'NO ENVIADO') estado
 FROM
     v_ele_facturas f
-    order by f.id desc;
+where to_number(to_char(f.fecha,'rrrr'))>=2018
+    order by f.fecha desc,f.id desc;
