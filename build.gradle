@@ -17,11 +17,10 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
-//Descomentar para generar archivo .war
 //apply plugin: 'war'
 
 group = 'com'
-version = '0.0.9-SNAPSHOT'
+version = '1.0.0-release'
 sourceCompatibility = 1.8
 compileKotlin {
 	kotlinOptions.jvmTarget = "1.8"
@@ -37,15 +36,16 @@ repositories {
 
 
 dependencies {
-//Descomentar para generar archivo .war
 //	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 //	Maven Local JDBC Oracle
-	compile("com.oracle:ojdbc6:11.2.0")
+//	compile("com.oracle:ojdbc6:11.2.0")
 //	Maven Local QuijoteLui -- inicio
+//	MySql o MariaDB
+	runtime('mysql:mysql-connector-java')
 	compile("com.quijotelui.firmador:QuijoteLuiFirmador:1.2")
 	compile("com.quijotelui.clientews:QuijoteLuiClient:1.2")
 //	Librería para generar el archivo xml en la carpeta rechazado cuando sea el caso.

@@ -1,0 +1,28 @@
+#!/bin/bash  
+# description: Tomcat Start Stop Restart  
+# processname: tomcat  
+# chkconfig: 234 20 80  
+
+#JAVA
+export JAVA_HOME=/app/jdk1.8.0_151
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+#Tomcat
+
+TOMCAT_HOME=/app/apache-tomcat-8.5.24
+TOMCAT_USER=quijotelui
+
+case $1 in  
+start)  
+/bin/su $TOMCAT_USER $TOMCAT_HOME/bin/startup.sh  
+;;   
+stop)     
+/bin/su $TOMCAT_USER $TOMCAT_HOME/bin/shutdown.sh  
+;;   
+restart)  
+/bin/su $TOMCAT_USER $TOMCAT_HOME/bin/shutdown.sh  
+/bin/su $TOMCAT_USER $TOMCAT_HOME/bin/startup.sh  
+;;   
+esac      
+exit 0  

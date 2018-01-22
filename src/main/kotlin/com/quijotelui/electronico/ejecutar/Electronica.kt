@@ -164,17 +164,21 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         val fecha = LocalDateTime.now()
         var mensaje = "$fecha |"
 
+
         if (respuesta.comprobantes.comprobante.size > 0) {
             for (i in respuesta.comprobantes.comprobante.indices) {
                 comprobante = respuesta.comprobantes.comprobante[i] as ec.gob.sri.comprobantes.ws.Comprobante
-                mensaje = mensaje + " " + comprobante.claveAcceso + ": "
+//                mensaje = mensaje + " " + comprobante.claveAcceso + ": "
                 for (m in comprobante.mensajes.mensaje.indices) {
                     val mensajeRespuesta = comprobante.mensajes.mensaje[m]
-                    mensaje = mensaje + " " + mensajeRespuesta.mensaje
+                    if (mensajeRespuesta.mensaje != null) {
+                        mensaje = mensaje + " " + mensajeRespuesta.mensaje + " " + mensajeRespuesta.informacionAdicional
+                    }
                 }
                 mensaje += " "
             }
         }
+
 
         if (mensaje.equals("RECIBIDA")){
             mensaje = "$mensaje Conexión exitosa"
@@ -210,6 +214,16 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
         var electronico = Electronico()
         var fecha : String? = null
+        var mensaje = ""
+
+        //            Mejorar
+//            print("Estado autorización: " + autorizacionEstado.estadoAutorizacion.descripcion)
+        for (m in autorizacionEstado.autorizacion.mensajes.mensaje.indices) {
+            val mensajeRespuesta = autorizacionEstado.autorizacion.mensajes.mensaje[m]
+            if (mensajeRespuesta.mensaje != null) {
+                mensaje = mensaje + " " +mensajeRespuesta.mensaje + " " + mensajeRespuesta.informacionAdicional
+            }
+        }
 
         // Si no existe en la base de datos se inserta
         if (this.electronicoService!!.findByComprobante(this.codigo, this.numero).isEmpty()) {
@@ -246,11 +260,13 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 electronico = electronicoUpdate[e]
             }
 
-            electronico.observacion = " | ${autorizacionEstado.autorizacion.numeroAutorizacion} " +
-                    "${autorizacionEstado.autorizacion.fechaAutorizacion} " + electronico.observacion
-            electronico.numeroAutorizacion = autorizacionEstado.autorizacion.numeroAutorizacion
+            electronico.observacion = mensaje + electronico.observacion
 
             if (autorizacionEstado.autorizacion.fechaAutorizacion!=null) {
+
+                electronico.observacion = " | ${autorizacionEstado.autorizacion.numeroAutorizacion} " +
+                        "${autorizacionEstado.autorizacion.fechaAutorizacion} " + electronico.observacion
+                electronico.numeroAutorizacion = autorizacionEstado.autorizacion.numeroAutorizacion
 
 
                 fecha = autorizacionEstado.autorizacion.fechaAutorizacion.year.toString() + "-" +
@@ -264,11 +280,12 @@ class Electronica(val codigo : String, val numero : String, val parametroService
                 val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
                 val fechaInDateType: Date
                 fechaInDateType = simpleDateFormat.parse(fecha)
-                println("Fecha autorización: $fechaInDateType")
+                println("Fecha autorización: $fechaInDateType - Fecha Cruda : ${autorizacionEstado.autorizacion.fechaAutorizacion}")
 
                 electronico.fechaAutorizacion = fechaInDateType
 
             }
+
             this.electronicoService!!.updateElectronico(electronico)
             println("Guardado ${electronico.codigo} ${electronico.numero}")
         }

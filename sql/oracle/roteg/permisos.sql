@@ -23,3 +23,5 @@ grant execute on FUN_GET_PORCENTAJE_IVA to quijotelui;
 grant select on FAC_DEVOLUCION_D to quijotelui;
 grant select on CXC_ABONO_D to quijotelui;
 grant select on CXC_TIPO_MOTIVO to quijotelui;
+
+--grant select on QUIJOTELUI.ELE_DOCUMENTOS_ELECTRONICOS to dismemayor;
