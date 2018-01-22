@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ff1b2b3-b03a-41f1-917f-f8b978681da4" name="Default" comment="Correción de versiones">
-      <change beforePath="$PROJECT_DIR$/sql/oracle/ele_documentos_electronicos.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/ele_parametros.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/permisos.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/sequences.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/sinonimos.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/triggers.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_contribuyentes.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_facturas.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_facturas_detalle.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_guias.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_guias_receptor.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_guias_receptor_detalle.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_impuestos.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_notas_credito.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_notas_credito_detalle.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_pagos.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_facturas.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_guias.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_notas_credito.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_retenciones.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_retenciones.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_retenciones_detalle.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -80,7 +57,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="600">
@@ -90,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuijoteLuiApplication.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="QuijoteLuiApplication.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="180">
+              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding>
                 <element signature="e#24#141#0" expanded="true" />
               </folding>
@@ -691,8 +668,8 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" />
       </list>
     </option>
   </component>
@@ -1613,16 +1590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="e#24#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -1636,6 +1603,16 @@
         <state relative-caret-position="600">
           <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="e#24#141#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
