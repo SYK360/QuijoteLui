@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 class QuijoteLuiApplication
 
 fun main(args: Array<String>) {
-    
+
     SpringApplication.run(QuijoteLuiApplication::class.java, *args)
+    
 }
