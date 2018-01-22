@@ -14,12 +14,12 @@ SELECT DISTINCT
         '3',
         '-1'
     ) AS codigo_porcentaje,
-    decode(d.porcentaje_iva,0,f.total_sin_iva,round(
+    ROUND(decode(d.porcentaje_iva,0,f.total_sin_iva,round(
         f.total_con_iva - f.descuentos,
         2
-    )) AS base_imponible,
+    )),2) AS base_imponible,
     d.porcentaje_iva AS tarifa,
-    round(f.iva,2) AS valor
+    decode(d.porcentaje_iva,0,0,round(f.iva,2)) AS valor
 FROM
     DISMEMAYOR.fac_factura_c f
     INNER JOIN DISMEMAYOR.FAC_FACTURA_D d ON
