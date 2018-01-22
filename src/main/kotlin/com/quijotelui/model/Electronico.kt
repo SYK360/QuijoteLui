@@ -10,8 +10,12 @@ import javax.persistence.*
 class Electronico : Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
-    @SequenceGenerator(name = "id_Sequence", sequenceName = "SEQ_ELE_DOCUMENTOS")
+    /*
+    Secuencia para Oracle
+     */
+//    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")  //Oracle
+//    @SequenceGenerator(name = "id_Sequence", sequenceName = "SEQ_ELE_DOCUMENTOS") //Oracle
+    @GeneratedValue(strategy = GenerationType.AUTO)//MySql
     @Column(name = "id")
     var id : Long? = null
 
