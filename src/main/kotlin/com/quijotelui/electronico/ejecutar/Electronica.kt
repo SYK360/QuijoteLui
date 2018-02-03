@@ -218,10 +218,12 @@ class Electronica(val codigo : String, val numero : String, val parametroService
 
         //            Mejorar
 //            print("Estado autorización: " + autorizacionEstado.estadoAutorizacion.descripcion)
-        for (m in autorizacionEstado.autorizacion.mensajes.mensaje.indices) {
-            val mensajeRespuesta = autorizacionEstado.autorizacion.mensajes.mensaje[m]
-            if (mensajeRespuesta.mensaje != null) {
-                mensaje = mensaje + " " +mensajeRespuesta.mensaje + " " + mensajeRespuesta.informacionAdicional
+        if (autorizacionEstado.autorizacion.mensajes != null) {
+            for (m in autorizacionEstado.autorizacion.mensajes.mensaje.indices) {
+                val mensajeRespuesta = autorizacionEstado.autorizacion.mensajes.mensaje[m]
+                if (mensajeRespuesta.mensaje != null) {
+                    mensaje = mensaje + " " + mensajeRespuesta.mensaje + " " + mensajeRespuesta.informacionAdicional
+                }
             }
         }
 
