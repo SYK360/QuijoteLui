@@ -9,6 +9,7 @@ interface IFacturaDao {
     fun findByFecha(fecha : Date) : MutableList<Factura>
     fun findByFechas(fechaInicio : Date, fechaFin : Date) : MutableList<Factura>
     fun findByComprobante(codigo : String, numero : String) : MutableList<Factura>
+    fun findEstadoByComprobante(codigo : String, numero : String) : MutableList<Any>
     fun findContribuyenteByComprobante(codigo : String, numero : String) : MutableList<Any>
     fun findParametroByNombre(nombre : String) : MutableList<Parametro>
     fun findImpuestoByComprobante(codigo : String, numero : String) : MutableList<Impuesto>

@@ -102,8 +102,10 @@ class FacturaRestApi {
     /*
     Envía y Autoriza el comprobante electrónico
     */
+    @CrossOrigin(value = "*")
     @GetMapping("/facturaProcesar/codigo/{codigo}/numero/{numero}")
-    fun procesarXml(@PathVariable(value = "codigo") codigo : String, @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Factura>> {
+    fun procesarXml(@PathVariable(value = "codigo") codigo : String,
+                    @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Any>> {
 
         if (codigo == null || numero == null) {
             return ResponseEntity(HttpStatus.CONFLICT)
@@ -122,11 +124,22 @@ class FacturaRestApi {
                 TimeUnit.SECONDS.sleep(3)
 
                 genera.comprobar(informacionService, TipoComprobante.FACTURA)
-                return ResponseEntity<MutableList<Factura>>(factura, HttpStatus.OK)
+
+                val estado = facturaService.findEstadoByComprobante(codigo, numero)
+
+                return ResponseEntity<MutableList<Any>>(estado, HttpStatus.OK)
             }
         }
 
     }
+
+    @GetMapping("/estado_factura/codigo/{codigo}/numero/{numero}")
+    fun getEstadoFactura(@PathVariable(value = "codigo") codigo : String,
+                         @PathVariable(value = "numero") numero : String) : ResponseEntity<MutableList<Any>> {
+        val factura = facturaService.findEstadoByComprobante(codigo, numero)
+        return ResponseEntity<MutableList<Any>>(factura, HttpStatus.OK)
+    }
+
 
     @GetMapping("/contribuyentefactura")
     fun getContribuyenteFactura() : ResponseEntity<MutableList<Any>> {

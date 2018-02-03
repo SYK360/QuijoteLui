@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.2.10'
+		kotlinVersion = '1.2.20'
 		springBootVersion = '1.5.9.RELEASE'
 	}
 	repositories {
@@ -33,7 +33,6 @@ repositories {
 	mavenLocal()
 	mavenCentral()
 }
-
 
 dependencies {
 //	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'

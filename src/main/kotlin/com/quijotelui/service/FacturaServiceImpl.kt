@@ -65,4 +65,7 @@ class FacturaServiceImpl : IFacturaService {
         return facturaDao.findInformacionByDocumento(documento)
     }
 
+    override fun findEstadoByComprobante(codigo: String, numero: String): MutableList<Any> {
+        return facturaDao.findEstadoByComprobante(codigo, numero)
+    }
 }

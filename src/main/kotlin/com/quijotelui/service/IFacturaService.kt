@@ -8,6 +8,7 @@ interface IFacturaService {
     fun findByFecha(fecha: String) : MutableList<Factura>
     fun findByFechas(fechaInicio : String, fechaFin : String) : MutableList<Factura>
     fun findByComprobante(codigo : String, numero : String) : MutableList<Factura>
+    fun findEstadoByComprobante(codigo : String, numero : String) : MutableList<Any>
     fun findContribuyenteByComprobante(codigo : String, numero : String) : MutableList<Any>
     fun findParametroByNombre(nombre : String) : MutableList<Parametro>
     fun findImpuestoByComprobante(codigo : String, numero : String) : MutableList<Impuesto>

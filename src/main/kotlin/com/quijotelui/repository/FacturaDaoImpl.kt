@@ -120,4 +120,12 @@ class FacturaDaoImpl : IFacturaDao {
                 .setParameter("documento", documento)
                 .resultList as MutableList<Informacion>
     }
+
+    override fun findEstadoByComprobante(codigo: String, numero: String): MutableList<Any> {
+        return entityMAnager.createQuery("select estado from ReporteFactura " +
+                "where codigo = :codigo " +
+                "and numero = :numero")
+                .setParameter("codigo", codigo)
+                .setParameter("numero", numero).resultList as MutableList<Any>
+    }
 }
