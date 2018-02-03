@@ -38,4 +38,7 @@ class RetencionServiceImpl : IRetencionService {
         return retencionDao.findInformacionByDocumento(documento)
     }
 
+    override fun findEstadoByComprobante(codigo: String, numero: String): MutableList<Any> {
+        return retencionDao.findEstadoByComprobante(codigo, numero)
+    }
 }

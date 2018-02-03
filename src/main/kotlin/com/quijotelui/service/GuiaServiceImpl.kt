@@ -32,4 +32,7 @@ class GuiaServiceImpl : IGuiaService {
         return guiaDao.findParametroByNombre(nombre)
     }
 
+    override fun findEstadoByComprobante(codigo: String, numero: String): MutableList<Any> {
+        return guiaDao.findEstadoByComprobante(codigo, numero)
+    }
 }

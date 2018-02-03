@@ -60,4 +60,11 @@ class GuiaDaoImpl : IGuiaDao {
                 .setParameter("nombre", nombre).resultList as MutableList<Parametro>
     }
 
+    override fun findEstadoByComprobante(codigo: String, numero: String): MutableList<Any> {
+        return entityMAnager.createQuery("select estado from ReporteGuia " +
+                "where codigo = :codigo " +
+                "and numero = :numero")
+                .setParameter("codigo", codigo)
+                .setParameter("numero", numero).resultList as MutableList<Any>
+    }
 }

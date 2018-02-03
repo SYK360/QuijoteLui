@@ -35,4 +35,7 @@ class NotaCreditoServiceImpl : INotaCreditoService {
         return notaCreditoDao.findInformacionByDocumento(documento)
     }
 
+    override fun findEstadoByComprobante(codigo: String, numero: String): MutableList<Any> {
+        return  notaCreditoDao.findEstadoByComprobante(codigo, numero)
+    }
 }

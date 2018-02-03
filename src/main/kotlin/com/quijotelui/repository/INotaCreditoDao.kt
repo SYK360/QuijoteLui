@@ -5,6 +5,7 @@ import com.quijotelui.model.*
 interface INotaCreditoDao {
 
     fun findByComprobante(codigo : String, numero : String) : MutableList<NotaCredito>
+    fun findEstadoByComprobante(codigo : String, numero : String) : MutableList<Any>
     fun findContribuyenteByComprobante(codigo : String, numero : String) : MutableList<Any>
     fun findNotaCreditoDetalleByComprobante(codigo : String, numero : String) : MutableList<NotaCreditoDetalle>
     fun findImpuestoByComprobante(codigo : String, numero : String) : MutableList<Impuesto>

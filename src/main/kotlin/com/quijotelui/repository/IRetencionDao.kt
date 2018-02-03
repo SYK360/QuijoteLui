@@ -9,6 +9,7 @@ interface IRetencionDao {
 
     fun findAll() : MutableList<Retencion>
     fun findByComprobante(codigo : String, numero : String) : MutableList<Retencion>
+    fun findEstadoByComprobante(codigo : String, numero : String) : MutableList<Any>
     fun findContribuyenteByComprobante(codigo : String, numero : String) : MutableList<Any>
     fun findRetencionDetalleByComprobante(codigo : String, numero : String) : MutableList<RetencionDetalle>
     fun findParametroByNombre(nombre : String) : MutableList<Parametro>
