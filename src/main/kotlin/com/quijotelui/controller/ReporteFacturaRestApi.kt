@@ -61,11 +61,11 @@ class ReporteFacturaRestApi {
                 fechaFin,
                 "NoAutorizados")
 
-        println("Facturas entre: $fechaInicio y  $fechaFin")
+        println("Envía facturas entre: $fechaInicio y  $fechaFin")
         if (reporteFactura.size > 0) {
             for (i in reporteFactura.indices) {
                 val row = reporteFactura.get(i)
-                println("$i - ${row.codigo} ${row.numero}")
+                println("$i - ${row.codigo} ${row.numero} enviando")
 
                 val factura = facturaService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
@@ -76,15 +76,29 @@ class ReporteFacturaRestApi {
                             parametroService,
                             electronicoService)
 
-                    val respuesta = genera.enviar(TipoComprobante.FACTURA)
-                    println("Restpuesta: $respuesta")
+                    genera.enviar(TipoComprobante.FACTURA)
+                }
+            }
+            println("Espere 3 segundos para empezar la verificación")
+            TimeUnit.SECONDS.sleep(3)
+            println("Verifica facturas entre: $fechaInicio y  $fechaFin")
+            for (i in reporteFactura.indices) {
+                val row = reporteFactura.get(i)
+                println("$i - ${row.codigo} ${row.numero} verificando")
 
-                    if (respuesta != "DEVUELTA") {
-                        println("Espere 3 segundos por favor")
-                        TimeUnit.SECONDS.sleep(3)
+                val factura = facturaService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
-                        genera.comprobar(informacionService, TipoComprobante.FACTURA)
-                    }
+                if (!factura.isEmpty()) {
+                    val genera = Electronica(facturaService,
+                            row.codigo.toString(),
+                            row.numero.toString(),
+                            parametroService,
+                            electronicoService)
+
+                    val respuesta = row.estado
+                    println("Respuesta: $respuesta")
+
+                    genera.comprobar(informacionService, TipoComprobante.FACTURA)
                 }
             }
         }

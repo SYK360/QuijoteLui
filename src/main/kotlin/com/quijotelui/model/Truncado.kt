@@ -26,4 +26,7 @@ class Truncado : Serializable {
     @Type(type="date")
     var fecha : Date? = null
 
+    @Column(name = "observacion")
+    var observacion : String? = null
+
 }
