@@ -18,4 +18,16 @@ class TruncadoServiceImpl : ITruncadoService {
     override fun count(): MutableList<Any> {
         return truncadoDao.count()
     }
+
+    override fun count(id: Long): MutableList<Any> {
+        return truncadoDao.count(id)
+    }
+
+    override fun findById(id: Long): Truncado {
+        return truncadoDao.findById(id)
+    }
+
+    override fun deleteById(id: Long) {
+        return truncadoDao.deleteById(id)
+    }
 }
