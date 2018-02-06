@@ -1,3 +1,9 @@
+/*
+Rest Api para manejar los comprobantes pendientes de enviar o autorizar.
+La información se llena por un procedimiento almacenado, ejecutado en
+un tarea programada.
+*/
+
 package com.quijotelui.controller
 
 import com.quijotelui.controller.util.Extraer
@@ -43,7 +49,7 @@ class TruncadoRestApi {
 
         val existe = Extraer.numero(truncadoService.count(id)) > 0
 
-        println("Existe el $id, $existe")
+//        println("Existe el $id, $existe")
 
         if (!existe) {
             return ResponseEntity(HttpStatus.NO_CONTENT)
