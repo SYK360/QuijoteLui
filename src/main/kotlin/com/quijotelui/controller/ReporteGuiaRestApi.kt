@@ -64,7 +64,7 @@ class ReporteGuiaRestApi {
         if (reporteGuia.size > 0) {
             for (i in reporteGuia.indices) {
                 val row = reporteGuia.get(i)
-                println("$i - ${row.codigo} ${row.numero}")
+                println("$i - ${row.codigo} ${row.numero} enviando")
 
                 val guia = guiaService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
@@ -76,9 +76,22 @@ class ReporteGuiaRestApi {
                             electronicoService)
 
                     genera.enviar(TipoComprobante.GUIA)
+                }
+            }
+            println("Espere 3 segundos para empezar la verificación")
+            TimeUnit.SECONDS.sleep(3)
+            for (i in reporteGuia.indices) {
+                val row = reporteGuia.get(i)
+                println("$i - ${row.codigo} ${row.numero} verificando")
 
-                    println("Espere 3 segundos por favor")
-                    TimeUnit.SECONDS.sleep(3)
+                val guia = guiaService.findByComprobante(row.codigo.toString(), row.numero.toString())
+
+                if (!guia.isEmpty()) {
+                    val genera = Electronica(guiaService,
+                            row.codigo.toString(),
+                            row.numero.toString(),
+                            parametroService,
+                            electronicoService)
 
                     genera.comprobar(informacionService, TipoComprobante.GUIA)
                 }

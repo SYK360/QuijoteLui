@@ -68,8 +68,8 @@ class ReporteRetencionRestApi {
         println("Retenciones entre: $fechaInicio y  $fechaFin")
         if (retenciones.size > 0) {
             for (i in retenciones.indices) {
-                val row = retenciones.get(i)
-                println("$i - ${row.codigo} ${row.numero}")
+                val row = retenciones[i]
+                println("$i - ${row.codigo} ${row.numero} enviando")
 
                 val retencion = retencionService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
@@ -81,9 +81,23 @@ class ReporteRetencionRestApi {
                             electronicoService)
 
                     genera.enviar(TipoComprobante.RETENCION)
+                }
+            }
+            println("Espere 3 segundos para empezar la verificación")
+            TimeUnit.SECONDS.sleep(3)
+            for (i in retenciones.indices) {
+                val row = retenciones[i]
+                println("$i - ${row.codigo} ${row.numero} verificando")
 
-                    println("Espere 3 segundos por favor")
-                    TimeUnit.SECONDS.sleep(3)
+                val retencion = retencionService.findByComprobante(row.codigo.toString(), row.numero.toString())
+                if (!retencion.isEmpty()) {
+                    val genera = Electronica(retencionService,
+                            row.codigo.toString(),
+                            row.numero.toString(),
+                            parametroService,
+                            electronicoService)
+
+                    println("Respuesta: ${row.estado}")
 
                     genera.comprobar(informacionService, TipoComprobante.RETENCION)
                 }
