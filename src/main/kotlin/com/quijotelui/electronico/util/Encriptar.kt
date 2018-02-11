@@ -51,10 +51,12 @@ object Encriptar {
 
 }
 
-/*fun main(args: Array<String>) {
+/*
+fun main(args: Array<String>) {
     val claveEncriptada = Encriptar.encrypt("MiClaveDeLaFirma")
     val claveDesencriptada = Encriptar.decrypt(claveEncriptada)
 
     println("Clave encriptada: " + claveEncriptada)
     println("Clave desencriptada: " + claveDesencriptada)
-}*/
+}
+*/

@@ -9,7 +9,7 @@
 hs_err_pid*
 
 
-
+/.idea/libraries/
 /.nb-gradle/
 /.gradle/
 /build/
@@ -27,3 +27,4 @@ hs_err_pid*
 /app/QuijoteLuiPrinter/dist/
 /app/checkAliveWS/nbproject/private/
 /app/checkAliveWS/build/
+

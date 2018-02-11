@@ -1,60 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ff1b2b3-b03a-41f1-917f-f8b978681da4" name="Default" comment="Correción de versiones">
-<<<<<<< HEAD
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__mysql_mysql_connector_java_5_1_44.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/quijotelui.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sql/oracle/roteg/sinonimos.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/util/cron_autorizacion_facturas.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/util/tags" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/util/tomcat" />
+    <list default="true" id="1541303a-d45e-4d6d-be4f-34547bdf1e10" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/QuijoteLui.iml" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jorgequiguango.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_1_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_1_11.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_core_1_1_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_core_1_1_11.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_classmate_1_3_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_classmate_1_3_4.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_8_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_8_10.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_8_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_8_10.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jayway_jsonpath_json_path_2_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jayway_jsonpath_json_path_2_2_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_oracle_ojdbc6_11_2_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_activation_activation_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_activation_activation_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_transaction_javax_transaction_api_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_transaction_javax_transaction_api_1_2.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_1_1_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_1_1_0_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_accessors_smart_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_accessors_smart_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_json_smart_2_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_json_smart_2_2_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_assertj_assertj_core_2_6_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_assertj_assertj_core_2_6_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_core_5_0_12_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_core_5_0_12_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_entitymanager_5_0_12_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_entitymanager_5_0_12_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_validator_5_3_6_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_validator_5_3_6_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javassist_javassist_3_21_0_GA.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javassist_javassist_3_21_0_GA.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_jandex_2_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_jandex_2_0_0_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_logging_jboss_logging_3_3_1_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_logging_jboss_logging_3_3_1_Final.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_1_10_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_1_10_19.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_objenesis_objenesis_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_objenesis_objenesis_2_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_ow2_asm_asm_5_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_ow2_asm_asm_5_0_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_skyscreamer_jsonassert_1_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_skyscreamer_jsonassert_1_4_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jcl_over_slf4j_1_7_25.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jcl_over_slf4j_1_7_25.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jul_to_slf4j_1_7_25.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jul_to_slf4j_1_7_25.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_log4j_over_slf4j_1_7_25.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_log4j_over_slf4j_1_7_25.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_25.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_25.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_yaml_snakeyaml_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_yaml_snakeyaml_1_17.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__xalan_serializer_2_7_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__xalan_serializer_2_7_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/QuijoteLui_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/QuijoteLui_main.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/QuijoteLui_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/QuijoteLui_test.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/QuijoteLui.iml" afterPath="$PROJECT_DIR$/QuijoteLui.iml" />
+      <change beforePath="$PROJECT_DIR$/QuijoteLui.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/nbproject/private/private.properties" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/nbproject/private/private.properties" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiClient/src/com/quijotelui/ws/util/ArchivoUtils.java" afterPath="$PROJECT_DIR$/app/QuijoteLuiClient/src/com/quijotelui/ws/util/ArchivoUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/build/built-jar.properties" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/build/built-jar.properties" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/dist/QuijoteLuiFirmador-1.2.jar" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/dist/QuijoteLuiFirmador-1.2.jar" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiFirmador/nbproject/private/private.properties" afterPath="$PROJECT_DIR$/app/QuijoteLuiFirmador/nbproject/private/private.properties" />
+      <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/nbproject/private/private.properties" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/nbproject/private/private.properties" />
       <change beforePath="$PROJECT_DIR$/app/QuijoteLuiPrinter/nbproject/private/private.xml" afterPath="$PROJECT_DIR$/app/QuijoteLuiPrinter/nbproject/private/private.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/ele_documentos_electronicos.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/ele_documentos_electronicos.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/ele_parametros.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/ele_parametros.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/permisos.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/permisos.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/sequences.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/sequences.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/triggers.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/triggers.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_contribuyentes.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_contribuyentes.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_facturas.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_facturas.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_facturas_detalle.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_facturas_detalle.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_guias.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_guias.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_guias_receptor.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_guias_receptor.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_guias_receptor_detalle.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_guias_receptor_detalle.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_impuestos.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_impuestos.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_informaciones.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_notas_credito.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_notas_credito.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_notas_credito_detalle.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_notas_credito_detalle.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_pagos.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_pagos.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_facturas.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_reporte_facturas.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_guias.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_reporte_guias.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_notas_credito.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_reporte_notas_credito.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_reporte_retenciones.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_reporte_retenciones.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_retenciones.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_retenciones.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/oracle/v_ele_retenciones_detalle.sql" afterPath="$PROJECT_DIR$/sql/oracle/roteg/v_ele_retenciones_detalle.sql" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" />
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,122 +82,17 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="QuijoteLui" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="QuijoteLui" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="QuijoteLui" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="QuijoteLui" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
+        <projects_view />
       </state>
     </system>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< HEAD
-      <file leaf-file-name="FacturaRestApi.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-365">
-              <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
-=======
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="Electronico.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="16" column="92" lean-forward="false" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="92" />
-              <folding />
-=======
-      <file leaf-file-name="QuijoteLuiApplication.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-              <folding>
-                <element signature="e#24#141#0" expanded="true" />
-              </folding>
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="ReporteFacturaRestApi.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Electronica.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="159" column="16" lean-forward="false" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnviarCorreo.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="144" column="62" lean-forward="false" selection-start-line="144" selection-start-column="62" selection-end-line="144" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProcesarElectronica.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="105" column="46" lean-forward="true" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
-=======
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
+            <state relative-caret-position="260">
+              <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -193,51 +100,12 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Kotlin Enum" />
-        <option value="Kotlin File" />
-        <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Floa</find>
-      <find>'</find>
-      <find>Cros</find>
-      <find>GeneraFactura</find>
-      <find>gra</find>
-      <find>file</find>
-      <find>f</find>
-      <find>rutaP</find>
-      <find>val rutaPDF= Parametros.getRuta(parametroService.findByNombre(&quot;PDF&quot;))</find>
-      <find>ruta</find>
-      <find>fun findParametroByNom</find>
-      <find>contribuyenteEspecial</find>
-      <find>InformacionRetencion</find>
-      <find>;</find>
-      <find>fac</find>
-      <find>Espere 3 segundos por favor</find>
-      <find>factura_verifica</find>
-      <find>El comprobante fue enviado, está pendiente</find>
-      <find>Ruta Rechazado</find>
-      <find>totalConImpuestos</find>
-      <find>reten</find>
-      <find>rete</find>
-      <find>Facturas entre</find>
-      <find>l archivo no tiene autorizaciones relacion</find>
+      <find>println</find>
     </findStrings>
-    <replaceStrings>
-      <replace>&quot;</replace>
-      <replace>,</replace>
-      <replace>: String? = null,</replace>
-    </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/src/main/kotlin</dir>
+      <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -320,7 +188,7 @@
                 <option name="name" value="init" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Supported annotations: ; Presets: spring; Compiler plugin classpath: /home/jorgequiguango/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-allopen/1.2.10/d60c55b6bb6e545f0c20b7113a1b750aa566518a/kotlin-allopen-1.2.10.jar" />
+                <option name="description" value="Supported annotations: ; Presets: spring; Compiler plugin classpath: /home/solecito/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-allopen/1.2.21/8269dc741bffc78a5878638f747151126e84c6f5/kotlin-allopen-1.2.21.jar" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="allOpenDataStorageTask" />
               </ExternalTaskPojo>
@@ -500,8 +368,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="3030338232000" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="3400054560" />
+        <entry key="$PROJECT_DIR$" value="3036605841000" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="1354586690" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="3442123891" />
       </map>
     </option>
@@ -517,38 +385,38 @@
                       <ExternalModuleBuildClasspathPojo>
                         <option name="entries">
                           <list>
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.9.RELEASE/eb1d7232a90469dd12946582bb9a99b84aa632c/spring-boot-gradle-plugin-1.5.9.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.9.RELEASE/4f3d6d5164784c51959db58bfc438c7ee44e0c5c/spring-boot-gradle-plugin-1.5.9.RELEASE.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.2.10/838e8a37b1a4de41dfa046acdef26c9615f23a84/kotlin-gradle-plugin-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.2.10/4590f13fc4dc702a433421040bdc58bd8e9973f8/kotlin-gradle-plugin-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-allopen/1.2.10/64b20eaba72348219a2a92000335ed46a3f3a237/kotlin-allopen-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-allopen/1.2.10/d60c55b6bb6e545f0c20b7113a1b750aa566518a/kotlin-allopen-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.9.RELEASE/61791907844a11bcea7eca8fb8ca853c9a95421a/spring-boot-loader-tools-1.5.9.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.9.RELEASE/5ce69eaa5709ccff5b4db4a85abfae16affa107a/spring-boot-loader-tools-1.5.9.RELEASE.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.3.RELEASE/7bb9ab86474b9ff2e7aa8ea3609878a1750e3f90/dependency-management-plugin-1.0.3.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.3.RELEASE/c7fc988680e19cef9bf91de0c39b891e4c8dca2d/dependency-management-plugin-1.0.3.RELEASE.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.2.10/a8020c912333eb6f195fa6761a39dd493cd421ca/kotlin-gradle-plugin-api-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.2.10/649d2fc7c597dd4001583ebf90ffb451d2a565ed/kotlin-gradle-plugin-api-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.10/c0f90f56ebb568fe5fa4001ee1941b27cb8a2e1f/kotlin-stdlib-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.10/b9bf650516989595a5390e5a54181e16347208ac/kotlin-stdlib-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.10/7f410f5298b7756fa132cccf49b793d5f242feb1/kotlin-compiler-embeddable-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.10/649eba68c683bc722208b7cb9ffb23d93dc37895/kotlin-compiler-embeddable-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.2.10/f8694667592d7f7df382cbb42ef13db608a13c35/kotlin-annotation-processing-gradle-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.2.10/4152af9baeb52652a3abcaff73a8d5f8ba736d5a/kotlin-annotation-processing-gradle-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.2.10/1b2b318370a67c4e22aaea4564d072b0f801765e/kotlin-android-extensions-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.2.10/10eb9a3d66aa7c5e17afdf93116082018d0d4643/kotlin-android-extensions-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.2.10/f2d9ab22c6fcf7cba4056b6a43915b27d72fae93/kotlin-compiler-runner-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.2.10/d5b16cd33799465d83080df62a09638c442cec41/kotlin-compiler-runner-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.13.RELEASE/fc9cf4f489515d429b005ee86ef105a704a94016/spring-core-4.3.13.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.13.RELEASE/eea18d7f4d01f1baa1b6728b678b5a6fe23c61f6/spring-core-4.3.13.RELEASE.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.2.10/74326516cb4782bca95cb7d7243ace213a7d218f/kotlin-script-runtime-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.2.10/941e197bf42d698e1cd5c47d302b753b7b1b7aec/kotlin-script-runtime-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.2.10/130e1d6da6fafc37b3024a60b04a6dad6ed08da/kotlin-reflect-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.2.10/19bc012f8c4cd6b705bd6512263777cc19bcf259/kotlin-reflect-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.2.10/1996c42be67f208cf8d7a6fa7319af168bfbd77/kotlin-build-common-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.2.10/9da5a326205f27fb19a1654bcfb18b9f166caf33/kotlin-build-common-1.2.10.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.2.10/ec7f155f944d40eb4b61527a387493c51dc37324/kotlin-daemon-client-1.2.10-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.2.10/651826c1a1d1a441c48e04f58dc98dff6752abb7/kotlin-daemon-client-1.2.10.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.10.RELEASE/1ec12545970356c867b330319c17fbe88095383b/spring-boot-gradle-plugin-1.5.10.RELEASE-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.10.RELEASE/9b2a9e4d0021ca3ff8ab6689a42df20f94ece41/spring-boot-gradle-plugin-1.5.10.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.2.21/802d96a0e07c262678aa5c87b6fc75138bdafbba/kotlin-gradle-plugin-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.2.21/e53ec8cdacbc461d750d0add731e803e5d4cf71c/kotlin-gradle-plugin-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-allopen/1.2.21/ad91fd4a0a3b2683bf765629fedeea3fc5ae066e/kotlin-allopen-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-allopen/1.2.21/8269dc741bffc78a5878638f747151126e84c6f5/kotlin-allopen-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.10.RELEASE/10108d98101e646028b493bbb39e9c97674db7c/spring-boot-loader-tools-1.5.10.RELEASE-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.10.RELEASE/1defe7e7f9d7f6d03aa7f93d21cfd20e67e4a0f6/spring-boot-loader-tools-1.5.10.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.4.RELEASE/f56e13eea5c5d3640efb34dc0f55b1369000fe32/dependency-management-plugin-1.0.4.RELEASE-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.4.RELEASE/f5b1df47ed5f708faa4d2fe0a71eb7fd36e11696/dependency-management-plugin-1.0.4.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.2.21/3fa4d78032a26f3e10a39f507694068e96f56dd/kotlin-gradle-plugin-api-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.2.21/59e96fa1418ae17356990c6c846d200362967f6b/kotlin-gradle-plugin-api-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.21/795e111c612ba96d0175f5705291228ca8167dc8/kotlin-stdlib-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.21/d64187eb2d9d1521be3421aa8c6774a8625cdde8/kotlin-stdlib-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.21/2f9e3088882ba774a740357ee1b4d0184deb9347/kotlin-compiler-embeddable-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.21/39456b64a42dc359e385697e2e93b5cba52e197f/kotlin-compiler-embeddable-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.2.21/3c35fd7f146d49051d565ed49c7c73652d8bd21d/kotlin-annotation-processing-gradle-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.2.21/a8217f1d15190b377518c6231200f325342a0ab1/kotlin-annotation-processing-gradle-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.2.21/ad0e5982cec42c5314debe5cd0ed6c7c27c4ff7f/kotlin-android-extensions-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.2.21/b35afe5863f02e395afd1bf61fcbd647034196a0/kotlin-android-extensions-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.2.21/fe77955ec5a84b8b43f3acb70fd470d3cb7fbd9e/kotlin-compiler-runner-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.2.21/61c6bc4b69da7c95c56192ccf4a831b89bb849a2/kotlin-compiler-runner-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.14.RELEASE/89a3dd5902381363686fa8fb737e3c028cedca53/spring-core-4.3.14.RELEASE-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.14.RELEASE/c70ddb6204457a802d1f6882d65bca3e5b3c41df/spring-core-4.3.14.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.2.21/8a1a9172f1bc3cba8ff329bb55e5022e66543519/kotlin-script-runtime-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.2.21/40c37b171146be48a989ab74b937b17a96d28d87/kotlin-script-runtime-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.2.21/3b26eda48f049afcd1a84e78797a558d0764e471/kotlin-reflect-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.2.21/3159ff5936aa570a90050d385cb717fbb6c1723a/kotlin-reflect-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.2.21/7e3d2d64ce2c30db96682ea4cc8e4b4a2f395b14/kotlin-build-common-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.2.21/bfd7e4fb5a46423e1555b1a3307bc99a0c2c011e/kotlin-build-common-1.2.21.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.2.21/847bcd9a08ee5d41dff38c26ca28f9169b0669e8/kotlin-daemon-client-1.2.21-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.2.21/cc7bf6957ba0443ea7a89e925551e16855d76b2/kotlin-daemon-client-1.2.21.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/5991ca87ef1fb5544943d9abc5a9a37583fabe03/annotations-13.0-sources.jar" />
@@ -564,142 +432,142 @@
               <option name="name" value="QuijoteLui" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/plugins" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/workers" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/dependency-management" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/open-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/base-services-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/resources-s3" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/test-kit" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/testing-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/platform-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/resources" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/tooling-api-builders" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/diagnostics" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/announce" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/resources-sftp" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/composite-builds" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/testing-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/publish" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ide-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ide-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/reporting" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/internal-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/jacoco" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/plugin-development" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/tooling-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/plugin-use" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/logging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ivy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/wrapper" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ear" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/jvm-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/platform-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/internal-android-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ui" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-java" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/javascript" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/installation-beacon" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/signing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/osgi" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/messaging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/platform-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/cli" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/model-core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/maven" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/core" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ide" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/antlr" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/build-cache-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/build-init" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/resources-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/internal-integ-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/plugin-use" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/testing-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/build-cache-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ide-native" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-groovy" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/build-comparison" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/internal-testing" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/announce" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/jvm-services" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/jetty" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/logging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/composite-builds" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/ui" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/open-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/language-scala" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/launcher" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-base-services-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-resources-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-native-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-model-groovy-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-messaging-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-open-api-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-process-services-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-cli-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-ui-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/ant-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-script-kotlin-0.8.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-logging-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-wrapper-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/src/wrapper" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-tooling-api-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-docs-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-base-services-groovy-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-runtime-api-info-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/groovy-all-2.4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-logging-3.5.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-launcher-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-installation-beacon-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-model-core-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-jvm-services-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-core-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-open-api-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-wrapper-3.5.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-version-info-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-code-quality-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-test-kit-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-testing-base-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-resources-s3-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-platform-jvm-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-java-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-diagnostics-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-jacoco-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-resources-sftp-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-build-init-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-platform-base-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-plugin-development-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-workers-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-testing-native-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-groovy-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-javascript-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-build-comparison-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-jetty-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-composite-builds-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-scala-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-announce-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-native-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-build-cache-http-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ide-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ide-play-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-testing-jvm-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-plugins-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-antlr-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-maven-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-jvm-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-scala-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-platform-native-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-jvm-services-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-base-services-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-core-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-cli-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-model-core-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-script-kotlin-0.8.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-resources-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-messaging-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-base-services-groovy-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-process-services-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-runtime-api-info-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-installation-beacon-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/groovy-all-2.4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-model-groovy-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-ui-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-docs-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/gradle-native-3.5.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-plugin-use-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ide-native-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-platform-play-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ivy-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-javascript-3.5.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-dependency-management-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-publish-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-osgi-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ear-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-reporting-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-groovy-3.5.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-signing-3.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-resources-http-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-jvm-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ide-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-test-kit-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-announce-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-platform-jvm-3.5.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-tooling-api-builders-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-jetty-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-build-cache-http-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-native-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-java-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ivy-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ear-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-resources-s3-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-resources-sftp-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-platform-base-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-code-quality-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-build-init-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-language-scala-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-testing-jvm-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-build-comparison-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-composite-builds-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ide-native-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-jacoco-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-platform-play-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-plugins-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-resources-http-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-testing-base-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-reporting-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-osgi-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-diagnostics-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-ide-play-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-workers-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-plugin-development-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-antlr-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-scala-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-platform-native-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-publish-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-maven-3.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.5.1-all/42vjebfdws9pjts3l4bouoq0p/gradle-3.5.1/lib/plugins/gradle-testing-native-3.5.1.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -721,66 +589,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/NotaCredito.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Archivos.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IFacturaService.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/GuiaRestApi.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/FacturaDetalle.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/NotaCreditoDetalle.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/RetencionServiceImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/NotaCreditoRestApi.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/RetencionRestApi.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/NotaCredito.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/InformacionNotaCredito.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/INotaCreditoDao.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/NotaCreditoDaoImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/INotaCreditoService.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/NotaCreditoServiceImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/ReporteGuia.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/ReporteNotaCredito.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IReporteNotaCreditoDao.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/IReporteGuiaDao.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ReporteNotaCreditoDaoImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ReporteGuiaDaoImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IReporteNotaCreditoService.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IReporteGuiaService.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteNotaCreditoServiceImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ReporteGuiaServiceImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/CorreoRestApi.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteRetencionRestApi.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteNotaCreditoRestApi.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt" />
-        <option value="$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteGuiaRestApi.kt" />
-        <option value="$PROJECT_DIR$/sql/oracle/v_ele_reporte_guias.sql" />
-        <option value="$PROJECT_DIR$/sql/oracle/v_ele_reporte_notas_credito.sql" />
-        <option value="$PROJECT_DIR$/sql/oracle/v_ele_reporte_retenciones.sql" />
-        <option value="$PROJECT_DIR$/sql/oracle/sinonimos.sql" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Encriptar.kt" />
-        <option value="$PROJECT_DIR$/sql/oracle/v_ele_reporte_facturas.sql" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt" />
-        <option value="$PROJECT_DIR$/sql/oracle/v_ele_impuestos.sql" />
-        <option value="$PROJECT_DIR$/sql/oracle/v_ele_pagos.sql" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="346" />
-    <option name="y" value="33" />
-    <option name="width" value="1058" />
-    <option name="height" value="739" />
+    <option name="y" value="30" />
+    <option name="width" value="1366" />
+    <option name="height" value="738" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -796,6 +617,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -807,11 +630,6 @@
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
               <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -842,18 +660,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-              <item name="electronico" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-              <item name="electronico" type="462c0819:PsiDirectoryNode" />
-              <item name="correo" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
@@ -863,7 +670,6 @@
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
               <item name="electronico" type="462c0819:PsiDirectoryNode" />
-              <item name="ejecutar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
@@ -872,8 +678,16 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
-=======
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
+              <item name="electronico" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuijoteLui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuijoteLui" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="quijotelui" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -887,40 +701,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Instaladores/Sign/KeyStore/keystore-explorer-source" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="SearchEverywhereHistoryKey" value="Espere 3 segundos por favor &#9;null&#9;null" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/sql/oracle" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.quijotelui.electronico.comprobantes.factura" />
-      <recent name="com.quijotelui.electronico.xml" />
-    </key>
-    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="com.quijotelui.electronico.comprobantes.nota.debito" />
-      <recent name="com.quijotelui.electronico.comprobantes.nota.credito" />
-      <recent name="com.quijotelui.electronico.comprobantes.retencion" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.quijotelui.service" />
-      <recent name="com.quijotelui.repository" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes" />
-      <recent name="$PROJECT_DIR$/sql/oracle" />
-    </key>
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -934,7 +720,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.com.quijotelui.electronico.util.EncriptarKt">
+  <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -956,38 +742,6 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="QuijoteLui" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -999,7 +753,7 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -1008,51 +762,15 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="com.quijotelui.QuijoteLuiApplicationKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.quijotelui.QuijoteLuiApplicationKt" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="QuijoteLui_main" />
-      <envs />
-    </configuration>
-    <configuration name="com.quijotelui.electronico.util.ArchivosKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.quijotelui.electronico.util.ArchivosKt" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="QuijoteLui_main" />
-      <envs />
-    </configuration>
     <configuration name="com.quijotelui.electronico.util.EncriptarKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.quijotelui.electronico.util.EncriptarKt" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="QuijoteLui_main" />
-      <envs />
-    </configuration>
-    <configuration name="com.quijotelui.electronico.util.Modulo11Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.quijotelui.electronico.util.Modulo11Kt" />
-      <option name="WORKING_DIRECTORY" />
       <module name="QuijoteLui_main" />
       <envs />
     </configuration>
@@ -1076,7 +794,7 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -1096,19 +814,9 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Gradle.QuijoteLui" />
-      <item index="1" class="java.lang.String" itemvalue="Kotlin.com.quijotelui.QuijoteLuiApplicationKt" />
-      <item index="2" class="java.lang.String" itemvalue="Kotlin.com.quijotelui.electronico.util.Modulo11Kt" />
-      <item index="3" class="java.lang.String" itemvalue="Kotlin.com.quijotelui.electronico.util.EncriptarKt" />
-      <item index="4" class="java.lang.String" itemvalue="Kotlin.com.quijotelui.electronico.util.ArchivosKt" />
-    </list>
     <recent_temporary>
-      <list size="4">
+      <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Kotlin.com.quijotelui.electronico.util.EncriptarKt" />
-        <item index="1" class="java.lang.String" itemvalue="Kotlin.com.quijotelui.electronico.util.ArchivosKt" />
-        <item index="2" class="java.lang.String" itemvalue="Kotlin.com.quijotelui.electronico.util.Modulo11Kt" />
-        <item index="3" class="java.lang.String" itemvalue="Kotlin.com.quijotelui.QuijoteLuiApplicationKt" />
       </list>
     </recent_temporary>
   </component>
@@ -1117,935 +825,145 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8ff1b2b3-b03a-41f1-917f-f8b978681da4" name="Default" comment="" />
-      <created>1508623461353</created>
+      <changelist id="1541303a-d45e-4d6d-be4f-34547bdf1e10" name="Default" comment="" />
+      <created>1518301287139</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1508623461353</updated>
+      <updated>1518301287139</updated>
     </task>
-    <task id="LOCAL-00001" summary="Error de copia, arreglado">
-      <created>1508623615924</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1508623615924</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Incluido Servicio de Contribuyente en el Api Rest">
-      <created>1508778478861</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1508778478861</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Añadido busqueda por RUC en Contribuyente">
-      <created>1508783785735</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1508783785735</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Añadido busqueda por RUC en Contribuyente">
-      <created>1508786225442</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1508786225442</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Añadido entidad Factura">
-      <created>1508803553262</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1508803553262</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Añadido metodo buscar por Fecha">
-      <created>1508806234563</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1508806234563</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Mejoras en los nombres de clases y métodos">
-      <created>1508818659718</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1508818659718</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Añadiendo Factura Detalle">
-      <created>1508869206732</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1508869206732</updated>
-    </task>
-    <task id="LOCAL-00009" summary="No funciona al generar un XML">
-      <created>1508990266524</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1508990266524</updated>
-    </task>
-    <task id="LOCAL-00010" summary="En factura Dao, se crea nueva consulta entre dos tablas">
-      <created>1509252044552</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1509252044552</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Añadida entidad Parametro">
-      <created>1509305171708</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1509305171708</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Añadido sql vista impuestos">
-      <created>1509488602858</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1509488602858</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Añadido Pagos de la Factura">
-      <created>1509596655659</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1509596655659</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Añadido vista Información">
-      <created>1509650903548</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1509650903548</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Añadido Firma Electrónica">
-      <created>1509830470096</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1509830470096</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Añadido Firma Electrónica mejorado">
-      <created>1509831708787</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1509831708787</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Añadido tabla y entidad para guardar los Documentos Electronicos enviados y autorizados al SRI">
-      <created>1509995689988</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1509995689988</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Proyecto de imprimir en PDF">
-      <created>1510143561993</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1510143561993</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Cliente Web Service del SRI en versión inestable">
-      <created>1510144112270</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1510144112270</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Corrección del errores en la entidad Electrónico">
-      <created>1510155764907</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1510155764907</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Añádido dirección del Logo">
-      <created>1510190643586</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1510190643586</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Añádido dirección del Logo">
-      <created>1510190687154</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1510190687154</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Añádido consulta Between entre fechas de facturas">
-      <created>1510524276750</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1510524276750</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Correción de versiones">
-      <created>1514398737901</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1514398737902</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="346" y="33" width="1600" height="864" extended-state="6" />
+    <frame x="0" y="30" width="1366" height="738" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599726" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Jelastic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2451613" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967743" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967743" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25354838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599726" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Error de copia, arreglado" />
-    <MESSAGE value="Incluido Servicio de Contribuyente en el Api Rest" />
-    <MESSAGE value="Añadido busqueda por RUC en Contribuyente" />
-    <MESSAGE value="Añadido entidad Factura" />
-    <MESSAGE value="Añadido metodo buscar por Fecha" />
-    <MESSAGE value="Mejoras en los nombres de clases y métodos" />
-    <MESSAGE value="Añadiendo Factura Detalle" />
-    <MESSAGE value="No funciona al generar un XML" />
-    <MESSAGE value="En factura Dao, se crea nueva consulta entre dos tablas" />
-    <MESSAGE value="Añadida entidad Parametro" />
-    <MESSAGE value="Añadido sql vista impuestos" />
-    <MESSAGE value="Añadido Pagos de la Factura" />
-    <MESSAGE value="Añadido vista Información" />
-    <MESSAGE value="Añadido Firma Electrónica" />
-    <MESSAGE value="Añadido Firma Electrónica mejorado" />
-    <MESSAGE value="Añadido tabla y entidad para guardar los Documentos Electronicos enviados y autorizados al SRI" />
-    <MESSAGE value="Proyecto de imprimir en PDF" />
-    <MESSAGE value="Cliente Web Service del SRI en versión inestable" />
-    <MESSAGE value="Corrección del errores en la entidad Electrónico" />
-    <MESSAGE value="Añádido dirección del Logo" />
-    <MESSAGE value="Añádido consulta Between entre fechas de facturas" />
-    <MESSAGE value="Correción de versiones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correción de versiones" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="14" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/nota/credito/InformacionNotaCredito.kt">
-<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        <state relative-caret-position="960">
+          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ElectronicoRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-606">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="165" column="54" lean-forward="false" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Pago.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="103" lean-forward="false" selection-start-line="14" selection-start-column="103" selection-end-line="14" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/InformacionAdicional.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/InformacionFactura.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/CampoAdicional.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Impuesto.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="123" column="51" lean-forward="false" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraGuia.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteGuiaRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="98" column="11" lean-forward="false" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Guia.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Destinatarios.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Destinatario.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Detalles.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Detalle.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_guias.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_notas_credito.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_retenciones.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Parametros.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/sinonimos.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IInformacionService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/ConfiguracionCorreo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/Correo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/web/support/SpringBootServletInitializer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Encriptar.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ContribuyenteRestApi.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quijotelui.log" />
-    <entry file="file://$PROJECT_DIR$/tomcat" />
-    <entry file="file://$PROJECT_DIR$/util/tomcat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_facturas.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-=======
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ElectronicoRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_informaciones.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-606">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ArchivosRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="165" column="54" lean-forward="false" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Pago.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="103" lean-forward="false" selection-start-line="14" selection-start-column="103" selection-end-line="14" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/InformacionAdicional.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/factura/InformacionFactura.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/CampoAdicional.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Impuesto.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraNotaCredito.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="123" column="51" lean-forward="false" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraGuia.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteGuiaRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="98" column="11" lean-forward="false" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Guia.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Destinatarios.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Destinatario.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Detalles.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/comprobantes/guia/Detalle.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_guias.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_notas_credito.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_retenciones.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Parametros.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="17" column="60" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/sinonimos.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IInformacionService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/ConfiguracionCorreo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="144" column="62" lean-forward="false" selection-start-line="144" selection-start-column="62" selection-end-line="144" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/Correo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/web/support/SpringBootServletInitializer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Encriptar.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ContribuyenteRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quijotelui.log" />
-    <entry file="file://$PROJECT_DIR$/tomcat" />
-    <entry file="file://$PROJECT_DIR$/util/tomcat">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_reporte_facturas.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1420">
-          <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_impuestos.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/IElectronicoService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/service/ElectronicoServiceImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/repository/ElectronicoDaoImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_facturas_detalle.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="44" selection-start-column="21" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/oracle/v_ele_pagos.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="108" column="71" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="jar://$MAVEN_REPOSITORY$/com/quijotelui/clientews/QuijoteLuiClient/1.2/QuijoteLuiClient-1.2.jar!/com/quijotelui/ws/definicion/Estado.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3220">
-          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ContribuyenteRestApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/util/Encriptar.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="59" column="3" lean-forward="true" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <element signature="e#24#141#0" expanded="true" />
-          </folding>
-=======
-    <entry file="jar://$MAVEN_REPOSITORY$/com/quijotelui/clientews/QuijoteLuiClient/1.2/QuijoteLuiClient-1.2.jar!/com/quijotelui/clientews/Comprobar.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="81" column="30" lean-forward="false" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/quijotelui/clientews/QuijoteLuiClient/1.2/QuijoteLuiClient-1.2.jar!/com/quijotelui/ws/definicion/Estado.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="105" column="48" lean-forward="false" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/xml/GeneraFactura.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3220">
-          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="600">
-          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/FacturaRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-365">
-          <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/quijotelui/clientews/QuijoteLuiClient/1.2/QuijoteLuiClient-1.2.jar!/com/quijotelui/clientews/Comprobar.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="81" column="30" lean-forward="false" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/ProcesarElectronica.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="105" column="46" lean-forward="true" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/controller/ReporteFacturaRestApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
-          <folding />
-=======
-        <state relative-caret-position="20">
-          <caret line="85" column="38" lean-forward="false" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="262" column="48" lean-forward="false" selection-start-line="262" selection-start-column="48" selection-end-line="262" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="16" column="92" lean-forward="false" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="92" />
-          <folding>
-            <element signature="e#30#141#0" expanded="false" />
-          </folding>
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/ejecutar/Electronica.kt">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="583">
-          <caret line="159" column="16" lean-forward="false" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
-=======
-        <state relative-caret-position="40">
-          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/electronico/correo/EnviarCorreo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="144" column="62" lean-forward="false" selection-start-line="144" selection-start-column="62" selection-end-line="144" selection-end-column="62" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/model/Electronico.kt">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="16" column="92" lean-forward="false" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="92" />
+          <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
           <folding />
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/quijotelui/QuijoteLuiApplication.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <element signature="e#24#141#0" expanded="true" />
-          </folding>
->>>>>>> eac3fbfc2091ac5a2ad3b5bf3cb535f613422f89
         </state>
       </provider>
     </entry>
@@ -2066,7 +984,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Kotlin</last-edited>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2101,7 +1019,18 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>QuijoteLui</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2113,7 +1042,6 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Gradle: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
