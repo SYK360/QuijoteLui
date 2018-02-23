@@ -46,7 +46,7 @@ class GeneraNotaCredito (val notaCreditoService: INotaCreditoService, val codigo
             notaCredito.setInformacionTributaria(getInformacionTributaria())
             notaCredito.setInformacionNotaCredito(getInformacionNotaCredito())
             notaCredito.setDetalles(getDetalle())
-            notaCredito.setInformacionAdicional(getInformacionAdicional())
+            getInformacionAdicional()?.let { notaCredito.setInformacionAdicional(it) }
 
             val jaxbContext = JAXBContext.newInstance(NotaCredito::class.java)
             val marshaller = jaxbContext.createMarshaller()
@@ -186,11 +186,16 @@ class GeneraNotaCredito (val notaCreditoService: INotaCreditoService, val codigo
         return impuestos
     }
 
-    private fun getInformacionAdicional() : InformacionAdicional {
+    private fun getInformacionAdicional() : InformacionAdicional? {
 
         val notaCreditoDocumento = getNotaCredito(this.contribuyenteNotaCredito)
 
         val informaciones = notaCreditoService.findInformacionByDocumento(notaCreditoDocumento.documento.toString())
+
+        if (informaciones.isEmpty()) {
+            return null
+        }
+
         var informacionAdicional = InformacionAdicional()
 
         for (informacion in informaciones){

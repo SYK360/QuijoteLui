@@ -32,7 +32,7 @@ class Retencion{
     private var impuestos = Impuestos()
 
     @XmlElement(name = "infoAdicional")
-    private  var informacionAdicional = InformacionAdicional()
+    private  var informacionAdicional : InformacionAdicional? = null
 
     fun setId(id : String) {
         this.id = id

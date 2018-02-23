@@ -52,7 +52,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
             factura.setInformacionTributaria(getInformacionTributaria())
             factura.setInformacionFactura(getInformacionFactura())
             factura.setDetalles(getDetalle())
-            factura.setInformacionAdicional(getInformacionAdicional())
+            getInformacionAdicional()?.let { factura.setInformacionAdicional(it) }
 
             val jaxbContext = JAXBContext.newInstance(Factura::class.java)
             val marshaller = jaxbContext.createMarshaller()
@@ -237,11 +237,16 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
         return impuestos
     }
 
-    private fun getInformacionAdicional() : InformacionAdicional {
+    private fun getInformacionAdicional() : InformacionAdicional? {
 
         val facturaDocumento = getFactura(this.contribuyenteFactura)
 
         val informaciones = facturaService.findInformacionByDocumento(facturaDocumento.documento.toString())
+
+        if (informaciones.isEmpty()) {
+            return null
+        }
+
         var informacionAdicional = InformacionAdicional()
 
         for (informacion in informaciones) {

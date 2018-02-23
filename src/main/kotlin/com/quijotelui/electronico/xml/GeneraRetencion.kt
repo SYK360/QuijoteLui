@@ -49,7 +49,7 @@ class GeneraRetencion(val retencionService : IRetencionService, val codigo : Str
             retencion.setInformacionTributaria(getInformacionTributaria())
             retencion.setInformacionRetencion(getInformacionRetencion())
             retencion.setImpuestos(getImpuestos())
-            retencion.setInformacionAdicional(getInformacionAdicional())
+            getInformacionAdicional()?.let { retencion.setInformacionAdicional(it) }
 
             val jaxbContext = JAXBContext.newInstance(Retencion::class.java)
             val marshaller = jaxbContext.createMarshaller()
@@ -147,11 +147,16 @@ class GeneraRetencion(val retencionService : IRetencionService, val codigo : Str
         return impuestos
     }
 
-    private fun getInformacionAdicional() : InformacionAdicional {
+    private fun getInformacionAdicional() : InformacionAdicional? {
 
         val retencionDocumento = getRetencion(this.contribuyenteRetencion)
 
         val informaciones = retencionService.findInformacionByDocumento(retencionDocumento.documento.toString())
+
+        if (informaciones.isEmpty()) {
+            return null
+        }
+
         var informacionAdicional = InformacionAdicional()
 
         for (informacion in informaciones){
