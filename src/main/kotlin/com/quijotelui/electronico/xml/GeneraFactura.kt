@@ -243,7 +243,7 @@ class GeneraFactura(val facturaService : IFacturaService, val codigo : String, v
 
         val informaciones = facturaService.findInformacionByDocumento(facturaDocumento.documento.toString())
 
-        if (informaciones.isEmpty()) {
+        if (informaciones.isEmpty() && informacionExtra.isEmpty()) {
             return null
         }
 
