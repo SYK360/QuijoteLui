@@ -42,10 +42,10 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 //	Maven Local JDBC Oracle
-	compile("com.oracle:ojdbc6:11.2.0")
+//	compile("com.oracle:ojdbc6:11.2.0")
 //	Maven Local QuijoteLui -- inicio
 //	MySql o MariaDB
-//	runtime('mysql:mysql-connector-java')
+	runtime('mysql:mysql-connector-java')
 	compile("com.quijotelui.firmador:QuijoteLuiFirmador:1.2")
 	compile("com.quijotelui.clientews:QuijoteLuiClient:1.2")
 //	Librería para generar el archivo xml en la carpeta rechazado cuando sea el caso.
