@@ -1,4 +1,4 @@
-CREATE VIEW `v_ele_facturas` AS
+CREATE OR replace VIEW `v_ele_facturas` AS
 SELECT 
     CAST(t.TICKETID AS UNSIGNED INTEGER) AS id,
     (SELECT 
@@ -13,14 +13,14 @@ SELECT
     CAST('101' AS CHAR (10)) AS punto_emision,
     CAST(LPAD(t.TICKETID, 9, '0') AS CHAR (10)) AS secuencial,
     CAST(r.DATENEW AS DATE) AS fecha,
-    ROUND(SUM(CAST(IF(tx.RATE > 0, 0, tl.PRICE) AS DECIMAL (19 , 2 ))),
+    ROUND(SUM(CAST(IF(tx.RATE > 0, 0, tl.UNITS * tl.PRICE) AS DECIMAL (19 , 2 ))),
             2) AS total_sin_iva,
-    ROUND(SUM(CAST(IF(tx.RATE > 0, tl.PRICE, 0) AS DECIMAL (19 , 2 ))),
+    ROUND(SUM(CAST(IF(tx.RATE > 0, tl.UNITS * tl.PRICE, 0) AS DECIMAL (19 , 2 ))),
             2) AS total_con_iva,
-    ROUND(SUM(CAST(IF(tx.RATE > 0, tl.PRICE * tx.RATE, 0) AS DECIMAL (19 , 2 ))),
+    ROUND(SUM(CAST(IF(tx.RATE > 0, tl.UNITS * tl.PRICE * tx.RATE, 0) AS DECIMAL (19 , 2 ))),
             2) AS iva,
     ROUND(SUM(CAST(0 AS DECIMAL (19 , 2 )))) AS descuentos,
-    ROUND(SUM(CAST((tl.PRICE + IF(tx.RATE > 0, tl.PRICE * tx.RATE, 0))
+    ROUND(SUM(CAST(((tl.UNITS * tl.PRICE) + IF(tx.RATE > 0, tl.UNITS * tl.PRICE * tx.RATE, 0))
                 AS DECIMAL (19 , 2 ))),
             2) AS total,
     IF(c.POSTAL = 'Consumidor Final',

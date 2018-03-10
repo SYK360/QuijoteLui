@@ -1,6 +1,6 @@
 CREATE or replace VIEW `v_ele_impuestos` AS
 SELECT
-    CAST((t.TICKETID + tl.LINE) AS UNSIGNED INTEGER) AS id,
+    CAST(concat(t.TICKETID, tl.LINE) AS UNSIGNED INTEGER) AS id,
     CAST('FAC' AS CHAR (10)) AS codigo,
     CAST(CONCAT('001', '101', LPAD(t.TICKETID, 9, '0'))
         AS CHAR (20)) AS numero,
@@ -15,7 +15,7 @@ FROM
     openbravo.TICKETLINES tl ON t.ID = tl.TICKET
         JOIN
     openbravo.TAXES tx ON tx.category = tl.taxid
-    group by CAST((t.TICKETID + tl.LINE) AS UNSIGNED INTEGER),
+    group by CAST(concat(t.TICKETID, tl.LINE) AS UNSIGNED INTEGER),
     CAST('FAC' AS CHAR (10)),
     CAST(CONCAT('001', '101', LPAD(t.TICKETID, 9, '0'))
         AS CHAR (20)),

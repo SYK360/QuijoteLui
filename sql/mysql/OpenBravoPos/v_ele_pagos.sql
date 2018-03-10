@@ -1,6 +1,6 @@
 CREATE or replace VIEW `v_ele_pagos` AS
 SELECT 
-    CAST(t.TICKETID AS UNSIGNED INTEGER) AS id,
+    CAST(concat(t.TICKETID, rand() * 100) AS UNSIGNED INTEGER) AS id,
     CAST('FAC' AS CHAR (10)) AS codigo,
     CAST(CONCAT('001', '101', LPAD(t.TICKETID, 9, '0'))
         AS CHAR (20)) AS numero,
