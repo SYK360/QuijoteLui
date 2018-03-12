@@ -1,0 +1,17 @@
+Insert into ele_parametros values (8,'Rechazado','/app/Quijotelui/comprobante/rechazado','La ubicación donde se genera el archivo XML rechazado','Activo');
+Insert into ele_parametros values (12,'Web Service Recepción','https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl','Servicio Web del SRI para la recepción de comprobantes electrónicos','Activo');
+Insert into ele_parametros values (13,'Web Service Autorización','https://celcer.sri.gob.ec/comprobantes-electronicos-ws/AutorizacionComprobantesOffline?wsdl','Servicio Web del SRI para la autorización de comprobantes electrónicos','Activo');
+Insert into ele_parametros values (14,'Logo','/data/git/QuijoteLui/app/QuijoteLuiPrinter/recursos/imagenes/logo.jpeg','Es la ubicación del archivo JPEG del logotipo','Activo');
+Insert into ele_parametros values (4,'Firmado','/app/Quijotelui/comprobante/firmado','La ubicación donde se genera el archivo XML firmado electrónicamente','Activo');
+Insert into ele_parametros values (5,'Enviado','/app/Quijotelui/comprobante/enviado','La ubicación donde se copia el archivo XML enviado','Activo');
+Insert into ele_parametros values (6,'Autorizado','/app/Quijotelui/comprobante/autorizado','La ubicación donde se genera el archivo XML autorizado','Activo');
+Insert into ele_parametros values (7,'NoAutorizado','/app/Quijotelui/comprobante/noAutorizado','La ubicación donde se genera el archivo XML no autorizado','Activo');
+Insert into ele_parametros values (9,'PDF','/app/Quijotelui/comprobante/pdf','La ubicación donde se genera el archivo PDF','Activo');
+Insert into ele_parametros values (10,'Firma Electrónica','/data/BCE/QuijoteLui.p12','Es la ubicación del archivo de la firma electrónica','Activo');
+Insert into ele_parametros values (11,'Clave Firma Electrónica','********','Es la contraseña de la firma electrónica','Activo');
+Insert into ele_parametros values (1,'Ambiente','Pruebas','El código que conformará el tipo de ambiente según la clave de acceso: Pruebas = 1, Producción = 2','Activo');
+Insert into ele_parametros values (2,'Emisión','Normal','El código que conformará el tipo de emisión según la clave de acceso: Emisión Normal = 1','Activo');
+Insert into ele_parametros values (3,'Generado','/app/Quijotelui/comprobante/generado','La ubicación donde se genera el archivo XML','Activo');
+Insert into ele_parametros values (15,'Reportes','/data/git/QuijoteLui/app/QuijoteLuiPrinter/recursos/reportes','Es la ubicación de los archivos de reportes','Activo');
+Insert into ele_parametros values (16,'Establecimiento','001','Número de establecimiento','Activo');
+Insert into ele_parametros values (17,'Punto Emisión','101','Número de punto de emisión','Activo');

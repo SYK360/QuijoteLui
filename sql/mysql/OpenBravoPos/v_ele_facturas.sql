@@ -5,12 +5,14 @@ CREATE OR REPLACE VIEW `v_ele_facturas` AS
                 id
             FROM
                 v_ele_contribuyentes) AS id_contribuyente,
-        CAST('FAC' AS CHAR (10)) AS codigo,
-        CAST(CONCAT('001', '101', LPAD(t.TICKETID, 9, '0'))
+        CAST('FV' AS CHAR (10)) AS codigo,
+        CAST(CONCAT(FUN_ESTABLECIMIENTO(),
+                    FUN_PUNTO_EMISION(),
+                    LPAD(t.TICKETID, 9, '0'))
             AS CHAR (20)) AS numero,
         CAST('01' AS CHAR (10)) AS codigo_documento,
-        CAST('001' AS CHAR (10)) AS establecimiento,
-        CAST('101' AS CHAR (10)) AS punto_emision,
+        FUN_ESTABLECIMIENTO() AS establecimiento,
+        FUN_PUNTO_EMISION() AS punto_emision,
         CAST(LPAD(t.TICKETID, 9, '0') AS CHAR (10)) AS secuencial,
         CAST(r.DATENEW AS DATE) AS fecha,
         ROUND(SUM(CAST(IF(tx.RATE > 0, 0, tl.UNITS * tl.PRICE) AS DECIMAL (19 , 2 ))),
@@ -56,8 +58,10 @@ CREATE OR REPLACE VIEW `v_ele_facturas` AS
     GROUP BY CAST(t.TICKETID AS UNSIGNED INTEGER) , (SELECT 
             id
         FROM
-            v_ele_contribuyentes) , CAST('FAC' AS CHAR (10)) , CAST(CONCAT('001', '101', LPAD(t.TICKETID, 9, '0'))
-        AS CHAR (20)) , CAST('01' AS CHAR (10)) , CAST('001' AS CHAR (10)) , CAST('101' AS CHAR (10)) , CAST(LPAD(t.TICKETID, 9, '0') AS CHAR (10)) , CAST(r.DATENEW AS DATE) , IF(c.POSTAL = 'Consumidor Final',
+            v_ele_contribuyentes) , CAST('FAC' AS CHAR (10)) , CAST(CONCAT(FUN_ESTABLECIMIENTO(),
+                FUN_PUNTO_EMISION(),
+                LPAD(t.TICKETID, 9, '0'))
+        AS CHAR (20)) , CAST('01' AS CHAR (10)) , fun_establecimiento() , fun_punto_emision() , CAST(LPAD(t.TICKETID, 9, '0') AS CHAR (10)) , CAST(r.DATENEW AS DATE) , IF(c.POSTAL = 'Consumidor Final',
         '07',
         IF(c.POSTAL = 'RUC',
             '04',

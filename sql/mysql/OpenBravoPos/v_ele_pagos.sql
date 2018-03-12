@@ -1,8 +1,8 @@
 CREATE OR REPLACE VIEW `v_ele_pagos` AS
     SELECT 
         CAST(CONCAT(t.TICKETID, RAND() * 100) AS UNSIGNED INTEGER) AS id,
-        CAST('FAC' AS CHAR (10)) AS codigo,
-        CAST(CONCAT('001', '101', LPAD(t.TICKETID, 9, '0'))
+        CAST('FV' AS CHAR (10)) AS codigo,
+        CAST(CONCAT(fun_establecimiento(), fun_punto_emision(), LPAD(t.TICKETID, 9, '0'))
             AS CHAR (20)) AS numero,
         CAST(IF(p.PAYMENT = 'cash', '01', '20') AS CHAR (10)) AS forma_pago,
         CAST(IF(p.PAYMENT = 'cash',
