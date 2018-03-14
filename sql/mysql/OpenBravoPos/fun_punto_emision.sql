@@ -1,7 +1,8 @@
+-- drop function fun_punto_emision;
 delimiter //
-CREATE FUNCTION fun_punto_emision() RETURNS char(10) CHARSET utf8
+CREATE FUNCTION fun_punto_emision() RETURNS varchar(10) CHARSET utf8
 BEGIN
-	DECLARE punto_emision char(10);
+	DECLARE punto_emision varchar(10);
 	select valor 
     into punto_emision
     from ele_parametros

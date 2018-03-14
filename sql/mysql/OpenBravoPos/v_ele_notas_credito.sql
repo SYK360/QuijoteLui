@@ -1,3 +1,4 @@
+CREATE OR REPLACE VIEW `v_ele_notas_credito` AS
     SELECT 
     CAST(t.TICKETID AS UNSIGNED INTEGER) AS id,
     (SELECT 
@@ -24,27 +25,26 @@
     CAST('01' AS CHAR (10)) AS documento_modificado,
     FUN_MODIFICADO(t.id) AS modificado,
     FUN_FECHA_MODIFICADO(t.id) AS fecha_modificado,
-    ROUND(SUM(CAST(IF(tx.RATE > 0, 0, tl.UNITS * tl.PRICE) AS DECIMAL (19 , 2 ))),
+    ROUND(SUM(CAST(ABS(tl.UNITS * tl.PRICE) AS DECIMAL (19 , 2 ))),
+            2) AS total_sin_impuestos,
+    ROUND(SUM(CAST(ABS(((tl.UNITS * tl.PRICE) + IF(tx.RATE > 0,
+                            tl.UNITS * tl.PRICE * tx.RATE,
+                            0)))
+                AS DECIMAL (19 , 2 ))),
+            2) AS total_modificado,
+    ROUND(SUM(CAST(ABS(IF(tx.RATE > 0, 0, tl.UNITS * tl.PRICE))
+                AS DECIMAL (19 , 2 ))),
             2) AS total_sin_iva,
-    ROUND(SUM(CAST(IF(tx.RATE > 0, tl.UNITS * tl.PRICE, 0) AS DECIMAL (19 , 2 ))),
+    ROUND(SUM(CAST(ABS(IF(tx.RATE > 0, tl.UNITS * tl.PRICE, 0))
+                AS DECIMAL (19 , 2 ))),
             2) AS total_con_iva,
-    ROUND(SUM(CAST(IF(tx.RATE > 0,
-                    tl.UNITS * tl.PRICE * tx.RATE,
-                    0)
+    ROUND(SUM(CAST(ABS(IF(tx.RATE > 0,
+                            tl.UNITS * tl.PRICE * tx.RATE,
+                            0))
                 AS DECIMAL (19 , 2 ))),
             2) AS iva,
-    ROUND(SUM(CAST(0 AS DECIMAL (19 , 2 )))) AS descuentos,
-    ROUND(SUM(CAST(((tl.UNITS * tl.PRICE) + IF(tx.RATE > 0,
-                    tl.UNITS * tl.PRICE * tx.RATE,
-                    0))
-                AS DECIMAL (19 , 2 ))),
-            2) AS total,
-    c.ADDRESS AS direccion,
-    CAST(NULL AS CHAR (20)) AS guia_remision,
-    (SELECT 
-            con.direccion
-        FROM
-            v_ele_contribuyentes con) AS direccion_establecimiento
+    CAST('Devolución' AS CHAR (20)) AS motivo,
+    FUN_DIRECCION_ESTABLECIMIENTO() AS direccion_establecimiento
 FROM
     openbravo.TICKETS t
         JOIN
@@ -67,7 +67,4 @@ GROUP BY CAST(t.TICKETID AS UNSIGNED INTEGER) , (SELECT
     '07',
     IF(c.POSTAL = 'RUC',
         '04',
-        IF(c.POSTAL = 'Cédula', '05', '06'))) , c.TAXID , c.NAME , '01' , FUN_MODIFICADO(t.id) , FUN_FECHA_MODIFICADO(t.id) , c.ADDRESS , CAST(NULL AS CHAR (20)) , (SELECT 
-        con.direccion
-    FROM
-        v_ele_contribuyentes con);
+        IF(c.POSTAL = 'Cédula', '05', '06'))) , c.TAXID , c.NAME , '01' , FUN_MODIFICADO(t.id) , FUN_FECHA_MODIFICADO(t.id) , CAST('Devolución' AS CHAR (20)) , FUN_DIRECCION_ESTABLECIMIENTO();

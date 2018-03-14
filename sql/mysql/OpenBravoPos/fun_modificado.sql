@@ -1,8 +1,8 @@
 -- DROP FUNCTION fun_modificado;
 delimiter //
-CREATE FUNCTION fun_modificado(pId char(255)) RETURNS char(20) CHARSET utf8
+CREATE FUNCTION fun_modificado(pId varchar(255)) RETURNS varchar(20) CHARSET utf8
 BEGIN
-	DECLARE vModificado char(20);
+	DECLARE vModificado varchar(20);
     
 	SELECT 
     t.TICKETID

@@ -1,7 +1,8 @@
+-- DROP FUNCTION fun_establecimiento;
 delimiter //
-CREATE FUNCTION fun_establecimiento() RETURNS char(10) CHARSET utf8
+CREATE FUNCTION fun_establecimiento() RETURNS varchar(10) CHARSET utf8
 BEGIN
-	DECLARE establecimiento char(10);
+	DECLARE establecimiento varchar(10);
 	select valor 
     into establecimiento
     from ele_parametros

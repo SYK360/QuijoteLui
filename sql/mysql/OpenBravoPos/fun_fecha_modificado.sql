@@ -1,8 +1,8 @@
 -- DROP FUNCTION fun_fecha_modificado;
 delimiter //
-CREATE FUNCTION fun_fecha_modificado(pId char(255)) RETURNS char(20) CHARSET utf8
+CREATE FUNCTION fun_fecha_modificado(pId varchar(255)) RETURNS varchar(20) CHARSET utf8
 BEGIN
-	DECLARE vFechaModificado char(20);
+	DECLARE vFechaModificado varchar(20);
     
 	SELECT 
     DATE_FORMAT(re.DATENEW, '%d/%m/%Y')
