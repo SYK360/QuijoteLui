@@ -13,5 +13,7 @@ Insert into ele_parametros values (1,'Ambiente','Pruebas','El código que confor
 Insert into ele_parametros values (2,'Emisión','Normal','El código que conformará el tipo de emisión según la clave de acceso: Emisión Normal = 1','Activo');
 Insert into ele_parametros values (3,'Generado','/app/Quijotelui/comprobante/generado','La ubicación donde se genera el archivo XML','Activo');
 Insert into ele_parametros values (15,'Reportes','/data/git/QuijoteLui/app/QuijoteLuiPrinter/recursos/reportes','Es la ubicación de los archivos de reportes','Activo');
-Insert into ele_parametros values (16,'Establecimiento','001','Número de establecimiento','Activo');
-Insert into ele_parametros values (17,'Punto Emisión','101','Número de punto de emisión','Activo');
+Insert into ELE_PARAMETROS values (16,'Servidor Correo','smtp.googlemail.com','Es la dirección del servidor de correo','Activo');
+Insert into ELE_PARAMETROS values (17,'Puerto Servidor Correo','465','Es el número de puerto del servidor de correo','Activo');
+Insert into ELE_PARAMETROS values (18,'Correo','correo@gmail.com','Es la dirección de correo electrónico','Activo');
+Insert into ELE_PARAMETROS values (19,'Clave Correo','******','Es la clave de la dirección de correo electrónico','Activo');

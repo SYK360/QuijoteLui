@@ -45,7 +45,7 @@ class ArchivosRestApi {
         }
         var claveAcceso = ""
 
-        if (codigo == "FAC") {
+        if (codigo == "FAC" || codigo == "FV") {
             val factura = facturaService.findByComprobante(codigo, numero)
 
             if (factura.isEmpty()) {
@@ -65,7 +65,7 @@ class ArchivosRestApi {
             val genera = GeneraRetencion(retencionService, codigo, numero)
             claveAcceso = genera.claveAcceso.toString()
         }
-        else if (codigo == "DVC" || codigo == "NCC") {
+        else if (codigo == "DVC" || codigo == "NCC" || codigo == "NCV") {
             val notaCredito = notaCreditoService.findByComprobante(codigo, numero)
 
             if (notaCredito.isEmpty()) {
