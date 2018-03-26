@@ -65,12 +65,11 @@ class ReporteFacturaRestApi {
         if (reporteFactura.size > 0) {
             for (i in reporteFactura.indices) {
                 val row = reporteFactura.get(i)
-                println("$i - ${row.codigo} ${row.numero} enviando")
+                println("$i - ${row.codigo} ${row.numero}, Estado -> ${row.estado}")
 
                 val factura = facturaService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
                 if (!factura.isEmpty() && !row.estado.equals("RECIBIDA")) {
-                    println("Estado: " + row.estado)
                     val genera = Electronica(facturaService,
                             row.codigo.toString(),
                             row.numero.toString(),
