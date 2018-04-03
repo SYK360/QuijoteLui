@@ -64,11 +64,11 @@ class ReporteGuiaRestApi {
         if (reporteGuia.size > 0) {
             for (i in reporteGuia.indices) {
                 val row = reporteGuia.get(i)
-                println("$i - ${row.codigo} ${row.numero} enviando")
+                println("$i - ${row.codigo} ${row.numero}, Estado -> ${row.estado}")
 
                 val guia = guiaService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
-                if (!guia.isEmpty()) {
+                if (!guia.isEmpty() && !row.estado.equals("RECIBIDA")) {
                     val genera = Electronica(guiaService,
                             row.codigo.toString(),
                             row.numero.toString(),

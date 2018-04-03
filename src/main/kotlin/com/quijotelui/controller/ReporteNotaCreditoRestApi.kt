@@ -65,11 +65,11 @@ class ReporteNotaCreditoRestApi {
         if (reporteNotaCredito.size > 0) {
             for (i in reporteNotaCredito.indices) {
                 val row = reporteNotaCredito[i]
-                println("$i - ${row.codigo} ${row.numero} enviando")
+                println("$i - ${row.codigo} ${row.numero}, Estado -> ${row.estado}")
 
                 val notaCredito = notaCreditoService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
-                if (!notaCredito.isEmpty()) {
+                if (!notaCredito.isEmpty() && !row.estado.equals("RECIBIDA")) {
                     val genera = Electronica(notaCreditoService,
                             row.codigo.toString(),
                             row.numero.toString(),

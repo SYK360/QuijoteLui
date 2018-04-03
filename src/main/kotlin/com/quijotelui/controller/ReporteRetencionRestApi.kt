@@ -69,11 +69,11 @@ class ReporteRetencionRestApi {
         if (retenciones.size > 0) {
             for (i in retenciones.indices) {
                 val row = retenciones[i]
-                println("$i - ${row.codigo} ${row.numero} enviando")
+                println("$i - ${row.codigo} ${row.numero}, Estado -> ${row.estado}")
 
                 val retencion = retencionService.findByComprobante(row.codigo.toString(), row.numero.toString())
 
-                if (!retencion.isEmpty()) {
+                if (!retencion.isEmpty() && !row.estado.equals("RECIBIDA")) {
                     val genera = Electronica(retencionService,
                             row.codigo.toString(),
                             row.numero.toString(),
