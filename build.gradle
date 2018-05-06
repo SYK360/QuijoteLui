@@ -1,7 +1,7 @@
 buildscript {
 	ext {
 		kotlinVersion = '1.2.21'
-		springBootVersion = '1.5.10.RELEASE'
+		springBootVersion = '1.5.12.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -20,7 +20,7 @@ apply plugin: 'org.springframework.boot'
 //apply plugin: 'war'
 
 group = 'com'
-version = '1.0.2-release'
+version = '1.0.3-release'
 sourceCompatibility = 1.8
 compileKotlin {
 	kotlinOptions.jvmTarget = "1.8"
@@ -41,10 +41,12 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 //	Maven Local JDBC Oracle
-	compile("com.oracle:ojdbc6:11.2.0")
+//	compile("com.oracle:ojdbc6:11.2.0")
 //	Maven Local QuijoteLui -- inicio
 //	MySql o MariaDB
 //	runtime('mysql:mysql-connector-java')
+//	Sql Server
+	runtime('com.microsoft.sqlserver:mssql-jdbc')
 	compile("com.quijotelui.firmador:QuijoteLuiFirmador:1.2")
 	compile("com.quijotelui.clientews:QuijoteLuiClient:1.2")
 //	Librería para generar el archivo xml en la carpeta rechazado cuando sea el caso.
