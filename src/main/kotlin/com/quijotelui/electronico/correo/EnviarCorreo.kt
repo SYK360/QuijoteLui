@@ -13,8 +13,6 @@ import java.io.File
 import javax.mail.internet.AddressException
 import javax.mail.internet.InternetAddress
 
-
-
 class EnviarCorreo(val codigo : String,
                    val numero : String,
                    val parametroService : IParametroService,
@@ -140,11 +138,12 @@ class EnviarCorreo(val codigo : String,
                     "$claveAcceso.xml"), "$descripcion XML")
 
             for (i in informacion.indices) {
+                println("Informaciones: ${informacion[i].nombre} - ${informacion[i].valor}")
                 if (!isValidEmailAddress(informacion[i].valor.toString())) {
-                    println("Correo no válido: ${informacion[i].valor.toString()}")
-                    return ResponseEntity(HttpStatus.CONFLICT)
-                }
-                correo.destinatario(informacion[i].valor.toString())
+                        println("Correo no válido: ${informacion[i].valor.toString()}")
+                        return ResponseEntity(HttpStatus.CONFLICT)
+                    }
+                    correo.destinatario(informacion[i].valor.toString())
             }
             correo.enviar("$descripcion Electrónica",
                     "Saludos cordiales, Adjunto el comprobante electrónico")
