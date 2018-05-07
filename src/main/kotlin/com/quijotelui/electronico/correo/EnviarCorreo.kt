@@ -141,7 +141,7 @@ class EnviarCorreo(val codigo : String,
                 println("Informaciones: ${informacion[i].nombre} - ${informacion[i].valor}")
                 if (!isValidEmailAddress(informacion[i].valor.toString())) {
                         println("Correo no válido: ${informacion[i].valor.toString()}")
-                        return ResponseEntity(HttpStatus.CONFLICT)
+                        return ResponseEntity(HttpStatus.OK)
                     }
                     correo.destinatario(informacion[i].valor.toString())
             }
@@ -151,15 +151,15 @@ class EnviarCorreo(val codigo : String,
         }
         catch (e : java.lang.IllegalArgumentException) {
             println("Error al enviar el correo ${e.message}")
-            return ResponseEntity(HttpStatus.CONFLICT)
+            return ResponseEntity(HttpStatus.OK)
         }
         catch (e: javax.mail.AuthenticationFailedException){
             println("Error al enviar el correo ${e.message}")
-            return ResponseEntity(HttpStatus.CONFLICT)
+            return ResponseEntity(HttpStatus.OK)
         }
         catch (e: java.io.IOException){
             println("Error al enviar el correo ${e.message}")
-            return ResponseEntity(HttpStatus.CONFLICT)
+            return ResponseEntity(HttpStatus.OK)
         }
 
         return ResponseEntity<MutableList<Informacion>>(informacion, HttpStatus.OK)

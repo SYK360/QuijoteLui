@@ -120,7 +120,7 @@ class FacturaRestApi {
 
                 genera.enviar(TipoComprobante.FACTURA)
 
-                println("Espere 3 segundos por favor")
+                println("Espere 3 segundos por favor hasta que el servicio del SRI autorice")
                 TimeUnit.SECONDS.sleep(3)
 
                 genera.comprobar(informacionService, TipoComprobante.FACTURA)
