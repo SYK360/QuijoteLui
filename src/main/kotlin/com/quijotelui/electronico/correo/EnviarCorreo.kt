@@ -7,6 +7,7 @@ import com.quijotelui.electronico.xml.GeneraNotaCredito
 import com.quijotelui.electronico.xml.GeneraRetencion
 import com.quijotelui.model.Informacion
 import com.quijotelui.service.*
+import org.apache.commons.mail.EmailException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import java.io.File
@@ -158,6 +159,10 @@ class EnviarCorreo(val codigo : String,
             return ResponseEntity(HttpStatus.OK)
         }
         catch (e: java.io.IOException){
+            println("Error al enviar el correo ${e.message}")
+            return ResponseEntity(HttpStatus.OK)
+        }
+        catch (e: EmailException){
             println("Error al enviar el correo ${e.message}")
             return ResponseEntity(HttpStatus.OK)
         }
