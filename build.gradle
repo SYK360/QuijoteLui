@@ -1,7 +1,7 @@
 buildscript {
 	ext {
 		kotlinVersion = '1.2.21'
-		springBootVersion = '1.5.12.RELEASE'
+		springBootVersion = '1.5.13.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -41,12 +41,12 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 //	Maven Local JDBC Oracle
-//	compile("com.oracle:ojdbc6:11.2.0")
+	compile("com.oracle:ojdbc6:11.2.0")
 //	Maven Local QuijoteLui -- inicio
 //	MySql o MariaDB
 //	runtime('mysql:mysql-connector-java')
 //	Sql Server
-	runtime('com.microsoft.sqlserver:mssql-jdbc')
+//	runtime('com.microsoft.sqlserver:mssql-jdbc')
 //	End databases
  	compile("com.quijotelui.firmador:QuijoteLuiFirmador:1.2")
 	compile("com.quijotelui.clientews:QuijoteLuiClient:1.2")
