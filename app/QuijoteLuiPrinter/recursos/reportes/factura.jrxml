@@ -172,11 +172,11 @@
 				<text><![CDATA[Contribuyente Especial Nro ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="6" y="253" width="177" height="14" uuid="377a8104-9c05-4ecd-a343-ac9ed26f2390"/>
+				<reportElement x="6" y="253" width="187" height="14" uuid="377a8104-9c05-4ecd-a343-ac9ed26f2390"/>
 				<textElement verticalAlignment="Middle">
 					<font size="8" isBold="true"/>
 				</textElement>
-				<text><![CDATA[OBLIGADO A LLEVAR CONTABILIDAD]]></text>
+				<text><![CDATA[Obligado a llevar contabilidad]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement mode="Transparent" x="0" y="273" width="554" height="44" uuid="ffca5ec8-b180-4ffe-a270-70e77257d27f"/>
