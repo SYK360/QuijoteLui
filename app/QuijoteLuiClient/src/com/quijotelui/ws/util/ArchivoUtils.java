@@ -302,7 +302,9 @@ public class ArchivoUtils {
             String rutaArchivoDestino = rutaDirectorioRechazados + File.separator + nombreArchivo;
             File archivoDestino = new File(rutaArchivoDestino);
             FileOutputStream fileOutputStream = new FileOutputStream(archivoDestino);
-            fileOutputStream.write(archivo);
+            if (fileOutputStream != null) {
+                fileOutputStream.write(archivo);
+            }            
             fileOutputStream.close();
         } catch (IOException ex) {
             LOG.error(ex);
