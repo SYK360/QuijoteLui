@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.ws.WebServiceException;
 
 public class Enviar {
 
@@ -46,10 +47,13 @@ public class Enviar {
             
             return respuestaSolicitudEnvio;
 
-        } catch (IOException ex) {
+        } catch (IOException | WebServiceException ex) {
             Logger.getLogger(Enviar.class.getName()).log(Level.SEVERE, null, ex);
+            RespuestaSolicitud respuestaError = new RespuestaSolicitud();
+            respuestaError.setEstado("Fallo en la conexión con el web service del SRI");    
+            
+            return respuestaError;
         }
-        return respuestaSolicitudEnvio;
     }
 
 }

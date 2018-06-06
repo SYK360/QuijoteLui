@@ -22,11 +22,13 @@ public class ObjectToXML {
             marshaller.marshal(comprobante, xmlComprobante);
             xmlComprobante.close();
             return xmlComprobante.toString().getBytes("UTF-8");
-        } catch (IOException | JAXBException ex) {
+        } catch (IOException | JAXBException | ClassCastException ex) {
             Logger.getLogger(ObjectToXML.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Se produjo un error al convetir el archivo al formato XML");
+            StringWriter xmlError = new StringWriter();                        
+            xmlError.write("Se produjo un error al convetir el archivo al formato XML");            
+            return xmlError.toString().getBytes();
         }
-        return null;
     }
 
     public static String convierteRespuestaSolicitudXml(RespuestaSolicitud respuesta, String pathArchivoSalida) {
