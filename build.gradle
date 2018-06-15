@@ -1,7 +1,7 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.2.21'
-		springBootVersion = '1.5.12.RELEASE'
+		kotlinVersion = '1.2.41'
+		springBootVersion = '1.5.14.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -20,13 +20,19 @@ apply plugin: 'org.springframework.boot'
 //apply plugin: 'war'
 
 group = 'com'
-version = '1.0.3-release'
+version = '1.0.4-release'
 sourceCompatibility = 1.8
 compileKotlin {
-	kotlinOptions.jvmTarget = "1.8"
+	kotlinOptions {
+		freeCompilerArgs = ["-Xjsr305=strict"]
+		jvmTarget = "1.8"
+	}
 }
 compileTestKotlin {
-	kotlinOptions.jvmTarget = "1.8"
+	kotlinOptions {
+		freeCompilerArgs = ["-Xjsr305=strict"]
+		jvmTarget = "1.8"
+	}
 }
 
 repositories {
