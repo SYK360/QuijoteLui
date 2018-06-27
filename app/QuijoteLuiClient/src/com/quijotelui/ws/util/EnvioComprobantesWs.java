@@ -20,9 +20,13 @@ public class EnvioComprobantesWs {
 
     public EnvioComprobantesWs(String wsdlLocation)
             throws MalformedURLException, WebServiceException {
-        URL url = new URL(wsdlLocation);
-        QName qname = new QName("http://ec.gob.sri.ws.recepcion", "RecepcionComprobantesOfflineService");
-        service = new RecepcionComprobantesOfflineService(url, qname);
+        try {
+            URL url = new URL(wsdlLocation);
+            QName qname = new QName("http://ec.gob.sri.ws.recepcion", "RecepcionComprobantesOfflineService");
+            service = new RecepcionComprobantesOfflineService(url, qname);
+        } catch (WebServiceException ex) {
+            Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public static final Object webService(String wsdlLocation) {
@@ -42,7 +46,7 @@ public class EnvioComprobantesWs {
         try {
             RecepcionComprobantesOffline port = service.getRecepcionComprobantesOfflinePort();
             response = port.validarComprobante(ArchivoUtils.archivoToByte(xmlFile));
-        } catch (IOException e) {
+        } catch (IOException | WebServiceException e) {
             Logger.getLogger(EnvioComprobantesWs.class.getName()).log(Level.SEVERE, null, e);
             response = new RespuestaSolicitud();
             response.setEstado(e.getMessage());

@@ -164,6 +164,9 @@ class Electronica(val codigo : String, val numero : String, val parametroService
         val fecha = LocalDateTime.now()
         var mensaje = "$fecha |"
 
+        if (respuesta.comprobantes == null) {
+            return "RESPUESTA NULA"
+        }
 
         if (respuesta.comprobantes.comprobante.size > 0) {
             for (i in respuesta.comprobantes.comprobante.indices) {
